@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Homework: Your Online Life Is Permanent</title>
+<!-- Tailwind CSS & Phosphor Icons for Premium Interface Consistency -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',      /* Dark UI Header Background */
+          bodyLight: '#F8FAFC',     /* Workspace background */
+          orangeAction: '#C2410C',  /* Primary brand accent color */
+          orangeHover: '#EA580C',   /* Hover color states */
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+          greenSoft: '#E8F8EF',
+          redSoft: '#FDEAEA',
+          amberSoft: '#FEF3D7'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&family=IBM+Plex+Mono:wght=400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .section { display: none; animation: fadeUp .35s ease; }
+  .section.active { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body class="bg-deepBlue text-darkSlate min-h-screen text-[18px] antialiased">
+
+<!-- ── STANDARDIZED METHOD FALA HEADER ── -->
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[960px] mx-auto px-6 py-5 flex items-center justify-between gap-4">
+    
+    <div class="flex items-center gap-3">
+      <div class="flex-shrink-0">
+        <button onclick="resetEngine()" class="cursor-pointer hover:opacity-80 transition-opacity select-none text-left focus:outline-none">
+          <span class="text-white font-bold tracking-wider text-lg mono">MÉTODO <span class="text-orangeAction">FAIXA</span></span>
+        </button>
+      </div>
+      <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
+      <div class="hidden sm:block">
+        <h1 class="text-base font-bold text-white tracking-wide">
+          <a href="yourlife.html" class="hover:text-orangeAction transition-colors inline-flex items-center gap-1.5">
+            <i class="ph ph-arrow-left text-sm"></i> Your Online Life Is Permanent
+          </a>
+        </h1>
+        <p class="text-xs text-slate-400">Homework Assignment · Digital Footprint · Writing Production</p>
+      </div>
+    </div>
+
+    <!-- Progress Tracker Linear Layout -->
+    <div class="flex items-center gap-3">
+      <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mono" id="progressLabel">Step 1 / 2</span>
+      <div class="w-24 sm:w-32 h-2.5 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
+        <div class="h-full bg-orangeAction rounded-full transition-all duration-500" id="progressFill" style="width:50%"></div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- MAIN CONTENT WORKSPACE -->
+<div class="bg-bodyLight w-full min-h-[calc(100vh-73px)]">
+  <main class="max-w-[960px] mx-auto px-6 py-12 pb-24">
+
+    <!-- ═══════════════════════════════════════════
+         MÓDULO 1: QUESTIONS & CALIBRATION (STEP 1)
+    ═══════════════════════════════════════════ -->
+    <div class="section active" id="sec1">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-4 border border-orange-100">Step 1: Calibration Quiz (15 min)</span>
+      
+      <h2 class="text-4xl font-bold text-deepBlue mb-3 leading-tight">Digital Hygiene Verification</h2>
+      
+      <!-- INSTRUCTION PARAGRAPH WITH ELEGANT LINK INTEGRATION -->
+      <p class="text-base text-slate-600 mb-6 leading-relaxed">
+        Let's review the analytical structures and expressions covered in 
+        <a href="index.html" class="text-orangeAction hover:text-orangeHover font-semibold underline decoration-2 underline-offset-4 transition-colors focus:outline-none">
+          "Your Online Life Is Permanent"
+        </a>. 
+        Select the most appropriate alternative for each scenario below.
+      </p>
+
+      <!-- DYNAMIC SCRAMBLED QUIZ CONTAINER -->
+      <div id="quiz-container" class="space-y-4 mb-6"></div>
+      
+      <!-- NOTIFICATION MESSAGE POPUP (INSTEAD OF ALERT) -->
+      <div id="validation-warning" class="hidden mb-4 p-4 rounded-lg bg-redSoft text-red-800 border border-red-200 text-sm font-medium"></div>
+      <div id="quiz-score-msg" class="hidden mb-6 p-5 rounded-lg font-semibold text-center text-lg"></div>
+
+      <div class="flex justify-end">
+        <div class="flex gap-2.5">
+          <button class="bg-deepBlue hover:bg-slate-800 text-white font-medium px-6 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="checkAllQuestions()">Validate Choices</button>
+          <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-6 py-3.5 rounded-lg hidden items-center gap-2 transition-colors shadow-sm text-base animate-pulse" id="toFinalBtn" onclick="goTo(2)">Proceed to Writing <i class="ph ph-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         MÓDULO 2: GOOGLE DOCS PERSISTENT FRAME (STEP 2)
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec2">
+      <span class="inline-block text-xs font-bold tracking-widest text-emerald-700 uppercase bg-emerald-50 px-3 py-1 rounded-full mb-3 border border-emerald-100">Step 2: Written Production (25 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Electronic Tattoos Policy Draft</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Combine your logical collocations and modal constraints to formulate a robust reflection on your digital legacy.</p>
+
+      <!-- INTEGRATED WRITING TASK WITH PERSISTENT GOOGLE DOCS IFRAME -->
+      <div class="bg-white border-2 border-dashed border-slate-300 rounded-xl p-8 mb-8 shadow-sm bg-slate-50/50">
+        <div class="flex items-center justify-between border-b pb-4 mb-4">
+          <h3 class="text-xl font-bold text-deepBlue"><i class="ph-bold ph-pencil-line text-orangeAction"></i> Active Writing Portfolio Task</h3>
+          <span class="text-xs bg-slate-200 px-2.5 py-1 text-slate-700 rounded-md uppercase tracking-wider font-bold mono">CEFR B2 Writing</span>
+        </div>
+        
+        <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+          <strong>🎯 Your Prompt:</strong> Write a short reflection (80-120 words) analyzing the concept of the <strong>electronic tattoo</strong>. Do companies have a right to audit prospective employees' permanent online past, or should individuals have a right to be digitally forgotten? Use at least 2 collocations (e.g., <em>provide information, make mistakes</em>) and modal markers (<em>must, should</em>).
+        </p>
+
+        <!-- Dynamic Live Google Docs Integration Frame -->
+        <div id="gdoc-frame-wrapper" class="w-full h-[550px] border border-slate-300 rounded-xl overflow-hidden shadow-inner bg-white mb-6 relative flex flex-col items-center justify-center">
+          <iframe id="gdoc-iframe" src="" class="w-full h-full hidden" frameborder="0" allowfullscreen></iframe>
+          
+          <div id="gdoc-placeholder" class="p-8 text-center max-w-md">
+            <i class="ph-bold ph-file-doc text-6xl text-slate-400 mb-3 animate-bounce"></i>
+            <h4 class="font-bold text-lg text-deepBlue mb-2">Google Docs Task Sandbox</h4>
+            <p class="text-sm text-slate-500 mb-4">The Google Doc is waiting to load. Teachers can configure a persistent document or template link in the settings panel below to enable direct student writing and real-time correction.</p>
+            <button onclick="toggleTeacherSettings()" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2 rounded-lg transition-all">
+              <i class="ph ph-gear-six"></i> Setup Doc Link
+            </button>
+          </div>
+        </div>
+
+        <!-- Hidden Teacher Control Dashboard -->
+        <div id="teacher-settings-panel" class="bg-white border border-slate-200 rounded-xl p-5 hidden transition-all">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono font-bold text-orangeAction uppercase">Teacher Customization panel</span>
+            <button onclick="toggleTeacherSettings()" class="text-slate-400 hover:text-slate-600 text-sm font-bold">Close <i class="ph ph-x"></i></button>
+          </div>
+          <p class="text-xs text-slate-500 mb-4">Paste your shared Google Drive Doc URL below (the one ending in <code>/edit</code> or <code>/pub</code>). The platform will securely persist this link in this browser's local sandbox:</p>
+          <div class="flex gap-2">
+            <input type="text" id="gdoc-url-input" class="flex-grow p-2.5 border rounded-lg text-xs font-mono focus:outline-none focus:border-orangeAction bg-slate-50" placeholder="https://docs.google.com/document/d/YOUR_DOCUMENT_ID/edit">
+            <button onclick="saveGoogleDocUrl()" class="bg-orangeAction hover:bg-orangeHover text-white px-5 rounded-lg text-xs font-bold font-mono">
+              Save & Link
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(1)"><i class="ph ph-arrow-left"></i> Back to Step 1</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-6 py-3.5 rounded-lg flex items-center gap-2 transition-colors text-base shadow" onclick="resetEngine()">
+          <i class="ph ph-arrows-counter-clockwise"></i> Restart Module
+        </button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ── ENGINE APPLICATION STATE & SCRAMBLING CORE ── -->
+<script>
+let currentSection = 1;
+let quizAnswers  = {};
+let quizChecked  = false;
+let quizScore    = 0;
+
+// ── COGNITIVE MULTI-CHOICE SCRAMBLED DATA ──
+const rawQuizData = [
+  { 
+    sentence: "To secure your reputation, you _____ share blueprints of private company logs on personal channels.", 
+    options: ["mustn't", "don't have to"], 
+    answer: "mustn't", 
+    hint: "For absolute prohibitions (things forbidden by compliance rules), we use 'mustn't'." 
+  },
+  { 
+    sentence: "It may _____ that the background metadata trackers were recording locations all along.", 
+    options: ["turn out", "threaten"], 
+    answer: "turn out", 
+    hint: "To be discovered or known finally and surprisingly is 'turn out'." 
+  },
+  { 
+    sentence: "Corporate employees _____ provide credentials to third-party scripts, as it violates server contracts.", 
+    options: ["are not allowed to", "don't need to"], 
+    answer: "are not allowed to", 
+    hint: "Explicit prohibitions of legal/contractual systems use 'are not allowed to'." 
+  },
+  { 
+    sentence: "When configuring a firewall, we _____ make mistakes, or we expose the server database to hackers.", 
+    options: ["mustn't", "should"], 
+    answer: "mustn't", 
+    hint: "'Make mistakes' is the target collocation; combined with 'mustn't' to prevent critical security risk." 
+  },
+  { 
+    sentence: "You _____ encrypt your personal browser, but doing so prevents silent advertising trackers.", 
+    options: ["don't have to", "shouldn't"], 
+    answer: "don't have to", 
+    hint: "An action that is recommended but not mandatory is a non-obligation: 'don't have to'." 
+  }
+];
+
+function shuffleArray(array) {
+  let arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+let scrambledQuizData = [];
+
+function buildQuizDatabase() {
+  scrambledQuizData = rawQuizData.map(item => {
+    return {
+      sentence: item.sentence,
+      answer: item.answer,
+      hint: item.hint,
+      scrambledOptions: shuffleArray(item.options)
+    };
+  });
+}
+
+function renderQuiz() {
+  const c = document.getElementById('quiz-container');
+  c.innerHTML = ""; 
+  
+  scrambledQuizData.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'border border-slate-200 rounded-xl p-6 bg-white shadow-sm transition-all';
+    div.id = 'q-' + i;
+    
+    const opts = item.scrambledOptions.map((o, idx) => `
+      <button class="opt-btn bg-white border border-slate-200 text-base font-medium text-deepBlue px-5 py-3 rounded-lg hover:border-orangeAction hover:bg-orange-50 transition-all mono" 
+              onclick="selectOpt(${i}, ${idx}, this)" 
+              id="btn-${i}-${idx}">
+        ${o}
+      </button>
+    `).join('');
+    
+    div.innerHTML = `
+      <div class="text-base font-medium text-deepBlue mb-4">
+        ${i+1}. &ldquo;${item.sentence}&rdquo;
+      </div>
+      <div class="flex flex-wrap gap-2.5 options">
+        ${opts}
+      </div>
+      <div class="mt-3 text-base font-semibold hidden feedback-msg"></div>
+    `;
+    c.appendChild(div);
+  });
+}
+
+buildQuizDatabase();
+renderQuiz();
+
+function selectOpt(questionIdx, optionIdx, clickedBtn) {
+  if (quizChecked) return; 
+  
+  quizAnswers[questionIdx] = clickedBtn.textContent.trim();
+  const block = document.getElementById('q-' + questionIdx);
+  
+  block.querySelectorAll('.opt-btn').forEach(btn => { 
+    btn.classList.remove('bg-deepBlue', 'text-white', 'border-deepBlue'); 
+    btn.classList.add('bg-white', 'text-deepBlue', 'border-slate-200'); 
+  });
+  
+  clickedBtn.classList.add('bg-deepBlue', 'text-white', 'border-deepBlue');
+  clickedBtn.classList.remove('bg-white', 'text-deepBlue', 'border-slate-200');
+
+  // Clear warning if any
+  document.getElementById('validation-warning').classList.add('hidden');
+}
+
+function checkAllQuestions() {
+  if (quizChecked) return;
+
+  // Verify all questions have been addressed
+  let unanswered = false;
+  for (let i = 0; i < rawQuizData.length; i++) {
+    if (quizAnswers[i] === undefined) {
+      unanswered = true;
+    }
+  }
+
+  if (unanswered) {
+    const warning = document.getElementById('validation-warning');
+    warning.textContent = "⚠️ Please answer all questions before validating.";
+    warning.classList.remove('hidden');
+    return;
+  }
+
+  quizChecked = true;
+  quizScore = 0;
+
+  scrambledQuizData.forEach((item, i) => {
+    const block = document.getElementById('q-' + i);
+    const fb = block.querySelector('.feedback-msg');
+    const userAns = quizAnswers[i];
+    const correct = item.answer;
+
+    fb.classList.remove('hidden');
+    block.querySelectorAll('.opt-btn').forEach(b => { b.disabled = true; b.classList.add('opacity-60'); });
+
+    if (userAns === correct) {
+      quizScore++;
+      block.classList.add('border-emerald-500', 'bg-emerald-50/20');
+      
+      block.querySelectorAll('.opt-btn').forEach(b => {
+        if (b.textContent.trim() === correct) {
+          b.classList.remove('opacity-60', 'bg-white', 'text-deepBlue', 'bg-deepBlue');
+          b.classList.add('bg-emerald-600', 'text-white', 'border-emerald-600');
+        }
+      });
+      
+      fb.className = 'mt-3 text-base font-semibold text-emerald-600 feedback-msg';
+      fb.textContent = '✓ Correct Choice! ' + item.hint;
+    } else {
+      block.classList.add('border-rose-300', 'bg-rose-50/20');
+      
+      block.querySelectorAll('.opt-btn').forEach(b => {
+        const textValue = b.textContent.trim();
+        if (userAns && textValue === userAns) {
+          b.classList.remove('opacity-60', 'bg-deepBlue', 'text-white');
+          b.classList.add('bg-rose-600', 'text-white', 'border-rose-600');
+        }
+        if (textValue === correct) {
+          b.classList.remove('opacity-60');
+          b.classList.add('border-emerald-600', 'text-emerald-600', 'font-bold');
+        }
+      });
+      
+      fb.className = 'mt-3 text-base font-semibold text-rose-600 feedback-msg';
+      fb.textContent = '✗ Incorrect selection. ' + item.hint;
+    }
+  });
+
+  const msg = document.getElementById('quiz-score-msg');
+  msg.classList.remove('hidden');
+  const total = rawQuizData.length;
+  
+  if (quizScore >= 4) {
+    msg.className = 'mb-6 p-5 rounded-lg font-semibold text-center text-lg bg-emerald-50 text-emerald-600 border border-emerald-200';
+    msg.textContent = `🎉 Calibration Confirmed! ${quizScore}/${total} configurations verified!`;
+  } else {
+    msg.className = 'mb-6 p-5 rounded-lg font-semibold text-center text-lg bg-rose-50 text-rose-600 border border-rose-200';
+    msg.textContent = `${quizScore}/${total} verified. Review digital hygiene markers and proceed.`;
+  }
+  
+  document.getElementById('toFinalBtn').classList.remove('hidden');
+  document.getElementById('toFinalBtn').classList.add('inline-flex');
+}
+
+function buildResults() {
+  const total = rawQuizData.length;
+  const pct = Math.round((quizScore / total) * 100);
+  const numEl = document.getElementById('finalScore');
+  const badgeEl = document.getElementById('finalBadge');
+  const msgEl = document.getElementById('finalMsg');
+
+  numEl.textContent = quizScore + '/' + total;
+
+  if (pct >= 80) {
+    badgeEl.textContent = '🏆 B2-Ready Compliance Analyst';
+    badgeEl.className = 'inline-block px-6 py-2.5 rounded-full font-bold text-base mb-5 bg-amberSoft text-amber-800';
+    msgEl.textContent = 'Excellent logical alignment! You can perfectly separate strict prohibitions from optional settings, managing difficult collocations smoothly.';
+  } else if (pct >= 60) {
+    badgeEl.textContent = '👍 Confident Privacy Specialist';
+    badgeEl.className = 'inline-block px-6 py-2.5 rounded-full font-bold text-base mb-5 bg-blue-50 text-blue-600';
+    msgEl.textContent = 'Stable baseline. Focus on distinguishing modal strengths (must vs should) for absolute accuracy.';
+  } else {
+    badgeEl.textContent = '📚 Developing Compliance Candidate';
+    badgeEl.className = 'inline-block px-6 py-2.5 rounded-full font-bold text-base mb-5 bg-emerald-50 text-emerald-600';
+    msgEl.textContent = 'Hygiene indicators require structural review. Re-analyze your parameters and execute the writing sandbox below.';
+  }
+
+  // Load Doc URL automatically
+  loadGoogleDocFromStorage();
+}
+
+// ── DYNAMIC GOOGLE DOCS INTEGRATION CONTROLLER ──
+function toggleTeacherSettings() {
+  const panel = document.getElementById('teacher-settings-panel');
+  panel.classList.toggle('hidden');
+}
+
+function saveGoogleDocUrl() {
+  const inputVal = document.getElementById('gdoc-url-input').value.trim();
+  if (!inputVal) {
+    return;
+  }
+
+  // Save safely in LocalStorage
+  localStorage.setItem('metodo_fala_gdoc_permanent_url', inputVal);
+  loadGoogleDocFromStorage();
+  
+  // Close the settings window
+  toggleTeacherSettings();
+}
+
+function loadGoogleDocFromStorage() {
+  const savedUrl = localStorage.getItem('metodo_fala_gdoc_permanent_url');
+  const iframe = document.getElementById('gdoc-iframe');
+  const placeholder = document.getElementById('gdoc-placeholder');
+  const inputField = document.getElementById('gdoc-url-input');
+
+  if (savedUrl) {
+    inputField.value = savedUrl;
+    iframe.src = savedUrl;
+    iframe.classList.remove('hidden');
+    placeholder.classList.add('hidden');
+  } else {
+    iframe.classList.add('hidden');
+    placeholder.classList.remove('hidden');
+  }
+}
+
+function resetEngine() {
+  quizAnswers = {};
+  quizChecked = false;
+  quizScore = 0;
+
+  document.getElementById('quiz-score-msg').classList.add('hidden');
+  document.getElementById('toFinalBtn').classList.add('hidden');
+  document.getElementById('toFinalBtn').classList.remove('inline-flex');
+  document.getElementById('validation-warning').classList.add('hidden');
+
+  buildQuizDatabase();
+  renderQuiz();
+  goTo(1);
+}
+
+function goTo(n) {
+  document.getElementById('sec' + currentSection).classList.remove('active');
+  currentSection = n;
+  document.getElementById('sec' + n).classList.add('active');
+  updateProgress(n);
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  if (n === 2) buildResults();
+}
+
+function updateProgress(n) {
+  const fill  = document.getElementById('progressFill');
+  const label = document.getElementById('progressLabel');
+  fill.style.width = (n * 50) + '%';
+  label.textContent = 'Step ' + n + ' / 2';
+}
+
+// Auto-run initial setups
+window.onload = function() {
+  loadGoogleDocFromStorage();
+};
+</script>
+</body>
+</html>
+```
+eof
