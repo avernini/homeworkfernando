@@ -53,7 +53,7 @@
       <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
       <div class="hidden sm:block">
         <h1 class="text-base font-bold text-white tracking-wide">
-          <a href="yourlife.html" class="hover:text-orangeAction transition-colors inline-flex items-center gap-1.5">
+          <a href="index.html" class="hover:text-orangeAction transition-colors inline-flex items-center gap-1.5">
             <i class="ph ph-arrow-left text-sm"></i> Your Online Life Is Permanent
           </a>
         </h1>
@@ -174,6 +174,10 @@ let currentSection = 1;
 let quizAnswers  = {};
 let quizChecked  = false;
 let quizScore    = 0;
+
+// ── LINK PERMANENTE DO GOOGLE DOCS ──
+// COLE O SEU LINK DE COMPARTILHAMENTO DO GOOGLE DOCS DIRETAMENTE AQUI:
+const HARDCODED_GDOC_URL = "https://docs.google.com/document/d/1SOEmie9ncFI7d8vMFirdJSCuy-oA1qzZRXFTyibTFNU/edit?usp=sharing";
 
 // ── COGNITIVE MULTI-CHOICE SCRAMBLED DATA ──
 const rawQuizData = [
@@ -409,12 +413,14 @@ function saveGoogleDocUrl() {
 }
 
 function loadGoogleDocFromStorage() {
-  const savedUrl = localStorage.getItem('metodo_fala_gdoc_permanent_url');
+  // Busca o link salvo no localStorage ou usa o link permanente padrão definido acima
+  const savedUrl = localStorage.getItem('metodo_fala_gdoc_permanent_url') || HARDCODED_GDOC_URL;
   const iframe = document.getElementById('gdoc-iframe');
   const placeholder = document.getElementById('gdoc-placeholder');
   const inputField = document.getElementById('gdoc-url-input');
 
-  if (savedUrl) {
+  // Só exibe o documento se o link for de fato um link real e válido do Google Docs
+  if (savedUrl && savedUrl.includes("docs.google.com/document")) {
     inputField.value = savedUrl;
     iframe.src = savedUrl;
     iframe.classList.remove('hidden');
@@ -463,5 +469,3 @@ window.onload = function() {
 </script>
 </body>
 </html>
-```
-eof
