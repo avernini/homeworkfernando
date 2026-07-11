@@ -144,7 +144,7 @@
           </div>
           <p class="text-xs text-slate-500 mb-4">Paste your shared Google Doc or Sheet editing URL below (the one ending in <code>/edit</code> or <code>/pub</code>). The platform will securely persist this link in this browser's local sandbox:</p>
           <div class="flex gap-2">
-            <input type="text" id="gdoc-url-input" class="flex-grow p-2.5 border rounded-lg text-xs font-mono focus:outline-none focus:border-orangeAction bg-slate-50" placeholder="https://docs.google.com/document/d/YOUR_DOCUMENT_ID/edit">
+            <input type="text" id="gdoc-url-input" class="flex-grow p-2.5 border rounded-lg text-xs font-mono focus:outline-none focus:border-orangeAction bg-slate-50" placeholder="https://docs.google.com/document/d/1SOEmie9ncFI7d8vMFirdJSCuy-oA1qzZRXFTyibTFNU/edit?usp=drive_link">
             <button onclick="saveGoogleDocUrl()" class="bg-orangeAction hover:bg-orangeHover text-white px-5 rounded-lg text-xs font-bold font-mono">
               Save & Link
             </button>
@@ -169,6 +169,9 @@ let currentSection = 1;
 let quizAnswers  = {};
 let quizChecked  = false;
 let quizScore    = 0;
+
+// ── LINK PERMANENTE DO GOOGLE DOCS (ADICIONADO) ──
+const HARDCODED_GDOC_URL = "https://docs.google.com/document/d/1SOEmie9ncFI7d8vMFirdJSCuy-oA1qzZRXFTyibTFNU/edit?usp=drive_link";
 
 // ── QUIZ DATA MATRIX FOR COMPREHENSION Check ──
 const rawQuizData = [
@@ -379,12 +382,13 @@ function saveGoogleDocUrl() {
 }
 
 function loadGoogleDocFromStorage() {
-  const savedUrl = localStorage.getItem('metodo_fala_homework_gdoc');
+  // ATUALIZADO: Busca o link salvo no localStorage ou usa o link permanente padrão definido acima
+  const savedUrl = localStorage.getItem('metodo_fala_homework_gdoc') || HARDCODED_GDOC_URL;
   const iframe = document.getElementById('gdoc-iframe');
   const placeholder = document.getElementById('gdoc-placeholder');
   const inputField = document.getElementById('gdoc-url-input');
 
-  if (savedUrl) {
+  if (savedUrl && savedUrl.includes("docs.google.com/document")) {
     inputField.value = savedUrl;
     iframe.src = savedUrl;
     iframe.classList.remove('hidden');
