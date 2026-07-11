@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – If We Were Honest Making Plans</title>
+<!-- Tailwind CSS & Phosphor Icons para Consistência de Interface Premium -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',      /* Cabeçalho Dark UI */
+          bodyLight: '#F8FAFC',     /* Workspace Claro */
+          orangeAction: '#C2410C',  /* Botões e Ações */
+          orangeHover: '#EA580C',   /* Hover */
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+          greenSoft: '#E8F8EF',
+          redSoft: '#FDEAEA',
+          amberSoft: '#FEF3D7'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&family=IBM+Plex+Mono:wght=400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .section { display: none; animation: fadeUp .35s ease; }
+  .section.active { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body class="bg-deepBlue text-darkSlate min-h-screen text-[18px] antialiased">
+
+<!-- ── STANDARDIZED METHOD FALA HEADER ── -->
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[960px] mx-auto px-6 py-5 flex items-center justify-between gap-4">
+    
+    <div class="flex items-center gap-3">
+      <div class="flex-shrink-0">
+        <button onclick="resetEngine()" class="cursor-pointer hover:opacity-80 transition-opacity select-none text-left focus:outline-none">
+          <span class="text-white font-bold tracking-wider text-lg mono">MÉTODO <span class="text-orangeAction">FALA</span></span>
+        </button>
+      </div>
+      <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
+      <div class="hidden sm:block">
+        <h1 class="text-base font-bold text-white tracking-wide">If We Were Honest Making Plans</h1>
+        <p class="text-xs text-slate-400">Refusal Styles · Social Etiquette Analysis · Sincerity vs Excuses</p>
+      </div>
+    </div>
+
+    <!-- Progress Tracker Linear Layout -->
+    <div class="flex items-center gap-3">
+      <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mono" id="progressLabel">Step 1 / 5</span>
+      <div class="w-24 sm:w-32 h-2.5 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
+        <div class="h-full bg-orangeAction rounded-full transition-all duration-500" id="progressFill" style="width:20%"></div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- MAIN CONTENT WORKSPACE -->
+<div class="bg-bodyLight w-full min-h-[calc(100vh-73px)]">
+  <main class="max-w-[960px] mx-auto px-6 py-12 pb-24">
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 1 – WARM-UP: SOCIAL GATHERINGS COMPARE
+    ═══════════════════════════════════════════ -->
+    <div class="section active" id="sec1">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-4 border border-orange-100">Step 1: Warm-up & Setup (10 min)</span>
+      
+      <h2 class="text-4xl font-bold text-deepBlue mb-3 leading-tight">Social Gatherings & Invites</h2>
+      <p class="text-lg text-slate-500 mb-8 leading-relaxed max-w-3xl">Let's compare typical lifestyle events. We often receive invitations to hang out, celebrate, or network. Select each card to compare their distinct dynamics and talk about your boundaries.</p>
+
+      <!-- SECTOR TARGETED GATHERING CARDS -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div onclick="selectGathering('birthday')" class="bg-white border rounded-xl overflow-hidden shadow-sm hover:border-orangeAction cursor-pointer transition-all">
+          <div class="h-44 w-full bg-slate-200">
+            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=400&h=180&q=80" alt="Birthday Party" class="w-full h-full object-cover">
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-mono text-orangeAction uppercase tracking-widest block mb-1">Informal Circle</span>
+            <h4 class="font-bold text-deepBlue text-lg">A Friend's Birthday</h4>
+          </div>
+        </div>
+
+        <div onclick="selectGathering('family')" class="bg-white border rounded-xl overflow-hidden shadow-sm hover:border-orangeAction cursor-pointer transition-all">
+          <div class="h-44 w-full bg-slate-200">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=400&h=180&q=80" alt="Family Gathering" class="w-full h-full object-cover">
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-mono text-slate-500 uppercase tracking-widest block mb-1">Personal Circle</span>
+            <h4 class="font-bold text-deepBlue text-lg">A Family Gathering</h4>
+          </div>
+        </div>
+
+        <div onclick="selectGathering('bbq')" class="bg-white border rounded-xl overflow-hidden shadow-sm hover:border-orangeAction cursor-pointer transition-all">
+          <div class="h-44 w-full bg-slate-200">
+            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=400&h=180&q=80" alt="Office BBQ" class="w-full h-full object-cover">
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-mono text-indigo-600 uppercase tracking-widest block mb-1">Professional Circle</span>
+            <h4 class="font-bold text-deepBlue text-lg">An Office BBQ</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- DYNAMIC REFLEXIVE FEEDBACK CARD -->
+      <div id="gatheringDetail" class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm hidden">
+        <h4 id="gatheringTitle" class="text-2xl font-bold text-deepBlue mb-4"></h4>
+        <div class="space-y-4">
+          <div class="p-4 bg-slate-50 border rounded-lg">
+            <span class="block text-xs font-mono text-slate-400 uppercase mb-1">Interactive Discussion Prompts:</span>
+            <p id="gatheringPrompt" class="text-base text-slate-700 leading-relaxed italic"></p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 bg-orange-50/50 border border-orange-100 rounded-lg">
+              <span class="block text-xs font-mono text-orangeAction uppercase mb-1">Why do people love this?</span>
+              <p id="gatheringLove" class="text-sm text-slate-600"></p>
+            </div>
+            <div class="p-4 bg-slate-100 rounded-lg">
+              <span class="block text-xs font-mono text-slate-500 uppercase mb-1">Common friction points:</span>
+              <p id="gatheringFriction" class="text-sm text-slate-600"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REFUSAL SCAFFOLD CHALLENGE -->
+      <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm">
+        <h3 class="text-xl font-bold text-deepBlue mb-4 flex items-center gap-2">
+          <i class="ph-bold ph-chats-teardrop text-orangeAction"></i> Setting up Excuses
+        </h3>
+        <p class="text-base text-slate-600 mb-6">Imagine a colleague tells you: <strong>"Hey guys, don't forget - party this weekend - my place! Bring booze, chips, and most importantly - yourselves!"</strong></p>
+        
+        <p class="text-base text-slate-600 mb-4">How do you decline? Try dragging your mouse or thinking how to complete these classic blueprints:</p>
+        <div class="space-y-3 font-mono text-sm">
+          <div class="p-4 bg-slate-50 rounded-lg border-l-4 border-slate-400">
+            <span class="text-xs uppercase text-slate-400 block font-bold mb-1">Option A: Soft & Concessive</span>
+            <span class="text-deepBlue font-medium">"I wish I could go, but..."</span>
+            <span class="text-slate-400 italic font-normal">[insert excuse, e.g. my dad is in town]</span>
+          </div>
+          <div class="p-4 bg-slate-50 rounded-lg border-l-4 border-slate-400">
+            <span class="text-xs uppercase text-slate-400 block font-bold mb-1">Option B: Fact-Based Refusal</span>
+            <span class="text-deepBlue font-medium">"I can't make it because..."</span>
+            <span class="text-slate-400 italic font-normal">[insert obligation, e.g. I agreed to help a friend move]</span>
+          </div>
+          <div class="p-4 bg-slate-50 rounded-lg border-l-4 border-slate-400">
+            <span class="text-xs uppercase text-slate-400 block font-bold mb-1">Option C: Direct Dismissal</span>
+            <span class="text-deepBlue font-medium">"Sorry, I just..."</span>
+            <span class="text-slate-400 italic font-normal">[insert feeling, e.g. don't want to go]</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(2)">Next: Video Analysis <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 2 – VIDEO & COMPREHENSION
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec2">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 2: Video & Comprehension (15 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">If We Were Honest Making Plans</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Let's watch the video again. In the post-viewing stage, you will analyze the differences between lame and honest excuses.</p>
+
+      <!-- RESPONSIVE IFRAME FOR VIDEO EMBED WITH SECURITY FALLBACK FOR ERROR 153 -->
+      <div class="mb-8">
+        <div class="w-full aspect-video rounded-xl overflow-hidden border border-slate-200 shadow-md bg-slate-900 relative">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/bdwQntqI-ts" title="If We Were Honest Making Plans" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        
+        <!-- Premium Error 153 & Playback Block Mitigation Box -->
+        <div class="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 bg-amber-100 text-amber-800 rounded-lg text-xl flex-shrink-0"><i class="ph-bold ph-warning-circle"></i></div>
+            <div class="text-left">
+              <h5 class="text-sm font-bold text-amber-900">Problemas com o vídeo? (Erro 153 / Bloqueio de Incorporação)</h5>
+              <p class="text-xs text-amber-800 mt-0.5 leading-relaxed">Alguns navegadores ou conexões locais bloqueiam a reprodução deste vídeo do BuzzFeed dentro de sistemas integrados.</p>
+            </div>
+          </div>
+          <a href="https://www.youtube.com/watch?v=bdwQntqI-ts" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 bg-orangeAction hover:bg-orangeHover text-white text-xs font-bold py-2.5 px-4 rounded-lg flex items-center gap-1.5 transition-colors shadow">
+            Assistir no YouTube <i class="ph-bold ph-arrow-square-out"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- PART 2 QUESTIONS FROM SLIDE -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white p-6 rounded-xl border shadow-sm">
+          <span class="text-xs font-mono text-orangeAction uppercase tracking-widest block mb-1">Phase 1: First 40"</span>
+          <h4 class="font-bold text-deepBlue text-base mb-2">Who is in the video & where are they?</h4>
+          <textarea class="w-full p-3 bg-slate-50 border rounded-lg text-sm font-medium text-slate-700 h-24 focus:outline-none focus:border-orangeAction" placeholder="Type response... (e.g. Justin, Steve, Quinta at an office setup)"></textarea>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border shadow-sm">
+          <span class="text-xs font-mono text-orangeAction uppercase tracking-widest block mb-1">Phase 2: Conversation</span>
+          <h4 class="font-bold text-deepBlue text-base mb-2">What happens in their conversation?</h4>
+          <textarea class="w-full p-3 bg-slate-50 border rounded-lg text-sm font-medium text-slate-700 h-24 focus:outline-none focus:border-orangeAction" placeholder="Type response... (e.g. He invites them, and they offer different excuses)"></textarea>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border shadow-sm">
+          <span class="text-xs font-mono text-orangeAction uppercase tracking-widest block mb-1">Phase 3: Prediction</span>
+          <h4 class="font-bold text-deepBlue text-base mb-2">What do you predict will happen next?</h4>
+          <textarea class="w-full p-3 bg-slate-50 border rounded-lg text-sm font-medium text-slate-700 h-24 focus:outline-none focus:border-orangeAction" placeholder="Type response... (e.g. Justin will feel offended or validate her truth)"></textarea>
+        </div>
+      </div>
+
+      <!-- TRUE / FALSE COMPREHENSION TASK -->
+      <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm">
+        <h3 class="text-xl font-bold text-deepBlue mb-6 flex items-center gap-2">
+          <i class="ph-bold ph-list-checks text-orangeAction"></i> True or False Matrix Verification
+        </h3>
+        
+        <div class="space-y-4">
+          <!-- Item 1 -->
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 bg-softSand rounded-lg gap-4">
+            <div>
+              <span class="text-[11px] font-mono text-slate-400 block uppercase">Timestamp: 0:52</span>
+              <p class="font-semibold text-deepBlue text-base">Quinta’s father doesn't visit her so often.</p>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="markTF(1, true, this)" class="tf-btn bg-white border border-slate-300 text-slate-700 text-sm font-bold px-4 py-2 rounded hover:border-orangeAction transition-all">TRUE</button>
+              <button onclick="markTF(1, false, this)" class="tf-btn bg-white border border-slate-300 text-slate-700 text-sm font-bold px-4 py-2 rounded hover:border-orangeAction transition-all">FALSE</button>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 bg-softSand rounded-lg gap-4">
+            <div>
+              <span class="text-[11px] font-mono text-slate-400 block uppercase">Timestamp: 1:00</span>
+              <p class="font-semibold text-deepBlue text-base">Quinta lives far from Justin’s house.</p>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="markTF(2, true, this)" class="tf-btn bg-white border border-slate-300 text-slate-700 text-sm font-bold px-4 py-2 rounded hover:border-orangeAction transition-all">TRUE</button>
+              <button onclick="markTF(2, false, this)" class="tf-btn bg-white border border-slate-300 text-slate-700 text-sm font-bold px-4 py-2 rounded hover:border-orangeAction transition-all">FALSE</button>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 bg-softSand rounded-lg gap-4">
+            <div>
+              <span class="text-[11px] font-mono text-slate-400 block uppercase">Timestamp: 1:14</span>
+              <p class="font-semibold text-deepBlue text-base">Justin did something that made Quinta angry.</p>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="markTF(3, true, this)" class="tf-btn bg-white border border-slate-300 text-slate-700 text-sm font-bold px-4 py-2 rounded hover:border-orangeAction transition-all">TRUE</button>
+              <button onclick="markTF(3, false, this)" class="tf-btn bg-white border border-slate-300 text-slate-700 text-sm font-bold px-4 py-2 rounded hover:border-orangeAction transition-all">FALSE</button>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 bg-softSand rounded-lg gap-4">
+            <div>
+              <span class="text-[11px] font-mono text-slate-400 block uppercase">Timestamp: 1:25</span>
+              <p class="font-semibold text-deepBlue text-base">Quinta has other plans at the time of Justin's party.</p>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="markTF(4, true, this)" class="tf-btn bg-white border border-slate-300 text-slate-700 text-sm font-bold px-4 py-2 rounded hover:border-orangeAction transition-all">TRUE</button>
+              <button onclick="markTF(4, false, this)" class="tf-btn bg-white border border-slate-300 text-slate-700 text-sm font-bold px-4 py-2 rounded hover:border-orangeAction transition-all">FALSE</button>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 bg-softSand rounded-lg gap-4">
+            <div>
+              <span class="text-[11px] font-mono text-slate-400 block uppercase">Timestamp: 2:32</span>
+              <p class="font-semibold text-deepBlue text-base">Quinta's friends think she is going to surprise them at the party.</p>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="markTF(5, true, this)" class="tf-btn bg-white border border-slate-300 text-slate-700 text-sm font-bold px-4 py-2 rounded hover:border-orangeAction transition-all">TRUE</button>
+              <button onclick="markTF(5, false, this)" class="tf-btn bg-white border border-slate-300 text-slate-700 text-sm font-bold px-4 py-2 rounded hover:border-orangeAction transition-all">FALSE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(1)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(3)">Next: Concept Analysis <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 3 – DISCUSSION & CONCEPT ANALYSIS
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec3">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 3: Discussion & Analysis (15 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Honesty vs Social Norms</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Analyze the spectrum of responses when declining invites. There are two major routes: being "brutally honest" or giving a "lame excuse". Let's investigate both models.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <span class="text-xs font-mono text-orangeAction uppercase tracking-widest block mb-1">Refusal Type A</span>
+          <h4 class="font-bold text-deepBlue text-lg mb-2">Lame Excuses 🤥</h4>
+          <p class="text-sm text-slate-600 mb-4 leading-relaxed">A minor white lie, weak explanation, or convoluted story designed to protect the requester's feelings, though it lacks genuine substance.</p>
+          <div class="p-3 bg-slate-50 border rounded font-mono text-xs text-slate-700">
+            "I agreed to help a friend move and I don't know what time we're going to be done."
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <span class="text-xs font-mono text-orangeAction uppercase tracking-widest block mb-1">Refusal Type B</span>
+          <h4 class="font-bold text-deepBlue text-lg mb-2">Brutal Honesty 🔪</h4>
+          <p class="text-sm text-slate-600 mb-4 leading-relaxed">Direct, unfiltered sincerity with zero polite padding. Simply stating that you lack the willingness or interest to join.</p>
+          <div class="p-3 bg-slate-50 border rounded font-mono text-xs text-slate-700">
+            "I just would rather not, and will not, be attending your party."
+          </div>
+        </div>
+      </div>
+
+      <!-- REFLEXIVE DISCUSSION MODULE -->
+      <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm">
+        <h3 class="text-xl font-bold text-deepBlue mb-4 flex items-center gap-2">
+          <i class="ph ph-chat-centered-dots text-orangeAction"></i> Interactive Excuse Architect
+        </h3>
+        <p class="text-base text-slate-600 mb-6 font-medium">Have you ever given a lame excuse to decline a colleague's hang out? Construct your own examples of both categories and test your teacher's reaction:</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <span class="text-xs uppercase text-slate-400 font-mono block mb-1">Design a Lame Excuse:</span>
+            <input type="text" class="w-full p-3 bg-slate-50 border rounded-lg font-mono text-sm focus:outline-none focus:border-orangeAction text-slate-800" placeholder="e.g. My cat has an online class at that time...">
+          </div>
+          <div>
+            <span class="text-xs uppercase text-orangeAction font-mono block mb-1">Design a Brutally Honest Excuse:</span>
+            <input type="text" class="w-full p-3 bg-slate-50 border rounded-lg font-mono text-sm focus:outline-none focus:border-orangeAction text-slate-800" placeholder="e.g. I simply want to stay home and play video games.">
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(2)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(4)">Next: Calibration Practice <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 4 – CONTROLLED CALIBRATION
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec4">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 4: Controlled Calibration (10 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Formal vs Informal Refusal Alignment</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Classify expressions of accepting or declining party invites into their proper register, and master vocabulary slang markers. <i>(Note: Alternatives are dynamically scrambled!)</i></p>
+
+      <!-- QUIZ CONTAINER -->
+      <div id="quiz-container" class="space-y-4 mb-6"></div>
+      <div id="quiz-score-msg" class="hidden mb-6 p-5 rounded-lg font-semibold text-center text-lg"></div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(3)"><i class="ph ph-arrow-left"></i> Back</button>
+        <div class="flex gap-2.5">
+          <button class="bg-deepBlue hover:bg-slate-800 text-white font-medium px-6 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="checkQuiz()">Validate All Entries</button>
+          <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-6 py-3.5 rounded-lg hidden items-center gap-2 transition-colors shadow-sm text-base" id="toFinalBtn" onclick="goTo(5)">See Final Output <i class="ph ph-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 5 – PRODUCTION & SUMMARY
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec5">
+      <span class="inline-block text-xs font-bold tracking-widest text-emerald-700 uppercase bg-emerald-50 px-3 py-1 rounded-full mb-3 border border-emerald-100">Step 5: Production & Reflection</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-8">Refusal Matrix Mastered! 🏆</h2>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-10 mb-6 shadow-sm text-center">
+        <div class="score-number text-7xl sm:text-8xl font-bold text-orangeAction mono mb-2" id="finalScore">–</div>
+        <div class="text-base font-semibold tracking-wider uppercase text-slate-400 mb-4">Refusal Calibration Accuracy</div>
+        <div class="inline-block px-6 py-2.5 rounded-full font-bold text-base mb-5 bg-amberSoft text-amber-800" id="finalBadge">Processing...</div>
+        <p class="text-slate-600 max-w-md mx-auto text-base leading-relaxed" id="finalMsg"></p>
+      </div>
+
+      <!-- BONUS SLANG GUIDE -->
+      <div class="bg-white border border-slate-200 rounded-xl p-8 mb-6 shadow-sm">
+        <h3 class="text-xl font-bold text-deepBlue mb-4 flex items-center gap-2">
+          <span class="bg-amberSoft text-amber-800 font-mono text-xs px-2.5 py-1 rounded">BONUS</span> Slang & Idiomatic Guide
+        </h3>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-4 bg-slate-50 rounded-lg">
+            <span class="block font-bold text-orangeAction font-mono text-base">To be down to</span>
+            <p class="text-sm text-slate-600">To be ready, willing, or highly eager to perform or participate in an activity.</p>
+            <em class="text-xs text-slate-400 block mt-1">"I'm definitely down to check out that new rooftop setup."</em>
+          </div>
+
+          <div class="p-4 bg-slate-50 rounded-lg">
+            <span class="block font-bold text-orangeAction font-mono text-base">Count me in</span>
+            <p class="text-sm text-slate-600">To explicitly request that someone includes you inside their plans or activities.</p>
+            <em class="text-xs text-slate-400 block mt-1">"If you guys are getting street food tonight, count me in!"</em>
+          </div>
+
+          <div class="p-4 bg-slate-50 rounded-lg">
+            <span class="block font-bold text-orangeAction font-mono text-base">Turn down</span>
+            <p class="text-sm text-slate-600">To reject or decline an offer, proposal, invitation, or application.</p>
+            <em class="text-xs text-slate-400 block mt-1">"It is hard for me to turn down a weekend beach party."</em>
+          </div>
+
+          <div class="bg-slate-900 p-4 rounded-lg text-white">
+            <span class="block font-bold text-amber-400 font-mono text-base">Count on me</span>
+            <p class="text-sm text-slate-300">To assure someone they can completely rely or depend on you for support or presence.</p>
+            <em class="text-xs text-slate-400 block mt-1">"If you need someone to help you move, you can count on me."</em>
+          </div>
+        </div>
+      </div>
+
+      <!-- LESSON REFLECTION TASK -->
+      <div class="bg-white border-2 border-dashed border-slate-300 rounded-xl p-8 mb-8 shadow-sm bg-slate-50/50">
+        <h3 class="text-xl font-bold text-deepBlue mb-4 flex items-center gap-2"><i class="ph ph-chat-centered-dots text-orangeAction"></i> Final Conversational Performance</h3>
+        <p class="text-base text-slate-600 mb-4">Take turns with your teacher in a realistic mock scenario. Decline an invite with a lame excuse first, then pivot to being brutally honest. Notice how Quinta’s logical formula alters the outcome:</p>
+        
+        <div class="bg-white p-4 rounded-lg border font-mono text-sm text-slate-700">
+          <span class="text-orangeAction font-bold">X Formula:</span> "I don't want to go + [Lame Excuse] vs. I don't want to go."
+        </div>
+      </div>
+
+      <div class="flex justify-start">
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-6 py-3.5 rounded-lg flex items-center gap-2 transition-colors text-base shadow" onclick="resetEngine()">
+          <i class="ph ph-arrows-counter-clockwise"></i> Restart Module
+        </button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ── ENGINE APPLICATION STATE & SCRAMBLING CORE ── -->
+<script>
+let currentSection = 1;
+let quizAnswers  = {};
+let quizChecked  = false;
+let quizScore    = 0;
+
+// Track true/false statuses
+let tfAnswers = {};
+
+// ── WARM-UP GATHERING DATA BLUEPRINTS ──
+const gatheringsData = {
+  birthday: {
+    title: "A Friend's Birthday Party 🎂",
+    prompt: "Which of these events do you enjoy the most or the least? Do you sometimes decline invitations? Do you feel bad about declining them? Why or why not?",
+    love: "High social connection, celebration vibes, reuniting with direct friends and peer circles.",
+    friction: "Obligation to buy gifts, small talk with strangers, loud spaces, staying out later than expected."
+  },
+  family: {
+    title: "A Family Gathering 🏡",
+    prompt: "Is a family gathering harder or easier to decline than a colleague's invite? Why? What are common excuses used here?",
+    love: "Deep personal connections, nostalgia, home-cooked food, feeling safe and supported.",
+    friction: "Repetitive questions about career or relationship metrics, lack of common ground, emotional weight."
+  },
+  bbq: {
+    title: "An Office BBQ 🍖",
+    prompt: "Do you enjoy professional gatherings after working hours? What are some reasons someone may not want to attend one?",
+    love: "Networking opportunities, free food/drinks, seeing colleagues in a relaxed, non-office setup.",
+    friction: "Blurred boundary lines between professional hierarchy and leisure, feeling forced to look productive."
+  }
+};
+
+function selectGathering(id) {
+  const box = document.getElementById('gatheringDetail');
+  const t = document.getElementById('gatheringTitle');
+  const p = document.getElementById('gatheringPrompt');
+  const l = document.getElementById('gatheringLove');
+  const f = document.getElementById('gatheringFriction');
+
+  box.classList.remove('hidden');
+  t.textContent = gatheringsData[id].title;
+  p.textContent = gatheringsData[id].prompt;
+  l.textContent = gatheringsData[id].love;
+  f.textContent = gatheringsData[id].friction;
+
+  box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function markTF(itemId, val, btn) {
+  tfAnswers[itemId] = val;
+  const wrapper = btn.parentElement;
+  wrapper.querySelectorAll('.tf-btn').forEach(b => {
+    b.classList.remove('bg-deepBlue', 'text-white', 'border-deepBlue');
+    b.classList.add('bg-white', 'text-slate-700', 'border-slate-300');
+  });
+  btn.classList.add('bg-deepBlue', 'text-white', 'border-deepBlue');
+  btn.classList.remove('bg-white', 'text-slate-700', 'border-slate-300');
+}
+
+// ── QUIZ DATA MATRIX WITH UX SCRAMBLING ALGORITHM ──
+const rawQuizData = [
+  { sentence: "I sincerely appreciate the invitation to the party. I'd love to take part.", options: ["Formal", "Informal"], answer: "Formal", hint: "The usage of words like *sincerely appreciate* and *take part* indicates a formal register." },
+  { sentence: "Yep, I'm free that night, and a party sounds awesome. Count me in!", options: ["Informal", "Formal"], answer: "Informal", hint: "Colloquial markers like *Yep* and the slang *Count me in* establish an informal register." },
+  { sentence: "Oh, cool. I'm definitely down to join.", options: ["Informal", "Formal"], answer: "Informal", hint: "The phrase *definitely down to join* is highly informal slang." },
+  { sentence: "I'm glad to receive your invitation to the party and confirm my attendance.", options: ["Formal", "Informal"], answer: "Formal", hint: "Verifying *attendance* and being *glad to receive* belongs to a professional/formal standard." },
+  { sentence: "I've got nothing else going on that night, so I don't see why not.", options: ["Informal", "Formal"], answer: "Informal", hint: "Using loose structures like *nothing else going on* indicates a casual, informal exchange." }
+];
+
+function shuffleArray(array) {
+  let arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+let scrambledQuizData = [];
+
+function buildQuizDatabase() {
+  scrambledQuizData = rawQuizData.map(item => {
+    return {
+      sentence: item.sentence,
+      answer: item.answer,
+      hint: item.hint,
+      scrambledOptions: shuffleArray(item.options)
+    };
+  });
+}
+
+function renderQuiz() {
+  const c = document.getElementById('quiz-container');
+  c.innerHTML = ""; 
+  
+  scrambledQuizData.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'border border-slate-200 rounded-xl p-6 bg-white shadow-sm transition-all';
+    div.id = 'q-' + i;
+    
+    const opts = item.scrambledOptions.map((o, idx) => `
+      <button class="opt-btn bg-white border border-slate-200 text-base font-medium text-deepBlue px-5 py-3 rounded-lg hover:border-orangeAction hover:bg-orange-50 transition-all mono" 
+              onclick="selectOpt(${i}, ${idx}, this)" 
+              id="btn-${i}-${idx}">
+        ${o}
+      </button>
+    `).join('');
+    
+    div.innerHTML = `
+      <div class="text-base font-medium text-deepBlue mb-4">
+        ${i+1}. &ldquo;${item.sentence}&rdquo;
+      </div>
+      <div class="flex flex-wrap gap-2.5 options">
+        ${opts}
+      </div>
+      <div class="mt-3 text-base font-semibold hidden feedback-msg"></div>
+    `;
+    c.appendChild(div);
+  });
+}
+
+buildQuizDatabase();
+renderQuiz();
+
+function selectOpt(questionIdx, optionIdx, clickedBtn) {
+  if (quizChecked) return; 
+  
+  quizAnswers[questionIdx] = clickedBtn.textContent.trim();
+  const block = document.getElementById('q-' + questionIdx);
+  
+  block.querySelectorAll('.opt-btn').forEach(btn => { 
+    btn.classList.remove('bg-deepBlue', 'text-white', 'border-deepBlue'); 
+    btn.classList.add('bg-white', 'text-deepBlue', 'border-slate-200'); 
+  });
+  
+  clickedBtn.classList.add('bg-deepBlue', 'text-white', 'border-deepBlue');
+  clickedBtn.classList.remove('bg-white', 'text-deepBlue', 'border-slate-200');
+}
+
+function checkQuiz() {
+  if (quizChecked) return;
+  quizChecked = true;
+  quizScore = 0;
+
+  scrambledQuizData.forEach((item, i) => {
+    const block = document.getElementById('q-' + i);
+    const fb = block.querySelector('.feedback-msg');
+    const userAns = quizAnswers[i];
+    const correct = item.answer;
+
+    fb.classList.remove('hidden');
+    block.querySelectorAll('.opt-btn').forEach(b => { b.disabled = true; b.classList.add('opacity-60'); });
+
+    if (userAns === correct) {
+      quizScore++;
+      block.classList.add('border-emerald-500', 'bg-emerald-50/20');
+      
+      block.querySelectorAll('.opt-btn').forEach(b => {
+        if (b.textContent.trim() === correct) {
+          b.classList.remove('opacity-60', 'bg-white', 'text-deepBlue', 'bg-deepBlue');
+          b.classList.add('bg-emerald-600', 'text-white', 'border-emerald-600');
+        }
+      });
+      
+      fb.className = 'mt-3 text-base font-semibold text-emerald-600 feedback-msg';
+      fb.textContent = '✓ Calibration Aligned! ' + item.hint;
+    } else {
+      block.classList.add('border-rose-300', 'bg-rose-50/20');
+      
+      block.querySelectorAll('.opt-btn').forEach(b => {
+        const textValue = b.textContent.trim();
+        if (userAns && textValue === userAns) {
+          b.classList.remove('opacity-60', 'bg-deepBlue', 'text-white');
+          b.classList.add('bg-rose-600', 'text-white', 'border-rose-600');
+        }
+        if (textValue === correct) {
+          b.classList.remove('opacity-60');
+          b.classList.add('border-emerald-600', 'text-emerald-600', 'font-bold');
+        }
+      });
+      
+      fb.className = 'mt-3 text-base font-semibold text-rose-600 feedback-msg';
+      fb.textContent = '✗ Classification Deviation. ' + item.hint;
+    }
+  });
+
+  const msg = document.getElementById('quiz-score-msg');
+  msg.classList.remove('hidden');
+  if (quizScore >= 4) {
+    msg.className = 'mb-6 p-5 rounded-lg font-semibold text-center text-lg bg-emerald-50 text-emerald-600 border border-emerald-200';
+    msg.textContent = `🎉 Calibration Confirmed! ${quizScore}/${rawQuizData.length} categories matched successfully!`;
+  } else if (quizScore >= 3) {
+    msg.className = 'mb-6 p-5 rounded-lg font-semibold text-center text-lg bg-amberSoft text-amber-800 border border-amber-200';
+    msg.textContent = `👍 Stable Base. ${quizScore}/${rawQuizData.length} markers synced. Watch parameters closely.`;
+  } else {
+    msg.className = 'mb-6 p-5 rounded-lg font-semibold text-center text-lg bg-rose-50 text-rose-600 border border-rose-200';
+    msg.textContent = `${quizScore}/${rawQuizData.length} values verified. Re-verify Step 4 guidelines.`;
+  }
+  
+  document.getElementById('toFinalBtn').classList.remove('hidden');
+  document.getElementById('toFinalBtn').classList.add('inline-flex');
+}
+
+function buildResults() {
+  const total = rawQuizData.length;
+  const pct = Math.round((quizScore / total) * 100);
+  const numEl = document.getElementById('finalScore');
+  const badgeEl = document.getElementById('finalBadge');
+  const msgEl = document.getElementById('finalMsg');
+
+  numEl.textContent = quizScore + '/' + total;
+
+  if (pct >= 80) {
+    badgeEl.textContent = '🏆 B2-Ready Honest Plan Maker';
+    badgeEl.className = 'inline-block px-6 py-2.5 rounded-full font-bold text-base mb-5 bg-amberSoft text-amber-800';
+    msgEl.textContent = 'Excellent pragmatical alignment! You can perfectly separate formal invites from loose slang markers, navigating difficult refusals smoothly.';
+  } else if (pct >= 60) {
+    badgeEl.textContent = '👍 Confident Refusal Analyst';
+    badgeEl.className = 'inline-block px-6 py-2.5 rounded-full font-bold text-base mb-5 bg-blue-50 text-blue-600';
+    msgEl.textContent = 'Stable performance baseline. Focus on distinguishing idiomatic expressions to polish your profile metrics.';
+  } else {
+    badgeEl.textContent = '📚 Developing Refusal Candidate';
+    badgeEl.className = 'inline-block px-6 py-2.5 rounded-full font-bold text-base mb-5 bg-emerald-50 text-emerald-600';
+    msgEl.textContent = 'Refusal metrics show syntax gaps. Review the slang guide and re-calibrate.';
+  }
+}
+
+function resetEngine() {
+  quizAnswers = {};
+  quizChecked = false;
+  quizScore = 0;
+  tfAnswers = {};
+
+  document.getElementById('quiz-score-msg').classList.add('hidden');
+  document.getElementById('toFinalBtn').classList.add('hidden');
+  document.getElementById('toFinalBtn').classList.remove('inline-flex');
+  document.getElementById('gatheringDetail').classList.add('hidden');
+
+  // Reset True/False buttons
+  document.querySelectorAll('.tf-btn').forEach(b => {
+    b.classList.remove('bg-deepBlue', 'text-white', 'border-deepBlue');
+    b.classList.add('bg-white', 'text-slate-700', 'border-slate-300');
+  });
+  
+  buildQuizDatabase();
+  renderQuiz();
+  goTo(1);
+}
+
+function goTo(n) {
+  document.getElementById('sec' + currentSection).classList.remove('active');
+  currentSection = n;
+  document.getElementById('sec' + n).classList.add('active');
+  updateProgress(n);
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  if (n === 5) buildResults();
+}
+
+function updateProgress(n) {
+  const fill  = document.getElementById('progressFill');
+  const label = document.getElementById('progressLabel');
+  fill.style.width = (n * 20) + '%';
+  label.textContent = 'Step ' + n + ' / 5';
+}
+</script>
+</body>
+</html>
