@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Student Homework Hub</title>
+<!-- Tailwind CSS & Phosphor Icons for Premium Interface Consistency -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',      /* Dark UI Header Background */
+          bodyLight: '#F8FAFC',     /* Workspace background */
+          orangeAction: '#C2410C',  /* Primary brand accent color */
+          orangeHover: '#EA580C',   /* Hover color states */
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+          greenSoft: '#E8F8EF',
+          redSoft: '#FDEAEA',
+          amberSoft: '#FEF3D7'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&family=IBM+Plex+Mono:wght=400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .transition-all { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+</style>
+</head>
+<body class="bg-bodyLight text-darkSlate min-h-screen text-[18px] antialiased">
+
+<!-- ── STANDARDIZED METHOD FALA HEADER ── -->
+<header class="bg-deepBlue border-b border-slate-800 shadow-md">
+  <div class="max-w-[960px] mx-auto px-6 py-5 flex items-center justify-between gap-4">
+    
+    <div class="flex items-center gap-3">
+      <div class="flex-shrink-0">
+        <span class="text-white font-bold tracking-wider text-lg mono select-none">MÉTODO <span class="text-orangeAction">FAIXA</span></span>
+      </div>
+      <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
+      <div class="hidden sm:block">
+        <h1 class="text-base font-bold text-white tracking-wide">Student Homework Hub</h1>
+        <p class="text-xs text-slate-400">CEFR B2 Level · Personal Learning Management Portal</p>
+      </div>
+    </div>
+
+    <!-- Active Student Profile Tag -->
+    <div class="flex items-center gap-2.5 bg-slate-800/80 px-4 py-1.5 rounded-lg border border-slate-700">
+      <div class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></div>
+      <span class="text-xs font-semibold text-white tracking-wide uppercase font-mono" id="studentNameLabel">Active Student</span>
+    </div>
+
+  </div>
+</header>
+
+<!-- MAIN CONTENT WORKSPACE -->
+<main class="max-w-[960px] mx-auto px-6 py-12 pb-24">
+
+  <!-- ── PROGRESS DASHBOARD HERO ── -->
+  <div class="bg-deepBlue rounded-2xl p-8 mb-8 text-white shadow-xl relative overflow-hidden border border-slate-800">
+    <div class="absolute -right-10 -top-10 w-40 h-44 bg-orangeAction/10 rounded-full blur-2xl"></div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+      <div class="md:col-span-2">
+        <span class="text-orangeAction font-mono font-bold text-xs uppercase tracking-widest">Performance Diagnostics</span>
+        <h2 class="text-3xl font-bold mt-1 mb-4">Your Independent Learning Road</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-4">Consolidate vocabulary collocations, critical frameworks, and writing portfolios covered in your executive English sessions.</p>
+        
+        <!-- Linear Progress Tracker bar -->
+        <div>
+          <div class="flex justify-between items-center text-xs font-mono font-semibold mb-1.5 text-slate-400">
+            <span>COMPLIANCE PROGRESS</span>
+            <span id="progressBarLabel">0% Complete</span>
+          </div>
+          <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden border border-slate-700 p-0.5">
+            <div id="progressBarFill" class="h-full bg-gradient-to-r from-orangeAction to-orangeHover rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 text-center">
+        <div class="bg-slate-800/60 border border-slate-700/60 p-4 rounded-xl">
+          <span class="block text-2xl font-bold font-mono text-orangeAction" id="counterTotal">2</span>
+          <span class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">Assigned</span>
+        </div>
+        <div class="bg-slate-800/60 border border-slate-700/60 p-4 rounded-xl">
+          <span class="block text-2xl font-bold font-mono text-emerald-400" id="counterDone">0</span>
+          <span class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">Complete</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TASK LIST COMPONENT ── -->
+  <div class="space-y-4 mb-8">
+    <div class="flex items-center justify-between">
+      <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 font-mono">Assigned Tasks Repository</h3>
+      <button onclick="toggleTeacherSettings()" class="text-xs font-bold font-mono text-slate-400 hover:text-orangeAction transition-colors flex items-center gap-1">
+        <i class="ph ph-gear"></i> Setup Hub
+      </button>
+    </div>
+
+    <!-- Task Card 1: Your Online Life Is Permanent -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-1">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-orange-50 text-orangeAction rounded-xl border border-orange-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-fingerprint"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-orangeAction bg-orange-50 border border-orange-100 px-2 py-0.5 rounded">Task 1</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR B2</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Homework Task: Your Online Life Is Permanent</h4>
+          <p class="text-xs text-slate-500 mt-1">Modal constraints (must/should), digital hygiene vocabulary, and electronic tattoo writing policy.</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <!-- Status Switcher checkbox -->
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-1" onchange="toggleTaskStatus(1)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-1">Not Started</span>
+        </label>
+        <a href="homework.html" id="linkTask-1" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm">
+          Execute Task <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Task Card 2: If We Were Honest Making Plans -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-2">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-amber-50 text-amber-700 rounded-xl border border-amber-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-chat-centered-dots"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-amber-700 bg-amber-50 border border-amber-100 px-2 py-0.5 rounded">Task 2</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR B2</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Homework Task: If We Were Honest Making Plans</h4>
+          <p class="text-xs text-slate-500 mt-1">Refusal registers, slang idioms (be down to, turn down), and social white lies essay writing.</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <!-- Status Switcher checkbox -->
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-2" onchange="toggleTaskStatus(2)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-2">Not Started</span>
+        </label>
+        <a href="index.html" id="linkTask-2" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm">
+          Execute Task <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TEACHER CONFIGURATION DASHBOARD (HIDDEN BY DEFAULT) ── -->
+  <div id="teacherSettings" class="bg-white border border-slate-200 rounded-xl p-6 hidden transition-all animate-fadeUp">
+    <div class="flex items-center justify-between border-b pb-3 mb-4">
+      <span class="text-xs font-mono font-bold text-orangeAction uppercase">Hub Customization panel</span>
+      <button onclick="toggleTeacherSettings()" class="text-slate-400 hover:text-slate-600 text-sm font-bold">Close <i class="ph ph-x"></i></button>
+    </div>
+    
+    <div class="grid grid-cols-1 gap-4 text-sm mb-4">
+      <div>
+        <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-1">Student Display Name:</label>
+        <input type="text" id="inputStudentName" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50" placeholder="Type student name...">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div>
+          <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-1">Task 1 URL Path:</label>
+          <input type="text" id="inputPath1" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50 font-mono text-xs" placeholder="homeworklife.html">
+        </div>
+        <div>
+          <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-1">Task 2 URL Path:</label>
+          <input type="text" id="inputPath2" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50 font-mono text-xs" placeholder="homeworkhonest.html">
+        </div>
+      </div>
+    </div>
+    <button onclick="saveTeacherSettings()" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-5 py-2.5 rounded-lg transition-colors font-mono">
+      Save Dashboard Matrix
+    </button>
+  </div>
+
+</main>
+
+<!-- ── ENGINE APPLICATION STATE & PERSISTENCE CORE ── -->
+<script>
+// State variable mapping
+let appState = {
+  studentName: "Active Student",
+  tasks: {
+    1: { completed: false, path: "homework.html" },
+    2: { completed: false, path: "index.html" }
+  }
+};
+
+// Toggle settings panel visibility
+function toggleTeacherSettings() {
+  const panel = document.getElementById('teacherSettings');
+  panel.classList.toggle('hidden');
+}
+
+// Save teacher customized values
+function saveTeacherSettings() {
+  const nameVal = document.getElementById('inputStudentName').value.trim();
+  const path1 = document.getElementById('inputPath1').value.trim();
+  const path2 = document.getElementById('inputPath2').value.trim();
+
+  if (nameVal) appState.studentName = nameVal;
+  if (path1) appState.tasks[1].path = path1;
+  if (path2) appState.tasks[2].path = path2;
+
+  localStorage.setItem('metodo_fala_homework_hub_state', JSON.stringify(appState));
+  syncDOM();
+  toggleTeacherSettings();
+}
+
+// Toggle status switchers
+function toggleTaskStatus(taskId) {
+  const checkbox = document.getElementById(`checkTask-${taskId}`);
+  appState.tasks[taskId].completed = checkbox.checked;
+  
+  localStorage.setItem('metodo_fala_homework_hub_state', JSON.stringify(appState));
+  syncDOM();
+}
+
+// Synchronize memory and UI layers
+function syncDOM() {
+  // Sync Student Profile Name
+  document.getElementById('studentNameLabel').textContent = appState.studentName;
+  document.getElementById('inputStudentName').value = appState.studentName;
+
+  let totalTasks = Object.keys(appState.tasks).length;
+  let completedCount = 0;
+
+  // Sync Cards parameters
+  for (let id in appState.tasks) {
+    const task = appState.tasks[id];
+    const checkbox = document.getElementById(`checkTask-${id}`);
+    const card = document.getElementById(`taskCard-${id}`);
+    const statusLabel = document.getElementById(`statusLabel-${id}`);
+    const runLink = document.getElementById(`linkTask-${id}`);
+    const pathInput = document.getElementById(`inputPath${id}`);
+
+    // Update Input values inside settings
+    if (pathInput) pathInput.value = task.path;
+
+    // Update checkbox status
+    if (checkbox) checkbox.checked = task.completed;
+
+    // Update target redirection paths
+    if (runLink) runLink.setAttribute('href', task.path);
+
+    if (task.completed) {
+      completedCount++;
+      statusLabel.textContent = "Completed";
+      statusLabel.className = "text-xs font-mono font-bold text-emerald-600 uppercase";
+      card.classList.remove('border-slate-200', 'bg-white');
+      card.classList.add('border-emerald-300', 'bg-emerald-50/10');
+    } else {
+      statusLabel.textContent = "Not Started";
+      statusLabel.className = "text-xs font-mono font-bold text-slate-400 uppercase";
+      card.classList.remove('border-emerald-300', 'bg-emerald-50/10');
+      card.classList.add('border-slate-200', 'bg-white');
+    }
+  }
+
+  // Calculate Linear metrics percentage
+  let pct = Math.round((completedCount / totalTasks) * 100);
+  document.getElementById('progressBarLabel').textContent = `${pct}% Complete`;
+  document.getElementById('progressBarFill').style.width = `${pct}%`;
+
+  document.getElementById('counterTotal').textContent = totalTasks;
+  document.getElementById('counterDone').textContent = completedCount;
+}
+
+// Load configurations securely on window onloads
+window.onload = function() {
+  const savedState = localStorage.getItem('metodo_fala_homework_hub_state');
+  if (savedState) {
+    try {
+      appState = JSON.parse(savedState);
+    } catch (e) {
+      console.error("Failure restoring localized states.", e);
+    }
+  }
+  syncDOM();
+};
+
+function resetEngine() {
+  appState = {
+    studentName: "Active Student",
+    tasks: {
+      1: { completed: false, path: "homework.html" },
+      2: { completed: false, path: "index.html" }
+    }
+  };
+  localStorage.removeItem('metodo_fala_homework_hub_state');
+  syncDOM();
+}
+</script>
+</body>
+</html>
+```
+eof
+
+Prontinho! Este arquivo servirá como a **página inicial (index.html)** principal que conecta todas as tarefas do aluno de maneira unificada e profissional. Caso precise realizar novos deploys ou integrações com os links locais, as rotas já estão perfeitamente preparadas.
