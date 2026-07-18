@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Street Navigation & Detour Challenges</title>
+<!-- Tailwind CSS & Phosphor Icons -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',      /* Dark UI Header Background */
+          bodyLight: '#F8FAFC',     /* Light workspace background */
+          orangeAction: '#C2410C',  /* Primary accent brand color */
+          orangeHover: '#EA580C',   /* Hover color states */
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+          greenSoft: '#E8F8EF',
+          redSoft: '#FDEAEA',
+          amberSoft: '#FEF3D7'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&family=IBM+Plex+Mono:wght=400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .section { display: none; animation: fadeUp .35s ease; }
+  .section.active { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body class="bg-deepBlue text-darkSlate min-h-screen text-[16px] antialiased">
+
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[960px] mx-auto px-6 py-5 flex items-center justify-between gap-4">
+    
+    <div class="flex items-center gap-3">
+      <div class="flex-shrink-0">
+        <button onclick="window.location.reload()" class="cursor-pointer hover:opacity-80 transition-opacity select-none text-left focus:outline-none">
+          <span class="text-white font-bold tracking-wider text-lg mono">MÉTODO <span class="text-orangeAction">FALA</span></span>
+        </button>
+      </div>
+      <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
+      <div class="hidden sm:block">
+        <h1 class="text-base font-bold text-white tracking-wide">Street Navigation</h1>
+        <p class="text-xs text-slate-400 font-mono">Real-World Prepositions · Obstacles & detours</p>
+      </div>
+    </div>
+
+    <!-- Progress Tracker -->
+    <div class="flex items-center gap-3">
+      <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mono" id="progressLabel">Step 1 / 5</span>
+      <div class="w-24 sm:w-32 h-2.5 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
+        <div class="h-full bg-orangeAction rounded-full transition-all duration-500" id="progressFill" style="width:20%"></div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- MAIN CONTENT WORKSPACE -->
+<div class="bg-bodyLight w-full min-h-[calc(100vh-73px)]">
+  <main class="max-w-[960px] mx-auto px-6 py-12 pb-24">
+
+    <!-- ═══════════════════════════════════════════
+         STEP 1: WARM-UP & URBAN CONTINGENCY (10 MIN)
+    ═══════════════════════════════════════════ -->
+    <div class="section active" id="sec1">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-4 border border-orange-100">Step 1: Warm-Up (10 Min)</span>
+      
+      <h2 class="text-3xl font-bold text-deepBlue mb-3 leading-tight font-sans">Finding Your Way Offline</h2>
+      <p class="text-base text-slate-500 mb-8 leading-relaxed max-w-3xl">Imagine arriving in a beautiful new city, but your phone runs out of battery. How do you find your hotel? Let's check how confident you feel asking locals for simple help.</p>
+
+      <!-- Lost in City Panoramic Visual -->
+      <div class="w-full h-[320px] rounded-xl overflow-hidden mb-8 shadow-sm border border-slate-200 relative bg-slate-900">
+        <img src="https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?auto=format&fit=crop&w=960&h=320&q=80" 
+             alt="Lost in city street map" 
+             class="w-full h-full object-cover"
+             onerror="handleImageError(this, 'lost-city')">
+      </div>
+
+      <!-- Discussion Questions -->
+      <div class="bg-white border border-slate-200 rounded-xl p-6 mb-8 shadow-sm">
+        <span class="font-bold uppercase tracking-wider text-orangeAction text-xs flex items-center gap-1.5 mb-3"><i class="ph-bold ph-chats-teardrop"></i> Daily Navigation Discussion:</span>
+        <div class="space-y-4 text-base text-slate-700 leading-relaxed">
+          <p class="flex items-start gap-2">
+            <span class="text-orangeAction font-bold">Q1:</span>
+            <span>Do you always use GPS when you go to a new place, or do you prefer to look at a simple map beforehand?</span>
+          </p>
+          <p class="flex items-start gap-2">
+            <span class="text-orangeAction font-bold">Q2:</span>
+            <span>When you are lost, do you feel comfortable stopping a stranger on the street and asking: "Excuse me, where is the station?"</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(2)">
+          Start Vocabulary Prep <i class="ph ph-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 2: LEXICAL ALIGNMENT (10 MIN)
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec2">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-4 border border-orange-100">Step 2: Lexical Alignment (10 Min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Everyday Street Prepositions</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Study the core spatial markers below. Click on each card to hear correct native-level pronunciation, and practice repeating after the voice.</p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        
+        <!-- Preposition Cards Panel -->
+        <div class="lg:col-span-2 bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-4">
+          <h3 class="font-bold text-deepBlue mb-4 flex items-center gap-2"><i class="ph-bold ph-map-pin text-orangeAction"></i> Preposition Audio Guide</h3>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <!-- Next to -->
+            <div class="flex items-center justify-between p-3.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-orangeAction transition-all">
+              <div>
+                <p class="font-bold text-deepBlue">Next to</p>
+                <p class="text-[11px] text-slate-500 mt-0.5">Beside something; very close with nothing in between.</p>
+              </div>
+              <button onclick="speakText('next to')" class="p-1.5 bg-deepBlue text-white hover:bg-slate-800 rounded-lg transition-colors"><i class="ph ph-speaker-high text-xs"></i></button>
+            </div>
+
+            <!-- Beside -->
+            <div class="flex items-center justify-between p-3.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-orangeAction transition-all">
+              <div>
+                <p class="font-bold text-deepBlue">Beside</p>
+                <p class="text-[11px] text-slate-500 mt-0.5">Right at the side of something. (Don't confuse with 'besides'!).</p>
+              </div>
+              <button onclick="speakText('beside')" class="p-1.5 bg-deepBlue text-white hover:bg-slate-800 rounded-lg transition-colors"><i class="ph ph-speaker-high text-xs"></i></button>
+            </div>
+
+            <!-- Between -->
+            <div class="flex items-center justify-between p-3.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-orangeAction transition-all">
+              <div>
+                <p class="font-bold text-deepBlue">Between</p>
+                <p class="text-[11px] text-slate-500 mt-0.5">In the middle of two distinct places or landmarks.</p>
+              </div>
+              <button onclick="speakText('between')" class="p-1.5 bg-deepBlue text-white hover:bg-slate-800 rounded-lg transition-colors"><i class="ph ph-speaker-high text-xs"></i></button>
+            </div>
+
+            <!-- Past -->
+            <div class="flex items-center justify-between p-3.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-orangeAction transition-all">
+              <div>
+                <p class="font-bold text-deepBlue">Go past</p>
+                <p class="text-[11px] text-slate-500 mt-0.5">Walk beyond a building or location without entering it.</p>
+              </div>
+              <button onclick="speakText('go past')" class="p-1.5 bg-deepBlue text-white hover:bg-slate-800 rounded-lg transition-colors"><i class="ph ph-speaker-high text-xs"></i></button>
+            </div>
+
+            <!-- Across from -->
+            <div class="flex items-center justify-between p-3.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-orangeAction transition-all">
+              <div>
+                <p class="font-bold text-deepBlue">Across from</p>
+                <p class="text-[11px] text-slate-500 mt-0.5">On the opposite side of the street or road.</p>
+              </div>
+              <button onclick="speakText('across from')" class="p-1.5 bg-deepBlue text-white hover:bg-slate-800 rounded-lg transition-colors"><i class="ph ph-speaker-high text-xs"></i></button>
+            </div>
+
+            <!-- On the corner of -->
+            <div class="flex items-center justify-between p-3.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-orangeAction transition-all">
+              <div>
+                <p class="font-bold text-deepBlue">On the corner of</p>
+                <p class="text-[11px] text-slate-500 mt-0.5">At the exact point where two roads meet.</p>
+              </div>
+              <button onclick="speakText('on the corner of')" class="p-1.5 bg-deepBlue text-white hover:bg-slate-800 rounded-lg transition-colors"><i class="ph ph-speaker-high text-xs"></i></button>
+            </div>
+
+            <!-- In front of -->
+            <div class="flex items-center justify-between p-3.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-orangeAction transition-all">
+              <div>
+                <p class="font-bold text-deepBlue">In front of</p>
+                <p class="text-[11px] text-slate-500 mt-0.5">Directly ahead; facing the entrance of a place.</p>
+              </div>
+              <button onclick="speakText('in front of')" class="p-1.5 bg-deepBlue text-white hover:bg-slate-800 rounded-lg transition-colors"><i class="ph ph-speaker-high text-xs"></i></button>
+            </div>
+
+            <!-- Behind -->
+            <div class="flex items-center justify-between p-3.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-orangeAction transition-all">
+              <div>
+                <p class="font-bold text-deepBlue">Behind</p>
+                <p class="text-[11px] text-slate-500 mt-0.5">At the back of something; opposite of in front of.</p>
+              </div>
+              <button onclick="speakText('behind')" class="p-1.5 bg-deepBlue text-white hover:bg-slate-800 rounded-lg transition-colors"><i class="ph ph-speaker-high text-xs"></i></button>
+            </div>
+
+            <!-- Close to -->
+            <div class="flex items-center justify-between p-3.5 bg-slate-50 rounded-lg border border-slate-200 hover:border-orangeAction transition-all">
+              <div>
+                <p class="font-bold text-deepBlue">Close to (Near)</p>
+                <p class="text-[11px] text-slate-500 mt-0.5">Only a short distance away; not far.</p>
+              </div>
+              <button onclick="speakText('close to')" class="p-1.5 bg-deepBlue text-white hover:bg-slate-800 rounded-lg transition-colors"><i class="ph ph-speaker-high text-xs"></i></button>
+            </div>
+          </div>
+
+          <!-- Fossilized Error Catch: Beside vs Besides -->
+          <div class="mt-4 p-4 bg-amber-50 rounded-xl border border-amber-200 text-xs text-slate-700 leading-relaxed">
+            <strong class="text-amber-800 uppercase tracking-wider block mb-1">💡 Teacher & Student Language Note:</strong>
+            <div>• <strong class="text-deepBlue">Beside</strong> = At the side of / next to. <em class="italic">"The bakery is beside the bookstore."</em></div>
+            <div class="mt-1">• <strong class="text-deepBlue">Besides</strong> = In addition to / except for. <em class="italic">"Besides the park, what other sights should we visit?"</em></div>
+          </div>
+        </div>
+
+        <!-- Practice Checkpoint -->
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm flex flex-col justify-between">
+          <div>
+            <h3 class="font-bold text-deepBlue mb-2 flex items-center gap-2"><i class="ph-bold ph-pencil-line text-orangeAction"></i> Practice Checkpoint</h3>
+            <p class="text-xs text-slate-500 mb-4 font-mono">Fill in the blanks using the core prepositions studied on the left.</p>
+            
+            <div class="space-y-4 text-xs font-mono">
+              <div>
+                <label class="text-xs font-bold text-slate-400 block mb-1">1. The Bookstore is ________ the Bakery. (They share a wall)</label>
+                <input type="text" id="preInput1" class="w-full p-2.5 border border-slate-200 rounded-lg bg-slate-50 text-xs focus:outline-none focus:border-orangeAction" placeholder="Type your answer here...">
+              </div>
+              <div>
+                <label class="text-xs font-bold text-slate-400 block mb-1">2. Keep walking straight ________ Grand Avenue for two blocks.</label>
+                <input type="text" id="preInput2" class="w-full p-2.5 border border-slate-200 rounded-lg bg-slate-50 text-xs focus:outline-none focus:border-orangeAction" placeholder="Type your answer here...">
+              </div>
+              <div>
+                <label class="text-xs font-bold text-slate-400 block mb-1">3. The parking lot is ________ the school. Walk to the back of the building.</label>
+                <input type="text" id="preInput3" class="w-full p-2.5 border border-slate-200 rounded-lg bg-slate-50 text-xs focus:outline-none focus:border-orangeAction" placeholder="Type your answer here...">
+              </div>
+            </div>
+          </div>
+          
+          <div id="validationMsg" class="hidden text-[11px] font-mono font-bold mt-4 p-3 rounded-lg"></div>
+
+          <button onclick="verifyStep2Grammar()" class="w-full mt-4 bg-orangeAction hover:bg-orangeHover text-white py-3 rounded-lg text-xs font-mono font-bold uppercase transition-all shadow">Verify Answers</button>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-sm" onclick="goTo(1)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-6 py-3.5 rounded-lg flex items-center gap-2 transition-all shadow text-sm" onclick="goTo(3)">Explore Town Map <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 3: THE INTERACTIVE MAP GRID (15 MIN)
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec3">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-4 border border-orange-100">Step 3: Interactive Map (15 Min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Downtown Neighborhood Grid</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Here is our neighborhood layout. **Click on the blocks** to inspect locations, then solve the routing challenges on the right.</p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+        
+        <!-- Interactive Map Grid Area -->
+        <div class="lg:col-span-6 bg-slate-200 border border-slate-300 rounded-2xl p-6 shadow-sm flex flex-col justify-center">
+          
+          <div class="relative w-full max-w-[420px] mx-auto aspect-square bg-slate-300 p-4 rounded-xl border border-slate-400">
+            <!-- Grid container defining blocks and streets -->
+            <div class="grid grid-cols-3 h-full w-full gap-x-8 gap-y-8 relative">
+              
+              <!-- Street Names Overlay -->
+              <div class="absolute inset-x-0 top-[28%] h-4 flex items-center justify-center bg-slate-300/95 border-y border-slate-400 pointer-events-none z-10">
+                <span class="text-[8px] font-mono font-bold tracking-widest uppercase text-slate-500">Main Street</span>
+              </div>
+              <div class="absolute inset-x-0 bottom-[28%] h-4 flex items-center justify-center bg-slate-300/95 border-y border-slate-400 pointer-events-none z-10">
+                <span class="text-[8px] font-mono font-bold tracking-widest uppercase text-slate-500">Broad Street</span>
+              </div>
+              <div class="absolute inset-y-0 left-[28%] w-4 flex items-center justify-center bg-slate-300/95 border-x border-slate-400 pointer-events-none z-10" style="writing-mode: vertical-rl;">
+                <span class="text-[8px] font-mono font-bold tracking-widest uppercase text-slate-500">Grand Avenue</span>
+              </div>
+              <div class="absolute inset-y-0 right-[28%] w-4 flex items-center justify-center bg-slate-300/95 border-x border-slate-400 pointer-events-none z-10" style="writing-mode: vertical-rl;">
+                <span class="text-[8px] font-mono font-bold tracking-widest uppercase text-slate-500">Oak Avenue</span>
+              </div>
+
+              <!-- Row 1 -->
+              <button id="block-A1" onclick="revealGridSector('Coffee House', 'This shop is next to Central Park and across from the Hotel Royal on Main Street.', 'A1', this)" class="grid-sector bg-white hover:bg-orange-50 border border-slate-300 hover:border-orangeAction rounded-xl flex flex-col items-center justify-center font-mono text-xs p-2 transition-all relative shadow-sm z-20">
+                <span class="absolute top-1 left-1.5 text-[8px] text-slate-400">A1</span>
+                <i class="ph ph-coffee text-xl mb-1 text-amber-600"></i>
+                <span class="font-bold text-[10px] sm:text-xs leading-none">Coffee House</span>
+              </button>
+              
+              <button id="block-A2" onclick="revealGridSector('Central Park', 'The park is located on the corner of Main Street and Grand Avenue.', 'A2', this)" class="grid-sector bg-white hover:bg-orange-50 border border-slate-300 hover:border-orangeAction rounded-xl flex flex-col items-center justify-center font-mono text-xs p-2 transition-all relative shadow-sm z-20">
+                <span class="absolute top-1 left-1.5 text-[8px] text-slate-400">A2</span>
+                <i class="ph ph-tree text-xl mb-1 text-emerald-600"></i>
+                <span class="font-bold text-[10px] sm:text-xs leading-none">Central Park</span>
+              </button>
+              
+              <button id="block-A3" onclick="revealGridSector('Subway Station', 'Located on the corner of Main Street and Oak Avenue, next to the park.', 'A3', this)" class="grid-sector bg-white hover:bg-orange-50 border border-slate-300 hover:border-orangeAction rounded-xl flex flex-col items-center justify-center font-mono text-xs p-2 transition-all relative shadow-sm z-20">
+                <span class="absolute top-1 left-1.5 text-[8px] text-slate-400">A3</span>
+                <i class="ph ph-train text-xl mb-1 text-blue-500"></i>
+                <span class="font-bold text-[10px] sm:text-xs leading-none">Subway</span>
+              </button>
+
+              <!-- Row 2 -->
+              <button id="block-B1" onclick="revealGridSector('Hotel Royal', 'This hotel is across from the Coffee House, and in front of the Library.', 'B1', this)" class="grid-sector bg-white hover:bg-orange-50 border border-slate-300 hover:border-orangeAction rounded-xl flex flex-col items-center justify-center font-mono text-xs p-2 transition-all relative shadow-sm z-20">
+                <span class="absolute top-1 left-1.5 text-[8px] text-slate-400">B1</span>
+                <i class="ph ph-bed text-xl mb-1 text-purple-600"></i>
+                <span class="font-bold text-[10px] sm:text-xs leading-none">Hotel Royal</span>
+              </button>
+              
+              <div class="bg-slate-200 border border-dashed border-slate-400 rounded-xl flex flex-col items-center justify-center font-mono text-[9px] p-2 relative shadow-inner z-20 select-none">
+                <span class="absolute top-1 left-1.5 text-[8px] text-slate-400">B2</span>
+                <i class="ph ph-arrows-merge text-lg mb-1 text-slate-500"></i>
+                <span class="font-bold text-[9px] text-slate-600 text-center leading-none">Main Crossing</span>
+              </div>
+              
+              <button id="block-B3" onclick="revealGridSector('Bookstore', 'The bookstore is on the corner of Main Street and Oak Avenue, right next to the bakery.', 'B3', this)" class="grid-sector bg-white hover:bg-orange-50 border border-slate-300 hover:border-orangeAction rounded-xl flex flex-col items-center justify-center font-mono text-xs p-2 transition-all relative shadow-sm z-20">
+                <span class="absolute top-1 left-1.5 text-[8px] text-slate-400">B3</span>
+                <i class="ph ph-book text-xl mb-1 text-indigo-500"></i>
+                <span class="font-bold text-[10px] sm:text-xs leading-none">Bookstore</span>
+              </button>
+
+              <!-- Row 3 -->
+              <button id="block-C1" onclick="revealGridSector('Library', 'The library is directly behind the Hotel Royal on Broad Street.', 'C1', this)" class="grid-sector bg-white hover:bg-orange-50 border border-slate-300 hover:border-orangeAction rounded-xl flex flex-col items-center justify-center font-mono text-xs p-2 transition-all relative shadow-sm z-20">
+                <span class="absolute top-1 left-1.5 text-[8px] text-slate-400">C1</span>
+                <i class="ph ph-read-cv-logo text-xl mb-1 text-teal-600"></i>
+                <span class="font-bold text-[10px] sm:text-xs leading-none">Library</span>
+              </button>
+              
+              <button id="block-C2" onclick="revealGridSector('Baker\'s Shop', 'This bakery is next to the bookstore and across from the Crossing.', 'C2', this)" class="grid-sector bg-white hover:bg-orange-50 border border-slate-300 hover:border-orangeAction rounded-xl flex flex-col items-center justify-center font-mono text-xs p-2 transition-all relative shadow-sm z-20">
+                <span class="absolute top-1 left-1.5 text-[8px] text-slate-400">C2</span>
+                <i class="ph ph-cookie text-xl mb-1 text-orangeAction"></i>
+                <span class="font-bold text-[10px] sm:text-xs leading-none">Baker's Shop</span>
+              </button>
+              
+              <button id="block-C3" onclick="revealGridSector('Tech Store', 'Located next to the bakery, and across from the bookstore on Broad Street.', 'C3', this)" class="grid-sector bg-white hover:bg-orange-50 border border-slate-300 hover:border-orangeAction rounded-xl flex flex-col items-center justify-center font-mono text-xs p-2 transition-all relative shadow-sm z-20">
+                <span class="absolute top-1 left-1.5 text-[8px] text-slate-400">C3</span>
+                <i class="ph ph-device-mobile text-xl mb-1 text-sky-600"></i>
+                <span class="font-bold text-[10px] sm:text-xs leading-none">Tech Store</span>
+              </button>
+
+            </div>
+          </div>
+          
+          <!-- Selected Block Description Panel -->
+          <div id="sensorBox" class="mt-4 p-4 bg-white rounded-xl border border-slate-200 text-xs font-mono text-slate-500 text-center shadow-inner">
+            Click any block above to inspect its spatial boundaries and read its location guide.
+          </div>
+        </div>
+
+        <!-- Pathfinder Quiz Console -->
+        <div class="lg:col-span-6 bg-white border border-slate-200 rounded-xl p-5 shadow-sm flex flex-col justify-between max-h-[520px] overflow-y-auto">
+          <div>
+            <h4 class="font-bold text-deepBlue mb-1 flex items-center gap-1.5"><i class="ph-bold ph-compass text-orangeAction"></i> Pathfinder Route Console</h4>
+            <p class="text-[11px] text-slate-500 mb-4 font-mono">Solve standard checks and speaking tasks to complete local coordinates.</p>
+            
+            <div class="space-y-4">
+              
+              <!-- PART A: MULTIPLE CHOICE -->
+              <div class="border-b pb-4 border-slate-100">
+                <span class="text-[10px] font-mono font-bold text-slate-400 block mb-2 uppercase tracking-wider">Part A: Quick Route Options</span>
+                
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 mb-3">
+                  <span class="text-[9px] font-mono font-bold text-orangeAction block mb-1">CHALLENGE 1</span>
+                  <p class="text-xs font-semibold text-deepBlue leading-relaxed mb-2">
+                    "You are at the <strong class="text-amber-600">Coffee House (A1)</strong>. How do you walk to the <strong class="text-purple-600">Hotel Royal (B1)</strong>?"
+                  </p>
+                  <div class="space-y-1.5 text-[11px] font-mono">
+                    <button onclick="checkStep3Quiz(1, 'correct', this)" class="w-full text-left p-2 bg-white border border-slate-200 hover:border-orangeAction rounded transition-all">
+                      a) "Go straight across Main Street. The hotel is directly across from the Coffee House."
+                    </button>
+                    <button onclick="checkStep3Quiz(1, 'wrong', this)" class="w-full text-left p-2 bg-white border border-slate-200 hover:border-orangeAction rounded transition-all">
+                      b) "Turn left on Grand Avenue and walk behind the Bookstore."
+                    </button>
+                  </div>
+                </div>
+
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                  <span class="text-[9px] font-mono font-bold text-orangeAction block mb-1">CHALLENGE 2</span>
+                  <p class="text-xs font-semibold text-deepBlue leading-relaxed mb-2">
+                    "You are at the <strong class="text-sky-600">Tech Store (C3)</strong>. How do you go to the <strong class="text-indigo-500">Bookstore (B3)</strong>?"
+                  </p>
+                  <div class="space-y-1.5 text-[11px] font-mono">
+                    <button onclick="checkStep3Quiz(2, 'wrong', this)" class="w-full text-left p-2 bg-white border border-slate-200 hover:border-orangeAction rounded transition-all">
+                      a) "Walk behind the Library on Broad Street."
+                    </button>
+                    <button onclick="checkStep3Quiz(2, 'correct', this)" class="w-full text-left p-2 bg-white border border-slate-200 hover:border-orangeAction rounded transition-all">
+                      b) "Walk up Oak Avenue for one block. The Bookstore is on the corner of Main Street."
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PART B: OPEN-ENDED -->
+              <div>
+                <span class="text-[10px] font-mono font-bold text-slate-400 block mb-2 uppercase tracking-wider">Part B: Speaking Navigation Challenges</span>
+                
+                <div class="p-3 bg-amber-50/60 border border-amber-200 mb-3 rounded-xl">
+                  <span class="text-[9px] font-mono font-bold text-amber-700 block mb-1 uppercase">Challenge 3: Route Description</span>
+                  <p class="text-xs font-semibold text-deepBlue leading-relaxed">
+                    "You are standing at the <strong class="text-teal-600">Library (C1)</strong>. Explain the route to reach the <strong class="text-orangeAction">Baker's Shop (C2)</strong>. What landmarks do you pass?"
+                  </p>
+                </div>
+
+                <div class="p-3 bg-amber-50/60 border border-amber-200 rounded-xl">
+                  <span class="text-[9px] font-mono font-bold text-amber-700 block mb-1 uppercase">Challenge 4: Subway Quest</span>
+                  <p class="text-xs font-semibold text-deepBlue leading-relaxed">
+                    "A tourist is at the <strong class="text-indigo-500">Bookstore (B3)</strong>. They ask: 'Excuse me, how do I get to the <strong class="text-blue-500">Subway Station (A3)</strong>?' Give them directions."
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Quiz Status feedback bar -->
+            <div id="step3QuizFeedback" class="hidden text-xs font-mono font-bold mt-4 p-3 rounded-lg"></div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-sm" onclick="goTo(2)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button id="step3NextBtn" class="hidden bg-orangeAction hover:bg-orangeHover text-white font-semibold px-6 py-3.5 rounded-lg flex items-center gap-2 transition-all shadow text-sm font-bold" onclick="goTo(4)">Go to Detour Challenge <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 4: ACTIVE COMMUNICATION & ROADBLOCK SIM (15 MIN)
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec4">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-4 border border-orange-100">Step 4: Active Communication (15 Min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Live Roadblock Contingency</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Oh no! Construction has blocked parts of the city. Use the **Live Simulator** below to trigger a random road hazard, analyze the **sychronized map**, then explain the detour safely.</p>
+
+      <!-- SIMULATOR HUB -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+        
+        <!-- Live Synchronized Map (Left Column) -->
+        <div class="lg:col-span-6 bg-slate-200 border border-slate-300 rounded-2xl p-6 shadow-sm flex flex-col justify-center">
+          <div class="text-center mb-3">
+            <span class="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest"><i class="ph-bold ph-activity text-red-600"></i> S7 Tactical Operations Map</span>
+          </div>
+
+          <div class="relative w-full max-w-[340px] mx-auto aspect-square bg-slate-300 p-3 rounded-xl border border-slate-400">
+            <!-- Grid container defining blocks and streets -->
+            <div class="grid grid-cols-3 h-full w-full gap-x-6 gap-y-6 relative">
+              
+              <!-- Street Names Overlay -->
+              <div class="absolute inset-x-0 top-[28%] h-3 flex items-center justify-center bg-slate-300/95 border-y border-slate-450 pointer-events-none z-10">
+                <span class="text-[7px] font-mono font-bold tracking-widest uppercase text-slate-500">Main Street</span>
+              </div>
+              <div class="absolute inset-x-0 bottom-[28%] h-3 flex items-center justify-center bg-slate-300/95 border-y border-slate-450 pointer-events-none z-10">
+                <span class="text-[7px] font-mono font-bold tracking-widest uppercase text-slate-500">Broad Street</span>
+              </div>
+              <div class="absolute inset-y-0 left-[28%] w-3 flex items-center justify-center bg-slate-300/95 border-x border-slate-450 pointer-events-none z-10" style="writing-mode: vertical-rl;">
+                <span class="text-[7px] font-mono font-bold tracking-widest uppercase text-slate-500">Grand Avenue</span>
+              </div>
+              <div class="absolute inset-y-0 right-[28%] w-3 flex items-center justify-center bg-slate-300/95 border-x border-slate-450 pointer-events-none z-10" style="writing-mode: vertical-rl;">
+                <span class="text-[7px] font-mono font-bold tracking-widest uppercase text-slate-500">Oak Avenue</span>
+              </div>
+
+              <!-- Row 1 -->
+              <div id="sim-block-A1" class="bg-white border border-slate-300 rounded-lg flex flex-col items-center justify-center font-mono text-[9px] p-1.5 relative shadow-sm z-20">
+                <span class="absolute top-0.5 left-1 text-[7px] text-slate-400">A1</span>
+                <i class="ph ph-coffee text-sm mb-0.5 text-amber-600"></i>
+                <span class="font-bold leading-none scale-90">Coffee</span>
+              </div>
+              
+              <div id="sim-block-A2" class="bg-white border border-slate-300 rounded-lg flex flex-col items-center justify-center font-mono text-[9px] p-1.5 relative shadow-sm z-20">
+                <span class="absolute top-0.5 left-1 text-[7px] text-slate-400">A2</span>
+                <i class="ph ph-tree text-sm mb-0.5 text-emerald-600"></i>
+                <span class="font-bold leading-none scale-90">Park</span>
+              </div>
+              
+              <div id="sim-block-A3" class="bg-white border border-slate-300 rounded-lg flex flex-col items-center justify-center font-mono text-[9px] p-1.5 relative shadow-sm z-20">
+                <span class="absolute top-0.5 left-1 text-[7px] text-slate-400">A3</span>
+                <i class="ph ph-train text-sm mb-0.5 text-blue-500"></i>
+                <span class="font-bold leading-none scale-90">Subway</span>
+              </div>
+
+              <!-- Row 2 -->
+              <div id="sim-block-B1" class="bg-white border border-slate-300 rounded-lg flex flex-col items-center justify-center font-mono text-[9px] p-1.5 relative shadow-sm z-20">
+                <span class="absolute top-0.5 left-1 text-[7px] text-slate-400">B1</span>
+                <i class="ph ph-bed text-sm mb-0.5 text-purple-600"></i>
+                <span class="font-bold leading-none scale-90">Hotel</span>
+              </div>
+              
+              <div id="sim-block-B2" class="bg-slate-200 border border-dashed border-slate-400 rounded-lg flex flex-col items-center justify-center font-mono text-[8px] p-1.5 relative shadow-inner z-20 select-none">
+                <span class="absolute top-0.5 left-1 text-[7px] text-slate-400">B2</span>
+                <i class="ph ph-arrows-merge text-sm mb-0.5 text-slate-500"></i>
+                <span class="font-bold leading-none text-center">Crossing</span>
+              </div>
+              
+              <div id="sim-block-B3" class="bg-white border border-slate-300 rounded-lg flex flex-col items-center justify-center font-mono text-[9px] p-1.5 relative shadow-sm z-20">
+                <span class="absolute top-0.5 left-1 text-[7px] text-slate-400">B3</span>
+                <i class="ph ph-book text-sm mb-0.5 text-indigo-500"></i>
+                <span class="font-bold leading-none scale-90">Bookstore</span>
+              </div>
+
+              <!-- Row 3 -->
+              <div id="sim-block-C1" class="bg-white border border-slate-300 rounded-lg flex flex-col items-center justify-center font-mono text-[9px] p-1.5 relative shadow-sm z-20">
+                <span class="absolute top-0.5 left-1 text-[7px] text-slate-400">C1</span>
+                <i class="ph ph-read-cv-logo text-sm mb-0.5 text-teal-600"></i>
+                <span class="font-bold leading-none scale-90">Library</span>
+              </div>
+              
+              <div id="sim-block-C2" class="bg-white border border-slate-300 rounded-lg flex flex-col items-center justify-center font-mono text-[9px] p-1.5 relative shadow-sm z-20">
+                <span class="absolute top-0.5 left-1 text-[7px] text-slate-400">C2</span>
+                <i class="ph ph-cookie text-sm mb-0.5 text-orangeAction"></i>
+                <span class="font-bold leading-none scale-90">Bakery</span>
+              </div>
+              
+              <div id="sim-block-C3" class="bg-white border border-slate-300 rounded-lg flex flex-col items-center justify-center font-mono text-[9px] p-1.5 relative shadow-sm z-20">
+                <span class="absolute top-0.5 left-1 text-[7px] text-slate-400">C3</span>
+                <i class="ph ph-device-mobile text-sm mb-0.5 text-sky-600"></i>
+                <span class="font-bold leading-none scale-90">Tech</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Simulator Control Panel & Guide (Right Column) -->
+        <div class="lg:col-span-6 space-y-4 flex flex-col justify-between">
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-4">
+            <div>
+              <span class="text-[10px] font-mono font-bold text-slate-400 block mb-1 uppercase tracking-wider">Operational controls</span>
+              <h3 class="font-bold text-deepBlue text-base mb-2">Road Event Simulator</h3>
+              
+              <button onclick="triggerRoadblockSimulation()" class="w-full bg-deepBlue hover:bg-slate-800 text-white font-mono font-bold text-xs py-3.5 rounded-lg transition-all shadow flex items-center justify-center gap-2 focus:outline-none">
+                <i class="ph-bold ph-arrows-clockwise"></i> Generate Road Hazard
+              </button>
+            </div>
+
+            <!-- Live Hazard Output display (Dynamic) -->
+            <div id="hazardOutput" class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-3">
+              <span class="text-3xl">🚗</span>
+              <div>
+                <p class="font-bold text-deepBlue text-xs">System Idle</p>
+                <p class="text-[11px] text-slate-500 font-mono mt-0.5">Click "Generate Road Hazard" to launch.</p>
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Formulate a detour around the blocked red zone on the map using **"turn left"**, **"turn right"**, and our spatial prepositions.
+            </p>
+
+            <div class="p-4 bg-orange-50 rounded-lg border border-orange-100 font-mono text-[11px] text-slate-700 leading-relaxed space-y-1.5">
+              <strong>💡 Scaffolding Guide:</strong>
+              <div>• "Because Main Street is blocked, you shouldn't go..."</div>
+              <div>• "Instead, turn right on Grand Avenue and walk past..."</div>
+              <div>• "The destination is directly across from the..."</div>
+            </div>
+          </div>
+
+          <!-- Instructor Verification Portal -->
+          <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+            <div class="flex items-center justify-between text-xs font-mono">
+              <label class="flex items-center gap-2 cursor-pointer text-slate-600 hover:text-deepBlue">
+                <input type="checkbox" id="evalCheckStep4" onchange="evaluateInstructorCheckpoint()" class="accent-orangeAction w-4 h-4">
+                <span>Instructor approved verbal navigation bypass.</span>
+              </label>
+            </div>
+            <div class="mt-3 p-2.5 bg-slate-50 border border-slate-200 rounded text-center">
+              <span id="instructorLockStatus" class="text-[10px] font-mono text-red-500 font-bold uppercase">Locked: Waiting for detour practice</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-sm" onclick="goTo(3)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button id="step4NextBtn" class="hidden bg-orangeAction hover:bg-orangeHover text-white font-semibold px-6 py-3.5 rounded-lg flex items-center gap-2 transition-all shadow text-sm font-bold animate-pulse" onclick="goTo(5)">Go to Writing Task <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 5: PORTFOLIO & WRITING TASK (10 MIN)
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec5">
+      <span class="inline-block text-xs font-bold tracking-widest text-emerald-700 uppercase bg-emerald-50 px-3 py-1 rounded-full mb-3 border border-emerald-100">Step 5: Written Output (10 Min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">The Tourist Guide Message</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Let's consolidate what you learned today. Write a short text message to a friend telling them how to meet you at the Coffee House starting from the Subway Station.</p>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 mb-8 shadow-sm">
+        <h3 class="text-lg font-bold text-deepBlue mb-4 flex items-center gap-2"><i class="ph ph-file-text text-orangeAction"></i> Writing Sandbox</h3>
+        
+        <p class="text-xs text-slate-500 leading-relaxed mb-6 font-mono">
+          <strong>📝 Task Guidelines:</strong> Write a short message (40-60 words) detailing:
+          <br>1. Where you are waiting (e.g., waiting at the Coffee House).
+          <br>2. Give a simple direction relative to another landmark (e.g., *across from the hotel*, *next to the park*).
+          <br>3. Tell them to walk straight from the subway.
+        </p>
+
+        <!-- WRITING BOARD -->
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs font-mono font-bold text-slate-400 uppercase mb-2">Message Subject / Title</label>
+            <input type="text" id="logSubject" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 focus:outline-none focus:border-orangeAction font-mono text-sm" placeholder="e.g., Directions to Coffee House">
+          </div>
+          <div>
+            <label class="block text-xs font-mono font-bold text-slate-400 uppercase mb-2">Message Body</label>
+            <textarea id="logMessage" rows="6" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 focus:outline-none focus:border-orangeAction font-mono text-sm" placeholder="Write your message here..."></textarea>
+          </div>
+          <div class="flex justify-between items-center text-xs font-mono text-slate-400">
+            <span>Target: 40 - 60 words</span>
+            <span id="logWordCount">0 words</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PORTFOLIO SAVE CONTROL -->
+      <div class="bg-slate-900 rounded-2xl p-6 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div>
+          <h4 class="font-bold text-base text-white">Save Progress and Complete</h4>
+          <p class="text-xs text-slate-400 font-mono">Submit your final text message to finish this part of the lesson.</p>
+        </div>
+        <button onclick="submitDispatchLog()" class="bg-orangeAction hover:bg-orangeHover text-white font-bold font-mono text-xs px-6 py-4 rounded-xl transition-all uppercase tracking-wider shrink-0">
+          Submit Message
+        </button>
+      </div>
+
+      <!-- CUSTOM BANNER MESSAGE BOX (No Alerts) -->
+      <div id="submitBanner" class="hidden mt-6 p-4 rounded-xl text-center text-sm font-semibold transition-all"></div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ── ENGINE APPLICATION STATE & SCRAMBLING CORE ── -->
+<script>
+let currentStep = 1;
+let quizScore = { 1: false, 2: false };
+
+// AUDIO SPEAKER SYNTHESIS (Preserved Speech synthesis)
+function speakText(text) {
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.85; 
+  window.speechSynthesis.speak(utterance);
+}
+
+// SAFE FALLBACK IMAGE GENERATION
+function handleImageError(img, theme) {
+  img.onerror = null; // Prevent loops
+  const parent = img.parentElement;
+  if (!parent) return;
+
+  parent.innerHTML = `
+    <div class="w-full h-full bg-gradient-to-br from-slate-950 to-slate-850 flex flex-col items-center justify-center text-white p-6 gap-2 text-center select-none">
+      <i class="ph ph-map-trifold text-5xl text-orangeAction animate-pulse"></i>
+      <span class="font-mono text-sm tracking-widest uppercase font-bold mt-1 text-slate-300">Neighborhood Map Screen</span>
+      <span class="text-xs text-slate-500 font-mono">Ready to inspect coordinates</span>
+    </div>
+  `;
+}
+
+// STEP 2 SYNTAX CHECKER
+function verifyStep2Grammar() {
+  const v1 = document.getElementById('preInput1').value.trim().toLowerCase();
+  const v2 = document.getElementById('preInput2').value.trim().toLowerCase();
+  const v3 = document.getElementById('preInput3').value.trim().toLowerCase();
+  const msg = document.getElementById('validationMsg');
+
+  msg.classList.remove('hidden');
+
+  if ((v1.includes('next to') || v1.includes('beside')) && v2.includes('on') && v3.includes('behind')) {
+    msg.className = "text-xs font-mono font-bold mt-4 p-3 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 animate-fadeUp";
+    msg.textContent = "✓ Correct! Great job utilizing 'next to', 'on', and 'behind'.";
+  } else {
+    msg.className = "text-xs font-mono font-bold mt-4 p-3 rounded-lg bg-rose-50 text-rose-700 border border-rose-200 animate-fadeUp";
+    msg.textContent = "❌ Check your spelling. Hints: 1 is 'next to' or 'beside', 2 is 'on', 3 is 'behind'.";
+  }
+}
+
+// STEP 3 INTERACTIVE MAP GRID
+function revealGridSector(name, description, coord, buttonEl) {
+  document.querySelectorAll('.grid-sector').forEach(btn => {
+    btn.classList.remove('border-orangeAction', 'bg-orange-50');
+    btn.classList.add('border-slate-300');
+  });
+
+  buttonEl.classList.remove('border-slate-300');
+  buttonEl.classList.add('border-orangeAction', 'bg-orange-50');
+
+  const sensorBox = document.getElementById('sensorBox');
+  sensorBox.className = "mt-4 p-3 bg-orange-50 rounded-xl border border-orange-200 text-xs font-mono text-slate-700 animate-fadeUp text-left shadow-sm";
+  
+  sensorBox.innerHTML = `
+    <div class="flex items-center justify-between mb-1">
+      <strong class="text-deepBlue font-bold uppercase">${name} (${coord})</strong>
+      <button onclick="speakText('${name}: ${description}')" class="p-1 bg-white hover:bg-slate-100 rounded border border-slate-200 text-slate-600 flex items-center justify-center">
+        <i class="ph ph-speaker-high text-xs"></i>
+      </button>
+    </div>
+    <p class="text-[11px] leading-relaxed text-slate-600">${description}</p>
+  `;
+}
+
+// STEP 3 PATHFINDER QUIZ CONTROLLER
+function checkStep3Quiz(questionId, resultType, buttonEl) {
+  const parent = buttonEl.parentElement;
+  parent.querySelectorAll('button').forEach(btn => {
+    btn.className = "w-full text-left p-2 bg-white border border-slate-200 hover:border-orangeAction rounded transition-all";
+  });
+
+  const feedbackBar = document.getElementById('step3QuizFeedback');
+  feedbackBar.classList.remove('hidden');
+
+  if (resultType === 'correct') {
+    buttonEl.className = "w-full text-left p-2 bg-emerald-50 border-2 border-emerald-400 text-emerald-800 font-semibold rounded transition-all";
+    quizScore[questionId] = true;
+    speakText("That is correct!");
+  } else {
+    buttonEl.className = "w-full text-left p-2 bg-rose-50 border-2 border-rose-400 text-rose-800 font-semibold rounded transition-all";
+    quizScore[questionId] = false;
+    speakText("Try again!");
+  }
+
+  // Validate both answers
+  if (quizScore[1] && quizScore[2]) {
+    feedbackBar.className = "text-xs font-mono font-bold mt-4 p-3 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 animate-fadeUp";
+    feedbackBar.textContent = "✓ Part A routes verified! Now discuss Part B open challenges with your instructor to complete this module.";
+    document.getElementById('step3NextBtn').classList.remove('hidden');
+  } else {
+    feedbackBar.className = "text-xs font-mono font-bold mt-4 p-3 rounded-lg bg-amber-50 text-amber-700 border border-amber-200 animate-fadeUp";
+    feedbackBar.textContent = "Complete Route Challenges 1 and 2 to unlock the Next button.";
+    document.getElementById('step3NextBtn').classList.add('hidden');
+  }
+}
+
+// STEP 4 ROADBLOCK SIMULATOR ENGINE (NEW VISUAL HAZARD MAP LINKING!)
+const simulationHazards = [
+  { 
+    icon: "🚧", 
+    title: "Roadwork Closure", 
+    desc: "Main Street has been closed for repairs near the Crossing (B2). No traffic is allowed.", 
+    audio: "Main Street is closed due to roadwork near the crossing.",
+    blockedBlockId: "sim-block-B2",
+    blockedLabel: "B2 - BLOCKED"
+  },
+  { 
+    icon: "💥", 
+    title: "Minor Traffic Collision", 
+    desc: "An accident blocks the corner of Grand Avenue and Main Street (A2). Expect heavy delays.", 
+    audio: "An accident blocks the corner of Grand Avenue and Main Street.",
+    blockedBlockId: "sim-block-A2",
+    blockedLabel: "A2 - ACCIDENT"
+  },
+  { 
+    icon: "🚛", 
+    title: "Delivery Blockade", 
+    desc: "Large delivery trucks are blocking the entrance to the Bakery (C2). Redirection is necessary.", 
+    audio: "Delivery trucks are blocking the entrance to the Baker's Shop.",
+    blockedBlockId: "sim-block-C2",
+    blockedLabel: "C2 - BLOCKED"
+  }
+];
+
+function triggerRoadblockSimulation() {
+  const hazardOutput = document.getElementById('hazardOutput');
+  const randomIndex = Math.floor(Math.random() * simulationHazards.length);
+  const hazard = simulationHazards[randomIndex];
+
+  // Reset previously blocked blocks
+  simulationHazards.forEach(h => {
+    const el = document.getElementById(h.blockedBlockId);
+    if (el) {
+      el.className = "bg-white border border-slate-300 rounded-lg flex flex-col items-center justify-center font-mono text-[9px] p-1.5 relative shadow-sm z-20 transition-all";
+      // Restore original text inside
+      if (h.blockedBlockId === "sim-block-B2") {
+        el.className = "bg-slate-200 border border-dashed border-slate-400 rounded-lg flex flex-col items-center justify-center font-mono text-[8px] p-1.5 relative shadow-inner z-20 select-none transition-all";
+        el.innerHTML = `<span class="absolute top-0.5 left-1 text-[7px] text-slate-400">B2</span><i class="ph ph-arrows-merge text-sm mb-0.5 text-slate-500"></i><span class="font-bold leading-none text-center">Crossing</span>`;
+      } else if (h.blockedBlockId === "sim-block-A2") {
+        el.innerHTML = `<span class="absolute top-0.5 left-1 text-[7px] text-slate-400">A2</span><i class="ph ph-tree text-sm mb-0.5 text-emerald-600"></i><span class="font-bold leading-none scale-90">Park</span>`;
+      } else if (h.blockedBlockId === "sim-block-C2") {
+        el.innerHTML = `<span class="absolute top-0.5 left-1 text-[7px] text-slate-400">C2</span><i class="ph ph-cookie text-sm mb-0.5 text-orangeAction"></i><span class="font-bold leading-none scale-90">Bakery</span>`;
+      }
+    }
+  });
+
+  // Apply Hazard Visual Block on Step 4 Map
+  const blockedElement = document.getElementById(hazard.blockedBlockId);
+  if (blockedElement) {
+    blockedElement.className = "bg-red-50 border-2 border-red-500 rounded-lg flex flex-col items-center justify-center font-mono text-[9px] p-1.5 relative shadow-inner z-25 text-red-600 font-bold animate-pulse transition-all";
+    blockedElement.innerHTML = `
+      <span class="absolute top-0.5 left-1 text-[7px] text-red-400">${hazard.blockedBlockId.split('-').pop()}</span>
+      <span class="text-base">${hazard.icon}</span>
+      <span class="text-[7px] tracking-tight uppercase leading-none mt-1">BLOCKED</span>
+    `;
+  }
+
+  // Generate Output Card
+  hazardOutput.className = "p-4 bg-orange-50 border border-orange-200 rounded-xl flex items-start gap-3 animate-fadeUp shadow-sm";
+  hazardOutput.innerHTML = `
+    <span class="text-3xl">${hazard.icon}</span>
+    <div>
+      <p class="font-bold text-deepBlue text-sm">${hazard.title}</p>
+      <p class="text-[11px] text-slate-600 leading-relaxed font-mono mt-0.5">${hazard.desc}</p>
+    </div>
+  `;
+
+  speakText(hazard.audio);
+}
+
+// STEP 4 INSTRUCTOR CHECKPOINT GATE
+function evaluateInstructorCheckpoint() {
+  const check = document.getElementById('evalCheckStep4').checked;
+  const nextBtn = document.getElementById('step4NextBtn');
+  const lockMsg = document.getElementById('instructorLockStatus');
+
+  if (check) {
+    nextBtn.classList.remove('hidden');
+    lockMsg.textContent = "✓ ACCESS APPROVED - CLICK NEXT TO PROCEED";
+    lockMsg.className = "text-xs font-mono text-emerald-600 font-bold uppercase animate-pulse";
+  } else {
+    nextBtn.classList.add('hidden');
+    lockMsg.textContent = "Locked: Waiting for detour practice";
+    lockMsg.className = "text-xs font-mono text-red-500 font-bold uppercase";
+  }
+}
+
+// STEP 5 WORD COUNTER MONITOR
+const logArea = document.getElementById('logMessage');
+const wordCounter = document.getElementById('logWordCount');
+
+logArea.addEventListener('input', function() {
+  const content = logArea.value.trim();
+  const words = content ? content.split(/\s+/).length : 0;
+  wordCounter.textContent = `${words} words`;
+});
+
+// STEP 5 SUBMIT HANDLER
+function submitDispatchLog() {
+  const header = document.getElementById('logSubject').value.trim();
+  const body = document.getElementById('logMessage').value.trim();
+  const banner = document.getElementById('submitBanner');
+
+  banner.classList.remove('hidden');
+
+  if(!header || !body) {
+    banner.className = "mt-6 p-4 rounded-xl text-center text-sm font-semibold bg-rose-50 text-rose-700 border border-rose-200 animate-fadeUp";
+    banner.textContent = "❌ Please complete both the Subject Title and Message Body fields before saving.";
+    return;
+  }
+
+  banner.className = "mt-6 p-4 rounded-xl text-center text-sm font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 animate-fadeUp";
+  banner.textContent = "✓ Message saved and added to your portfolio! Excellent job today.";
+  
+  setTimeout(() => {
+    goTo(1);
+    banner.classList.add('hidden');
+  }, 3000);
+}
+
+// STEP ENGINE NAVIGATOR
+function goTo(n) {
+  document.getElementById('sec' + currentStep).classList.remove('active');
+  currentStep = n;
+  document.getElementById('sec' + n).classList.add('active');
+
+  // Move indicator bars
+  document.getElementById('progressFill').style.width = (n * 20) + '%';
+  document.getElementById('progressLabel').textContent = 'Step ' + n + ' / 5';
+  
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+</body>
+</html>

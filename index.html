@@ -41,12 +41,12 @@
     
     <div class="flex items-center gap-3">
       <div class="flex-shrink-0">
-        <span class="text-white font-bold tracking-wider text-lg mono select-none">MÉTODO <span class="text-orangeAction">FAIXA</span></span>
+        <span class="text-white font-bold tracking-wider text-lg mono select-none">MÉTODO <span class="text-orangeAction">FALA</span></span>
       </div>
       <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
       <div class="hidden sm:block">
         <h1 class="text-base font-bold text-white tracking-wide">Student Homework Hub</h1>
-        <p class="text-xs text-slate-400">CEFR B2 Level · Personal Learning Management Portal</p>
+        <p class="text-xs text-slate-400">CEFR Operations Portal · Personal Learning Management</p>
       </div>
     </div>
 
@@ -86,7 +86,7 @@
 
       <div class="grid grid-cols-2 gap-3 text-center">
         <div class="bg-slate-800/60 border border-slate-700/60 p-4 rounded-xl">
-          <span class="block text-2xl font-bold font-mono text-orangeAction" id="counterTotal">2</span>
+          <span class="block text-2xl font-bold font-mono text-orangeAction" id="counterTotal">5</span>
           <span class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">Assigned</span>
         </div>
         <div class="bg-slate-800/60 border border-slate-700/60 p-4 rounded-xl">
@@ -122,12 +122,11 @@
         </div>
       </div>
       <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
-        <!-- Status Switcher checkbox -->
         <label class="flex items-center gap-2 cursor-pointer select-none">
           <input type="checkbox" id="checkTask-1" onchange="toggleTaskStatus(1)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
           <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-1">Not Started</span>
         </label>
-        <a href="homeworklife.html" id="linkTask-1" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm">
+        <a href="homeworklife.html" id="linkTask-1" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
           Execute Task <i class="ph ph-arrow-right"></i>
         </a>
       </div>
@@ -149,16 +148,94 @@
         </div>
       </div>
       <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
-        <!-- Status Switcher checkbox -->
         <label class="flex items-center gap-2 cursor-pointer select-none">
           <input type="checkbox" id="checkTask-2" onchange="toggleTaskStatus(2)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
           <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-2">Not Started</span>
         </label>
-        <a href="homeworkhonest.html" id="linkTask-2" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm">
+        <a href="homeworkhonest.html" id="linkTask-2" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
           Execute Task <i class="ph ph-arrow-right"></i>
         </a>
       </div>
     </div>
+
+    <!-- Task Card 3: Television - The Global Classroom -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-3">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-blue-50 text-blue-700 rounded-xl border border-blue-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-television"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-blue-700 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded">Task 3</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR A2-B1</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Homework Task: Television &amp; Media Habits</h4>
+          <p class="text-xs text-slate-500 mt-1">Industry terminology (binge watch, spinoff), past habits (used to) vs modern perfect trends, and embedded Docs workspace[cite: 3].</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-3" onchange="toggleTaskStatus(3)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-3">Not Started</span>
+        </label>
+        <a href="homework_television.html" id="linkTask-3" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+          Execute Task <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Task Card 4: Multi-Skill Proficiency Mock Test -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-4">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-emerald-50 text-emerald-700 rounded-xl border border-emerald-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-certificate"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded">Task 4</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR A2-B2 Diagnostic</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Proficiency Simulation: 4-Skill Mock Test</h4>
+          <p class="text-xs text-slate-500 mt-1">Flight disruption text analytics, auditory laboratory stress tracking, written notification files, and audio recording matrix[cite: 3].</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-4" onchange="toggleTaskStatus(4)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-4">Not Started</span>
+        </label>
+        <a href="mocktest.html" id="linkTask-4" class="bg-orangeAction hover:bg-orangeHover text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+          Execute Task <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Task Card 5: Street Navigation & Detour Challenges -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-5">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-purple-50 text-purple-700 rounded-xl border border-purple-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-map-trifold"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-purple-700 bg-purple-50 border border-purple-100 px-2 py-0.5 rounded">Task 5</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR A2</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Homework Task: Street Navigation &amp; Spatial Prepositions</h4>
+          <p class="text-xs text-slate-500 mt-1">Spatial prepositions calibration (across from, next to, behind), interactive city grid matrix, and tourist guide text production[cite: 3].</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-5" onchange="toggleTaskStatus(5)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-5">Not Started</span>
+        </label>
+        <a href="homework_navigation.html" id="linkTask-5" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+          Execute Task <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
   </div>
 
   <!-- ── TEACHER CONFIGURATION DASHBOARD (HIDDEN BY DEFAULT) ── -->
@@ -176,11 +253,23 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div>
           <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-1">Task 1 URL Path:</label>
-          <input type="text" id="inputPath1" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50 font-mono text-xs" placeholder="homeworklife.html">
+          <input type="text" id="inputPath1" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50 font-mono text-xs">
         </div>
         <div>
           <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-1">Task 2 URL Path:</label>
-          <input type="text" id="inputPath2" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50 font-mono text-xs" placeholder="homeworkhonest.html">
+          <input type="text" id="inputPath2" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50 font-mono text-xs">
+        </div>
+        <div>
+          <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-1">Task 3 URL Path:</label>
+          <input type="text" id="inputPath3" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50 font-mono text-xs">
+        </div>
+        <div>
+          <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-1">Task 4 URL Path:</label>
+          <input type="text" id="inputPath4" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50 font-mono text-xs">
+        </div>
+        <div>
+          <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-1">Task 5 URL Path:</label>
+          <input type="text" id="inputPath5" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50 font-mono text-xs">
         </div>
       </div>
     </div>
@@ -193,37 +282,39 @@
 
 <!-- ── ENGINE APPLICATION STATE & PERSISTENCE CORE ── -->
 <script>
-// State variable mapping
+// State variable mapping with 5 slots
 let appState = {
   studentName: "Active Student",
   tasks: {
     1: { completed: false, path: "homeworklife.html" },
-    2: { completed: false, path: "homeworkhonest.html" }
+    2: { completed: false, path: "homeworkhonest.html" },
+    3: { completed: false, path: "homework_television.html" },
+    4: { completed: false, path: "mocktest.html" },
+    5: { completed: false, path: "homework_navigation.html" }
   }
 };
 
-// Toggle settings panel visibility
 function toggleTeacherSettings() {
   const panel = document.getElementById('teacherSettings');
   panel.classList.toggle('hidden');
 }
 
-// Save teacher customized values
 function saveTeacherSettings() {
   const nameVal = document.getElementById('inputStudentName').value.trim();
-  const path1 = document.getElementById('inputPath1').value.trim();
-  const path2 = document.getElementById('inputPath2').value.trim();
-
   if (nameVal) appState.studentName = nameVal;
-  if (path1) appState.tasks[1].path = path1;
-  if (path2) appState.tasks[2].path = path2;
+
+  for (let i = 1; i <= 5; i++) {
+    const pathInput = document.getElementById(`inputPath${i}`);
+    if (pathInput && pathInput.value.trim()) {
+      appState.tasks[i].path = pathInput.value.trim();
+    }
+  }
 
   localStorage.setItem('metodo_fala_homework_hub_state', JSON.stringify(appState));
   syncDOM();
   toggleTeacherSettings();
 }
 
-// Toggle status switchers
 function toggleTaskStatus(taskId) {
   const checkbox = document.getElementById(`checkTask-${taskId}`);
   appState.tasks[taskId].completed = checkbox.checked;
@@ -232,7 +323,6 @@ function toggleTaskStatus(taskId) {
   syncDOM();
 }
 
-// Synchronize memory and UI layers
 function syncDOM() {
   // Sync Student Profile Name
   document.getElementById('studentNameLabel').textContent = appState.studentName;
@@ -241,7 +331,7 @@ function syncDOM() {
   let totalTasks = Object.keys(appState.tasks).length;
   let completedCount = 0;
 
-  // Sync Cards parameters
+  // Sync Cards parameters across all 5 slots
   for (let id in appState.tasks) {
     const task = appState.tasks[id];
     const checkbox = document.getElementById(`checkTask-${id}`);
@@ -250,26 +340,19 @@ function syncDOM() {
     const runLink = document.getElementById(`linkTask-${id}`);
     const pathInput = document.getElementById(`inputPath${id}`);
 
-    // Update Input values inside settings
     if (pathInput) pathInput.value = task.path;
-
-    // Update checkbox status
     if (checkbox) checkbox.checked = task.completed;
-
-    // Update target redirection paths
     if (runLink) runLink.setAttribute('href', task.path);
 
     if (task.completed) {
       completedCount++;
       statusLabel.textContent = "Completed";
       statusLabel.className = "text-xs font-mono font-bold text-emerald-600 uppercase";
-      card.classList.remove('border-slate-200', 'bg-white');
-      card.classList.add('border-emerald-300', 'bg-emerald-50/10');
+      card.className = "bg-white border border-emerald-300 bg-emerald-50/10 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-emerald-400 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6";
     } else {
       statusLabel.textContent = "Not Started";
       statusLabel.className = "text-xs font-mono font-bold text-slate-400 uppercase";
-      card.classList.remove('border-emerald-300', 'bg-emerald-50/10');
-      card.classList.add('border-slate-200', 'bg-white');
+      card.className = "bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6";
     }
   }
 
@@ -282,12 +365,19 @@ function syncDOM() {
   document.getElementById('counterDone').textContent = completedCount;
 }
 
-// Load configurations securely on window onloads
 window.onload = function() {
   const savedState = localStorage.getItem('metodo_fala_homework_hub_state');
   if (savedState) {
     try {
-      appState = JSON.parse(savedState);
+      // Deep merge parameters to avoid losing missing keys if older state exists
+      const parsed = JSON.parse(savedState);
+      if (parsed.studentName) appState.studentName = parsed.studentName;
+      for (let id in appState.tasks) {
+        if (parsed.tasks && parsed.tasks[id]) {
+          appState.tasks[id].completed = parsed.tasks[id].completed || false;
+          appState.tasks[id].path = parsed.tasks[id].path || appState.tasks[id].path;
+        }
+      }
     } catch (e) {
       console.error("Failure restoring localized states.", e);
     }
@@ -300,7 +390,10 @@ function resetEngine() {
     studentName: "Active Student",
     tasks: {
       1: { completed: false, path: "homeworklife.html" },
-      2: { completed: false, path: "homeworkhonest.html" }
+      2: { completed: false, path: "homeworkhonest.html" },
+      3: { completed: false, path: "homework_television.html" },
+      4: { completed: false, path: "mocktest.html" },
+      5: { completed: false, path: "homework_navigation.html" }
     }
   };
   localStorage.removeItem('metodo_fala_homework_hub_state');

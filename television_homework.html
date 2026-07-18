@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Television Homework: Practice &amp; Writing</title>
+<!-- Tailwind CSS & Phosphor Icons para Consistência Visual Premium -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',      /* Dark UI Header Block */
+          bodyLight: '#F8FAFC',     /* Workspace body background */
+          orangeAction: '#C2410C',  /* Primary brand accent */
+          orangeHover: '#EA580C',   /* Hover color states */
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+          greenSoft: '#E8F8EF',
+          redSoft: '#FDEAEA',
+          amberSoft: '#FEF3D7'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&family=IBM+Plex+Mono:wght=400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .section { display: none; animation: fadeUp .35s ease; }
+  .section.active { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body class="bg-deepBlue text-darkSlate min-h-screen text-[18px] antialiased">
+
+<!-- ── STANDARDIZED METHOD FALA HEADER ── -->
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[960px] mx-auto px-6 py-5 flex items-center justify-between gap-4">
+    
+    <div class="flex items-center gap-3">
+      <div class="flex-shrink-0">
+        <button onclick="resetHomework()" class="cursor-pointer hover:opacity-80 transition-opacity select-none text-left focus:outline-none">
+          <span class="text-white font-bold tracking-wider text-lg mono">MÉTODO <span class="text-orangeAction">FALA</span></span>
+        </button>
+      </div>
+      <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
+      <div class="hidden sm:block">
+        <h1 class="text-base font-bold text-white tracking-wide">Television Homework</h1>
+        <p class="text-xs text-slate-400">Easy Practice · Video &amp; Writing Task</p>
+      </div>
+    </div>
+
+    <!-- Progress Tracker Linear Layout -->
+    <div class="flex items-center gap-3">
+      <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mono" id="progressLabel">Step 1 / 5</span>
+      <div class="w-24 sm:w-32 h-2.5 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
+        <div class="h-full bg-orangeAction rounded-full transition-all duration-500" id="progressFill" style="width:20%"></div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- MAIN CONTENT WORKSPACE -->
+<div class="bg-bodyLight w-full min-h-[calc(100vh-73px)]">
+  <main class="max-w-[960px] mx-auto px-6 py-8 pb-24">
+
+    <!-- ── LINK DIRETO PARA AULA PRINCIPAL (HEADER LINK CARD) ── -->
+    <div class="w-full bg-slate-900 text-white rounded-xl p-4 mb-8 flex items-center justify-between gap-4 shadow-sm border border-slate-800">
+      <div class="flex items-center gap-3">
+        <div class="p-2 bg-slate-800 rounded-lg text-xl text-orangeAction"><i class="ph ph-television-simple"></i></div>
+        <div>
+          <h4 class="text-sm font-bold">Need to review the TV lesson?</h4>
+          <p class="text-xs text-slate-400">Review the vocabulary and main guidelines before starting your exercises.</p>
+        </div>
+      </div>
+      <a href="television_the_global_classroom.html" class="bg-orangeAction hover:bg-orangeHover text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg transition-colors shadow-xs flex items-center gap-1">
+        Open Lesson <i class="ph ph-arrow-square-out"></i>
+      </a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 1 – VOCABULARY RECALL
+    ═══════════════════════════════════════════ -->
+    <div class="section active" id="sec1">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-4 border border-orange-100">Step 1: Words Practice (3 min)</span>
+      
+      <h2 class="text-3xl font-bold text-deepBlue mb-2 leading-tight">Check Your Vocabulary</h2>
+      <p class="text-base text-slate-500 mb-8 leading-relaxed">Let's review the special words from our class. Read the sentences below and choose the correct option:</p>
+
+      <div class="space-y-4 mb-8">
+        <!-- Pergunta 1 -->
+        <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-3" id="vocab-q-0">
+          <p class="text-base font-semibold text-slate-800">1. A popular television show broadcast daily about the dramatic lives of families:</p>
+          <div class="flex flex-wrap gap-2.5 text-sm font-mono">
+            <button onclick="selectVocabMatch(0, 'sitcom', this)" class="vocab-btn bg-white border border-slate-200 p-3 rounded-lg hover:border-orangeAction transition-all">sitcom</button>
+            <button onclick="selectVocabMatch(0, 'soap opera', this)" class="vocab-btn bg-white border border-slate-200 p-3 rounded-lg hover:border-orangeAction transition-all">soap opera</button>
+            <button onclick="selectVocabMatch(0, 'spinoff', this)" class="vocab-btn bg-white border border-slate-200 p-3 rounded-lg hover:border-orangeAction transition-all">spinoff</button>
+          </div>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-3" id="vocab-q-1">
+          <p class="text-base font-semibold text-slate-800">2. When you watch many episodes or full seasons of a TV show continuously in one day:</p>
+          <div class="flex flex-wrap gap-2.5 text-sm font-mono">
+            <button onclick="selectVocabMatch(1, 'binge watching', this)" class="vocab-btn bg-white border border-slate-200 p-3 rounded-lg hover:border-orangeAction transition-all">binge watching</button>
+            <button onclick="selectVocabMatch(1, 'broadcasting', this)" class="vocab-btn bg-white border border-slate-200 p-3 rounded-lg hover:border-orangeAction transition-all">broadcasting</button>
+            <button onclick="selectVocabMatch(1, 're-routing', this)" class="vocab-btn bg-white border border-slate-200 p-3 rounded-lg hover:border-orangeAction transition-all">re-routing</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="vocab-feedback-msg" class="hidden mb-6 p-4 rounded-lg font-semibold text-center text-sm"></div>
+
+      <div class="flex justify-end">
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(2)">Next: Grammar Check <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 2 – GRAMMAR ALIGNMENT BUFFER
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec2">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 2: Grammar Practice (3 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Past Habits vs. Today's Trends</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Let's practice grammar. Choose the best option for old childhood habits (<strong>used to</strong>) or open activities that started in the past (<strong>Present Perfect</strong>):</p>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-6 mb-8 space-y-4">
+        <!-- Questão Gramática 1 -->
+        <div class="p-4 bg-slate-50 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-3" id="gram-q-0">
+          <p class="font-medium text-slate-800 text-base">1. Over the last years, modern streaming apps _____ how we watch TV today.</p>
+          <div class="flex gap-2 text-sm font-semibold">
+            <button onclick="selectGrammarMatch(0, 'have completely shifted', this)" class="gram-btn bg-white border border-slate-200 px-4 py-2 rounded-lg hover:border-orangeAction transition-all">have completely shifted</button>
+            <button onclick="selectGrammarMatch(0, 'used to shift', this)" class="gram-btn bg-white border border-slate-200 px-4 py-2 rounded-lg hover:border-orangeAction transition-all">used to shift</button>
+          </div>
+        </div>
+
+        <!-- Questão Gramática 2 -->
+        <div class="p-4 bg-slate-50 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-3" id="gram-q-1">
+          <p class="font-medium text-slate-800 text-base">2. When I was a child, my family _____ wait one week for a new episode.</p>
+          <div class="flex gap-2 text-sm font-semibold">
+            <button onclick="selectGrammarMatch(1, 'have waited', this)" class="gram-btn bg-white border border-slate-200 px-4 py-2 rounded-lg hover:border-orangeAction transition-all">have waited</button>
+            <button onclick="selectGrammarMatch(1, 'used to', this)" class="gram-btn bg-white border border-slate-200 px-4 py-2 rounded-lg hover:border-orangeAction transition-all">used to</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="grammar-feedback-msg" class="hidden mb-6 p-4 rounded-lg font-semibold text-center text-sm"></div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(1)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(3)">Next: Write Your Essay <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 3 – INTEGRATED WRITING WORKSPACE (GOOGLE DOCS IFRAME)
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec3">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 3: Writing Task (7 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Write Your Television Essay</h2>
+      <p class="text-slate-500 mb-6 leading-relaxed">
+        <strong>Your Task:</strong> Write a text about how streaming apps changed our lives compared to old cable TV. 
+        Please use at least two vocabulary words from Step 1 and use <em>"used to"</em> and <em>Present Perfect</em> in your sentences.
+      </p>
+
+      <!-- INTEGRATED GOOGLE DOCS IFRAME WORKSPACE -->
+      <div class="w-full bg-white rounded-xl border border-slate-200 shadow-md p-4 mb-6">
+        <div class="flex items-center justify-between border-b pb-3 mb-4">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">📝</span>
+            <strong class="text-deepBlue text-base uppercase tracking-wider font-mono">Google Document Space</strong>
+          </div>
+          <span class="text-xs bg-orange-50 border border-orange-100 text-orangeAction px-2 py-0.5 rounded font-bold font-mono">Live Document</span>
+        </div>
+
+        <!-- RESPONSIVE EMBED CONTAINER -->
+        <div class="w-full aspect-[4/5] sm:aspect-[16/10] rounded-lg overflow-hidden border border-slate-200 bg-slate-100 relative">
+          <!-- Link do Google Docs público de Homework -->
+          <iframe class="w-full h-full absolute top-0 left-0" 
+                  src="https://docs.google.com/document/d/1g2bL9C5Vw0kE5qKAn6Z8w4dD_hG-Lw_X5Z_gN8Bv-qM/edit?usp=sharing" 
+                  frameborder="0" 
+                  allowfullscreen></iframe>
+        </div>
+        
+        <p class="text-xs text-slate-400 mt-3 font-medium italic">
+          *Note: If the document doesn't load instantly, please check your internet connection or use your personal Google link folder.
+        </p>
+      </div>
+
+      <!-- INSTRUCTOR COMPLIANCE CHECK FOR TIMELINE -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 mb-6 flex justify-between items-center shadow-sm">
+        <div class="flex gap-3 items-center">
+          <div class="p-2 bg-slate-100 rounded-lg text-lg"><i class="ph ph-check-square text-orangeAction"></i></div>
+          <div>
+            <h4 class="text-xs font-bold text-deepBlue">Writing Confirmation</h4>
+            <p class="text-[11px] text-slate-500">Check this box when you finish writing your text inside the document.</p>
+          </div>
+        </div>
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="essay-check" onchange="toggleStep4Button()" class="rounded border-slate-300 text-orangeAction focus:ring-orangeAction w-4 h-4">
+          <span class="text-xs font-bold text-slate-600 uppercase">Finished</span>
+        </label>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(2)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button id="btn-to-step4" class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg hidden items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(4)">Next: Speaking Plan <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 4 – SPEECH STRUCTURE BRAINSTORMING
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec4">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 4: Speaking Plan (2 min)</span>
+      <h2 class="text-2xl font-bold text-deepBlue mb-2">Prepare Your Conversation</h2>
+      <p class="text-slate-500 mb-6 text-sm leading-relaxed">Let's prepare for our conversation next class. Type short notes or keywords inside the boxes to organize your arguments:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <!-- Bloco de Concessão -->
+        <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-xs space-y-2">
+          <span class="block text-xs font-bold text-orangeAction font-mono uppercase">1. Concession Idea</span>
+          <p class="text-[11px] text-slate-400 italic">"Streaming apps are easy, but..."</p>
+          <textarea id="speech-b-1" oninput="calculateOutlineReadiness()" placeholder="Type your ideas here..." class="w-full h-[80px] p-2 text-xs border rounded-lg outline-none focus:border-orangeAction bg-slate-50 resize-none font-sans"></textarea>
+        </div>
+
+        <!-- Bloco de Hábito -->
+        <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-xs space-y-2">
+          <span class="block text-xs font-bold text-orangeAction font-mono uppercase">2. Old Past Habit</span>
+          <p class="text-[11px] text-slate-400 italic">"In the past, my family used to..."</p>
+          <textarea id="speech-b-2" oninput="calculateOutlineReadiness()" placeholder="Type your childhood memories here..." class="w-full h-[80px] p-2 text-xs border rounded-lg outline-none focus:border-orangeAction bg-slate-50 resize-none font-sans"></textarea>
+        </div>
+
+        <!-- Bloco de Tendência -->
+        <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-xs space-y-2">
+          <span class="block text-xs font-bold text-orangeAction font-mono uppercase">3. Modern TV Trend</span>
+          <p class="text-[11px] text-slate-400 italic">"Today, streaming platforms have..."</p>
+          <textarea id="speech-b-3" oninput="calculateOutlineReadiness()" placeholder="Type your modern opinions here..." class="w-full h-[80px] p-2 text-xs border rounded-lg outline-none focus:border-orangeAction bg-slate-50 resize-none font-sans"></textarea>
+        </div>
+      </div>
+
+      <!-- Barra de Prontidão de Argumento Reativa -->
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm mb-6">
+        <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+          <span>SPEAKING PREPARATION PROGRESS</span>
+          <span id="outline-score-lbl">0%</span>
+        </div>
+        <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+          <div id="outline-bar-fill" class="bg-orangeAction h-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(3)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(5)">Next: Send Profile <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 5 – SUBMISSION LAB COMPILATION
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec5">
+      <span class="inline-block text-xs font-bold tracking-widest text-emerald-700 uppercase bg-emerald-50 px-3 py-1 rounded-full mb-3 border border-emerald-100">Step 5: Finish Work (1 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Save Your Homework Profile</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Click the button below to complete and lock your homework data profile for your next class with your teacher.</p>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm text-center">
+        <button onclick="compileHomeworkReport()" class="w-full bg-deepBlue hover:bg-slate-800 text-white font-bold uppercase tracking-wider py-4 rounded-xl text-sm transition-colors shadow-sm font-mono">
+          Finish &amp; Lock My Homework
+        </button>
+        <div id="final-summary-box" class="hidden mt-6 p-5 rounded-xl border text-left text-sm font-medium leading-relaxed"></div>
+      </div>
+
+      <div class="flex justify-start">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(4)"><i class="ph ph-arrow-left"></i> Back</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ENGINE JAVASCRIPT COHESION SYSTEM -->
+<script>
+let currentSection = 1;
+let vocabUserSelections = {};
+let grammarUserSelections = {};
+
+function goTo(n) {
+  document.getElementById('sec' + currentSection).classList.remove('active');
+  currentSection = n;
+  document.getElementById('sec' + n).classList.add('active');
+  
+  // Progress Calculation
+  document.getElementById('progressFill').style.width = (n * 20) + '%';
+  document.getElementById('progressLabel').textContent = 'Step ' + n + ' / 5';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// ── VOCABULARY SELECTION LOGIC ──
+function selectVocabMatch(qIndex, selection, btn) {
+  vocabUserSelections[qIndex] = selection;
+  const card = document.getElementById('vocab-q-' + qIndex);
+  
+  card.querySelectorAll('.vocab-btn').forEach(b => {
+    b.className = "vocab-btn bg-white border border-slate-200 p-3 rounded-lg hover:border-orangeAction transition-all";
+  });
+  
+  btn.className = "vocab-btn bg-deepBlue text-white border border-deepBlue p-3 rounded-lg transition-all";
+  
+  if (Object.keys(vocabUserSelections).length === 2) {
+    auditVocabStep();
+  }
+}
+
+function auditVocabStep() {
+  const c1 = vocabUserSelections[0] === 'soap opera';
+  const c2 = vocabUserSelections[1] === 'binge watching';
+  const feedback = document.getElementById('vocab-feedback-msg');
+  feedback.classList.remove('hidden');
+  
+  if (c1 && c2) {
+    feedback.className = "mb-6 p-4 rounded-lg font-semibold text-center text-xs border border-emerald-200 bg-emerald-50 text-emerald-800 font-mono";
+    feedback.textContent = "✓ Good job! Your vocabulary options match correctly.";
+  } else {
+    feedback.className = "mb-6 p-4 rounded-lg font-semibold text-center text-xs border border-amber-200 bg-amber-50 text-amber-800 font-mono";
+    feedback.textContent = "⚠ Mismatch detected. Please check the word options again.";
+  }
+}
+
+// ── GRAMMAR SELECTION LOGIC ──
+function selectGrammarMatch(qIndex, selection, btn) {
+  grammarUserSelections[qIndex] = selection;
+  const card = document.getElementById('gram-q-' + qIndex);
+  
+  card.querySelectorAll('.gram-btn').forEach(b => {
+    b.className = "gram-btn bg-white border border-slate-200 px-4 py-2 rounded-lg hover:border-orangeAction transition-all";
+  });
+  
+  btn.className = "gram-btn bg-deepBlue text-white border border-deepBlue px-4 py-2 rounded-lg transition-all";
+  
+  if (Object.keys(grammarUserSelections).length === 2) {
+    auditGrammarStep();
+  }
+}
+
+function auditGrammarStep() {
+  const c1 = grammarUserSelections[0] === 'have completely shifted';
+  const c2 = grammarUserSelections[1] === 'used to';
+  const feedback = document.getElementById('grammar-feedback-msg');
+  feedback.classList.remove('hidden');
+  
+  if (c1 && c2) {
+    feedback.className = "mb-6 p-4 rounded-lg font-semibold text-center text-xs border border-emerald-200 bg-emerald-50 text-emerald-800 font-mono";
+    feedback.textContent = "✓ Grammar Confirmed! Old past habits are correctly separated from modern trends.";
+  } else {
+    feedback.className = "mb-6 p-4 rounded-lg font-semibold text-center text-xs border border-amber-200 bg-amber-50 text-amber-800 font-mono";
+    feedback.textContent = "⚠ Mismatch in grammar options. Check Step 2 rules again.";
+  }
+}
+
+// ── WORKSPACE LOCK TOGGLE ──
+function toggleStep4Button() {
+  const checked = document.getElementById('essay-check').checked;
+  const btn = document.getElementById('btn-to-step4');
+  if (checked) {
+    btn.classList.remove('hidden');
+    btn.classList.add('inline-flex');
+  } else {
+    btn.classList.add('hidden');
+    btn.classList.remove('inline-flex');
+  }
+}
+
+// ── REATIVE SPEECH ARCHITECTURE COMPLIANCE SCANNER (STEP 4)
+function calculateOutlineReadiness() {
+  let score = 0;
+  const b1 = document.getElementById('speech-b-1').value.trim();
+  const b2 = document.getElementById('speech-b-2').value.trim();
+  const b3 = document.getElementById('speech-b-3').value.trim();
+
+  if (b1) score += 33;
+  if (b2) score += 33;
+  if (b3) score += 34;
+
+  document.getElementById('outline-score-lbl').textContent = score + "%";
+  document.getElementById('outline-bar-fill').style.width = score + "%";
+}
+
+// ── REPORT COMPILATION CORE ──
+function compileHomeworkReport() {
+  const summaryBox = document.getElementById('final-summary-box');
+  summaryBox.classList.remove('hidden');
+  summaryBox.className = "mt-6 p-5 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-800 font-sans shadow-inner";
+  summaryBox.innerHTML = `
+    <div class="flex items-start gap-3">
+      <span class="text-xl mt-0.5">🏆</span>
+      <div>
+        <h4 class="font-bold text-base">Homework Saved Successfully!</h4>
+        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+          Your vocabulary answers, grammar selections, and your integrated Google Doc essay are locked. Please be ready to talk about your notes out loud in our next live class!
+        </p>
+      </div>
+    </div>
+  `;
+}
+
+function resetHomework() {
+  location.reload();
+}
+</script>
+</body>
+</html>

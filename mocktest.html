@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Advanced Multi-Skill Diagnostic Dashboard (A2-B2 Gateway)</title>
+<!-- Tailwind CSS & Phosphor Icons para Consistência Visual -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',
+          bodyLight: '#F8FAFC',
+          orangeAction: '#C2410C',
+          orangeHover: '#EA580C',
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+          greenSoft: '#E8F8EF',
+          redSoft: '#FDEAEA',
+          amberSoft: '#FEF3D7'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&family=IBM+Plex+Mono:wght=400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .section { display: none; }
+  .section.active { display: block; }
+</style>
+</head>
+<body class="bg-deepBlue text-darkSlate min-h-screen text-[17px] antialiased">
+
+<!-- ── CABEÇALHO PADRONIZADO PROFICIENCY SIMULATOR ── -->
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[1000px] mx-auto px-6 py-4 flex items-center justify-between gap-4">
+    
+    <div class="flex items-center gap-3">
+      <div class="flex-shrink-0">
+        <button onclick="resetSimulation()" class="cursor-pointer hover:opacity-90 transition-opacity text-left focus:outline-none">
+          <span class="text-white font-bold tracking-wider text-lg mono">MÉTODO <span class="text-orangeAction">FALA</span></span>
+        </button>
+      </div>
+      <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
+      <div class="hidden sm:block">
+        <h1 class="text-base font-bold text-white tracking-wide">Multi-Skill Proficiency Diagnostic</h1>
+        <p class="text-xs text-slate-400">CEFR Gateway Target: A2 → B2 Accelerator · 15 Min Timer</p>
+      </div>
+    </div>
+
+    <!-- Barra de Progresso Interativa -->
+    <div class="flex items-center gap-3">
+      <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mono" id="progressLabel">Skill 1 / 5</span>
+      <div class="w-24 sm:w-32 h-2 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
+        <div class="h-full bg-orangeAction rounded-full transition-all duration-300" id="progressFill" style="width:20%"></div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- ESPAÇO DE TRABALHO PRINCIPAL -->
+<div class="bg-bodyLight w-full min-h-[calc(100vh-69px)]">
+  <main class="max-w-[1000px] mx-auto px-6 py-8 pb-20">
+
+    <!-- ═══════════════════════════════════════════
+         STEP 1 – SKILL 1: READING COMPREHENSION (DENSE)
+    ═══════════════════════════════════════════ -->
+    <div class="section active" id="sec1">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 1: Reading &amp; Analysis (3 min)</span>
+      <h2 class="text-2xl font-bold text-deepBlue mb-2 leading-tight">Corporate Flight &amp; Merchant Return Regulations</h2>
+      <p class="text-base text-slate-500 mb-4 leading-relaxed">Analyze the twin operational log files below and complete the triple multiple-choice corporate audit data check:</p>
+
+      <div class="w-full h-[120px] rounded-xl overflow-hidden mb-6 shadow-sm border border-slate-200">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1000&q=80" alt="Commercial airplane on runway" class="w-full h-full object-cover">
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-6">
+        <!-- Textos Técnicos para Leitura -->
+        <div class="md:col-span-6 space-y-4">
+          <div class="bg-slate-900 text-slate-100 p-4 rounded-xl border border-slate-800 text-xs leading-relaxed font-mono">
+            <span class="text-orangeAction font-bold block uppercase text-[9px] font-sans">BULLETIN #NYC-7702 · FLIGHT CLAUSE</span>
+            <p>"Due to severe weather disruptions at JFK Airport, all low-cost short-haul flights scheduled for July 18 are cancelled. Economy class tickets are not eligible for direct cash refunds if alternative re-routing is processed by the carrier within 12 hours. Past this window, a full refund or a 120% store credit note valid for 60 days will be assigned upon presenting the receipt."</p>
+          </div>
+          <div class="bg-slate-900 text-slate-100 p-4 rounded-xl border border-slate-800 text-xs leading-relaxed font-mono">
+            <span class="text-orangeAction font-bold block uppercase text-[9px] font-sans">BULLETIN #RET-4410 · MERCHANT HARDWARE</span>
+            <p>"Merchandise returns for high-end workspace electronics require verified proof of purchase. If the product is determined to be defective or incomplete after a 24-hour window from checkout, cash refunds are barred. The consumer receives equal value store credit or free worldwide replacement shipping taking 14 business days."</p>
+          </div>
+        </div>
+
+        <!-- Painel de Múltipla Escolha -->
+        <div class="md:col-span-6 space-y-3">
+          <!-- Questão 1 -->
+          <div class="bg-white border border-slate-200 rounded-xl p-3 shadow-sm space-y-1">
+            <span class="text-[9px] font-bold text-orangeAction uppercase tracking-wider block font-mono">Question 1.1 · Cash Refund Trigger</span>
+            <p class="text-xs font-semibold text-slate-800">When is an economy passenger eligible for a full cash refund on cancelled flights?</p>
+            <div class="space-y-1 text-[11px]" id="rd-opts-1">
+              <button onclick="markMultipleChoice('correct', this, 'rd-msg-1', 'Correct! The 12-hour alternate routing option must expire completely.')" class="w-full text-left bg-slate-50 border p-2 rounded hover:border-orangeAction transition-all">A) Only if the carrier fails to provide an alternate re-routing choice within 12 hours.</button>
+              <button onclick="markMultipleChoice('wrong', this, 'rd-msg-1', 'Incorrect. Store credit notes do not trigger primary cash refunds.')" class="w-full text-left bg-slate-50 border p-2 rounded hover:border-orangeAction transition-all">B) Automatically by transforming the paper receipt into credit tokens.</button>
+            </div>
+            <p id="rd-msg-1" class="text-[11px] font-bold hidden"></p>
+          </div>
+
+          <!-- Questão 2 -->
+          <div class="bg-white border border-slate-200 rounded-xl p-3 shadow-sm space-y-1">
+            <span class="text-[9px] font-bold text-orangeAction uppercase tracking-wider block font-mono">Question 1.2 · Voucher Lifetime</span>
+            <p class="text-xs font-semibold text-slate-800">What is the exact shelf-life restriction of the 120% store credit note?</p>
+            <div class="space-y-1 text-[11px]" id="rd-opts-2">
+              <button onclick="markMultipleChoice('wrong', this, 'rd-msg-2', 'Incorrect. 12 hours is the re-routing threshold timeline.')" class="w-full text-left bg-slate-50 border p-2 rounded hover:border-orangeAction transition-all">A) It remains active on the corporate profile balance for 12 hours.</button>
+              <button onclick="markMultipleChoice('correct', this, 'rd-msg-2', 'Correct! The bulletin specifies it is valid for exactly 60 days.')" class="w-full text-left bg-slate-50 border p-2 rounded hover:border-orangeAction transition-all">B) It remains valid for exactly 60 days following the cancellation date.</button>
+            </div>
+            <p id="rd-msg-2" class="text-[11px] font-bold hidden"></p>
+          </div>
+
+          <!-- Questão 3 -->
+          <div class="bg-white border border-slate-200 rounded-xl p-3 shadow-sm space-y-1">
+            <span class="text-[9px] font-bold text-orangeAction uppercase tracking-wider block font-mono">Question 1.3 · Hardware Constraints</span>
+            <p class="text-xs font-semibold text-slate-800">What happens to defective workspace devices returned past the initial 24-hour limit?</p>
+            <div class="space-y-1 text-[11px]" id="rd-opts-3">
+              <button onclick="markMultipleChoice('correct', this, 'rd-msg-3', 'Correct! Cash options are barred, leaving credit or worldwide replacement shipping.')" class="w-full text-left bg-slate-50 border p-2 rounded hover:border-orangeAction transition-all">A) Cash refunds are barred; the client receives store credit or international shipping.</button>
+              <button onclick="markMultipleChoice('wrong', this, 'rd-msg-3', 'Incorrect. Free shipping takes 14 business days, not 24 hours.')" class="w-full text-left bg-slate-50 border p-2 rounded hover:border-orangeAction transition-all">B) The vendor provides an immediate brand-new replacement device inside 24 hours.</button>
+            </div>
+            <p id="rd-msg-3" class="text-[11px] font-bold hidden"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-6 py-2.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-sm" onclick="goTo(2)">Next: Listening Laboratory <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════
+         STEP 2 – SKILL 2: LISTENING COMPREHENSION (4 BLOCKS)
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec2">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 2: Listening &amp; Phonetics (4 min)</span>
+      <h2 class="text-2xl font-bold text-deepBlue mb-2">Technical Discrepancy Phonetics Laboratory</h2>
+      <p class="text-slate-500 mb-4 leading-relaxed">Listen to the target native audio pronunciation blocks (.mp3) and decode their exact structural logistics roles via the selection dropdowns:</p>
+
+      <div class="w-full h-[120px] rounded-xl overflow-hidden mb-6 shadow-sm border border-slate-200">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=80" alt="Retail checkout interaction" class="w-full h-full object-cover">
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5 mb-6 shadow-sm space-y-3">
+        
+        <!-- Bloco 1 -->
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <button onclick="audioSpeak('Overbooking')" class="w-8 h-8 bg-orangeAction/10 text-orangeAction rounded-full flex items-center justify-center hover:bg-orangeAction hover:text-white transition-colors"><i class="ph-bold ph-speaker-high text-xs"></i></button>
+            <strong class="text-xs text-deepBlue font-mono">AUDIO BLOCK 2.1</strong>
+          </div>
+          <select id="lst-opt-1" class="text-xs px-2 py-1.5 border rounded bg-white outline-none focus:border-orangeAction w-full sm:w-2/3">
+            <option value="wrong">Select answer...</option>
+            <option value="correct">Describes selling more inventory room/seat slots than structural stock allows</option>
+            <option value="wrong1">Refers to cash compensation issued inside a strict 24-hour limit window</option>
+          </select>
+        </div>
+
+        <!-- Bloco 2 -->
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <button onclick="audioSpeak('Defective')" class="w-8 h-8 bg-orangeAction/10 text-orangeAction rounded-full flex items-center justify-center hover:bg-orangeAction hover:text-white transition-colors"><i class="ph-bold ph-speaker-high text-xs"></i></button>
+            <strong class="text-xs text-deepBlue font-mono">AUDIO BLOCK 2.2</strong>
+          </div>
+          <select id="lst-opt-2" class="text-xs px-2 py-1.5 border rounded bg-white outline-none focus:border-orangeAction w-full sm:w-2/3">
+            <option value="wrong">Select answer...</option>
+            <option value="wrong1">Refers to a standard valid proof of purchase paper ledger file</option>
+            <option value="correct">Refers to merchandise displaying component, system, or mechanical damage failures</option>
+          </select>
+        </div>
+
+        <!-- Bloco 3 -->
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <button onclick="audioSpeak('Exchange')" class="w-8 h-8 bg-orangeAction/10 text-orangeAction rounded-full flex items-center justify-center hover:bg-orangeAction hover:text-white transition-colors"><i class="ph-bold ph-speaker-high text-xs"></i></button>
+            <strong class="text-xs text-deepBlue font-mono">AUDIO BLOCK 2.3</strong>
+          </div>
+          <select id="lst-opt-3" class="text-xs px-2 py-1.5 border rounded bg-white outline-none focus:border-orangeAction w-full sm:w-2/3">
+            <option value="wrong">Select answer...</option>
+            <option value="correct">The direct act of swapping a problematic device for a different configuration unit</option>
+            <option value="wrong1">A mandatory legal fee or international border cargo tariff tax record</option>
+          </select>
+        </div>
+
+        <!-- Bloco 4 -->
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <button onclick="audioSpeak('Receipt')" class="w-8 h-8 bg-orangeAction/10 text-orangeAction rounded-full flex items-center justify-center hover:bg-orangeAction hover:text-white transition-colors"><i class="ph-bold ph-speaker-high text-xs"></i></button>
+            <strong class="text-xs text-deepBlue font-mono">AUDIO BLOCK 2.4</strong>
+          </div>
+          <select id="lst-opt-4" class="text-xs px-2 py-1.5 border rounded bg-white outline-none focus:border-orangeAction w-full sm:w-2/3">
+            <option value="wrong">Select answer...</option>
+            <option value="wrong1">A limited non-liquid compensation voucher token valid for 30 days only</option>
+            <option value="correct">The essential primary document layout serving as formal proof of purchase verification</option>
+          </select>
+        </div>
+
+        <div class="pt-2 flex justify-start">
+          <button onclick="validateListeningLab()" class="bg-deepBlue hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-xl transition-all shadow-sm">Verify Auditory Parameters</button>
+        </div>
+        <p id="listen-lab-feedback" class="text-xs font-bold hidden"></p>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-2.5 rounded-lg border border-slate-200 flex items-center gap-1.5 transition-colors text-sm" onclick="goTo(1)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-6 py-2.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-sm" onclick="goTo(3)">Next: Structural Competence <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════
+         STEP 3 – SKILL BUILDER: STRUCTURAL DRILLS (3 QUESTIONS)
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec3">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 3: Structural Competence (2 min)</span>
+      <h2 class="text-2xl font-bold text-deepBlue mb-2">B2 Transition Syntax Calibration</h2>
+      <p class="text-slate-500 mb-4 leading-relaxed">Calibrate your competence in chaining complex business logic blocks. Complete the 3 sentence configuration parameters:</p>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5 mb-6 shadow-sm space-y-4">
+        <!-- Drill 1 -->
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
+          <p class="text-xs font-semibold text-slate-800">1. "The server station has lost all data packets. ________ we must claim immediate alternative compensation."</p>
+          <select id="str-opt-1" class="text-xs px-2 py-1.5 border rounded bg-white outline-none focus:border-orangeAction w-full sm:w-1/2">
+            <option value="wrong">Due to an incorrect receipt size...</option>
+            <option value="correct">Due to a defective element inside the terminal...</option>
+          </select>
+        </div>
+
+        <!-- Drill 2 -->
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
+          <p class="text-xs font-semibold text-slate-800">2. "________, cash payback processing is strictly barred after a 24-hour baseline expires."</p>
+          <select id="str-opt-2" class="text-xs px-2 py-1.5 border rounded bg-white outline-none focus:border-orangeAction w-full sm:w-1/2">
+            <option value="correct">According to the corporate policy documentation...</option>
+            <option value="wrong">By way of compensation for the incomplete cargo...</option>
+          </select>
+        </div>
+
+        <!-- Drill 3 -->
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
+          <p class="text-xs font-semibold text-slate-800">3. "We cannot stay 14 business days offline. ________ accept the store credit and purchase alternate gadgets today."</p>
+          <select id="str-opt-3" class="text-xs px-2 py-1.5 border rounded bg-white outline-none focus:border-orangeAction w-full sm:w-1/2">
+            <option value="wrong">According to the defective screen size...</option>
+            <option value="correct">It is more cost-effective to...</option>
+          </select>
+        </div>
+
+        <div class="pt-1 flex justify-start">
+          <button onclick="validateStructuralDrills()" class="bg-deepBlue hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-xl transition-all shadow-sm">Verify Syntax Logs</button>
+        </div>
+        <p id="structural-drills-feedback" class="text-xs font-bold hidden"></p>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-2.5 rounded-lg border border-slate-200 flex items-center gap-1.5 transition-colors text-sm" onclick="goTo(2)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-6 py-2.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-sm" onclick="goTo(4)">Next: Written Production <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════
+         STEP 4 – SKILL 3: WRITTEN PRODUCTION (DOUBLE TASK)
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec4">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 4: Written Production (3 min)</span>
+      <h2 class="text-2xl font-bold text-deepBlue mb-2">The New York $1,200 Laptop Dispute File</h2>
+      <p class="text-slate-500 mb-4 text-sm leading-relaxed"><strong>Dilemma Scenario:</strong> You bought a $1,200 company laptop in NYC. The screen began flickering heavily. The unit is sold out. Policy dictates: cash returns require a 24h window (expired). You can only claim store credit or wait 14 business days for worldwide replacement shipping to Brazil. You return tomorrow.</p>
+
+      <div class="w-full h-[120px] rounded-xl overflow-hidden mb-6 shadow-sm border border-slate-200">
+        <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=1000&q=80" alt="Writing formal message" class="w-full h-full object-cover">
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-6">
+        <!-- Esquerda Console de Input Duplo -->
+        <div class="md:col-span-7 bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4">
+          
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <span class="text-[11px] font-bold text-slate-500 uppercase font-mono">Task 4.1 · Official Disruption Notice (Min 30 words):</span>
+              <span id="w-count-1" class="text-xs font-mono text-slate-400 font-semibold">0 words</span>
+            </div>
+            <textarea id="w-in-1" oninput="countLiveWords('w-in-1', 'w-count-1')" placeholder="Dear Management, regarding the defective screen on receipt #9082..." class="w-full h-[100px] p-3 text-xs border border-slate-300 rounded-xl outline-none focus:border-orangeAction resize-none leading-relaxed"></textarea>
+          </div>
+
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <span class="text-[11px] font-bold text-slate-500 uppercase font-mono">Task 4.2 · Tactical Settlement Note (State Option choice &amp; cost-effectiveness):</span>
+              <span id="w-count-2" class="text-xs font-mono text-slate-400 font-semibold">0 words</span>
+            </div>
+            <textarea id="w-in-2" oninput="countLiveWords('w-in-2', 'w-count-2')" placeholder="According to store policy, it is more cost-effective for our team to..." class="w-full h-[100px] p-3 text-xs border border-slate-300 rounded-xl outline-none focus:border-orangeAction resize-none leading-relaxed"></textarea>
+          </div>
+
+          <button onclick="processDoubleWriting()" class="w-full bg-deepBlue hover:bg-slate-800 text-white font-bold text-xs uppercase py-2.5 rounded-xl tracking-wider shadow-sm transition-all">Lock Double Text Submissions</button>
+        </div>
+
+        <!-- Direita Dashboard Coerência -->
+        <div class="md:col-span-5 bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between">
+          <div>
+            <h4 class="text-sm font-bold text-deepBlue mb-2 uppercase tracking-wider font-mono">Syntax Quality Tracking</h4>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">The text compliance scanner analyses syntax depth across both files to assess your baseline transition layout score:</p>
+            
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-[11px] font-bold text-slate-600 mb-1">
+                  <span>Chunk Linkage Density</span>
+                  <span id="score-val-lbl">0%</span>
+                </div>
+                <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                  <div id="score-bar-fill" class="bg-orangeAction h-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-3 bg-softSand border rounded-xl text-[11px] leading-relaxed text-slate-600 mt-4 font-medium">
+            💡 <strong>B2 Upgrade Path:</strong> Ensure both text zones utilize exact frames: <em>"According to the store policy"</em>, <em>"defective"</em>, and <em>"cost-effective"</em>.
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTROLE DE VALIDAÇÃO SÍNCRONA -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 mb-6 flex justify-between items-center shadow-sm">
+        <div class="flex gap-3 items-center">
+          <div class="p-2 bg-slate-100 rounded-lg text-lg"><i class="ph ph-check-square text-orangeAction"></i></div>
+          <div>
+            <h4 class="text-xs font-bold text-deepBlue">Instructor Verification Board</h4>
+            <p class="text-[11px] text-slate-500">Tick this checkbox when the student completes both written matrix fields.</p>
+          </div>
+        </div>
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="writing-instructor-check" onchange="unlockStep5()" class="rounded border-slate-300 text-orangeAction focus:ring-orangeAction w-4 h-4">
+          <span class="text-xs font-bold text-slate-600 uppercase">Text Assets Approved</span>
+        </label>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-2.5 rounded-lg border border-slate-200 flex items-center gap-1.5 transition-colors text-sm" onclick="goTo(3)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button id="btn-to-step5" class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-6 py-2.5 rounded-lg hidden items-center gap-2 transition-colors shadow-sm text-sm" onclick="goTo(5)">Next: Oral Production Studio <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════
+         STEP 5 – SKILL 4: ORAL COMPLIANCE STUDIO (ROUND 1 &amp; ROUND 2)
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec5">
+      <span class="inline-block text-xs font-bold tracking-widest text-emerald-700 uppercase bg-emerald-50 px-3 py-1 rounded-full mb-3 border border-emerald-100">Step 5: Oral Production Studio (4 min)</span>
+      <h2 class="text-2xl font-bold text-deepBlue mb-2">Counter Dispute Dialogue Simulator</h2>
+      <p class="text-sm text-slate-500 mb-4">Execute your microfone tracking controls. You can **Record, Pause, Listen and Re-record** your response file for each round before sealing the proficiency diagnostic.</p>
+
+      <div class="w-full h-[120px] rounded-xl overflow-hidden mb-6 shadow-sm border border-slate-200">
+        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1000&q=80" alt="Interaction counter interface" class="w-full h-full object-cover">
+      </div>
+
+      <!-- TIMELINE EM 2 ROUNDS DE AUDIO SEGUIDOS -->
+      <div class="space-y-6 mb-8">
+        
+        <!-- ROUND 1 -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4">
+          <div class="flex items-center justify-between border-b pb-2">
+            <span class="text-xs font-bold text-slate-400 font-mono">ROUND 1 · PROOF OF PURCHASE CHALLENGE</span>
+            <div class="flex items-center gap-1">
+              <button onclick="playManagerPrompt('tts-script-1', this)" class="w-7 h-7 bg-orangeAction/10 text-orangeAction rounded hover:bg-orangeAction hover:text-white text-xs transition-colors"><i class="ph-bold ph-play"></i></button>
+              <button onclick="pauseManagerPrompt()" class="w-7 h-7 bg-slate-100 text-slate-600 rounded hover:bg-slate-200 text-xs transition-colors"><i class="ph-bold ph-pause"></i></button>
+            </div>
+          </div>
+          <p id="tts-script-1" class="text-xs text-slate-700 bg-slate-50 p-3 rounded-lg border-l-3 border-orangeAction italic font-medium leading-relaxed">
+            "Welcome to the New York customer counter. I checked your device casing, and the screen failure is obvious. However, you lost the physical paper receipt ledger. Do you possess alternative proof of purchase records?"
+          </p>
+
+          <!-- Controller do Microfone Customizado Round 1 -->
+          <div class="border border-dashed rounded-xl p-4 bg-slate-50 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex-1 text-center sm:text-left">
+              <span id="status-lbl-1" class="text-xs font-bold font-mono text-orangeAction block mb-1">Microphone Standby · Ready for Round 1</span>
+              <audio id="playback-1" controls class="w-full h-8 outline-none mt-2" style="display:none;"></audio>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <button onclick="toggleStudioMic(1, 'playback-1', 'status-lbl-1', this, 'round-2-reveal-btn')" class="w-12 h-12 rounded-full bg-orangeAction hover:bg-orangeHover text-white flex items-center justify-center shadow focus:outline-none transition-all"><i class="ph-bold ph-microphone text-xl"></i></button>
+              <button onclick="pauseStudioMic()" class="w-8 h-8 rounded-lg bg-white border text-slate-500 flex items-center justify-center hover:bg-slate-100 text-sm focus:outline-none"><i class="ph-bold ph-pause"></i></button>
+              <button onclick="resetStudioMic(1, 'playback-1', 'status-lbl-1')" class="w-8 h-8 rounded-lg bg-white border text-slate-500 flex items-center justify-center hover:bg-slate-100 text-sm focus:outline-none"><i class="ph-bold ph-arrows-counter-clockwise"></i></button>
+            </div>
+          </div>
+          <div class="text-right">
+            <button id="round-2-reveal-btn" onclick="revealRound2()" class="hidden bg-deepBlue hover:bg-slate-800 text-white font-bold text-xs uppercase px-4 py-2 rounded-xl transition-all shadow-sm">Proceed to Round 2 <i class="ph ph-arrow-down"></i></button>
+          </div>
+        </div>
+
+        <!-- ROUND 2 (REVELADO PROGRESSIVAMENTE) -->
+        <div id="spk-round-2-card" class="hidden bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4 transition-all duration-300">
+          <div class="flex items-center justify-between border-b pb-2">
+            <span class="text-xs font-bold text-slate-400 font-mono">ROUND 2 · DEFINITIVE OPTION ARGUMENT</span>
+            <div class="flex items-center gap-1">
+              <button onclick="playManagerPrompt('tts-script-2', this)" class="w-7 h-7 bg-orangeAction/10 text-orangeAction rounded hover:bg-orangeAction hover:text-white text-xs transition-colors"><i class="ph-bold ph-play"></i></button>
+              <button onclick="pauseManagerPrompt()" class="w-7 h-7 bg-slate-100 text-slate-600 rounded hover:bg-slate-200 text-xs transition-colors"><i class="ph-bold ph-pause"></i></button>
+            </div>
+          </div>
+          <p id="tts-script-2" class="text-xs text-slate-700 bg-slate-50 p-3 rounded-lg border-l-3 border-orangeAction italic font-medium leading-relaxed">
+            "Your digital bank statement matches our system registry ledger. Since the identical laptop model is completely out of stock, I can process a $1,200 store credit note immediately or arrange a replacement shipment to Brazil. What is your definitive executive choice?"
+          </p>
+
+          <!-- Controller do Microfone Customizado Round 2 -->
+          <div class="border border-dashed rounded-xl p-4 bg-slate-50 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex-1 text-center sm:text-left">
+              <span id="status-lbl-2" class="text-xs font-bold font-mono text-orangeAction block mb-1">Microphone Standby · Ready for Round 2</span>
+              <audio id="playback-2" controls class="w-full h-8 outline-none mt-2" style="display:none;"></audio>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <button onclick="toggleStudioMic(2, 'playback-2', 'status-lbl-2', this, 'prof-summary-portal')" class="w-12 h-12 rounded-full bg-orangeAction hover:bg-orangeHover text-white flex items-center justify-center shadow focus:outline-none transition-all"><i class="ph-bold ph-microphone text-xl"></i></button>
+              <button onclick="pauseStudioMic()" class="w-8 h-8 rounded-lg bg-white border text-slate-500 flex items-center justify-center hover:bg-slate-100 text-sm focus:outline-none"><i class="ph-bold ph-pause"></i></button>
+              <button onclick="resetStudioMic(2, 'playback-2', 'status-lbl-2')" class="w-8 h-8 rounded-lg bg-white border text-slate-500 flex items-center justify-center hover:bg-slate-100 text-sm focus:outline-none"><i class="ph-bold ph-arrows-counter-clockwise"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PORTAL DE SUBMISSÃO GERAL DIAGNÓSTICA -->
+      <div id="prof-summary-portal" class="hidden bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
+        <h4 class="text-base font-bold text-deepBlue mb-1">Compile Diagnostic Metrics</h4>
+        <p class="text-xs text-slate-500 mb-4">Click below to seal and compile all textual and auditory proficiency matrices.</p>
+        <button onclick="generateCefrReport()" class="bg-deepBlue hover:bg-slate-800 text-white font-bold text-xs uppercase px-6 py-3 rounded-xl tracking-wider transition-colors shadow-sm">Compile CEFR Diagnostic Report</button>
+        <div id="diagnostic-report-box" class="hidden mt-4 p-4 rounded-xl border text-xs text-left font-medium"></div>
+      </div>
+
+      <div class="flex justify-start mt-6">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-2.5 rounded-lg border border-slate-200 flex items-center gap-1.5 transition-colors text-sm" onclick="goTo(4)"><i class="ph ph-arrow-left"></i> Back</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- LÓGICA DE PROCESSAMENTO DO SIMULADOR PRO -->
+<script>
+let currentSection = 1;
+let managerUtteranceInstance = null;
+
+// VARIÁVEIS OPERACIONAIS MICROFONE (MEDIARECORDER MULTI-ROUND)
+let mediaRecorder = null;
+let recordedChunks = [];
+let activeRoundId = null;
+
+// 🔊 1. SISTEMA MP3 LABORATÓRIO LISTENING (STEP 2)
+async function audioSpeak(word) {
+  const cleanWord = word.replace(/[^a-zA-Z ]/g, "").trim().toLowerCase();
+  try {
+    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(cleanWord)}`);
+    if (!response.ok) throw new Error("Audio missing");
+    const data = await response.json();
+    let audioUrl = null;
+    if (data && data[0] && data[0].phonetics) {
+      const match = data[0].phonetics.find(p => p.audio && p.audio !== "");
+      if (match) audioUrl = match.audio;
+    }
+    if (audioUrl) {
+      const audio = new Audio(audioUrl);
+      audio.volume = 1.0;
+      audio.play();
+    } else {
+      fallbackAudioVoice(word);
+    }
+  } catch (error) {
+    fallbackAudioVoice(word);
+  }
+}
+
+function fallbackAudioVoice(word) {
+  window.speechSynthesis.cancel();
+  const voice = new SpeechSynthesisUtterance(word);
+  voice.lang = 'en-US';
+  voice.rate = 0.9;
+  window.speechSynthesis.speak(voice);
+}
+
+// 📖 2. MULTIPLE CHOICE MAPPING (STEP 1)
+function markMultipleChoice(status, btn, msgId, feedbackText) {
+  const msg = document.getElementById(msgId);
+  msg.classList.remove('hidden');
+  btn.parentElement.querySelectorAll('button').forEach(b => b.className = "w-full text-left bg-slate-50 border p-2.5 rounded-lg hover:border-orangeAction transition-all text-xs");
+
+  if (status === 'correct') {
+    btn.className = "w-full text-left bg-emerald-50 border border-emerald-400 p-2.5 rounded-lg text-xs text-emerald-800 font-medium shadow-xs";
+    msg.className = "text-[11px] font-bold text-emerald-600 mt-1";
+    msg.textContent = feedbackText;
+  } else {
+    btn.className = "w-full text-left bg-rose-50 border border-rose-400 p-2.5 rounded-lg text-xs text-rose-800 font-medium shadow-xs";
+    msg.className = "text-[11px] font-bold text-rose-600 mt-1";
+    msg.textContent = feedbackText;
+  }
+}
+
+// 🎧 3. VALIDAÇÃO DO LISTENING LABORATORY (STEP 2)
+function validateListeningLab() {
+  const ans1 = document.getElementById('lst-opt-1').value;
+  const ans2 = document.getElementById('lst-opt-2').value;
+  const ans3 = document.getElementById('lst-opt-3').value;
+  const ans4 = document.getElementById('lst-opt-4').value;
+  const feedback = document.getElementById('listen-lab-feedback');
+  feedback.classList.remove('hidden');
+
+  if (ans1 === 'correct' && ans2 === 'correct' && ans3 === 'correct' && ans4 === 'correct') {
+    feedback.className = "text-xs font-bold text-emerald-600 mt-2 block";
+    feedback.textContent = "✓ Auditory Matrix Verified: 100% Precision. All data blocks decapsulated flawlessly.";
+  } else {
+    feedback.className = "text-xs font-bold text-rose-600 mt-2 block";
+    feedback.textContent = "✗ Auditory Mismatch detected. Replay phonetic logs and evaluate definitions.";
+  }
+}
+
+// ⚙️ 4. VALIDAÇÃO DAS QUESTÕES ESTRUTURAIS (STEP 3)
+function validateStructuralDrills() {
+  const s1 = document.getElementById('str-opt-1').value;
+  const s2 = document.getElementById('str-opt-2').value;
+  const s3 = document.getElementById('str-opt-3').value;
+  const fb = document.getElementById('structural-drills-feedback');
+  fb.classList.remove('hidden');
+
+  if (s1 === 'correct' && s2 === 'correct' && s3 === 'correct') {
+    fb.className = "text-xs font-bold text-emerald-600 mt-2 block";
+    fb.textContent = "✓ Syntax Parameters Validated. B2 connective logic frameworks active.";
+  } else {
+    fb.className = "text-xs font-bold text-rose-600 mt-2 block";
+    fb.textContent = "✗ Structural alignment mismatch. Verify clause connectors.";
+  }
+}
+
+// 📝 5. DOUBLE WRITING HANDLERS (STEP 4)
+function countLiveWords(inputId, labelId) {
+  const text = document.getElementById(inputId).value.trim();
+  const words = text ? text.split(/\s+/).length : 0;
+  document.getElementById(labelId).textContent = `${words} words`;
+}
+
+function processDoubleWriting() {
+  const t1 = document.getElementById('w-in-1').value.trim();
+  const t2 = document.getElementById('w-in-2').value.trim();
+  if (!t1 || !t2) {
+    alert("Please complete both written production tasks before sealing data.");
+    return;
+  }
+  let totalDensity = 15;
+  const combined = (t1 + " " + t2).toLowerCase();
+  
+  if (combined.includes("according to the store policy") || combined.includes("according to corporate policy")) totalDensity += 35;
+  if (combined.includes("defective") || combined.includes("faulty")) totalDensity += 25;
+  if (combined.includes("cost-effective") || combined.includes("compensation")) totalDensity += 25;
+  if (totalDensity > 100) totalDensity = 100;
+
+  document.getElementById('score-val-lbl').textContent = `${totalDensity}%`;
+  document.getElementById('score-bar-fill').style.width = `${totalDensity}%`;
+}
+
+function unlockStep5() {
+  const verified = document.getElementById('writing-instructor-check').checked;
+  const btn = document.getElementById('btn-to-step5');
+  if (verified) {
+    btn.classList.remove('hidden');
+    btn.classList.add('inline-flex');
+  } else {
+    btn.classList.add('hidden');
+    btn.classList.remove('inline-flex');
+  }
+}
+
+// 🎙️ 6. GRAVADOR DE ÁUDIO REAL DE MULTI-ROUND COM SUPORTE A PAUSA E RESET (STEP 5)
+async function toggleStudioMic(roundNumber, playerElementId, statusLabelId, buttonElement, nextActionId) {
+  const statusLabel = document.getElementById(statusLabelId);
+  const playerEl = document.getElementById(playerElementId);
+  const iconEl = buttonElement.querySelector('i');
+  
+  activeRoundId = roundNumber;
+
+  // Estado Inicial: Começar nova gravação
+  if (!mediaRecorder) {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaRecorder = new MediaRecorder(stream);
+      recordedChunks = [];
+
+      mediaRecorder.ondataavailable = (e) => { if (e.data.size > 0) recordedChunks.push(e.data); };
+      
+      mediaRecorder.onstop = () => {
+        const audioBlob = new Blob(recordedChunks, { type: 'audio/mp3' });
+        playerEl.src = URL.createObjectURL(audioBlob);
+        playerEl.style.display = 'block';
+      };
+
+      mediaRecorder.start();
+      statusLabel.textContent = `🎙️ ROUND ${roundNumber} ACTIVE · Capturing stream... Click button to stop.`;
+      statusLabel.className = "text-xs font-bold font-mono text-red-500 tracking-wide";
+      buttonElement.className = "w-12 h-12 rounded-full bg-emerald-600 text-white flex items-center justify-center shadow focus:outline-none";
+      iconEl.className = "ph-bold ph-check text-xl";
+
+    } catch (err) {
+      alert("Microphone integration offline. Grant secure tracking permissions.");
+    }
+  } 
+  // Estado Pausado: Retomar
+  else if (mediaRecorder.state === "paused") {
+    mediaRecorder.resume();
+    statusLabel.textContent = `🎙️ ROUND ${roundNumber} ACTIVE · Capturing stream...`;
+    statusLabel.className = "text-xs font-bold font-mono text-red-500 tracking-wide";
+    iconEl.className = "ph-bold ph-check text-xl";
+  } 
+  // Estado Gravando: Parar e Processar Áudio
+  else if (mediaRecorder.state === "recording") {
+    mediaRecorder.stop();
+    mediaRecorder.stream.getTracks().forEach(t => track = t.stop());
+    mediaRecorder = null; // Libera instância para os próximos rounds
+
+    statusLabel.textContent = `🏆 ROUND ${roundNumber} CAPTURED · Auto-evaluation playback open below.`;
+    statusLabel.className = "text-xs font-bold font-mono text-emerald-600 tracking-wide";
+    buttonElement.className = "w-12 h-12 rounded-full bg-slate-200 text-slate-400 flex items-center justify-center border cursor-not-allowed";
+    buttonElement.disabled = true;
+
+    // Revela a próxima etapa lógica progressivamente na timeline
+    const revealTarget = document.getElementById(nextActionId);
+    if (revealTarget) {
+      revealTarget.classList.remove('hidden');
+      if (revealTarget.tagName === 'BUTTON') revealTarget.classList.add('inline-flex');
+    }
+  }
+}
+
+function pauseStudioMic() {
+  if (mediaRecorder && mediaRecorder.state === "recording") {
+    mediaRecorder.pause();
+    const lbl = document.getElementById(`status-lbl-${activeRoundId}`);
+    lbl.textContent = `⏸️ ROUND ${activeRoundId} PAUSED · Formulation block active. Click mic button to resume.`;
+    lbl.className = "text-xs font-bold font-mono text-amber-600 tracking-wide";
+  }
+}
+
+function resetStudioMic(roundNumber, playerElementId, statusLabelId) {
+  if (mediaRecorder) {
+    mediaRecorder.stop();
+    mediaRecorder.stream.getTracks().forEach(t => t.stop());
+    mediaRecorder = null;
+  }
+  recordedChunks = [];
+  
+  const statusLabel = document.getElementById(statusLabelId);
+  const playerEl = document.getElementById(playerElementId);
+  
+  // Encontra o botão de gravação correspondente caçando o nó pai
+  const cardContainer = statusLabel.parentElement.parentElement;
+  const micBtn = cardContainer.querySelector('button');
+  const micIcon = micBtn.querySelector('i');
+
+  statusLabel.textContent = `Microphone Standby · Round ${roundNumber} log cleared. Re-record active.`;
+  statusLabel.className = "text-xs font-bold font-mono text-orangeAction tracking-wide";
+  
+  micBtn.disabled = false;
+  micBtn.className = "w-12 h-12 rounded-full bg-orangeAction hover:bg-orangeHover text-white flex items-center justify-center shadow focus:outline-none transition-all";
+  micIcon.className = "ph-bold ph-microphone text-xl";
+
+  playerEl.src = "";
+  playerEl.style.display = 'none';
+}
+
+function revealRound2() {
+  document.getElementById('spk-round-2-card').classList.remove('hidden');
+  document.getElementById('round-2-reveal-btn').classList.add('hidden');
+  document.getElementById('spk-round-2-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// CONTROLES DO GERENTE TTS
+function playManagerPrompt(id, btn) {
+  window.speechSynthesis.cancel();
+  const script = document.getElementById(id).textContent;
+  managerUtteranceInstance = new SpeechSynthesisUtterance(script);
+  managerUtteranceInstance.lang = 'en-US';
+  managerUtteranceInstance.rate = 0.95;
+  managerUtteranceInstance.onend = () => { btn.innerHTML = '<i class="ph-bold ph-play"></i>'; };
+  window.speechSynthesis.speak(managerUtteranceInstance);
+}
+
+function pauseManagerPrompt() {
+  if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) window.speechSynthesis.pause();
+  else if (window.speechSynthesis.paused) window.speechSynthesis.resume();
+}
+
+// NAVEGAÇÃO SÍNCRONA GLOBAL
+function goTo(n) {
+  document.getElementById('sec' + currentSection).classList.remove('active');
+  currentSection = n;
+  document.getElementById('sec' + n).classList.add('active');
+  document.getElementById('progressFill').style.width = (n * 20) + '%';
+  document.getElementById('progressLabel').textContent = 'Skill ' + n + ' / 5';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function generateCefrReport() {
+  const box = document.getElementById('diagnostic-report-box');
+  box.classList.remove('hidden');
+  box.className = "mt-4 p-4 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-800 text-xs font-semibold leading-relaxed";
+  box.innerHTML = "🏆 <strong>Multi-Skill CEFR Matrix Compiled!</strong><br><span class='text-slate-600 font-normal block mt-1'>The multi-skill diagnostic simulation has concluded. All parameters (Reading data matches, text structure syntax, and captured audio binary files) have been successfully compiled for your instructor's proficiency mapping dashboard.</span>";
+}
+
+function resetSimulation() {
+  location.reload();
+}
+</script>
+</body>
+</html>

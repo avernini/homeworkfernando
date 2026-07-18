@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Television: The Global Classroom</title>
+<!-- Tailwind CSS & Phosphor Icons for Premium Product Consistency -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',      /* Dark UI Header Block */
+          bodyLight: '#F8FAFC',     /* Workspace body background */
+          orangeAction: '#C2410C',  /* Primary brand accent */
+          orangeHover: '#EA580C',   /* Hover color states */
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+          greenSoft: '#E8F8EF',
+          redSoft: '#FDEAEA',
+          amberSoft: '#FEF3D7'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&family=IBM+Plex+Mono:wght=400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .section { display: none; animation: fadeUp .35s ease; }
+  .section.active { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body class="bg-deepBlue text-darkSlate min-h-screen text-[18px] antialiased">
+
+<!-- ── STANDARDIZED METHOD FALA HEADER ── -->
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[960px] mx-auto px-6 py-5 flex items-center justify-between gap-4">
+    
+    <div class="flex items-center gap-3">
+      <div class="flex-shrink-0">
+        <button onclick="resetEngine()" class="cursor-pointer hover:opacity-80 transition-opacity select-none text-left focus:outline-none">
+          <span class="text-white font-bold tracking-wider text-lg mono">MÉTODO <span class="text-orangeAction">FALA</span></span>
+        </button>
+      </div>
+      <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
+      <div class="hidden sm:block">
+        <h1 class="text-base font-bold text-white tracking-wide">Television</h1>
+        <p class="text-xs text-slate-400">Educational Medium · Vocabulary Mastery · Critique & Debate</p>
+      </div>
+    </div>
+
+    <!-- Progress Tracker Linear Layout -->
+    <div class="flex items-center gap-3">
+      <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mono" id="progressLabel">Step 1 / 5</span>
+      <div class="w-24 sm:w-32 h-2.5 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
+        <div class="h-full bg-orangeAction rounded-full transition-all duration-500" id="progressFill" style="width:20%"></div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- MAIN CONTENT WORKSPACE -->
+<div class="bg-bodyLight w-full min-h-[calc(100vh-73px)]">
+  <main class="max-w-[960px] mx-auto px-6 py-12 pb-24">
+
+    <!-- ═══════════════════════════════════════════
+         STEP 1 – IMMERSIVE WARM-UP & DISCUSSION
+    ═══════════════════════════════════════════ -->
+    <div class="section active" id="sec1">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-4 border border-orange-100">Step 1: Warm-up (5-8 min)</span>
+      
+      <h2 class="text-4xl font-bold text-deepBlue mb-3 leading-tight">All Television is Educational</h2>
+      
+      <!-- QUOTE CARD -->
+      <div class="bg-slate-900 border-l-4 border-orangeAction text-slate-200 rounded-r-xl p-6 mb-8 shadow-sm">
+        <p class="text-lg italic font-medium leading-relaxed">"All television is educational television. The question is: what is it teaching?"</p>
+        <span class="block text-xs font-mono uppercase text-orangeAction tracking-wider mt-3">— Nicholas Johnson, Former FCC Commissioner</span>
+      </div>
+
+      <p class="text-lg text-slate-500 mb-8 leading-relaxed max-w-3xl">From childhood cartoons and morning broadcasts to high-budget dramas and reality shows, television remains one of the most powerful socialization tools ever invented. Let's analyze its impact on your lifestyle and preferences.</p>
+
+      <!-- PANORAMIC THEMED VISUAL -->
+      <div class="w-full h-[320px] rounded-xl overflow-hidden mb-8 shadow-sm border border-slate-200 relative bg-slate-950 flex items-center justify-center">
+        <img src="https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?auto=format&fit=crop&w=960&h=320&q=80" 
+             alt="Retro television set glowing in a warm room" 
+             class="w-full h-full object-cover opacity-80"
+             onerror="handleImageError(this, 'retro-tv')">
+      </div>
+
+      <!-- DISCUSS QUESTIONS GRID (PAGE 1) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+          <span class="font-bold uppercase tracking-wider text-orangeAction text-xs flex items-center gap-1.5 mb-3"><i class="ph-bold ph-chats"></i> Personal Habits:</span>
+          <div class="space-y-3.5 text-base text-slate-700 font-medium">
+            <p class="flex items-start gap-2">➔ <span class="text-slate-800">How often do you watch TV? When do you usually watch TV?</span></p>
+            <p class="flex items-start gap-2">➔ <span class="text-slate-800">Do you have the TV on while you are eating a meal? How about when friends and family visit?</span></p>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+          <span class="font-bold uppercase tracking-wider text-orangeAction text-xs flex items-center gap-1.5 mb-3"><i class="ph-bold ph-film-slate"></i> Genres & Formats:</span>
+          <div class="space-y-3.5 text-base text-slate-700 font-medium">
+            <p class="flex items-start gap-2">➔ <span class="text-slate-800">What are your favorite documentaries, game shows, or dramas?</span></p>
+            <p class="flex items-start gap-2">➔ <span class="text-slate-800">What type of person applies to go on a reality TV show? Would you take part in one?</span></p>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm md:col-span-2">
+          <span class="font-bold uppercase tracking-wider text-orangeAction text-xs flex items-center gap-1.5 mb-3"><i class="ph-bold ph-hourglass"></i> Generational Shift:</span>
+          <div class="space-y-3.5 text-base text-slate-700 font-medium">
+            <p class="flex items-start gap-2">➔ <span class="text-slate-800">What were your favorite TV shows when you were a child? What are kids watching today?</span></p>
+            <p class="flex items-start gap-2">➔ <span class="text-slate-800">How is TV different today compared to when you were younger? Is it better or worse?</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(2)">Next: Vocabulary <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 2 – VOCABULARY CALIBRATION & PILLES
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec2">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 2: Vocabulary (10-12 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Industry Lexicon & Definitions</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Map the exact television terms to your vocabulary bank. Click on any pill to preview its CEFR-aligned definitions and correct contextual usage:</p>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-8 mb-6 shadow-sm">
+        <div class="flex flex-wrap gap-2.5 mb-5">
+          <button class="vocab-pill px-5 py-2.5 rounded-lg border border-slate-200 bg-white text-base font-medium hover:border-orangeAction hover:text-orangeAction transition-colors mono" onclick="toggleVocab(this, 'binge')">to binge watch</button>
+          <button class="vocab-pill px-5 py-2.5 rounded-lg border border-slate-200 bg-white text-base font-medium hover:border-orangeAction hover:text-orangeAction transition-colors mono" onclick="toggleVocab(this, 'slang')">telly / idiot box</button>
+          <button class="vocab-pill px-5 py-2.5 rounded-lg border border-slate-200 bg-white text-base font-medium hover:border-orangeAction hover:text-orangeAction transition-colors mono" onclick="toggleVocab(this, 'soap')">soap (opera)</button>
+          <button class="vocab-pill px-5 py-2.5 rounded-lg border border-slate-200 bg-white text-base font-medium hover:border-orangeAction hover:text-orangeAction transition-colors mono" onclick="toggleVocab(this, 'sitcom')">sitcom</button>
+          <button class="vocab-pill px-5 py-2.5 rounded-lg border border-slate-200 bg-white text-base font-medium hover:border-orangeAction hover:text-orangeAction transition-colors mono" onclick="toggleVocab(this, 'structure')">episode / season</button>
+          <button class="vocab-pill px-5 py-2.5 rounded-lg border border-slate-200 bg-white text-base font-medium hover:border-orangeAction hover:text-orangeAction transition-colors mono" onclick="toggleVocab(this, 'spinoff')">spinoff</button>
+        </div>
+
+        <!-- VOCABULARY CARD DETAILS -->
+        <div class="vocab-def hidden mt-3 p-5 bg-softSand rounded-lg border-l-4 border-orangeAction text-base leading-relaxed" id="def-binge">
+          <div class="flex items-center gap-2 mb-1.5">
+            <button onclick="speak('to binge watch')" class="text-orangeAction hover:text-orangeHover text-xl focus:outline-none transition-transform active:scale-95 flex items-center justify-center mr-1" title="Listen pronunciation"><i class="ph-bold ph-speaker-high"></i></button>
+            <strong class="text-deepBlue text-lg font-bold">to binge watch</strong>
+            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded text-slate-600 font-mono">verb</span>
+          </div>
+          <p class="text-slate-600">To watch multiple episodes of a TV series in rapid succession, typically in a single sitting.</p>
+          <em class="text-slate-500 block mt-1">"I had the best weekend ever! I binge watched the entire first, second, and third seasons of Twin Peaks."</em>
+        </div>
+
+        <div class="vocab-def hidden mt-3 p-5 bg-softSand rounded-lg border-l-4 border-orangeAction text-base leading-relaxed" id="def-slang">
+          <div class="flex items-center gap-2 mb-1.5">
+            <button onclick="speak('telly and idiot box')" class="text-orangeAction hover:text-orangeHover text-xl focus:outline-none transition-transform active:scale-95 flex items-center justify-center mr-1" title="Listen pronunciation"><i class="ph-bold ph-speaker-high"></i></button>
+            <strong class="text-deepBlue text-lg font-bold">telly, gogglebox, idiot box</strong>
+            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded text-slate-600 font-mono">nouns</span>
+          </div>
+          <p class="text-slate-600">Popular slang terms for the television set. "Telly" is highly common in British English, whereas "idiot box" emphasizes mindless watching.</p>
+          <em class="text-slate-500 block mt-1">"There's nothing but absolute rubbish on the telly these days."</em>
+        </div>
+
+        <div class="vocab-def hidden mt-3 p-5 bg-softSand rounded-lg border-l-4 border-orangeAction text-base leading-relaxed" id="def-soap">
+          <div class="flex items-center gap-2 mb-1.5">
+            <button onclick="speak('soap opera')" class="text-orangeAction hover:text-orangeHover text-xl focus:outline-none transition-transform active:scale-95 flex items-center justify-center mr-1" title="Listen pronunciation"><i class="ph-bold ph-speaker-high"></i></button>
+            <strong class="text-deepBlue text-lg font-bold">soap (opera)</strong>
+            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded text-slate-600 font-mono">noun</span>
+          </div>
+          <p class="text-slate-600">A serial drama show, typically broadcast daily, focusing on the melodramatic, interconnected lives of a recurring cast of characters.</p>
+          <em class="text-slate-500 block mt-1">"Emmerdale is a soap that follows the lives of various families living in a small village in Yorkshire."</em>
+        </div>
+
+        <div class="vocab-def hidden mt-3 p-5 bg-softSand rounded-lg border-l-4 border-orangeAction text-base leading-relaxed" id="def-sitcom">
+          <div class="flex items-center gap-2 mb-1.5">
+            <button onclick="speak('sitcom')" class="text-orangeAction hover:text-orangeHover text-xl focus:outline-none transition-transform active:scale-95 flex items-center justify-center mr-1" title="Listen pronunciation"><i class="ph-bold ph-speaker-high"></i></button>
+            <strong class="text-deepBlue text-lg font-bold">sitcom</strong>
+            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded text-slate-600 font-mono">noun</span>
+          </div>
+          <p class="text-slate-600">Short for "situational comedy." A humorous TV show revolving around a fixed cast of characters navigating everyday environments (like a home or workplace).</p>
+          <em class="text-slate-500 block mt-1">"Cheers, set in a fictional bar of the same name, is a highly popular sitcom following a group of regulars."</em>
+        </div>
+
+        <div class="vocab-def hidden mt-3 p-5 bg-softSand rounded-lg border-l-4 border-orangeAction text-base leading-relaxed" id="def-structure">
+          <div class="flex items-center gap-2 mb-1.5">
+            <button onclick="speak('episode, season, and series')" class="text-orangeAction hover:text-orangeHover text-xl focus:outline-none transition-transform active:scale-95 flex items-center justify-center mr-1" title="Listen pronunciation"><i class="ph-bold ph-speaker-high"></i></button>
+            <strong class="text-deepBlue text-lg font-bold">episode, season, series</strong>
+            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded text-slate-600 font-mono">nouns</span>
+          </div>
+          <p class="text-slate-600">An individual program (episode); a collection of episodes released in a specific year or period (season in US/UK English); the entire run of the show (series).</p>
+          <em class="text-slate-500 block mt-1">"Did you see the latest episode of Game of Thrones? I cannot believe how little Jon Snow actually knows!"</em>
+        </div>
+
+        <div class="vocab-def hidden mt-3 p-5 bg-softSand rounded-lg border-l-4 border-orangeAction text-base leading-relaxed" id="def-spinoff">
+          <div class="flex items-center gap-2 mb-1.5">
+            <button onclick="speak('spinoff')" class="text-orangeAction hover:text-orangeHover text-xl focus:outline-none transition-transform active:scale-95 flex items-center justify-center mr-1" title="Listen pronunciation"><i class="ph-bold ph-speaker-high"></i></button>
+            <strong class="text-deepBlue text-lg font-bold">spinoff</strong>
+            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded text-slate-600 font-mono">noun</span>
+          </div>
+          <p class="text-slate-600">A new TV show or movie derived from an existing, successful piece of intellectual property, usually focusing on a popular supporting character.</p>
+          <em class="text-slate-500 block mt-1">"The Mandalorian is a spinoff from the Star Wars films that follows a lone bounty hunter."</em>
+        </div>
+      </div>
+
+      <!-- DYNAMIC DRILL CONTAINER (Drives memory retention instead of passive reading) -->
+      <div id="quiz-container" class="space-y-4 mb-6"></div>
+      <div id="quiz-score-msg" class="hidden mb-6 p-5 rounded-lg font-semibold text-center text-lg"></div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(1)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(3)">Next: Video integration <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 3 – VIDEO COMPREHENSION SIMULATOR
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec3">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 3: Video Integration (15 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Broadcast Studio: WatchMojo's Top 10 TV Shows</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Watch the video briefing tracking down the Top 10 television programs everyone should watch at least once, then input your diagnostic parameters below.</p>
+
+      <!-- RESPONSIVE VIDEO EMBED -->
+      <div class="w-full aspect-video rounded-xl overflow-hidden border border-slate-200 shadow-md mb-8 relative bg-black">
+        <iframe class="w-full h-full" 
+                src="https://www.youtube.com/embed/umeMR2eactU?si=CWJ6pKjUzBHT8nkQ" 
+                title="Top 10 TV Shows Everyone Should Watch At Least Once" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen></iframe>
+      </div>
+
+      <!-- INTERACTIVE INTEGRATION CONSOLE -->
+      <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm">
+        <div class="flex items-center gap-2 mb-6 border-b pb-4">
+          <span class="text-2xl">🎛️</span>
+          <h3 class="text-xl font-bold text-deepBlue">Broadcast Master Control Board</h3>
+        </div>
+
+        <!-- 1. MULTIPLE CHOICE TRACKS -->
+        <div class="space-y-6">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-orangeAction font-mono">Track Alpha: Multiple Choice Audit</h4>
+          
+          <div class="p-5 bg-slate-50 rounded-xl border border-slate-200" id="video-mc-1">
+            <p class="text-base font-bold text-deepBlue mb-3">1. What did the company in the popular show "The Office" sell?</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              <button onclick="selectVideoMC(1, 'stationary', this)" class="v-mc-btn bg-white border p-3 rounded-lg text-sm font-medium hover:border-orangeAction transition-all">Stationary</button>
+              <button onclick="selectVideoMC(1, 'furniture', this)" class="v-mc-btn bg-white border p-3 rounded-lg text-sm font-medium hover:border-orangeAction transition-all">Office Furniture</button>
+              <button onclick="selectVideoMC(1, 'paper', this)" class="v-mc-btn bg-white border p-3 rounded-lg text-sm font-medium hover:border-orangeAction transition-all">Paper</button>
+            </div>
+          </div>
+
+          <div class="p-5 bg-slate-50 rounded-xl border border-slate-200" id="video-mc-2">
+            <p class="text-base font-bold text-deepBlue mb-3">2. From which country was the original production of "The Office"?</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              <button onclick="selectVideoMC(2, 'France', this)" class="v-mc-btn bg-white border p-3 rounded-lg text-sm font-medium hover:border-orangeAction transition-all">France</button>
+              <button onclick="selectVideoMC(2, 'Germany', this)" class="v-mc-btn bg-white border p-3 rounded-lg text-sm font-medium hover:border-orangeAction transition-all">Germany</button>
+              <button onclick="selectVideoMC(2, 'United Kingdom', this)" class="v-mc-btn bg-white border p-3 rounded-lg text-sm font-medium hover:border-orangeAction transition-all">United Kingdom</button>
+            </div>
+          </div>
+
+          <div class="p-5 bg-slate-50 rounded-xl border border-slate-200" id="video-mc-3">
+            <p class="text-base font-bold text-deepBlue mb-3">3. What exact proportion of the world's population disappeared in "The Leftovers"?</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              <button onclick="selectVideoMC(3, '1%', this)" class="v-mc-btn bg-white border p-3 rounded-lg text-sm font-medium hover:border-orangeAction transition-all">1%</button>
+              <button onclick="selectVideoMC(3, '2%', this)" class="v-mc-btn bg-white border p-3 rounded-lg text-sm font-medium hover:border-orangeAction transition-all">2%</button>
+              <button onclick="selectVideoMC(3, '3%', this)" class="v-mc-btn bg-white border p-3 rounded-lg text-sm font-medium hover:border-orangeAction transition-all">3%</button>
+            </div>
+          </div>
+
+          <div class="p-5 bg-slate-50 rounded-xl border border-slate-200" id="video-mc-4">
+            <p class="text-base font-bold text-deepBlue mb-3">4. Where did fans heavily discuss, theorize, and analyze the plot turns of "Lost"?</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              <button onclick="selectVideoMC(4, 'chatrooms', this)" class="v-mc-btn bg-white border p-3 rounded-lg text-sm font-medium hover:border-orangeAction transition-all">Chatrooms</button>
+              <button onclick="selectVideoMC(4, 'internet forums', this)" class="v-mc-btn bg-white border p-3 rounded-lg text-sm font-medium hover:border-orangeAction transition-all">Internet Forums</button>
+              <button onclick="selectVideoMC(4, 'social media', this)" class="v-mc-btn bg-white border p-3 rounded-lg text-sm font-medium hover:border-orangeAction transition-all">Social Media</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. SENTENCE COMPLETION MATRIX -->
+        <div class="space-y-6 mt-8">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-orangeAction font-mono">Track Beta: Sentence Completion</h4>
+          
+          <div class="space-y-4 text-base">
+            <div class="p-4 bg-slate-50 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-3">
+              <span class="font-medium">5. The Simpsons is one of the most <span class="border-b-2 border-orangeAction px-1 font-mono text-orangeAction italic">influential</span> TV shows of all time.</span>
+              <input type="text" id="v-sc-5" class="p-2 border rounded font-mono text-sm focus:outline-none focus:border-orangeAction w-full md:w-44" placeholder="Enter missing word...">
+            </div>
+
+            <div class="p-4 bg-slate-50 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-3">
+              <span class="font-medium">6. Both <span class="border-b-2 border-orangeAction px-1 font-mono text-orangeAction italic">kids and adults</span> can enjoy Avatar: The Last Airbender.</span>
+              <input type="text" id="v-sc-6" class="p-2 border rounded font-mono text-sm focus:outline-none focus:border-orangeAction w-full md:w-44" placeholder="Enter missing phrase...">
+            </div>
+
+            <div class="p-4 bg-slate-50 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-3">
+              <span class="font-medium">7. The creator of The Wire was previously a crime reporter for <span class="border-b-2 border-orangeAction px-1 font-mono text-orangeAction italic">Baltimore Sun</span>.</span>
+              <input type="text" id="v-sc-7" class="p-2 border rounded font-mono text-sm focus:outline-none focus:border-orangeAction w-full md:w-44" placeholder="Enter reporter entity...">
+            </div>
+
+            <div class="p-4 bg-slate-50 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-3">
+              <span class="font-medium">8. It is difficult to <span class="border-b-2 border-orangeAction px-1 font-mono text-orangeAction italic">describe</span> Twin Peaks as it is incomparable.</span>
+              <input type="text" id="v-sc-8" class="p-2 border rounded font-mono text-sm focus:outline-none focus:border-orangeAction w-full md:w-44" placeholder="Enter verb...">
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. SHORT ANSWER CHALLENGES -->
+        <div class="space-y-6 mt-8">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-orangeAction font-mono">Track Gamma: Short Answer Assessment</h4>
+
+          <div class="space-y-4">
+            <div class="p-5 bg-slate-50 rounded-xl border border-slate-200">
+              <label class="block text-sm font-bold text-deepBlue mb-2">9. Which epic book series was Game of Thrones adapted from?</label>
+              <input type="text" id="v-sa-9" class="w-full p-3 border rounded-lg text-sm font-mono focus:outline-none focus:border-orangeAction" placeholder="Type book saga name...">
+            </div>
+
+            <div class="p-5 bg-slate-50 rounded-xl border border-slate-200">
+              <label class="block text-sm font-bold text-deepBlue mb-2">10. The Sopranos details the complex lives of whom?</label>
+              <input type="text" id="v-sa-10" class="w-full p-3 border rounded-lg text-sm font-mono focus:outline-none focus:border-orangeAction" placeholder="Describe the focus (e.g. mobsters, mafia family)...">
+            </div>
+
+            <div class="p-5 bg-slate-50 rounded-xl border border-slate-200">
+              <label class="block text-sm font-bold text-deepBlue mb-2">11. What specific sitcom category of show is "I Love Lucy"?</label>
+              <input type="text" id="v-sa-11" class="w-full p-3 border rounded-lg text-sm font-mono focus:outline-none focus:border-orangeAction" placeholder="e.g. sitcom, soap opera, drama...">
+            </div>
+
+            <div class="p-5 bg-slate-50 rounded-xl border border-slate-200">
+              <label class="block text-sm font-bold text-deepBlue mb-2">12. Breaking Bad resembles a written page-turner because it utilizes many what?</label>
+              <input type="text" id="v-sa-12" class="w-full p-3 border rounded-lg text-sm font-mono focus:outline-none focus:border-orangeAction" placeholder="Type structural device (e.g. cliffhangers, twists)...">
+            </div>
+          </div>
+        </div>
+
+        <div id="video-quiz-score-msg" class="hidden mt-8 p-5 rounded-lg font-semibold text-center text-lg"></div>
+
+        <div class="mt-8 flex justify-end">
+          <button onclick="checkVideoBroadcastBoard()" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-sm px-6 py-3 rounded-lg shadow transition-colors">
+            Process Video Audit Parameters
+          </button>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(2)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(4)">Next: Grammar Calibration <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 4 – GRAMMAR CALIBRATOR (A2 ➔ B2 BRIDGE)
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec4">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 4: Grammar Focus (12-15 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">The Generational Media Pivot: habits vs. experiences</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">To jump from A2 to B2, you must clearly distinguish between <strong>what you used to do</strong> (habits from your past childhood) and <strong>what you have done</strong> (your experiences up to now). Analyze the contrast below:</p>
+
+      <!-- INTERACTIVE GRAMMAR COMPARISON WORKSPACE -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <!-- PAST HABITS (USED TO) -->
+        <div class="bg-white border-t-4 border-orangeAction rounded-xl p-6 shadow-sm">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="p-2 bg-orange-50 text-orangeAction rounded-lg text-lg font-bold">📜</span>
+            <h3 class="text-xl font-bold text-deepBlue">Past Habits (Used to)</h3>
+          </div>
+          <p class="text-sm text-slate-500 mb-4 leading-relaxed">Use <strong>used to + verb</strong> for things you did frequently in the past, but don't do anymore. Ideal for talking about your childhood TV habits.</p>
+          <div class="bg-slate-50 p-4 rounded-lg font-mono text-sm text-slate-700 space-y-2 mb-4">
+            <p>➔ "I <strong>used to watch</strong> cartoons every Saturday morning when I was ten."</p>
+            <p class="text-xs text-slate-400 italic">(Now I don't do this anymore. It is a closed past habit.)</p>
+          </div>
+          <span class="text-xs font-bold text-slate-400 block uppercase font-mono">Formulation:</span>
+          <p class="text-sm text-slate-600 font-medium">Subject + used to + base verb</p>
+        </div>
+
+        <!-- LIFE EXPERIENCES (PRESENT PERFECT) -->
+        <div class="bg-white border-t-4 border-deepBlue rounded-xl p-6 shadow-sm">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="p-2 bg-slate-100 text-deepBlue rounded-lg text-lg font-bold">🎯</span>
+            <h3 class="text-xl font-bold text-deepBlue">Life Experiences (Present Perfect)</h3>
+          </div>
+          <p class="text-sm text-slate-500 mb-4 leading-relaxed">Use <strong>have/has + past participle</strong> for life achievements or things you have done up to this point in your life. The exact time doesn't matter!</p>
+          <div class="bg-slate-50 p-4 rounded-lg font-mono text-sm text-slate-700 space-y-2 mb-4">
+            <p>➔ "I <strong>have watched</strong> the entire series of Breaking Bad three times."</p>
+            <p class="text-xs text-slate-400 italic">(My experience up to today. I don't specify the exact date.)</p>
+          </div>
+          <span class="text-xs font-bold text-slate-400 block uppercase font-mono">Formulation:</span>
+          <p class="text-sm text-slate-600 font-medium">Subject + have/has + past participle</p>
+        </div>
+      </div>
+
+      <!-- SYNTAX GUARD PANEL -->
+      <div class="bg-white border border-slate-200 rounded-xl mb-8 shadow-sm overflow-hidden">
+        <div class="bg-deepBlue px-6 py-4 flex items-center justify-between border-b border-slate-800">
+          <div class="flex items-center gap-2">
+            <i class="ph ph-shield-warning text-xl text-orangeAction"></i>
+            <span class="text-base font-bold text-white uppercase tracking-wider mono">Fossilized Syntax Guard (A2-B2)</span>
+          </div>
+        </div>
+
+        <div class="p-8 space-y-6 bg-bodyLight/30 text-base">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="bg-rose-50/40 border border-rose-100 rounded-xl p-5 flex items-start gap-4 shadow-sm">
+              <div class="p-2 bg-rose-100 text-rose-600 rounded-lg text-xl flex-shrink-0 mt-0.5"><i class="ph ph-prohibit"></i></div>
+              <div>
+                <span class="block text-xs font-bold text-rose-700 uppercase tracking-wider mb-1">Avoid Mixing Simple Past with Present Perfect Timestamps</span>
+                <p class="mono text-slate-800 leading-relaxed"><span class="line-through text-rose-600">I have watched a sitcom last night.</span></p>
+                <p class="text-xs text-slate-500 mt-1">If you name a specific past time ("last night", "yesterday"), you must use Simple Past.</p>
+              </div>
+            </div>
+            <div class="bg-emerald-50/40 border border-emerald-100 rounded-xl p-5 flex items-start gap-4 shadow-sm">
+              <div class="p-2 bg-emerald-100 text-emerald-600 rounded-lg text-xl flex-shrink-0 mt-0.5"><i class="ph ph-check-circle"></i></div>
+              <div>
+                <span class="block text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">Correct Way</span>
+                <p class="mono text-slate-800 font-medium leading-relaxed">I <strong>watched</strong> a sitcom last night. / I <strong>have already watched</strong> that sitcom. <em class="text-xs text-slate-400 block mt-1">(Simple Past vs. Undefined Experience)</em></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRAMMAR INTERACTIVE CALIBRATOR -->
+      <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm">
+        <h3 class="text-xl font-bold text-deepBlue mb-4 flex items-center gap-2">
+          <i class="ph-bold ph-lightning-a text-orangeAction"></i> Fast Grammar Sync Drill
+        </h3>
+        <p class="text-base text-slate-600 mb-6 font-medium">Select the option that correctly represents B2-level grammar for each scenario:</p>
+        
+        <div class="space-y-4 text-base" id="grammar-drill-box">
+          <!-- Sentences will be populated and checked in JS -->
+        </div>
+        
+        <div id="grammar-score-msg" class="hidden mt-6 p-4 rounded-lg font-semibold text-center"></div>
+        <div class="mt-6 flex justify-end">
+          <button onclick="checkGrammarDrill()" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-sm px-6 py-2.5 rounded-lg shadow">Verify Grammar Sync</button>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(3)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(5)">Next: Debate Boardroom <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 5 – DEBATE BOARD & BOARDROOM DIALOGUE
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec5">
+      <span class="inline-block text-xs font-bold tracking-widest text-emerald-700 uppercase bg-emerald-50 px-3 py-1 rounded-full mb-3 border border-emerald-100">Step 5: Output & Boardroom (15 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">The Broadcasting Monopoly: Streaming vs. Cable</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Let's discuss the societal impacts, monetization shifts, and psychological side effects of television in the 21st century. Activate these complex debate prompts with your trainer using your new B2 grammar anchors:</p>
+
+      <div class="space-y-4 mb-8">
+        <!-- TOPIC CARD 1 -->
+        <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-xs">
+          <span class="font-mono text-xs font-bold text-orangeAction uppercase tracking-widest block mb-1">Audit 1: Streaming Platforms</span>
+          <p class="text-base text-slate-700 leading-relaxed font-semibold">"Are streaming platforms (Netflix, HBO Max, Prime) superior to traditional cable television sets? Is it better to have a variety of streaming services or would it be better if all TV shows were on just one platform?"</p>
+          <div class="mt-3 p-3 bg-slate-50 rounded border text-xs font-mono text-slate-500">
+            💡 <strong>B2 Pivot Challenge:</strong> Try to use <strong>used to</strong> to compare how you watched TV in your childhood vs. how you do it today.
+          </div>
+        </div>
+
+        <!-- TOPIC CARD 2 -->
+        <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-xs">
+          <span class="font-mono text-xs font-bold text-orangeAction uppercase tracking-widest block mb-1">Audit 2: Societal & Children Impact</span>
+          <p class="text-base text-slate-700 leading-relaxed font-semibold">"Do children watch too much TV these days? What effect does TV have on kids? Do parents use the TV like a babysitter? Is there too much violence and sexual content on TV these days?"</p>
+          <div class="mt-3 p-3 bg-slate-50 rounded border text-xs font-mono text-slate-500">
+            💡 <strong>B2 Pivot Challenge:</strong> Use <strong>Present Perfect</strong> to talk about trends that have occurred over the last ten years (e.g., *"Streaming platforms have changed how..."*).
+          </div>
+        </div>
+
+        <!-- TOPIC CARD 3 -->
+        <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-xs">
+          <span class="font-mono text-xs font-bold text-orangeAction uppercase tracking-widest block mb-1">Audit 3: Stereotypes & Geopolitical Influences</span>
+          <p class="text-base text-slate-700 leading-relaxed font-semibold">"What kind of stereotypes are common to see on TV programmes? How does TV influence people's lives and how did it change the world?"</p>
+          <div class="mt-3 p-3 bg-slate-50 rounded border text-xs font-mono text-slate-500">
+            💡 <strong>B2 Pivot Challenge:</strong> Express how TV characters and stories <strong>used to be</strong> very stereotypical compared to now.
+          </div>
+        </div>
+      </div>
+
+      <!-- CONNECTORS PANEL -->
+      <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm">
+        <h3 class="text-xl font-bold text-deepBlue mb-4 flex items-center gap-2">
+          <i class="ph-bold ph-anchor text-orangeAction"></i> Synthesizing Complex Arguments
+        </h3>
+        <p class="text-base text-slate-600 mb-6 font-medium">Use these precise rhetorical connectors to formulate your ideas out loud without sounding repetitive:</p>
+        
+        <div class="space-y-3 font-mono text-sm">
+          <div class="p-4 bg-slate-50 rounded-lg border-l-4 border-orangeAction">
+            <span class="text-xs uppercase text-slate-400 block font-bold mb-1">Blueprint 1: Distinguishing Platforms</span>
+            <span class="text-deepBlue font-medium">"Although streaming services offer high speed convenience, they force consumers to..."</span>
+          </div>
+          <div class="p-4 bg-slate-50 rounded-lg border-l-4 border-orangeAction">
+            <span class="text-xs uppercase text-slate-400 block font-bold mb-1">Blueprint 2: Media Influence</span>
+            <span class="text-deepBlue font-medium">"As long as television networks prioritize high-rating sensationalism, society will..."</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- REDIRECT CARD FOR SEPARATE HOMEWORK -->
+      <div class="border-t border-slate-200 pt-8 mt-12">
+        <div class="bg-slate-900 text-white rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
+          <div class="space-y-2 max-w-xl">
+            <span class="text-xs font-mono font-bold text-orangeAction uppercase tracking-wider block">Operational Milestone Reached</span>
+            <h4 class="font-bold text-2xl">Ready for written production?</h4>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Your conversational and grammar parameters are complete! To consolidate these structures and write your media audit essay, open the separate Homework file.
+            </p>
+          </div>
+          <a href="homework_television.html" class="inline-flex items-center gap-2 bg-orangeAction hover:bg-orangeHover text-white text-base font-semibold px-6 py-3.5 rounded-lg transition-all transform hover:scale-[1.02] active:scale-95 shadow">
+            Open Homework Task <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-8 flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(4)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-6 py-3.5 rounded-lg flex items-center gap-2 transition-colors text-base shadow" onclick="resetEngine()">
+          <i class="ph ph-arrows-counter-clockwise"></i> Restart Lesson
+        </button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ── ENGINE APPLICATION STATE & SHUFFLER CORE ── -->
+<script>
+let currentSection = 1;
+let vocabAnswers  = {};
+let vocabChecked  = false;
+let totalLessonScore = 0;
+
+// Track step 3 video parameters
+let videoQuizChecked = false;
+let selectedVideoMCAnswers = {};
+
+// Track grammar drill parameters
+let selectedGrammarAnswers = {};
+let grammarChecked = false;
+
+// HIGH-ACCURACY NATIVE US UTTERANCE ENGINE
+function speak(word) {
+  window.speechSynthesis.cancel(); 
+  const voiceEngine = new SpeechSynthesisUtterance(word);
+  const systemVoices = window.speechSynthesis.getVoices();
+  
+  const usAccentVoice = systemVoices.find(voice => 
+    voice.lang === 'en-US' && (voice.name.includes('Google') || voice.name.includes('Natural') || voice.name.includes('Zira'))
+  );
+  
+  if (usAccentVoice) {
+    voiceEngine.voice = usAccentVoice;
+  } else {
+    voiceEngine.lang = 'en-US';
+  }
+  voiceEngine.rate = 0.85; 
+  window.speechSynthesis.speak(voiceEngine);
+}
+
+if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+}
+
+// SECURE TEMPLATE-BASED IMAGE ERROR HANDLING WRAPPER (FALLBACKS)
+function handleImageError(imgElement, theme) {
+  imgElement.onerror = null; 
+  const container = imgElement.parentElement;
+  if (!container) return;
+
+  let gradient = 'from-slate-800 to-slate-900';
+  let icon = 'ph-television-simple';
+  let titleText = 'Broadcast Stream';
+  let descText = 'Television core media fallback active';
+
+  if (theme === 'retro-tv') {
+    gradient = 'from-amber-950 to-slate-900';
+    icon = 'ph-television';
+    titleText = 'Retro TV Set';
+    descText = 'Nicholas Johnson Educational Quote';
+  }
+
+  const fallbackDiv = document.createElement('div');
+  fallbackDiv.className = `w-full h-full bg-gradient-to-br ${gradient} flex flex-col items-center justify-center text-white p-6 gap-2 text-center select-none`;
+  fallbackDiv.innerHTML = `
+    <i class="ph-bold ${icon} text-5xl text-orangeAction animate-pulse"></i>
+    <span class="font-mono text-sm tracking-widest uppercase font-bold mt-1 text-slate-300">${titleText}</span>
+    <span class="text-xs text-slate-500 font-mono">${descText}</span>
+  `;
+
+  container.innerHTML = '';
+  container.appendChild(fallbackDiv);
+}
+
+function goTo(n) {
+  document.getElementById('sec' + currentSection).classList.remove('active');
+  currentSection = n;
+  document.getElementById('sec' + n).classList.add('active');
+  updateProgress(n);
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function updateProgress(n) {
+  const fill  = document.getElementById('progressFill');
+  const label = document.getElementById('progressLabel');
+  fill.style.width = (n * 20) + '%';
+  label.textContent = 'Step ' + n + ' / 5';
+}
+
+function toggleVocab(pill, key) {
+  const card = pill.closest('div').parentElement;
+  const allPills = pill.parentElement.querySelectorAll('.vocab-pill');
+  const allDefs  = card.querySelectorAll('.vocab-def');
+  const def      = document.getElementById('def-' + key);
+
+  if (pill.classList.contains('bg-deepBlue')) {
+    pill.classList.remove('bg-deepBlue', 'text-white', 'border-deepBlue');
+    pill.classList.add('bg-white', 'text-darkSlate', 'border-slate-200');
+    if (def) { def.classList.add('hidden'); }
+    return;
+  }
+  
+  allPills.forEach(p => {
+    p.classList.remove('bg-deepBlue', 'text-white', 'border-deepBlue');
+    p.classList.add('bg-white', 'text-darkSlate', 'border-slate-200');
+  });
+  allDefs.forEach(d => d.classList.add('hidden'));
+  
+  pill.classList.add('bg-deepBlue', 'text-white', 'border-deepBlue');
+  pill.classList.remove('bg-white', 'text-darkSlate', 'border-slate-200');
+  if (def) def.classList.remove('hidden');
+}
+
+// ── COMPLIANCE EXERCISE SCRAMBLED DATA (PAGE 2 GAP FILL) ──
+const rawQuizEntries = [
+  { text: "1. Cheers, set in the fictional bar of the same name, is a popular _____ which follows the humorous interactions of a group of regulars.", options: ["sitcom", "soap opera", "episode"], answer: "sitcom", hint: "Cheers is a situational comedy (sitcom) about a bar." },
+  { text: "2. Did you see the latest _____ of Game of Thrones? I can't believe how little Jon Snow actually knows!", options: ["episode", "season", "spinoff"], answer: "episode", hint: "An individual program of a show is called an episode." },
+  { text: "3. Emmerdale is a _____ that follows the lives of various families that live in a small village in the Yorkshire Dales.", options: ["soap opera", "sitcom", "spinoff"], answer: "soap opera", hint: "A daily show about characters' personal lives is a soap opera." },
+  { text: "4. I had the best weekend ever! I _____ the entire first, second and third seasons of Twin Peaks.", options: ["binge watched", "spinoffed", "episoded"], answer: "binge watched", hint: "Watching multiple seasons/episodes at once is called binge watching." },
+  { text: "5. The Mandalorian is a _____ from the Star Wars films and follows the story of a lone bounty hunter.", options: ["spinoff", "season", "gogglebox"], answer: "spinoff", hint: "A show focused on characters derived from another series is a spinoff." },
+  { text: "6. There's nothing but rubbish on the _____ these days.", options: ["telly", "episode", "spinoff"], answer: "telly", hint: "Telly is standard British slang for television." }
+];
+
+function shuffleArray(array) {
+  let arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+let scrambledQuizDataset = [];
+
+function buildQuizDatabase() {
+  scrambledQuizDataset = rawQuizEntries.map(item => ({
+    text: item.text,
+    answer: item.answer,
+    hint: item.hint,
+    scrambledOptions: shuffleArray(item.options)
+  }));
+}
+
+function renderMatrixQuiz() {
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = ""; 
+  
+  scrambledQuizDataset.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'border border-slate-200 rounded-xl p-6 bg-white shadow-sm transition-all';
+    div.id = 'q-' + i;
+    
+    const optionsHtml = item.scrambledOptions.map((opt, idx) => `
+      <button class="opt-btn bg-white border border-slate-200 text-base font-medium text-deepBlue px-5 py-3 rounded-lg hover:border-orangeAction hover:bg-orange-50 transition-all mono" 
+              onclick="selectMatrixOption(${i}, ${idx}, this)">
+        ${opt}
+      </button>
+    `).join('');
+    
+    div.innerHTML = `
+      <div class="text-base font-medium text-deepBlue mb-4">
+        ${item.text.replace('_____', '<span class=\"inline-block min-w-[100px] border-b-2 border-orangeAction bg-orange-50 h-5 vertical-middle rounded-sm\"></span>')}
+      </div>
+      <div class="flex flex-wrap gap-2.5 options">
+        ${optionsHtml}
+      </div>
+      <div class="mt-3 text-base font-semibold hidden feedback-msg"></div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function selectMatrixOption(questionIdx, optionIdx, clickedBtn) {
+  if (vocabChecked) return; 
+  
+  vocabAnswers[questionIdx] = clickedBtn.textContent.trim();
+  const block = document.getElementById('q-' + questionIdx);
+  
+  block.querySelectorAll('.opt-btn').forEach(btn => { 
+    btn.classList.remove('bg-deepBlue', 'text-white', 'border-deepBlue'); 
+    btn.classList.add('bg-white', 'text-darkSlate', 'border-slate-200'); 
+  });
+  
+  clickedBtn.classList.add('bg-deepBlue', 'text-white', 'border-deepBlue');
+  clickedBtn.classList.remove('bg-white', 'text-darkSlate', 'border-slate-200');
+
+  // Automatically check if all are answered
+  if (Object.keys(vocabAnswers).length === rawQuizEntries.length) {
+    checkVocabQuiz();
+  }
+}
+
+function checkVocabQuiz() {
+  if (vocabChecked) return;
+  vocabChecked = true;
+  let vocabScore = 0;
+
+  scrambledQuizDataset.forEach((item, i) => {
+    const block = document.getElementById('q-' + i);
+    const fb = block.querySelector('.feedback-msg');
+    const userAns = vocabAnswers[i];
+    const correct = item.answer;
+
+    fb.classList.remove('hidden');
+    block.querySelectorAll('.opt-btn').forEach(b => { b.disabled = true; b.classList.add('opacity-60'); });
+
+    if (userAns && userAns.toLowerCase() === correct.toLowerCase()) {
+      vocabScore++;
+      block.classList.add('border-emerald-500', 'bg-emerald-50/20');
+      
+      block.querySelectorAll('.opt-btn').forEach(b => {
+        if (b.textContent.trim().toLowerCase() === correct.toLowerCase()) {
+          b.classList.remove('opacity-60', 'bg-white', 'text-deepBlue', 'bg-deepBlue');
+          b.classList.add('bg-emerald-600', 'text-white', 'border-emerald-600');
+        }
+      });
+      fb.className = 'mt-3 text-base font-semibold text-emerald-600 feedback-msg';
+      fb.textContent = '✓ Calibration Aligned! ' + item.hint;
+    } else {
+      block.classList.add('border-rose-300', 'bg-rose-50/20');
+      
+      block.querySelectorAll('.opt-btn').forEach(b => {
+        const textValue = b.textContent.trim().toLowerCase();
+        if (userAns && textValue === userAns.toLowerCase()) {
+          b.classList.remove('opacity-60', 'bg-deepBlue', 'text-white');
+          b.classList.add('bg-rose-600', 'text-white', 'border-rose-600');
+        }
+        if (textValue === correct.toLowerCase()) {
+          b.classList.remove('opacity-60');
+          b.classList.add('border-emerald-600', 'text-emerald-600', 'font-bold');
+        }
+      });
+      fb.className = 'mt-3 text-base font-semibold text-rose-600 feedback-msg';
+      fb.textContent = '✗ Target Mismatch. ' + item.hint;
+    }
+  });
+
+  const msg = document.getElementById('quiz-score-msg');
+  msg.classList.remove('hidden');
+  const total = rawQuizEntries.length;
+  
+  if (vocabScore >= 5) {
+    msg.className = 'mb-6 p-5 rounded-lg font-semibold text-center text-lg bg-emerald-50 text-emerald-600 border border-emerald-200';
+    msg.textContent = `🎉 Vocabulary Confirmed! ${vocabScore}/${total} transactional entries matched successfully!`;
+  } else {
+    msg.className = 'mb-6 p-5 rounded-lg font-semibold text-center text-lg bg-rose-50 text-rose-600 border border-rose-200';
+    msg.textContent = `${vocabScore}/${total} entries verified. Re-verify TV definitions.`;
+  }
+}
+
+// ── STEP 3 BROADCAST BOARD (VIDEO COMPREHENSION ANALYSIS) ──
+function selectVideoMC(qNum, value, btn) {
+  if (videoQuizChecked) return;
+  selectedVideoMCAnswers[qNum] = value;
+
+  const row = document.getElementById('video-mc-' + qNum);
+  row.querySelectorAll('.v-mc-btn').forEach(b => {
+    b.classList.remove('bg-deepBlue', 'text-white', 'border-deepBlue');
+    b.classList.add('bg-white', 'text-darkSlate', 'border-slate-200');
+  });
+
+  btn.classList.add('bg-deepBlue', 'text-white', 'border-deepBlue');
+  btn.classList.remove('bg-white', 'text-darkSlate', 'border-slate-200');
+}
+
+function checkVideoBroadcastBoard() {
+  if (videoQuizChecked) return;
+  videoQuizChecked = true;
+
+  let videoScore = 0;
+  const maxScore = 12;
+
+  // Answers Map
+  const mcAnswers = { 1: "paper", 2: "United Kingdom", 3: "2%", 4: "internet forums" };
+  const scAnswers = { 
+    5: ["influential", "famous", "popular", "greatest"], 
+    6: ["kids and adults", "children and adults", "both kids and adults"], 
+    7: ["baltimore sun", "a newspaper", "baltimore"], 
+    8: ["describe", "classify", "explain", "define"] 
+  };
+  const saAnswers = {
+    9: ["a song of ice and fire", "game of thrones", "song of ice and fire"],
+    10: ["mobsters", "mafia", "mafia family", "tony soprano and his family", "criminals"],
+    11: ["sitcom", "comedy", "situational comedy"],
+    12: ["cliffhangers", "plot twists", "twists", "suspense"]
+  };
+
+  // MC Audit
+  for (let q in mcAnswers) {
+    const row = document.getElementById('video-mc-' + q);
+    const userMC = selectedVideoMCAnswers[q];
+    const correct = mcAnswers[q];
+
+    row.querySelectorAll('.v-mc-btn').forEach(b => { b.disabled = true; b.classList.add('opacity-60'); });
+
+    if (userMC === correct) {
+      videoScore++;
+      row.classList.add('border-emerald-500', 'bg-emerald-50/10');
+    } else {
+      row.classList.add('border-rose-300', 'bg-rose-50/10');
+    }
+  }
+
+  // Sentence Completion Audit
+  for (let q = 5; q <= 8; q++) {
+    const inputEl = document.getElementById('v-sc-' + q);
+    const userVal = inputEl.value.trim().toLowerCase();
+    const correctGroup = scAnswers[q];
+
+    inputEl.disabled = true;
+
+    if (correctGroup.some(ans => userVal.includes(correctGroup[0]) || ans === userVal)) {
+      videoScore++;
+      inputEl.parentElement.classList.add('border-emerald-500', 'bg-emerald-50/20');
+    } else {
+      inputEl.parentElement.classList.add('border-rose-300', 'bg-rose-50/20');
+      inputEl.value += ` (Expected: ${correctGroup[0]})`;
+    }
+  }
+
+  // Short Answer Audit
+  for (let q = 9; q <= 12; q++) {
+    const inputEl = document.getElementById('v-sa-' + q);
+    const userVal = inputEl.value.trim().toLowerCase();
+    const correctGroup = saAnswers[q];
+
+    inputEl.disabled = true;
+
+    if (correctGroup.some(ans => userVal.includes(ans) || ans === userVal)) {
+      videoScore++;
+      inputEl.parentElement.classList.add('border-emerald-500', 'bg-emerald-50/20');
+    } else {
+      inputEl.parentElement.classList.add('border-rose-300', 'bg-rose-50/20');
+      inputEl.value += ` (Expected: ${correctGroup[0]})`;
+    }
+  }
+
+  // Compile Video Quiz Feedback
+  const msgBox = document.getElementById('video-quiz-score-msg');
+  msgBox.classList.remove('hidden');
+
+  if (videoScore >= 9) {
+    msgBox.className = 'mt-8 p-5 rounded-lg font-semibold text-center text-lg bg-emerald-50 text-emerald-600 border border-emerald-200 animate-fadeUp';
+    msgBox.textContent = `🎉 Excellent Monitoring! Your Broadcast Score is ${videoScore}/${maxScore}. Ready to proceed.`;
+  } else {
+    msgBox.className = 'mt-8 p-5 rounded-lg font-semibold text-center text-lg bg-rose-50 text-rose-600 border border-rose-200 animate-fadeUp';
+    msgBox.textContent = `📺 Media Calibration Needed: Your Broadcast Score is ${videoScore}/${maxScore}. Study the script elements.`;
+  }
+}
+
+// ── STEP 4 GRAMMAR DRILLS & CALIBRATION ──
+const rawGrammarEntries = [
+  { sentence: "1. When I was a kid, we _____ have any streaming platforms, only local TV.", options: ["didn't use to", "haven't had"], correct: "didn't use to", hint: "Negative past habits are framed with 'didn't use to'." },
+  { sentence: "2. I _____ Netflix for five years now, and I use it daily.", options: ["have subscribed to", "used to subscribe to"], correct: "have subscribed to", hint: "An action starting in the past and continuing up to now uses the Present Perfect." },
+  { sentence: "3. My family _____ together for dinner every night while watching the news.", options: ["used to gather", "have gathered"], correct: "used to gather", hint: "A regular childhood family habit uses 'used to'." },
+  { sentence: "4. Recently, technology _____ the traditional TV industry completely obsolete.", options: ["has made", "made last year"], correct: "has made", hint: "'Recently' indicates a trend up to now, demanding the Present Perfect." }
+];
+
+function renderGrammarDrill() {
+  const box = document.getElementById('grammar-drill-box');
+  box.innerHTML = "";
+
+  rawGrammarEntries.forEach((item, idx) => {
+    const itemDiv = document.createElement('div');
+    itemDiv.className = "p-4 bg-slate-50 border rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-3";
+    itemDiv.id = "g-drill-" + idx;
+
+    const optButtons = item.options.map(opt => `
+      <button class="g-opt-btn bg-white border border-slate-200 text-sm font-semibold px-4 py-2 rounded-lg hover:border-orangeAction transition-all"
+              onclick="selectGrammarOpt(${idx}, '${opt}', this)">
+        ${opt}
+      </button>
+    `).join("");
+
+    itemDiv.innerHTML = `
+      <p class="font-medium text-slate-800">${item.sentence.replace('_____', '<span class="inline-block min-w-[100px] border-b border-orangeAction px-2 font-bold text-orangeAction">...</span>')}</p>
+      <div class="flex gap-2">${optButtons}</div>
+    `;
+    box.appendChild(itemDiv);
+  });
+}
+
+function selectGrammarOpt(idx, opt, btn) {
+  if (grammarChecked) return;
+  selectedGrammarAnswers[idx] = opt;
+
+  const row = document.getElementById('g-drill-' + idx);
+  row.querySelectorAll('.g-opt-btn').forEach(b => {
+    b.classList.remove('bg-deepBlue', 'text-white', 'border-deepBlue');
+    b.classList.add('bg-white', 'text-darkSlate', 'border-slate-200');
+  });
+
+  btn.classList.add('bg-deepBlue', 'text-white', 'border-deepBlue');
+  btn.classList.remove('bg-white', 'text-darkSlate', 'border-slate-200');
+}
+
+function checkGrammarDrill() {
+  if (grammarChecked) return;
+  
+  // Verify all are answered
+  if (Object.keys(selectedGrammarAnswers).length < rawGrammarEntries.length) {
+    const msg = document.getElementById('grammar-score-msg');
+    msg.className = "mt-6 p-4 rounded-lg bg-rose-50 text-rose-600 font-semibold border border-rose-100";
+    msg.textContent = "Please solve all scenarios before verifying.";
+    msg.classList.remove('hidden');
+    return;
+  }
+
+  grammarChecked = true;
+  let score = 0;
+
+  rawGrammarEntries.forEach((item, idx) => {
+    const row = document.getElementById('g-drill-' + idx);
+    const ans = selectedGrammarAnswers[idx];
+    const correct = item.correct;
+
+    row.querySelectorAll('.g-opt-btn').forEach(b => { b.disabled = true; b.classList.add('opacity-60'); });
+
+    if (ans === correct) {
+      score++;
+      row.classList.add('border-emerald-500', 'bg-emerald-50/10');
+      row.querySelectorAll('.g-opt-btn').forEach(b => {
+        if (b.textContent.trim() === correct) {
+          b.classList.remove('opacity-60', 'bg-white', 'text-darkSlate', 'bg-deepBlue');
+          b.classList.add('bg-emerald-600', 'text-white', 'border-emerald-600');
+        }
+      });
+    } else {
+      row.classList.add('border-rose-300', 'bg-rose-50/10');
+      row.querySelectorAll('.g-opt-btn').forEach(b => {
+        const value = b.textContent.trim();
+        if (value === ans) {
+          b.classList.remove('opacity-60', 'bg-deepBlue', 'text-white');
+          b.classList.add('bg-rose-600', 'text-white', 'border-rose-600');
+        }
+        if (value === correct) {
+          b.classList.remove('opacity-60');
+          b.classList.add('border-emerald-600', 'text-emerald-600', 'font-bold');
+        }
+      });
+    }
+  });
+
+  const msg = document.getElementById('grammar-score-msg');
+  msg.classList.remove('hidden');
+  const max = rawGrammarEntries.length;
+
+  if (score === max) {
+    msg.className = "mt-6 p-4 rounded-lg bg-emerald-50 text-emerald-600 font-semibold border border-emerald-100";
+    msg.textContent = `🎉 Grammar Aligned! Perfect score: ${score}/${max}. You successfully bridged past habits with life experiences!`;
+  } else {
+    msg.className = "mt-6 p-4 rounded-lg bg-amberSoft text-amber-800 font-semibold border border-amber-100";
+    msg.textContent = `Keep practicing! You scored ${score}/${max}. Check the highlighted corrections.`;
+  }
+}
+
+function resetEngine() {
+  vocabAnswers = {};
+  vocabChecked = false;
+  videoQuizChecked = false;
+  selectedVideoMCAnswers = {};
+  selectedGrammarAnswers = {};
+  grammarChecked = false;
+
+  document.getElementById('quiz-score-msg').classList.add('hidden');
+  document.getElementById('video-quiz-score-msg').classList.add('hidden');
+  document.getElementById('grammar-score-msg').classList.add('hidden');
+
+  // Reset Video Inputs
+  for (let q = 5; q <= 8; q++) {
+    const input = document.getElementById('v-sc-' + q);
+    input.disabled = false;
+    input.value = "";
+    input.parentElement.className = 'p-4 bg-slate-50 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-3';
+  }
+  for (let q = 9; q <= 12; q++) {
+    const input = document.getElementById('v-sa-' + q);
+    input.disabled = false;
+    input.value = "";
+    input.parentElement.className = 'p-5 bg-slate-50 rounded-xl border border-slate-200';
+  }
+
+  document.querySelectorAll('.v-mc-btn').forEach(b => {
+    b.disabled = false;
+    b.className = 'v-mc-btn bg-white border p-3 rounded-lg text-sm font-medium hover:border-orangeAction transition-all';
+  });
+
+  document.querySelectorAll('.vocab-pill').forEach(pill => {
+    pill.classList.remove('bg-deepBlue', 'text-white', 'border-deepBlue');
+    pill.classList.add('bg-white', 'text-darkSlate', 'border-slate-200');
+  });
+  document.querySelectorAll('.vocab-def').forEach(def => def.classList.add('hidden'));
+
+  buildQuizDatabase();
+  renderMatrixQuiz();
+  renderGrammarDrill();
+  goTo(1);
+}
+
+// Auto-run initial setups
+window.onload = function() {
+  buildQuizDatabase();
+  renderMatrixQuiz();
+  renderGrammarDrill();
+};
+</script>
+</body>
+</html>
