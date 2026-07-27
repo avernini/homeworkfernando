@@ -27,7 +27,7 @@
   }
 </script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&family=IBM+Plex+Mono:wght=400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
   body { font-family: 'Inter', sans-serif; }
   .mono { font-family: 'IBM Plex Mono', monospace; }
   .transition-all { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -106,19 +106,19 @@
       </button>
     </div>
 
-    <!-- Task Card 1: Your Online Life Is Permanent -->
+    <!-- Task Card 1: Freelance Negotiation & Pricing (Vinculado à aula freelance.html) -->
     <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-1">
       <div class="flex items-start gap-4">
         <div class="p-3 bg-orange-50 text-orangeAction rounded-xl border border-orange-100 flex-shrink-0 text-2xl">
-          <i class="ph ph-fingerprint"></i>
+          <i class="ph ph-currency-dollar"></i>
         </div>
         <div>
           <div class="flex items-center gap-2 flex-wrap mb-1">
             <span class="text-xs font-mono font-bold text-orangeAction bg-orange-50 border border-orange-100 px-2 py-0.5 rounded">Task 1</span>
-            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR B2</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR A2-B1</span>
           </div>
-          <h4 class="font-bold text-deepBlue text-lg">Homework Task: Your Online Life Is Permanent</h4>
-          <p class="text-xs text-slate-500 mt-1">Modal constraints (must/should), digital hygiene vocabulary, and electronic tattoo writing policy.</p>
+          <h4 class="font-bold text-deepBlue text-lg">Class Module: Freelance Negotiation &amp; Pricing</h4>
+          <p class="text-xs text-slate-500 mt-1">Second Conditional structures, commercial pricing vocabulary, interactive case files, and audio studio production.</p>
         </div>
       </div>
       <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
@@ -126,8 +126,8 @@
           <input type="checkbox" id="checkTask-1" onchange="toggleTaskStatus(1)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
           <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-1">Not Started</span>
         </label>
-        <a href="homeworklife.html" id="linkTask-1" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
-          Execute Task <i class="ph ph-arrow-right"></i>
+        <a href="freelance.html" id="linkTask-1" class="bg-orangeAction hover:bg-orangeHover text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+          Open Lesson <i class="ph ph-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -204,7 +204,7 @@
           <input type="checkbox" id="checkTask-4" onchange="toggleTaskStatus(4)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
           <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-4">Not Started</span>
         </label>
-        <a href="mocktest.html" id="linkTask-4" class="bg-orangeAction hover:bg-orangeHover text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+        <a href="mocktest.html" id="linkTask-4" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
           Execute Task <i class="ph ph-arrow-right"></i>
         </a>
       </div>
@@ -282,11 +282,11 @@
 
 <!-- ── ENGINE APPLICATION STATE & PERSISTENCE CORE ── -->
 <script>
-// State variable mapping with 5 slots
+// State variable mapping with 5 slots mapping to freelance lesson
 let appState = {
   studentName: "Active Student",
   tasks: {
-    1: { completed: false, path: "homeworklife.html" },
+    1: { completed: false, path: "freelance.html" },
     2: { completed: false, path: "homeworkhonest.html" },
     3: { completed: false, path: "homework_television.html" },
     4: { completed: false, path: "mocktest.html" },
@@ -369,7 +369,6 @@ window.onload = function() {
   const savedState = localStorage.getItem('metodo_fala_homework_hub_state');
   if (savedState) {
     try {
-      // Deep merge parameters to avoid losing missing keys if older state exists
       const parsed = JSON.parse(savedState);
       if (parsed.studentName) appState.studentName = parsed.studentName;
       for (let id in appState.tasks) {
@@ -389,7 +388,7 @@ function resetEngine() {
   appState = {
     studentName: "Active Student",
     tasks: {
-      1: { completed: false, path: "homeworklife.html" },
+      1: { completed: false, path: "freelance.html" },
       2: { completed: false, path: "homeworkhonest.html" },
       3: { completed: false, path: "homework_television.html" },
       4: { completed: false, path: "mocktest.html" },

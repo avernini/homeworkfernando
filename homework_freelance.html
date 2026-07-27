@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Homework: Freelance Negotiation (A2/B1)</title>
+<!-- Tailwind CSS & Phosphor Icons -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',
+          bodyLight: '#F8FAFC',
+          orangeAction: '#C2410C',
+          orangeHover: '#EA580C',
+          darkSlate: '#334155',
+          softSand: '#F1F5F9'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .task-card { transition: all 0.2s ease; }
+  .task-card:hover { transform: translateY(-2px); }
+</style>
+</head>
+<body class="bg-bodyLight text-darkSlate min-h-screen text-[17px] antialiased">
+
+<!-- ── HEADER HOMEWORK FALA ── -->
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[1000px] mx-auto px-6 py-4 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div class="flex-shrink-0">
+        <a href="freelance_negociacao.html" class="cursor-pointer hover:opacity-90 transition-opacity text-left focus:outline-none flex items-center gap-2">
+          <i class="ph-bold ph-arrow-left text-orangeAction text-lg"></i>
+          <span class="text-white font-bold tracking-wider text-sm mono">VOLTAR À AULA</span>
+        </a>
+      </div>
+      <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
+      <div class="hidden sm:block">
+        <h1 class="text-base font-bold text-white tracking-wide">Homework Hub: Freelance Negotiation</h1>
+        <p class="text-xs text-slate-400">Expanded Practice Exercises · Level A2/B1</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-xs font-mono font-bold text-orangeAction bg-orange-950/50 border border-orange-500/30 px-3 py-1 rounded-full">Extended Practice</span>
+    </div>
+  </div>
+</header>
+
+<!-- ESPAÇO DE TRABALHO PRINCIPAL -->
+<main class="max-w-[1000px] mx-auto px-6 py-8 pb-24">
+
+  <!-- BANNER DE INTRODUÇÃO -->
+  <div class="bg-deepBlue text-white rounded-2xl p-6 mb-8 shadow-sm border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="space-y-2">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-950/60 px-3 py-1 rounded-full border border-orange-500/30 mono">Extended Reinforcement</span>
+      <h2 class="text-2xl font-bold tracking-tight">Mastering Commercial Hypotheses</h2>
+      <p class="text-xs text-slate-300 max-w-xl leading-relaxed">Complete these 5 interactive tasks to firmly anchor the Second Conditional structures and business vocabulary into your active communication skills.</p>
+    </div>
+    <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl text-center flex-shrink-0 w-full md:w-auto">
+      <span class="text-[10px] font-mono text-slate-400 uppercase block mb-1">Estimated Time</span>
+      <span class="text-lg font-bold text-orangeAction mono">25 – 30 Minutes</span>
+    </div>
+  </div>
+
+  <!-- GRID DE TAREFAS EXPANDIDO -->
+  <div class="space-y-6">
+
+    <!-- TAREFA 1: WRITING CHALLENGE -->
+    <div class="task-card bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+      <div class="flex items-center justify-between border-b pb-3 mb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-orange-50 text-orangeAction flex items-center justify-center font-bold font-mono">01</div>
+          <div>
+            <h3 class="text-base font-bold text-deepBlue">Written Counter-Offer Practice</h3>
+            <p class="text-xs text-slate-400 font-mono">Second Conditional Application</p>
+          </div>
+        </div>
+        <span class="text-xs bg-slate-100 px-2.5 py-1 rounded text-slate-600 font-mono">Writing Task</span>
+      </div>
+      <p class="text-xs text-slate-600 mb-4 leading-relaxed">A client emails: <em>"We like your portfolio, but our budget is very low. Can you do this project for half price?"</em> Write a professional counter-offer using the Second Conditional.</p>
+      <div class="space-y-3">
+        <textarea id="task1-input" rows="3" placeholder="Type your response here (e.g., If you signed a longer contract, we would...)..." class="w-full text-xs font-mono p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-orangeAction bg-slate-50"></textarea>
+        <div class="flex justify-between items-center">
+          <span id="task1-feedback" class="text-xs font-mono font-bold hidden"></span>
+          <button onclick="checkTask1()" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold px-4 py-2 rounded-lg text-xs font-mono transition-colors cursor-pointer ml-auto">Verify Structure</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAREFA 2: GAP FILLING DRILL -->
+    <div class="task-card bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+      <div class="flex items-center justify-between border-b pb-3 mb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-orange-50 text-orangeAction flex items-center justify-center font-bold font-mono">02</div>
+          <div>
+            <h3 class="text-base font-bold text-deepBlue">Grammar Precision Drill</h3>
+            <p class="text-xs text-slate-400 font-mono">Fixing Clause Structures</p>
+          </div>
+        </div>
+        <span class="text-xs bg-slate-100 px-2.5 py-1 rounded text-slate-600 font-mono">Interactive Quiz</span>
+      </div>
+      <p class="text-xs text-slate-600 mb-4 leading-relaxed">Complete the sentence using the correct verb form for the Second Conditional:</p>
+      <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 font-mono text-xs text-slate-700 space-y-3 mb-4">
+        <p>"If our agency ______ more flexibility with deadlines, we ______ accept your proposal right away."</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+          <div>
+            <label class="block text-[10px] text-slate-400 mb-1 uppercase">First blank (If clause)</label>
+            <input type="text" id="blank-1" placeholder="type verb..." class="w-full p-2 rounded border border-slate-300 text-xs focus:outline-none focus:border-orangeAction bg-white">
+          </div>
+          <div>
+            <label class="block text-[10px] text-slate-400 mb-1 uppercase">Second blank (Result clause)</label>
+            <input type="text" id="blank-2" placeholder="type verb..." class="w-full p-2 rounded border border-slate-300 text-xs focus:outline-none focus:border-orangeAction bg-white">
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-between items-center">
+        <span id="task2-feedback" class="text-xs font-mono font-bold hidden"></span>
+        <button onclick="checkTask2()" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold px-4 py-2 rounded-lg text-xs font-mono transition-colors cursor-pointer ml-auto">Check Answers</button>
+      </div>
+    </div>
+
+    <!-- TAREFA 3: ERROR SPOTTING & CORRECTION (NOVO EXERCÍCIO) -->
+    <div class="task-card bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+      <div class="flex items-center justify-between border-b pb-3 mb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-orange-50 text-orangeAction flex items-center justify-center font-bold font-mono">03</div>
+          <div>
+            <h3 class="text-base font-bold text-deepBlue">Error Spotting &amp; Correction</h3>
+            <p class="text-xs text-slate-400 font-mono">Identifying Grammar Mistakes</p>
+          </div>
+        </div>
+        <span class="text-xs bg-slate-100 px-2.5 py-1 rounded text-slate-600 font-mono">Analytical Task</span>
+      </div>
+      <p class="text-xs text-slate-600 mb-4 leading-relaxed">Identify the mistake in this sentence and select the correct option:</p>
+      <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-3 mb-4">
+        <p class="font-mono font-semibold text-rose-700">❌ "If you would sign the contract today, we will offer a discount."</p>
+        <p class="text-slate-600">Which sentence corrects the error completely?</p>
+        <div class="space-y-2 pt-1 font-mono">
+          <label class="flex items-center gap-2 cursor-pointer p-2 rounded-lg bg-white border border-slate-200 hover:border-orangeAction">
+            <input type="radio" name="error-quiz" value="a" class="text-orangeAction">
+            <span>"If you signed the contract today, we would offer a discount."</span>
+          </label>
+          <label class="flex items-center gap-2 cursor-pointer p-2 rounded-lg bg-white border border-slate-200 hover:border-orangeAction">
+            <input type="radio" name="error-quiz" value="b" class="text-orangeAction">
+            <span>"If you sign the contract today, we offered a discount."</span>
+          </label>
+        </div>
+      </div>
+      <div class="flex justify-between items-center">
+        <span id="task3-feedback" class="text-xs font-mono font-bold hidden"></span>
+        <button onclick="checkTask3()" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold px-4 py-2 rounded-lg text-xs font-mono transition-colors cursor-pointer ml-auto">Check Answer</button>
+      </div>
+    </div>
+
+    <!-- TAREFA 4: VOCABULARY MATCHING (NOVO EXERCÍCIO) -->
+    <div class="task-card bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+      <div class="flex items-center justify-between border-b pb-3 mb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-orange-50 text-orangeAction flex items-center justify-center font-bold font-mono">04</div>
+          <div>
+            <h3 class="text-base font-bold text-deepBlue">Commercial Vocabulary Match</h3>
+            <p class="text-xs text-slate-400 font-mono">Lexical Recall</p>
+          </div>
+        </div>
+        <span class="text-xs bg-slate-100 px-2.5 py-1 rounded text-slate-600 font-mono">Vocabulary Task</span>
+      </div>
+      <p class="text-xs text-slate-600 mb-4 leading-relaxed">Match the freelance term to its correct definition:</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4 text-xs font-mono">
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+          <p class="font-bold text-deepBlue">1. Upfront Deposit</p>
+          <select id="vocab-1" class="w-full p-2 rounded border border-slate-300 bg-white text-xs">
+            <option value="">Select definition...</option>
+            <option value="wrong">Final product handed over</option>
+            <option value="correct">Initial payment before starting work</option>
+            <option value="wrong">Project boundaries</option>
+          </select>
+        </div>
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+          <p class="font-bold text-deepBlue">2. Deliverable</p>
+          <select id="vocab-2" class="w-full p-2 rounded border border-slate-300 bg-white text-xs">
+            <option value="">Select definition...</option>
+            <option value="correct">Final product handed over to the client</option>
+            <option value="wrong">Price estimate quote</option>
+            <option value="wrong">Initial payment</option>
+          </select>
+        </div>
+      </div>
+      <div class="flex justify-between items-center">
+        <span id="task4-feedback" class="text-xs font-mono font-bold hidden"></span>
+        <button onclick="checkTask4()" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold px-4 py-2 rounded-lg text-xs font-mono transition-colors cursor-pointer ml-auto">Verify Vocabulary</button>
+      </div>
+    </div>
+
+    <!-- TAREFA 5: ORAL PREPARATION -->
+    <div class="task-card bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+      <div class="flex items-center justify-between border-b pb-3 mb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-orange-50 text-orangeAction flex items-center justify-center font-bold font-mono">05</div>
+          <div>
+            <h3 class="text-base font-bold text-deepBlue">Voice Memo Preparation</h3>
+            <p class="text-xs text-slate-400 font-mono">Speaking Readiness</p>
+          </div>
+        </div>
+        <span class="text-xs bg-slate-100 px-2.5 py-1 rounded text-slate-600 font-mono">Oral Prep</span>
+      </div>
+      <p class="text-xs text-slate-600 mb-4 leading-relaxed">Prepare a 30-second response for our next session answering this prompt: <em>"If a client requested three extra revisions for free, what would you tell them?"</em></p>
+      <div class="p-3 bg-orange-50 rounded-xl border border-orange-200 text-xs text-orange-900 font-mono">
+        💡 <strong>Tip:</strong> Practice saying it out loud using contractions like <em>"If you wanted..."</em> or <em>"We would charge..."</em>.
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- SCRIPTS DE VALIDAÇÃO DO HOMEWORK -->
+<script>
+function checkTask1() {
+  const text = document.getElementById('task1-input').value.toLowerCase();
+  const fb = document.getElementById('task1-feedback');
+  fb.classList.remove('hidden');
+
+  if ((text.includes('if') && text.includes('would')) || text.length > 15) {
+    fb.className = "text-xs font-mono font-bold text-emerald-600";
+    fb.textContent = "✓ Excellent! Great use of hypothetical structures.";
+  } else {
+    fb.className = "text-xs font-mono font-bold text-rose-600";
+    fb.textContent = "✗ Make sure to include both 'if' (past simple) and 'would' in your counter-offer.";
+  }
+}
+
+function checkTask2() {
+  const b1 = document.getElementById('blank-1').value.trim().toLowerCase();
+  const b2 = document.getElementById('blank-2').value.trim().toLowerCase();
+  const fb = document.getElementById('task2-feedback');
+  fb.classList.remove('hidden');
+
+  if (b1 === 'had' && (b2 === 'would' || b2 === 'would accept')) {
+    fb.className = "text-xs font-mono font-bold text-emerald-600";
+    fb.textContent = "✓ Perfect! 'had' (Past Simple) and 'would accept' form the accurate Second Conditional.";
+  } else {
+    fb.className = "text-xs font-mono font-bold text-rose-600";
+    fb.textContent = "✗ Check the rules: If + had (past simple), result + would + base verb.";
+  }
+}
+
+function checkTask3() {
+  const selected = document.querySelector('input[name="error-quiz"]:checked');
+  const fb = document.getElementById('task3-feedback');
+  fb.classList.remove('hidden');
+
+  if (selected && selected.value === 'a') {
+    fb.className = "text-xs font-mono font-bold text-emerald-600";
+    fb.textContent = "✓ Correct! Never use 'would' in the If-clause, and use Past Simple ('signed').";
+  } else {
+    fb.className = "text-xs font-mono font-bold text-rose-600";
+    fb.textContent = "✗ Incorrect. Remember: If + Past Simple, result + would + base verb.";
+  }
+}
+
+function checkTask4() {
+  const v1 = document.getElementById('vocab-1').value;
+  const v2 = document.getElementById('vocab-2').value;
+  const fb = document.getElementById('task4-feedback');
+  fb.classList.remove('hidden');
+
+  if (v1 === 'correct' && v2 === 'correct') {
+    fb.className = "text-xs font-mono font-bold text-emerald-600";
+    fb.textContent = "✓ Spot on! All commercial terms correctly matched.";
+  } else {
+    fb.className = "text-xs font-mono font-bold text-rose-600";
+    fb.textContent = "✗ One or more definitions are incorrect. Review the vocabulary cards from class.";
+  }
+}
+</script>
+</body>
+</html>
