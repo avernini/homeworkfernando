@@ -549,3 +549,407 @@ window.onload = function() {
 </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Student Homework Hub</title>
+<!-- Tailwind CSS & Phosphor Icons for Premium Interface Consistency -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',      /* Dark UI Header Background */
+          bodyLight: '#F8FAFC',     /* Workspace background */
+          orangeAction: '#C2410C',  /* Primary brand accent color */
+          orangeHover: '#EA580C',   /* Hover color states */
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+          greenSoft: '#E8F8EF',
+          redSoft: '#FDEAEA',
+          amberSoft: '#FEF3D7'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .transition-all { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+</style>
+</head>
+<body class="bg-bodyLight text-darkSlate min-h-screen text-[18px] antialiased">
+
+<!-- ── STANDARDIZED METHOD FALA HEADER ── -->
+<header class="bg-deepBlue border-b border-slate-800 shadow-md">
+  <div class="max-w-[960px] mx-auto px-6 py-5 flex items-center justify-between gap-4">
+    
+    <div class="flex items-center gap-3">
+      <div class="flex-shrink-0">
+        <span class="text-white font-bold tracking-wider text-lg mono select-none">MÉTODO <span class="text-orangeAction">FALA</span></span>
+      </div>
+      <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
+      <div class="hidden sm:block">
+        <h1 class="text-base font-bold text-white tracking-wide">Student Homework Hub</h1>
+        <p class="text-xs text-slate-400">CEFR Operations Portal · Personal Learning Management</p>
+      </div>
+    </div>
+
+    <!-- Active Student Profile Tag -->
+    <div class="flex items-center gap-2.5 bg-slate-800/80 px-4 py-1.5 rounded-lg border border-slate-700">
+      <div class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></div>
+      <span class="text-xs font-semibold text-white tracking-wide uppercase font-mono" id="studentNameLabel">Active Student</span>
+    </div>
+
+  </div>
+</header>
+
+<!-- MAIN CONTENT WORKSPACE -->
+<main class="max-w-[960px] mx-auto px-6 py-12 pb-24">
+
+  <!-- ── PROGRESS DASHBOARD HERO ── -->
+  <div class="bg-deepBlue rounded-2xl p-8 mb-8 text-white shadow-xl relative overflow-hidden border border-slate-800">
+    <div class="absolute -right-10 -top-10 w-40 h-44 bg-orangeAction/10 rounded-full blur-2xl"></div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+      <div class="md:col-span-2">
+        <span class="text-orangeAction font-mono font-bold text-xs uppercase tracking-widest">Performance Diagnostics</span>
+        <h2 class="text-3xl font-bold mt-1 mb-4">Your Independent Learning Road</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-4">Consolidate vocabulary collocations, critical frameworks, and writing portfolios covered in your executive English sessions.</p>
+        
+        <!-- Linear Progress Tracker bar -->
+        <div>
+          <div class="flex justify-between items-center text-xs font-mono font-semibold mb-1.5 text-slate-400">
+            <span>COMPLIANCE PROGRESS</span>
+            <span id="progressBarLabel">0% Complete</span>
+          </div>
+          <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden border border-slate-700 p-0.5">
+            <div id="progressBarFill" class="h-full bg-gradient-to-r from-orangeAction to-orangeHover rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 text-center">
+        <div class="bg-slate-800/60 border border-slate-700/60 p-4 rounded-xl">
+          <span class="block text-2xl font-bold font-mono text-orangeAction" id="counterTotal">5</span>
+          <span class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">Assigned</span>
+        </div>
+        <div class="bg-slate-800/60 border border-slate-700/60 p-4 rounded-xl">
+          <span class="block text-2xl font-bold font-mono text-emerald-400" id="counterDone">0</span>
+          <span class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">Complete</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TASK LIST COMPONENT ── -->
+  <div class="space-y-4 mb-8">
+    <div class="flex items-center justify-between">
+      <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 font-mono">Assigned Tasks Repository</h3>
+      <button onclick="toggleTeacherSettings()" class="text-xs font-bold font-mono text-slate-400 hover:text-orangeAction transition-colors flex items-center gap-1">
+        <i class="ph ph-gear"></i> Setup Hub
+      </button>
+    </div>
+
+    <!-- Task Card 1: Freelance Negotiation & Pricing (Vinculado à aula freelance.html) -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-1">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-orange-50 text-orangeAction rounded-xl border border-orange-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-currency-dollar"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-orangeAction bg-orange-50 border border-orange-100 px-2 py-0.5 rounded">Task 1</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR A2-B1</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Class Module: Freelance Negotiation &amp; Pricing</h4>
+          <p class="text-xs text-slate-500 mt-1">Second Conditional structures, commercial pricing vocabulary, interactive case files, and audio studio production.</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-1" onchange="toggleTaskStatus(1)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-1">Not Started</span>
+        </label>
+        <a href="freelance.html" id="linkTask-1" class="bg-orangeAction hover:bg-orangeHover text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+          Open Lesson <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Task Card 2: If We Were Honest Making Plans -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-2">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-amber-50 text-amber-700 rounded-xl border border-amber-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-chat-centered-dots"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-amber-700 bg-amber-50 border border-amber-100 px-2 py-0.5 rounded">Task 2</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR B2</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Homework Task: If We Were Honest Making Plans</h4>
+          <p class="text-xs text-slate-500 mt-1">Refusal registers, slang idioms (be down to, turn down), and social white lies essay writing.</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-2" onchange="toggleTaskStatus(2)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-2">Not Started</span>
+        </label>
+        <a href="homeworkhonest.html" id="linkTask-2" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+          Execute Task <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Task Card 3: Television - The Global Classroom -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-3">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-blue-50 text-blue-700 rounded-xl border border-blue-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-television"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-blue-700 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded">Task 3</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR A2-B1</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Homework Task: Television &amp; Media Habits</h4>
+          <p class="text-xs text-slate-500 mt-1">Industry terminology (binge watch, spinoff), past habits (used to) vs modern perfect trends, and embedded Docs workspace[cite: 3].</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-3" onchange="toggleTaskStatus(3)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-3">Not Started</span>
+        </label>
+        <a href="homework_television.html" id="linkTask-3" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+          Execute Task <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Task Card 4: Multi-Skill Proficiency Mock Test -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-4">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-emerald-50 text-emerald-700 rounded-xl border border-emerald-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-certificate"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded">Task 4</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR A2-B2 Diagnostic</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Proficiency Simulation: 4-Skill Mock Test</h4>
+          <p class="text-xs text-slate-500 mt-1">Flight disruption text analytics, auditory laboratory stress tracking, written notification files, and audio recording matrix[cite: 3].</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-4" onchange="toggleTaskStatus(4)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-4">Not Started</span>
+        </label>
+        <a href="mocktest.html" id="linkTask-4" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+          Execute Task <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Task Card 5: Street Navigation & Detour Challenges -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-5">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-purple-50 text-purple-700 rounded-xl border border-purple-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-map-trifold"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-purple-700 bg-purple-50 border border-purple-100 px-2 py-0.5 rounded">Task 5</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR A2</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Homework Task: Street Navigation &amp; Spatial Prepositions</h4>
+          <p class="text-xs text-slate-500 mt-1">Spatial prepositions calibration (across from, next to, behind), interactive city grid matrix, and tourist guide text production[cite: 3].</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-5" onchange="toggleTaskStatus(5)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-5">Not Started</span>
+        </label>
+        <a href="homework_navigation.html" id="linkTask-5" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+          Execute Task <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── TEACHER CONFIGURATION DASHBOARD (HIDDEN BY DEFAULT) ── -->
+  <div id="teacherSettings" class="bg-white border border-slate-200 rounded-xl p-6 hidden transition-all animate-fadeUp">
+    <div class="flex items-center justify-between border-b pb-3 mb-4">
+      <span class="text-xs font-mono font-bold text-orangeAction uppercase">Hub Customization panel</span>
+      <button onclick="toggleTeacherSettings()" class="text-slate-400 hover:text-slate-600 text-sm font-bold">Close <i class="ph ph-x"></i></button>
+    </div>
+    
+    <div class="grid grid-cols-1 gap-4 text-sm mb-4">
+      <div>
+        <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-1">Student Display Name:</label>
+        <input type="text" id="inputStudentName" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50" placeholder="Type student name...">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div>
+          <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-1">Task 1 URL Path:</label>
+          <input type="text" id="inputPath1" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50 font-mono text-xs">
+        </div>
+        <div>
+          <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-1">Task 2 URL Path:</label>
+          <input type="text" id="inputPath2" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50 font-mono text-xs">
+        </div>
+        <div>
+          <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-1">Task 3 URL Path:</label>
+          <input type="text" id="inputPath3" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50 font-mono text-xs">
+        </div>
+        <div>
+          <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-1">Task 4 URL Path:</label>
+          <input type="text" id="inputPath4" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50 font-mono text-xs">
+        </div>
+        <div>
+          <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-1">Task 5 URL Path:</label>
+          <input type="text" id="inputPath5" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50 font-mono text-xs">
+        </div>
+      </div>
+    </div>
+    <button onclick="saveTeacherSettings()" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-5 py-2.5 rounded-lg transition-colors font-mono">
+      Save Dashboard Matrix
+    </button>
+  </div>
+
+</main>
+
+<!-- ── ENGINE APPLICATION STATE & PERSISTENCE CORE ── -->
+<script>
+// State variable mapping with 5 slots mapping to freelance lesson
+let appState = {
+  studentName: "Active Student",
+  tasks: {
+    1: { completed: false, path: "freelance.html" },
+    2: { completed: false, path: "homeworkhonest.html" },
+    3: { completed: false, path: "homework_television.html" },
+    4: { completed: false, path: "mocktest.html" },
+    5: { completed: false, path: "homework_navigation.html" }
+  }
+};
+
+function toggleTeacherSettings() {
+  const panel = document.getElementById('teacherSettings');
+  panel.classList.toggle('hidden');
+}
+
+function saveTeacherSettings() {
+  const nameVal = document.getElementById('inputStudentName').value.trim();
+  if (nameVal) appState.studentName = nameVal;
+
+  for (let i = 1; i <= 5; i++) {
+    const pathInput = document.getElementById(`inputPath${i}`);
+    if (pathInput && pathInput.value.trim()) {
+      appState.tasks[i].path = pathInput.value.trim();
+    }
+  }
+
+  localStorage.setItem('metodo_fala_homework_hub_state', JSON.stringify(appState));
+  syncDOM();
+  toggleTeacherSettings();
+}
+
+function toggleTaskStatus(taskId) {
+  const checkbox = document.getElementById(`checkTask-${taskId}`);
+  appState.tasks[taskId].completed = checkbox.checked;
+  
+  localStorage.setItem('metodo_fala_homework_hub_state', JSON.stringify(appState));
+  syncDOM();
+}
+
+function syncDOM() {
+  // Sync Student Profile Name
+  document.getElementById('studentNameLabel').textContent = appState.studentName;
+  document.getElementById('inputStudentName').value = appState.studentName;
+
+  let totalTasks = Object.keys(appState.tasks).length;
+  let completedCount = 0;
+
+  // Sync Cards parameters across all 5 slots
+  for (let id in appState.tasks) {
+    const task = appState.tasks[id];
+    const checkbox = document.getElementById(`checkTask-${id}`);
+    const card = document.getElementById(`taskCard-${id}`);
+    const statusLabel = document.getElementById(`statusLabel-${id}`);
+    const runLink = document.getElementById(`linkTask-${id}`);
+    const pathInput = document.getElementById(`inputPath${id}`);
+
+    if (pathInput) pathInput.value = task.path;
+    if (checkbox) checkbox.checked = task.completed;
+    if (runLink) runLink.setAttribute('href', task.path);
+
+    if (task.completed) {
+      completedCount++;
+      statusLabel.textContent = "Completed";
+      statusLabel.className = "text-xs font-mono font-bold text-emerald-600 uppercase";
+      card.className = "bg-white border border-emerald-300 bg-emerald-50/10 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-emerald-400 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6";
+    } else {
+      statusLabel.textContent = "Not Started";
+      statusLabel.className = "text-xs font-mono font-bold text-slate-400 uppercase";
+      card.className = "bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6";
+    }
+  }
+
+  // Calculate Linear metrics percentage
+  let pct = Math.round((completedCount / totalTasks) * 100);
+  document.getElementById('progressBarLabel').textContent = `${pct}% Complete`;
+  document.getElementById('progressBarFill').style.width = `${pct}%`;
+
+  document.getElementById('counterTotal').textContent = totalTasks;
+  document.getElementById('counterDone').textContent = completedCount;
+}
+
+window.onload = function() {
+  const savedState = localStorage.getItem('metodo_fala_homework_hub_state');
+  if (savedState) {
+    try {
+      const parsed = JSON.parse(savedState);
+      if (parsed.studentName) appState.studentName = parsed.studentName;
+      for (let id in appState.tasks) {
+        if (parsed.tasks && parsed.tasks[id]) {
+          appState.tasks[id].completed = parsed.tasks[id].completed || false;
+          appState.tasks[id].path = parsed.tasks[id].path || appState.tasks[id].path;
+        }
+      }
+    } catch (e) {
+      console.error("Failure restoring localized states.", e);
+    }
+  }
+  syncDOM();
+};
+
+function resetEngine() {
+  appState = {
+    studentName: "Active Student",
+    tasks: {
+      1: { completed: false, path: "freelance.html" },
+      2: { completed: false, path: "homeworkhonest.html" },
+      3: { completed: false, path: "homework_television.html" },
+      4: { completed: false, path: "mocktest.html" },
+      5: { completed: false, path: "homework_navigation.html" }
+    }
+  };
+  localStorage.removeItem('metodo_fala_homework_hub_state');
+  syncDOM();
+}
+</script>
+</body>
+</html>
