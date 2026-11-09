@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Practical Homework: Decision Fatigue &amp; Audit Lab (B1/B2)</title>
+<!-- Tailwind CSS & Phosphor Icons -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',
+          bodyLight: '#F8FAFC',
+          orangeAction: '#C2410C',
+          orangeHover: '#EA580C',
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body class="bg-deepBlue text-darkSlate min-h-screen text-[17px] antialiased">
+
+<!-- HEADER -->
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[1000px] mx-auto px-6 py-4 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div>
+        <span class="text-white font-bold tracking-wider text-lg mono block">MÉTODO <span class="text-orangeAction">FALA</span></span>
+        <span class="block text-[10px] text-slate-400 font-mono uppercase tracking-widest">Practical Homework · Decision Audit &amp; Optimization Lab</span>
+      </div>
+    </div>
+    <div>
+      <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mono">Andragogical Active Practice</span>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN WORKSPACE -->
+<div class="bg-bodyLight w-full min-h-[calc(100vh-69px)]">
+  <main class="max-w-[1000px] mx-auto px-6 py-8 pb-24 space-y-8">
+
+    <!-- INTRO HERO -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100 font-mono">Active Practical Homework (B1/B2)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Decision Audit &amp; Energy Optimization Lab</h2>
+      <p class="text-base text-slate-500 leading-relaxed">Practice the modal structures of advice and necessity (<em>should have, need to, must, ought to</em>) and audit your daily cognitive bandwidth through interactive operational scenarios.</p>
+    </div>
+
+    <!-- PART 1: GRAMMAR CALIBRATION DRILLS -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
+      <div class="flex items-center gap-2 border-b pb-3">
+        <div class="p-2 bg-indigo-50 text-indigo-700 rounded-lg"><i class="ph-bold ph-list-checks text-lg"></i></div>
+        <div>
+          <h3 class="font-bold text-deepBlue text-lg">Part 1: Contextual Grammar Checkpoint</h3>
+          <p class="text-xs text-slate-400 font-mono">Select the correct modal structure for each managerial situation:</p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Q1 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3" id="mc-q-1">
+          <p class="text-xs font-semibold text-slate-800">1. "We ______ automated our weekly meal planning last month to avoid evening decision fatigue."</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button type="button" onclick="checkMC(1, 'correct', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">A) should have</button>
+            <button type="button" onclick="checkMC(1, 'wrong', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">B) need to</button>
+          </div>
+          <p class="mc-feedback hidden text-[11px] font-bold mt-1"></p>
+        </div>
+
+        <!-- Q2 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3" id="mc-q-2">
+          <p class="text-xs font-semibold text-slate-800">2. "To protect our morning cognitive bandwidth, executives ______ batch notifications and check email only twice a day."</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button type="button" onclick="checkMC(2, 'wrong', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">A) should have</button>
+            <button type="button" onclick="checkMC(2, 'correct', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">B) need to</button>
+          </div>
+          <p class="mc-feedback hidden text-[11px] font-bold mt-1"></p>
+        </div>
+
+        <!-- Q3 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3" id="mc-q-3">
+          <p class="text-xs font-semibold text-slate-800">3. "We ______ avoid making major strategic decisions late at night when mental energy is fully depleted."</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button type="button" onclick="checkMC(3, 'correct', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">A) must</button>
+            <button type="button" onclick="checkMC(3, 'wrong', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">B) ought</button>
+          </div>
+          <p class="mc-feedback hidden text-[11px] font-bold mt-1"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART 2: INTERACTIVE DECISION AUDIT SIMULATION -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
+      <div class="flex items-center gap-2 border-b pb-3">
+        <div class="p-2 bg-emerald-50 text-emerald-700 rounded-lg"><i class="ph-bold ph-scales text-lg"></i></div>
+        <div>
+          <h3 class="font-bold text-deepBlue text-lg">Part 2: Executive Decision Audit Simulation</h3>
+          <p class="text-xs text-slate-400 font-mono">Make operational choices to optimize your cognitive energy score:</p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <!-- SIMULATION SCENARIO 1 -->
+        <div class="p-5 bg-slate-50 rounded-xl border border-slate-200 space-y-4" id="sim-1">
+          <div class="flex justify-between items-center">
+            <span class="text-[10px] font-mono font-bold text-orangeAction uppercase bg-orange-50 px-2.5 py-1 rounded border border-orange-200">Scenario 1: Morning Inbox Management</span>
+            <span class="text-xs font-mono text-slate-400">Impact: Cognitive Bandwidth</span>
+          </div>
+          <p class="text-xs font-semibold text-slate-800">You arrive at your desk at 9:00 AM with high mental energy. Your messaging app shows 47 unread notifications. What do you do?</p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button type="button" onclick="runSimulation(1, 'reactive')" class="bg-white border border-slate-300 text-left p-3 rounded-xl text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">
+              <strong class="block text-deepBlue mb-1">A) Open inbox immediately</strong>
+              <span class="text-[11px] text-slate-500 block">Respond to every ping as it arrives throughout the morning.</span>
+            </button>
+            <button type="button" onclick="runSimulation(1, 'system')" class="bg-white border border-slate-300 text-left p-3 rounded-xl text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">
+              <strong class="block text-deepBlue mb-1">B) Defer notifications &amp; focus</strong>
+              <span class="text-[11px] text-slate-500 block">Block 90 minutes for deep work first; check messages only at 11:30 AM.</span>
+            </button>
+          </div>
+          <div id="sim-feedback-1" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+        </div>
+
+        <!-- SIMULATION SCENARIO 2 -->
+        <div class="p-5 bg-slate-50 rounded-xl border border-slate-200 space-y-4" id="sim-2">
+          <div class="flex justify-between items-center">
+            <span class="text-[10px] font-mono font-bold text-orangeAction uppercase bg-orange-50 px-2.5 py-1 rounded border border-orange-200">Scenario 2: Evening Decision Making</span>
+            <span class="text-xs font-mono text-slate-400">Impact: Decision Fatigue</span>
+          </div>
+          <p class="text-xs font-semibold text-slate-800">It is 6:30 PM after a grueling 10-hour workday. A major client contract arrives with complex revisions requiring an immediate verdict. What do you do?</p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button type="button" onclick="runSimulation(2, 'fatigue')" class="bg-white border border-slate-300 text-left p-3 rounded-xl text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">
+              <strong class="block text-deepBlue mb-1">A) Review and sign tonight</strong>
+              <span class="text-[11px] text-slate-500 block">Push through exhaustion and finalize the contract immediately.</span>
+            </button>
+            <button type="button" onclick="runSimulation(2, 'optimized')" class="bg-white border border-slate-300 text-left p-3 rounded-xl text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">
+              <strong class="block text-deepBlue mb-1">B) Defer review to tomorrow</strong>
+              <span class="text-[11px] text-slate-500 block">Recognize depleted bandwidth; flag revisions for fresh morning review.</span>
+            </button>
+          </div>
+          <div id="sim-feedback-2" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUBMISSION BOX -->
+    <div class="bg-slate-900 text-white rounded-2xl p-8 text-center shadow-md border border-slate-800 space-y-3">
+      <h4 class="text-base font-bold font-mono uppercase tracking-wider text-orangeAction">Complete Practical Homework</h4>
+      <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">Once you complete the grammar checks and the decision audit simulation above, submit your assignment session here.</p>
+      <div class="pt-2">
+        <button type="button" onclick="alert('Homework assignment submitted successfully! Excellent decision fatigue practice.')" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-deepBlue font-bold uppercase px-8 py-3.5 rounded-xl transition-all shadow font-mono cursor-pointer text-xs">
+          Submit Homework <i class="ph-bold ph-check text-base"></i>
+        </button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- SCRIPT LOGIC -->
+<script>
+function checkMC(qNum, status, btn) {
+  const container = document.getElementById('mc-q-' + qNum);
+  const fb = container.querySelector('.mc-feedback');
+  fb.classList.remove('hidden');
+  container.querySelectorAll('button').forEach(b => {
+    b.className = "bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer";
+  });
+
+  if (status === 'correct') {
+    btn.className = "bg-emerald-50 border border-emerald-400 text-emerald-800 font-semibold text-left px-3.5 py-2 rounded-lg text-xs font-mono";
+    fb.className = "mc-feedback text-[11px] font-bold text-emerald-600 mt-1";
+    fb.textContent = "✓ Correct! Impeccable modal usage.";
+  } else {
+    btn.className = "bg-rose-50 border border-rose-400 text-rose-800 font-semibold text-left px-3.5 py-2 rounded-lg text-xs font-mono";
+    fb.className = "mc-feedback text-[11px] font-bold text-rose-600 mt-1";
+    fb.textContent = "✗ Incorrect choice. Review the grammar rules for advice and necessity modals.";
+  }
+}
+
+function runSimulation(simNum, choice) {
+  const container = document.getElementById('sim-' + simNum);
+  const fb = document.getElementById('sim-feedback-' + simNum);
+  fb.classList.remove('hidden');
+
+  container.querySelectorAll('button').forEach(b => {
+    b.className = "bg-white border border-slate-300 text-left p-3 rounded-xl text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer";
+  });
+
+  event.currentTarget.className = "bg-slate-900 border border-slate-900 text-white text-left p-3 rounded-xl text-xs font-mono shadow-sm";
+
+  if (simNum === 1) {
+    if (choice === 'system') {
+      fb.className = "p-3 rounded-xl text-xs font-mono bg-emerald-50 border border-emerald-300 text-emerald-900";
+      fb.innerHTML = "<strong>✓ Optimal Choice!</strong> You successfully protected your morning cognitive bandwidth. As we studied: <em>Executives need to batch notifications to preserve mental energy.</em>";
+    } else {
+      fb.className = "p-3 rounded-xl text-xs font-mono bg-rose-50 border border-rose-300 text-rose-900";
+      fb.innerHTML = "<strong>✗ High Decision Fatigue Risk.</strong> Opening your inbox immediately drains your peak focus on reactive tasks. You should have deferred notifications.";
+    }
+  } else if (simNum === 2) {
+    if (choice === 'optimized') {
+      fb.className = "p-3 rounded-xl text-xs font-mono bg-emerald-50 border border-emerald-300 text-emerald-900";
+      fb.innerHTML = "<strong>✓ Optimal Choice!</strong> Excellent judgment. Leaders <em>must</em> avoid making major strategic decisions late in the evening when mental exhaustion peaks.";
+    } else {
+      fb.className = "p-3 rounded-xl text-xs font-mono bg-rose-50 border border-rose-300 text-rose-900";
+      fb.innerHTML = "<strong>✗ High Error Risk.</strong> Reviewing complex contracts while depleted often leads to impulsive mistakes. You ought to have postponed this decision until morning.";
+    }
+  }
+}
+</script>
+</body>
+</html>

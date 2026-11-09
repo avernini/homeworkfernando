@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Practical Homework: Attention Economy &amp; Concession Lab (B1/B2)</title>
+<!-- Tailwind CSS & Phosphor Icons -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',
+          bodyLight: '#F8FAFC',
+          orangeAction: '#C2410C',
+          orangeHover: '#EA580C',
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body class="bg-deepBlue text-darkSlate min-h-screen text-[17px] antialiased">
+
+<!-- HEADER -->
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[1000px] mx-auto px-6 py-4 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div>
+        <span class="text-white font-bold tracking-wider text-lg mono block">MÉTODO <span class="text-orangeAction">FALA</span></span>
+        <span class="block text-[10px] text-slate-400 font-mono uppercase tracking-widest">Practical Homework · Concession &amp; Focus Drills</span>
+      </div>
+    </div>
+    <div>
+      <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mono">Andragogical Active Practice</span>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN WORKSPACE -->
+<div class="bg-bodyLight w-full min-h-[calc(100vh-69px)]">
+  <main class="max-w-[1000px] mx-auto px-6 py-8 pb-24 space-y-8">
+
+    <!-- INTRO HERO -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100 font-mono">Active Practical Homework (B1/B2)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Executive Concession &amp; Focus Lab</h2>
+      <p class="text-base text-slate-500 leading-relaxed">Practice the grammatical structures (<em>Even though vs. Despite</em>) and key vocabulary learned in the masterclass through realistic professional scenarios. No long essays—just immediate practical application.</p>
+    </div>
+
+    <!-- PART 1: CONCESSION GRAMMAR DRILLS -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
+      <div class="flex items-center gap-2 border-b pb-3">
+        <div class="p-2 bg-indigo-50 text-indigo-700 rounded-lg"><i class="ph-bold ph-list-checks text-lg"></i></div>
+        <div>
+          <h3 class="font-bold text-deepBlue text-lg">Part 1: Contextual Grammar Checkpoint</h3>
+          <p class="text-xs text-slate-400 font-mono">Select the correct concession structure for each professional context:</p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Q1 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3" id="mc-q-1">
+          <p class="text-xs font-semibold text-slate-800">1. "______ knowing the risks of context switching, many managers keep their messaging apps open all day."</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button type="button" onclick="checkMC(1, 'wrong', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">A) Even though</button>
+            <button type="button" onclick="checkMC(1, 'correct', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">B) Despite</button>
+          </div>
+          <p class="mc-feedback hidden text-[11px] font-bold mt-1"></p>
+        </div>
+
+        <!-- Q2 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3" id="mc-q-2">
+          <p class="text-xs font-semibold text-slate-800">2. "______ we try to protect our morning schedule, urgent requests constantly interrupt us."</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button type="button" onclick="checkMC(2, 'correct', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">A) Even though</button>
+            <button type="button" onclick="checkMC(2, 'wrong', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">B) Despite</button>
+          </div>
+          <p class="mc-feedback hidden text-[11px] font-bold mt-1"></p>
+        </div>
+
+        <!-- Q3 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3" id="mc-q-3">
+          <p class="text-xs font-semibold text-slate-800">3. "______ constant digital distractions, she successfully finished her deep work project on time."</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button type="button" onclick="checkMC(3, 'wrong', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">A) Even though</button>
+            <button type="button" onclick="checkMC(3, 'correct', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">B) Despite</button>
+          </div>
+          <p class="mc-feedback hidden text-[11px] font-bold mt-1"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART 2: VOCABULARY & SYNTAX FILL-IN-THE-GAPS -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
+      <div class="flex items-center gap-2 border-b pb-3">
+        <div class="p-2 bg-emerald-50 text-emerald-700 rounded-lg"><i class="ph-bold ph-pencil-simple-line text-lg"></i></div>
+        <div>
+          <h3 class="font-bold text-deepBlue text-lg">Part 2: Vocabulary &amp; Terminology Drills</h3>
+          <p class="text-xs text-slate-400 font-mono">Fill in the gaps using the correct term from the word bank:</p>
+        </div>
+      </div>
+
+      <!-- WORD BANK -->
+      <div class="p-3 bg-slate-100 rounded-xl border border-slate-200 flex flex-wrap gap-2 items-center text-xs font-mono text-deepBlue">
+        <span class="font-bold text-slate-500 uppercase text-[10px]">Word Bank:</span>
+        <span class="bg-white px-2.5 py-1 rounded border border-slate-300 shadow-sm">monetize</span>
+        <span class="bg-white px-2.5 py-1 rounded border border-slate-300 shadow-sm">friction</span>
+        <span class="bg-white px-2.5 py-1 rounded border border-slate-300 shadow-sm">dopamine</span>
+        <span class="bg-white px-2.5 py-1 rounded border border-slate-300 shadow-sm">engagement</span>
+      </div>
+
+      <div class="space-y-4">
+        <!-- GAP 1 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+          <p class="text-xs font-semibold text-slate-800">1. Social media platforms rely on high daily ______ in order to sell targeted advertising space.</p>
+          <div class="flex items-center gap-3">
+            <input type="text" id="gap-1" placeholder="Type word here..." class="bg-white border border-slate-300 px-3 py-2 rounded-lg text-xs font-mono w-64 focus:outline-none focus:border-orangeAction">
+            <button type="button" onclick="checkGap(1, 'engagement')" class="bg-deepBlue hover:bg-slate-800 text-white text-xs font-mono px-4 py-2 rounded-lg transition-all cursor-pointer">Check</button>
+          </div>
+          <p id="gap-fb-1" class="hidden text-[11px] font-bold"></p>
+        </div>
+
+        <!-- GAP 2 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+          <p class="text-xs font-semibold text-slate-800">2. Adding intentional ______ to your device, such as grayscale mode, helps curb impulsive checking.</p>
+          <div class="flex items-center gap-3">
+            <input type="text" id="gap-2" placeholder="Type word here..." class="bg-white border border-slate-300 px-3 py-2 rounded-lg text-xs font-mono w-64 focus:outline-none focus:border-orangeAction">
+            <button type="button" onclick="checkGap(2, 'friction')" class="bg-deepBlue hover:bg-slate-800 text-white text-xs font-mono px-4 py-2 rounded-lg transition-all cursor-pointer">Check</button>
+          </div>
+          <p id="gap-fb-2" class="hidden text-[11px] font-bold"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUBMISSION BOX -->
+    <div class="bg-slate-900 text-white rounded-2xl p-8 text-center shadow-md border border-slate-800 space-y-3">
+      <h4 class="text-base font-bold font-mono uppercase tracking-wider text-orangeAction">Complete Practical Homework</h4>
+      <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">Once you complete the grammar and vocabulary drills above, submit your assignment session here.</p>
+      <div class="pt-2">
+        <button type="button" onclick="alert('Homework assignment submitted successfully! Excellent practical practice.')" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-deepBlue font-bold uppercase px-8 py-3.5 rounded-xl transition-all shadow font-mono cursor-pointer text-xs">
+          Submit Homework <i class="ph-bold ph-check text-base"></i>
+        </button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- SCRIPT LOGIC -->
+<script>
+function checkMC(qNum, status, btn) {
+  const container = document.getElementById('mc-q-' + qNum);
+  const fb = container.querySelector('.mc-feedback');
+  fb.classList.remove('hidden');
+  container.querySelectorAll('button').forEach(b => {
+    b.className = "bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer";
+  });
+
+  if (status === 'correct') {
+    btn.className = "bg-emerald-50 border border-emerald-400 text-emerald-800 font-semibold text-left px-3.5 py-2 rounded-lg text-xs font-mono";
+    fb.className = "mc-feedback text-[11px] font-bold text-emerald-600 mt-1";
+    fb.textContent = "✓ Correct! Impeccable concession usage.";
+  } else {
+    btn.className = "bg-rose-50 border border-rose-400 text-rose-800 font-semibold text-left px-3.5 py-2 rounded-lg text-xs font-mono";
+    fb.className = "mc-feedback text-[11px] font-bold text-rose-600 mt-1";
+    fb.textContent = "✗ Incorrect choice. Review the grammar rules for Even though vs. Despite.";
+  }
+}
+
+function checkGap(gapNum, correctWord) {
+  const input = document.getElementById('gap-' + gapNum);
+  const fb = document.getElementById('gap-fb-' + gapNum);
+  const val = input.value.trim().toLowerCase();
+  
+  fb.classList.remove('hidden');
+  if (val === correctWord) {
+    input.className = "bg-emerald-50 border border-emerald-400 px-3 py-2 rounded-lg text-xs font-mono w-64 text-emerald-900 font-bold focus:outline-none";
+    fb.className = "text-[11px] font-bold text-emerald-600 mt-1";
+    fb.textContent = "✓ Correct! Terminology mastered.";
+  } else {
+    input.className = "bg-rose-50 border border-rose-400 px-3 py-2 rounded-lg text-xs font-mono w-64 text-rose-900 focus:outline-none";
+    fb.className = "text-[11px] font-bold text-rose-600 mt-1";
+    fb.textContent = `✗ Incorrect. The correct term is "${correctWord}".`;
+  }
+}
+</script>
+</body>
+</html>

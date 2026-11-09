@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Masterclass: The Art of Persuasion &amp; Negotiation for Designers (B1/B2)</title>
+<!-- Tailwind CSS & Phosphor Icons -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',
+          bodyLight: '#F8FAFC',
+          orangeAction: '#C2410C',
+          orangeHover: '#EA580C',
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .section { display: none; }
+  .section.active { display: block; animation: fadeUp .3s ease forwards; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .perspective-1000 { perspective: 1000px; }
+  .transform-style-3d { transform-style: preserve-3d; }
+  .backface-hidden { backface-visibility: hidden; }
+  .rotate-y-180 { transform: rotateY(180deg); }
+</style>
+</head>
+<body class="bg-deepBlue text-darkSlate min-h-screen text-[17px] antialiased">
+
+<!-- HEADER FALA COM PROGRESSO (5 STEPS) -->
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[1000px] mx-auto px-6 py-4 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div class="flex-shrink-0">
+        <button type="button" onclick="goTo(1)" class="cursor-pointer hover:opacity-95 text-left focus:outline-none transition-opacity group bg-transparent border-0 p-0" title="Return to start">
+          <span class="text-white font-bold tracking-wider text-lg mono group-hover:text-orangeAction transition-colors block">MÉTODO <span class="text-orangeAction">FALA</span></span>
+          <span class="block text-[10px] text-slate-400 font-mono uppercase tracking-widest">Masterclass · Creative Negotiation</span>
+        </button>
+      </div>
+      <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
+      <div class="hidden sm:block">
+        <h1 class="text-base font-bold text-white tracking-wide">The Art of Persuasion &amp; Negotiation</h1>
+        <p class="text-xs text-slate-400">Interactive Masterclass for Designers · B1/B2</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mono" id="progressLabel">Step 1 / 5</span>
+      <div class="w-24 sm:w-32 h-2.5 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
+        <div class="h-full bg-orangeAction rounded-full transition-all duration-300" id="progressFill" style="width:20%"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN WORKSPACE -->
+<div class="bg-bodyLight w-full min-h-[calc(100vh-69px)]">
+  <main class="max-w-[1000px] mx-auto px-6 py-8 pb-24">
+
+    <!-- STEP 1 – WARM-UP & SCENARIO HOOK -->
+    <div class="section active" id="sec1">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100 font-mono">Step 1: Scenario Hook &amp; Speaking Kickoff (5-8 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2 leading-tight">How to Defend Design Choices Without Sounding Defensive</h2>
+      <p class="text-base text-slate-500 mb-6 leading-relaxed">In a design agency, presenting a branding concept or UI layout to a resistant client requires diplomacy and persuasive eloquence. Answer out loud:</p>
+
+      <!-- HERO BANNER -->
+      <div class="w-full h-52 rounded-2xl overflow-hidden mb-6 shadow-sm border border-slate-200 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 flex items-center justify-between p-8 relative">
+        <div class="space-y-2 z-10 max-w-lg">
+          <span class="text-xs font-mono text-orangeAction bg-orange-950/80 px-2.5 py-1 rounded border border-orange-800 uppercase font-bold">Creative Diplomacy</span>
+          <h3 class="text-white font-bold text-xl">The Designer's Leverage</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">Mastering design rationale, handling client feedback, and building aesthetic consensus with elegance.</p>
+        </div>
+        <div class="hidden sm:flex items-center justify-center z-10 text-orangeAction opacity-90">
+          <i class="ph-bold ph-pen-nib text-6xl"></i>
+        </div>
+      </div>
+
+      <!-- WARM-UP DISCUSSION BOX -->
+      <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-md mb-6 border border-slate-800 space-y-4">
+        <div class="flex items-center gap-2 text-orangeAction font-bold uppercase tracking-wider text-xs font-mono">
+          <i class="ph-bold ph-chats-teardrop text-base animate-pulse"></i> Speaking Warm-up Prompts (B1/B2 Level)
+        </div>
+        <div class="space-y-2.5 font-mono text-xs sm:text-sm text-slate-200 leading-relaxed">
+          <p>💬 <strong>1.</strong> How do you usually react when a client asks you to "make the logo bigger" on a clean layout?</p>
+          <p>💬 <strong>2.</strong> What strategy do you use when a project scope changes completely right before the deadline?</p>
+          <p>💬 <strong>3.</strong> Do you find it easy to explain complex design choices in English to international clients?</p>
+        </div>
+      </div>
+
+      <!-- NAVEGAÇÃO STEP 1 -->
+      <div class="flex justify-end pt-4">
+        <button type="button" class="bg-orangeAction hover:bg-orangeHover text-white font-bold px-8 py-4 rounded-xl flex items-center gap-3 transition-all transform hover:-translate-y-0.5 shadow-md text-base cursor-pointer" onclick="goTo(2)">
+          Next: Vocabulary Lab <i class="ph-bold ph-arrow-right text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2 – FLASHCARDS VOCABULARY LAB -->
+    <div class="section" id="sec2">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100 font-mono">Step 2: Vocabulary Lab (8-10 min)</span>
+      <h2 class="text-2xl font-bold text-deepBlue mb-2">Essential Agency Negotiation Vocabulary</h2>
+      <p class="text-slate-500 mb-6 text-sm leading-relaxed">Click any card to inspect definitions, phonetic context, and text-to-speech audio:</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6" id="flashcardsGrid"></div>
+
+      <!-- NAVEGAÇÃO STEP 2 -->
+      <div class="flex justify-between items-center pt-4">
+        <button type="button" class="bg-white hover:bg-slate-100 text-deepBlue font-bold px-7 py-3.5 rounded-xl border border-slate-300 flex items-center gap-2.5 transition-colors shadow-sm text-sm cursor-pointer" onclick="goTo(1)">
+          <i class="ph-bold ph-arrow-left text-base"></i> Back
+        </button>
+        <button type="button" class="bg-orangeAction hover:bg-orangeHover text-white font-bold px-8 py-4 rounded-xl flex items-center gap-3 transition-all transform hover:-translate-y-0.5 shadow-md text-base cursor-pointer" onclick="goTo(3)">
+          Next: Grammar Calibration <i class="ph-bold ph-arrow-right text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 3 – GRAMMAR CALIBRATION -->
+    <div class="section" id="sec3">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100 font-mono">Step 3: Grammar Calibration (10-12 min)</span>
+      <h2 class="text-2xl font-bold text-deepBlue mb-2">Diplomatic Structures &amp; Concession (*Even though*, *Provided that*, *Would you mind if...*)</h2>
+      <p class="text-slate-500 mb-6 text-sm">To soften design critiques and propose compromises elegantly, we use advanced diplomatic clauses:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 text-xs">
+        <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm space-y-2">
+          <span class="font-bold text-orangeAction block uppercase font-mono tracking-wider text-[10px]">1. Concession (*Even though*)</span>
+          <div class="p-2.5 bg-slate-50 rounded border font-mono text-[11px] text-slate-700 space-y-1">
+            <p>• <strong>Even though</strong> the client wants bright red, blue fits better.</p>
+            <p>• <strong>Even though</strong> the deadline is tight, quality remains high.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm space-y-2">
+          <span class="font-bold text-emerald-700 block uppercase font-mono tracking-wider text-[10px]">2. Condition (*Provided that*)</span>
+          <div class="p-2.5 bg-slate-50 rounded border font-mono text-[11px] text-slate-700 space-y-1">
+            <p>• We can change the font <strong>provided that</strong> we keep the hierarchy.</p>
+            <p>• Extra revisions are fine <strong>provided that</strong> budget allows.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm space-y-2">
+          <span class="font-bold text-indigo-700 block uppercase font-mono tracking-wider text-[10px]">3. Polite Inquiry (*Would you mind if...*)</span>
+          <div class="p-2.5 bg-slate-50 rounded border font-mono text-[11px] text-slate-700 space-y-1">
+            <p>• <strong>Would you mind if we</strong> explored a minimalist layout?</p>
+            <p>• <strong>Would you mind if we</strong> postponed the review to Friday?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE DRILLS -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm mb-6 space-y-4">
+        <h4 class="text-xs font-bold font-mono text-slate-400 uppercase tracking-wider">Calibration Drills (4 Challenges)</h4>
+        
+        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-1.5" id="g-q-1">
+          <p class="font-semibold text-slate-800">1. "______ the client requested a colorful banner, a minimalist white space works better for luxury branding."</p>
+          <div class="flex gap-2">
+            <button type="button" onclick="markGrammarDrill(1, 'correct', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">Even though</button>
+            <button type="button" onclick="markGrammarDrill(1, 'wrong', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">Provided that</button>
+          </div>
+          <p class="feedback hidden text-[11px] font-bold"></p>
+        </div>
+
+        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-1.5" id="g-q-2">
+          <p class="font-semibold text-slate-800">2. "We can add extra animation frames ______ we finalize the core wireframes today."</p>
+          <div class="flex gap-2">
+            <button type="button" onclick="markGrammarDrill(2, 'correct', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">provided that</button>
+            <button type="button" onclick="markGrammarDrill(2, 'wrong', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">even though</button>
+          </div>
+          <p class="feedback hidden text-[11px] font-bold"></p>
+        </div>
+
+        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-1.5" id="g-q-3">
+          <p class="font-semibold text-slate-800">3. "______ we explored a dark mode version for the mobile app interface?"</p>
+          <div class="flex gap-2">
+            <button type="button" onclick="markGrammarDrill(3, 'correct', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">Would you mind if</button>
+            <button type="button" onclick="markGrammarDrill(3, 'wrong', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">Even though</button>
+          </div>
+          <p class="feedback hidden text-[11px] font-bold"></p>
+        </div>
+
+        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-1.5" id="g-q-4">
+          <p class="font-semibold text-slate-800">4. "______ the typography is unique, it might affect legibility on small mobile screens."</p>
+          <div class="flex gap-2">
+            <button type="button" onclick="markGrammarDrill(4, 'correct', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">Even though</button>
+            <button type="button" onclick="markGrammarDrill(4, 'wrong', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">Provided that</button>
+          </div>
+          <p class="feedback hidden text-[11px] font-bold"></p>
+        </div>
+      </div>
+
+      <!-- NAVEGAÇÃO STEP 3 -->
+      <div class="flex justify-between items-center pt-4">
+        <button type="button" class="bg-white hover:bg-slate-100 text-deepBlue font-bold px-7 py-3.5 rounded-xl border border-slate-300 flex items-center gap-2.5 transition-colors shadow-sm text-sm cursor-pointer" onclick="goTo(2)">
+          <i class="ph-bold ph-arrow-left text-base"></i> Back
+        </button>
+        <button type="button" class="bg-orangeAction hover:bg-orangeHover text-white font-bold px-8 py-4 rounded-xl flex items-center gap-3 transition-all transform hover:-translate-y-0.5 shadow-md text-base cursor-pointer" onclick="goTo(4)">
+          Next: Strategic Discussion Case Files <i class="ph-bold ph-arrow-right text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 4 – STRATEGIC CASE FILES -->
+    <div class="section" id="sec4">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100 font-mono">Step 4: Strategic Case Files (15-18 min)</span>
+      <h2 class="text-2xl font-bold text-deepBlue mb-2">5 Agency Design Scenarios</h2>
+      <p class="text-slate-500 mb-6 text-sm">Select a scenario to analyze how to negotiate and persuade clients effectively:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-6">
+        <div class="md:col-span-4 space-y-2 flex flex-col">
+          <span class="text-xs font-bold text-slate-400 uppercase font-mono block">Choose Scenario:</span>
+          
+          <button type="button" onclick="triggerDilemmaScenario('logo')" id="btn-scen-logo" class="w-full text-left bg-white border border-slate-200 hover:border-orangeAction p-2.5 rounded-xl text-xs flex items-center gap-3 transition-all cursor-pointer">
+            <span class="w-8 h-8 rounded-lg bg-slate-900 text-orangeAction flex items-center justify-center font-bold text-xs"><i class="ph-bold ph-vector-three"></i></span>
+            <div><strong class="text-deepBlue block">1. The "Bigger Logo" Request</strong><span class="text-slate-400">Defending layout balance</span></div>
+          </button>
+
+          <button type="button" onclick="triggerDilemmaScenario('scope')" id="btn-scen-scope" class="w-full text-left bg-white border border-slate-200 hover:border-orangeAction p-2.5 rounded-xl text-xs flex items-center gap-3 transition-all cursor-pointer">
+            <span class="w-8 h-8 rounded-lg bg-slate-900 text-orangeAction flex items-center justify-center font-bold text-xs"><i class="ph-bold ph-clock"></i></span>
+            <div><strong class="text-deepBlue block">2. Last-Minute Scope Creep</strong><span class="text-slate-400">Negotiating deadlines</span></div>
+          </button>
+
+          <button type="button" onclick="triggerDilemmaScenario('color')" id="btn-scen-color" class="w-full text-left bg-white border border-slate-200 hover:border-orangeAction p-2.5 rounded-xl text-xs flex items-center gap-3 transition-all cursor-pointer">
+            <span class="w-8 h-8 rounded-lg bg-slate-900 text-orangeAction flex items-center justify-center font-bold text-xs"><i class="ph-bold ph-palette"></i></span>
+            <div><strong class="text-deepBlue block">3. Personal Color Taste</strong><span class="text-slate-400">Reframing client feedback</span></div>
+          </button>
+
+          <button type="button" onclick="triggerDilemmaScenario('typography')" id="btn-scen-typography" class="w-full text-left bg-white border border-slate-200 hover:border-orangeAction p-2.5 rounded-xl text-xs flex items-center gap-3 transition-all cursor-pointer">
+            <span class="w-8 h-8 rounded-lg bg-slate-900 text-orangeAction flex items-center justify-center font-bold text-xs"><i class="ph-bold ph-text-t"></i></span>
+            <div><strong class="text-deepBlue block">4. Font Pairing Debate</strong><span class="text-slate-400">Balancing readability &amp; style</span></div>
+          </button>
+
+          <button type="button" onclick="triggerDilemmaScenario('budget')" id="btn-scen-budget" class="w-full text-left bg-white border border-slate-200 hover:border-orangeAction p-2.5 rounded-xl text-xs flex items-center gap-3 transition-all cursor-pointer">
+            <span class="w-8 h-8 rounded-lg bg-slate-900 text-orangeAction flex items-center justify-center font-bold text-xs"><i class="ph-bold ph-currency-dollar"></i></span>
+            <div><strong class="text-deepBlue block">5. Premium vs. Budget</strong><span class="text-slate-400">Aligning expectations</span></div>
+          </button>
+        </div>
+
+        <div class="md:col-span-8 space-y-4">
+          <div id="dilemma-data-panel" class="hidden rounded-xl bg-white border border-slate-200 text-xs leading-relaxed shadow-sm overflow-hidden">
+            <div class="w-full h-[120px] bg-slate-900 flex items-center justify-center text-orangeAction text-4xl">
+              <span id="dilemma-icon-large"><i class="ph-bold ph-vector-three"></i></span>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center gap-2 mb-2 border-b pb-2">
+                <strong id="dilemma-title" class="text-deepBlue uppercase tracking-wider font-mono">Select a scenario</strong>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                <div class="bg-rose-50/40 p-3 rounded-lg border border-rose-100">
+                  <span class="font-bold text-rose-700 block uppercase text-[9px] font-mono mb-1">Key Phenomenon</span>
+                  <p id="dilemma-pros" class="text-slate-600 font-medium"></p>
+                </div>
+                <div class="bg-emerald-50/40 p-3 rounded-lg border border-emerald-100">
+                  <span class="font-bold text-emerald-700 block uppercase text-[9px] font-mono mb-1">Grammar Target</span>
+                  <p id="dilemma-cons" class="text-slate-600 font-medium"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="teacher-talk-panel" class="hidden p-4 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 text-xs shadow-md">
+            <div class="flex items-center gap-2 text-orangeAction font-bold uppercase tracking-wider text-[10px] mb-2 font-mono">
+              <i class="ph-bold ph-chats-teardrop text-sm animate-pulse"></i> Guided Discussion Prompts
+            </div>
+            <div id="teacher-questions-box" class="space-y-2 font-mono text-white text-xs leading-relaxed bg-slate-950 p-3 rounded-lg border border-slate-800"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATUS CONFIRMATION -->
+      <div class="bg-white border border-slate-200 rounded-xl p-4 flex justify-between items-center shadow-sm mb-4">
+        <div class="flex gap-3 items-center">
+          <div class="p-2 bg-slate-100 rounded-lg text-base"><i class="ph ph-check-square text-orangeAction"></i></div>
+          <div>
+            <h4 class="text-xs font-bold text-deepBlue">Interactive Case Analysis Completed</h4>
+            <p class="text-[11px] text-slate-500">Check this box to unlock the Sentence Architect exercise.</p>
+          </div>
+        </div>
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="instr-check" onchange="toggleStep5Button()" class="rounded border-slate-300 text-orangeAction focus:ring-orangeAction w-4 h-4 cursor-pointer">
+          <span class="text-xs font-bold text-slate-600 uppercase">Confirmed</span>
+        </label>
+      </div>
+
+      <!-- NAVEGAÇÃO STEP 4 -->
+      <div class="flex justify-between items-center pt-4">
+        <button type="button" class="bg-white hover:bg-slate-100 text-deepBlue font-bold px-7 py-3.5 rounded-xl border border-slate-300 flex items-center gap-2.5 transition-colors shadow-sm text-sm cursor-pointer" onclick="goTo(3)">
+          <i class="ph-bold ph-arrow-left text-base"></i> Back
+        </button>
+        <button type="button" id="btn-to-step5" class="bg-orangeAction hover:bg-orangeHover text-white font-bold px-8 py-4 rounded-xl hidden items-center gap-3 transition-all transform hover:-translate-y-0.5 shadow-md text-base cursor-pointer" onclick="goTo(5)">
+          Next: Sentence Architect <i class="ph-bold ph-arrow-right text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 5 – SENTENCE ARCHITECT -->
+    <div class="section" id="sec5">
+      <span class="inline-block text-xs font-bold tracking-widest text-emerald-700 uppercase bg-emerald-50 px-3 py-1 rounded-full mb-3 border border-emerald-100 font-mono">Step 5: Sentence Architect (10-15 min)</span>
+      <h2 class="text-2xl font-bold text-deepBlue mb-2">Syntax Builder: Assembling Negotiation Sentences</h2>
+      <p class="text-sm text-slate-500 mb-6">Click the word tiles in the correct order to construct advanced diplomatic design sentences:</p>
+
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm mb-6 space-y-6">
+        <div class="flex items-center justify-between border-b pb-3">
+          <span class="text-xs font-mono font-bold text-orangeAction uppercase" id="builder-counter">Sentence 1 of 3</span>
+          <span class="text-xs font-mono text-slate-400">Target: Diplomatic Syntax</span>
+        </div>
+
+        <div>
+          <span class="text-xs font-mono text-slate-400 block mb-1">Portuguese Reference:</span>
+          <p id="builder-target-ref" class="text-sm sm:text-base font-semibold text-deepBlue bg-slate-50 p-3 rounded-xl border border-slate-200">
+            Carregando referência...
+          </p>
+        </div>
+
+        <!-- DROP ZONE -->
+        <div>
+          <span class="text-xs font-mono text-slate-400 block mb-1">Your Built Sentence:</span>
+          <div id="builder-slot-zone" class="min-h-[60px] p-3 bg-slate-900 rounded-xl border border-slate-800 flex flex-wrap gap-2 items-center"></div>
+        </div>
+
+        <!-- AVAILABLE TILES -->
+        <div>
+          <span class="text-xs font-mono text-slate-400 block mb-1">Available Tiles:</span>
+          <div id="builder-tiles-zone" class="min-h-[60px] p-3 bg-slate-100 rounded-xl border border-slate-200 flex flex-wrap gap-2 items-center"></div>
+        </div>
+
+        <div class="flex justify-between items-center pt-2">
+          <button type="button" onclick="resetCurrentSentence()" class="bg-white hover:bg-slate-100 text-deepBlue border border-slate-200 text-xs font-semibold px-4 py-2 rounded-lg transition-all cursor-pointer">
+            Reset Tiles
+          </button>
+          <button type="button" onclick="checkBuiltSentence()" class="bg-orangeAction hover:bg-orangeHover text-white text-xs font-semibold px-6 py-2.5 rounded-lg transition-all shadow cursor-pointer">
+            Check Sentence
+          </button>
+        </div>
+
+        <div id="builder-feedback" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+      </div>
+
+      <!-- NAVEGAÇÃO FINAL STEP 5 -->
+      <div class="flex justify-between items-center pt-4">
+        <button type="button" class="bg-white hover:bg-slate-100 text-deepBlue font-bold px-7 py-3.5 rounded-xl border border-slate-300 flex items-center gap-2.5 transition-colors shadow-sm text-sm cursor-pointer" onclick="goTo(4)">
+          <i class="ph-bold ph-arrow-left text-base"></i> Back
+        </button>
+        <button type="button" onclick="alert('Masterclass completed successfully! Creative negotiation frameworks fully consolidated.')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-4 rounded-xl flex items-center gap-3 transition-all shadow-md text-base cursor-pointer">
+          Finish Masterclass <i class="ph-bold ph-check text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- SCRIPT LOGIC -->
+<script>
+let currentSection = 1;
+const totalSections = 5;
+
+// 1. NAVEGAÇÃO ENTRE PASSOS (5 STEPS)
+function goTo(n) {
+  const targetId = 'sec' + n;
+  const targetEl = document.getElementById(targetId);
+  if (!targetEl) return;
+
+  document.querySelectorAll('.section').forEach(sec => {
+    sec.classList.remove('active');
+  });
+
+  targetEl.classList.add('active');
+  currentSection = n;
+
+  const progressFill = document.getElementById('progressFill');
+  const progressLabel = document.getElementById('progressLabel');
+  const percentage = (n / totalSections) * 100;
+  if (progressFill) progressFill.style.width = percentage + '%';
+  if (progressLabel) progressLabel.textContent = 'Step ' + n + ' / ' + totalSections;
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleStep5Button() {
+  const isChecked = document.getElementById('instr-check').checked;
+  const btn = document.getElementById('btn-to-step5');
+  if (btn) {
+    if (isChecked) {
+      btn.classList.remove('hidden');
+      btn.classList.add('inline-flex');
+    } else {
+      btn.classList.add('hidden');
+      btn.classList.remove('inline-flex');
+    }
+  }
+}
+
+// 2. FLASHCARDS LAB (DESIGN AGENCY CONTEXT)
+const flashcardsData = [
+  { en: "Leverage", def: "Power or ability to influence a situation to achieve certain results.", ex: "Good portfolio work gives designers leverage in fee negotiations.", icon: "ph-scales", color: "bg-blue-600" },
+  { en: "Concession", def: "A thing that is granted, often in response to demands or bargaining.", ex: "We made a concession on the delivery date in exchange for full creative freedom.", icon: "ph-handshake", color: "bg-amber-600" },
+  { en: "Consensus", def: "A general agreement among members of a team or client group.", ex: "Reaching a consensus on the color palette took two client review meetings.", icon: "ph-users", color: "bg-emerald-600" },
+  { en: "Rationale", def: "A set of reasons or a logical basis for a course of action or design choice.", ex: "Presenting a clear design rationale stops clients from changing layouts arbitrarily.", icon: "ph-lightbulb", color: "bg-purple-600" },
+  { en: "Scope", def: "The extent of the area or subject matter that something deals with or to which it is relevant.", ex: "Adding extra banner sizes is out of the initial project scope.", icon: "ph-bounding-box", color: "bg-indigo-600" },
+  { en: "Feedback", def: "Information about reactions to a product or person's performance of a task.", ex: "Constructive feedback helps refine the UI components effectively.", icon: "ph-chat-teardrop-text", color: "bg-rose-600" },
+  { en: "Diplomatic", def: "Dealing with people sensitively and effectively without causing offense.", ex: "A diplomatic tone is essential when rejecting bad client suggestions.", icon: "ph-shield-check", color: "bg-cyan-600" },
+  { en: "Trade-off", def: "A balance achieved between two desirable but incompatible features.", ex: "There is a trade-off between animation richness and website loading speed.", icon: "ph-arrows-left-right", color: "bg-slate-700" }
+];
+
+function renderFlashcards() {
+  const grid = document.getElementById('flashcardsGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  flashcardsData.forEach((card, idx) => {
+    let wrapper = document.createElement('div');
+    wrapper.className = "perspective-1000 w-full h-64 cursor-pointer";
+    wrapper.onclick = function() {
+      this.querySelector('.card-inner').classList.toggle('rotate-y-180');
+    };
+    wrapper.innerHTML = `
+      <div class="card-inner relative w-full h-full duration-500 transform-style-3d shadow-sm rounded-xl">
+        <div class="absolute inset-0 w-full h-full bg-white border border-slate-200 rounded-xl overflow-hidden flex flex-col justify-between backface-hidden">
+          <div class="h-28 w-full ${card.color} flex items-center justify-center text-white">
+            <i class="ph-bold ${card.icon} text-5xl"></i>
+          </div>
+          <div class="p-3 flex flex-col justify-between flex-1">
+            <div class="flex items-center justify-between">
+              <span class="text-[9px] font-mono text-slate-400 uppercase">#${idx+1} · Click</span>
+              <button type="button" onclick="event.stopPropagation(); audioSpeak('${card.en}')" class="w-6 h-6 rounded-full bg-orange-50 text-orangeAction flex items-center justify-center hover:bg-orangeAction hover:text-white transition-colors cursor-pointer">
+                <i class="ph-bold ph-speaker-high text-xs"></i>
+              </button>
+            </div>
+            <div class="text-center"><h4 class="text-deepBlue font-mono font-bold text-xs">${card.en}</h4></div>
+          </div>
+        </div>
+        <div class="absolute inset-0 w-full h-full bg-deepBlue text-white rounded-xl p-4 flex flex-col justify-between backface-hidden rotate-y-180">
+          <div class="flex items-center justify-between">
+            <span class="text-[9px] font-mono text-orangeAction uppercase">Vocabulary Lab</span>
+            <span class="text-[9px] font-mono text-slate-400">Design B1/B2</span>
+          </div>
+          <div class="space-y-1.5 text-left">
+            <p class="text-[11px] text-slate-200 leading-snug"><strong>Meaning:</strong> ${card.def}</p>
+            <p class="text-[11px] text-orange-300 italic leading-snug"><strong>Ex:</strong> "${card.ex}"</p>
+          </div>
+          <div class="text-center"><span class="text-[9px] text-slate-400 italic">Back Side</span></div>
+        </div>
+      </div>
+    `;
+    grid.appendChild(wrapper);
+  });
+}
+
+function audioSpeak(word) {
+  window.speechSynthesis.cancel();
+  const tts = new SpeechSynthesisUtterance(word);
+  tts.lang = 'en-US';
+  tts.rate = 0.85;
+  window.speechSynthesis.speak(tts);
+}
+
+// 3. DRILLS GRAMATICAIS
+function markGrammarDrill(qNum, status, btn) {
+  const row = document.getElementById('g-q-' + qNum);
+  const fb = row.querySelector('.feedback');
+  fb.classList.remove('hidden');
+  row.querySelectorAll('button').forEach(b => b.className = "bg-white border px-3 py-1.5 rounded-lg text-slate-700 font-medium text-xs border-slate-200 hover:bg-slate-50 transition-all cursor-pointer");
+
+  if (status === 'correct') {
+    btn.className = "bg-emerald-50 border border-emerald-400 text-emerald-800 font-semibold px-3 py-1.5 rounded-lg text-xs";
+    fb.className = "feedback text-[11px] font-bold text-emerald-600 mt-1";
+    fb.textContent = "✓ Correct! Impeccable diplomatic syntax.";
+  } else {
+    btn.className = "bg-rose-50 border border-rose-400 text-rose-800 font-semibold px-3 py-1.5 rounded-lg text-xs";
+    fb.className = "feedback text-[11px] font-bold text-rose-600 mt-1";
+    fb.textContent = "✗ Incorrect structure. Review concession and politeness clauses.";
+  }
+}
+
+// 4. STEP 4: CASOS ESTRATÉGICOS (DESIGN AGENCY)
+const dilemmaScenariosData = {
+  logo: {
+    icon: "ph-vector-three",
+    title: "1. The 'Bigger Logo' Request",
+    pros: "Reframing client insecurity by explaining visual hierarchy and branding balance.",
+    cons: "Target Structure: 'Even though the client wants the logo bigger, whitespace protects the brand aesthetic.'",
+    questions: [
+      "1. How do you explain visual hierarchy to a client without sounding patronizing?",
+      "2. What compromise can you offer when a client insists on unbalancing a clean layout?"
+    ],
+    btnId: "btn-scen-logo"
+  },
+  scope: {
+    icon: "ph-clock",
+    title: "2. Last-Minute Scope Creep",
+    pros: "Handling sudden extra banner sizes or feature requests without damaging client relations.",
+    cons: "Target Structure: 'We can add extra variations provided that we adjust the delivery deadline.'",
+    questions: [
+      "1. Why do clients often underestimate the time required for small design changes?",
+      "2. How do you establish firm boundaries when scope creep happens?"
+    ],
+    btnId: "btn-scen-scope"
+  },
+  color: {
+    icon: "ph-palette",
+    title: "3. Personal Color Taste",
+    pros: "Navigating feedback based on personal taste ('I don't like blue') rather than strategic goals.",
+    cons: "Target Structure: 'Would you mind if we reviewed how this color palette aligns with your target audience?'",
+    questions: [
+      "1. How do you redirect client feedback away from subjective taste toward objective strategy?",
+      "2. What role does a strong design rationale play in defending color choices?"
+    ],
+    btnId: "btn-scen-color"
+  },
+  typography: {
+    icon: "ph-text-t",
+    title: "4. Font Pairing Debate",
+    pros: "Defending typography readability and licensing choices against trendy but impractical requests.",
+    cons: "Target Structure: 'Even though this font looks modern, legibility on mobile screens is our priority.'",
+    questions: [
+      "1. Have you ever had to convince a client to drop an illegible decorative font?",
+      "2. How do you balance aesthetic trends with functional UX design?"
+    ],
+    btnId: "btn-scen-typography"
+  },
+  budget: {
+    icon: "ph-currency-dollar",
+    title: "5. Premium vs. Budget",
+    pros: "Negotiating project tiers and explaining why custom design requires appropriate investment.",
+    cons: "Target Structure: 'Provided that the budget covers custom asset creation, we can deliver premium motion graphics.'",
+    questions: [
+      "1. How do you communicate the true value of custom design to budget-conscious clients?",
+      "2. What trade-offs do you propose when a client wants premium quality on a startup budget?"
+    ],
+    btnId: "btn-scen-budget"
+  }
+};
+
+function triggerDilemmaScenario(key) {
+  const data = dilemmaScenariosData[key];
+  document.querySelectorAll('[id^="btn-scen-"]').forEach(b => {
+    b.className = "w-full text-left bg-white border border-slate-200 hover:border-orangeAction p-2.5 rounded-xl text-xs flex items-center gap-3 transition-all cursor-pointer";
+  });
+  document.getElementById(data.btnId).className = "w-full text-left bg-orangeAction border border-orangeAction text-white p-2.5 rounded-xl text-xs flex items-center gap-3 transition-all font-semibold shadow-sm cursor-pointer";
+
+  document.getElementById('dilemma-data-panel').classList.remove('hidden');
+  document.getElementById('teacher-talk-panel').classList.remove('hidden');
+
+  document.getElementById('dilemma-icon-large').innerHTML = `<i class="ph-bold ${data.icon}"></i>`;
+  document.getElementById('dilemma-title').textContent = data.title;
+  document.getElementById('dilemma-pros').textContent = data.pros;
+  document.getElementById('dilemma-cons').textContent = data.cons;
+
+  const qBox = document.getElementById('teacher-questions-box');
+  qBox.innerHTML = data.questions.map(q => `<p class="font-medium p-1">• ${q}</p>`).join('');
+}
+
+// 5. STEP 5: SENTENCE ARCHITECT
+const builderSentences = [
+  {
+    ref: "Embora o cliente queira o logotipo maior, o espaço em branco protege a estética da marca.",
+    correct: ["Even", "though", "the", "client", "wants", "the", "logo", "bigger,", "whitespace", "protects", "brand", "aesthetics."],
+    shuffled: ["logo", "Even", "wants", "though", "client", "the", "bigger,", "whitespace", "protects", "brand", "aesthetics.", "the"]
+  },
+  {
+    ref: "Podemos adicionar variações extras, desde que ajustemos o prazo de entrega.",
+    correct: ["We", "can", "add", "extra", "variations", "provided", "that", "we", "adjust", "the", "deadline."],
+    shuffled: ["variations", "We", "that", "add", "extra", "provided", "can", "adjust", "we", "deadline.", "the"]
+  },
+  {
+    ref: "Você se importaria se explorássemos uma versão em modo escuro para a interface?",
+    correct: ["Would", "you", "mind", "if", "we", "explored", "a", "dark", "mode", "version?"],
+    shuffled: ["you", "Would", "if", "mind", "version?", "we", "explored", "dark", "mode", "a"]
+  }
+];
+
+let currentBuilderIdx = 0;
+
+function loadBuilderSentence() {
+  const item = builderSentences[currentBuilderIdx];
+  document.getElementById('builder-counter').textContent = `Sentence ${currentBuilderIdx + 1} of ${builderSentences.length}`;
+  document.getElementById('builder-target-ref').textContent = item.ref;
+  
+  const slotZone = document.getElementById('builder-slot-zone');
+  const tilesZone = document.getElementById('builder-tiles-zone');
+  slotZone.innerHTML = '';
+  tilesZone.innerHTML = '';
+  
+  document.getElementById('builder-feedback').classList.add('hidden');
+
+  item.shuffled.forEach((word) => {
+    let tile = document.createElement('button');
+    tile.type = "button";
+    tile.className = "bg-white hover:bg-orange-50 border border-slate-300 text-deepBlue font-mono text-xs px-3 py-2 rounded-lg shadow-sm transition-all cursor-pointer";
+    tile.textContent = word;
+    tile.onclick = function() {
+      if (tile.parentElement === tilesZone) {
+        slotZone.appendChild(tile);
+      } else {
+        tilesZone.appendChild(tile);
+      }
+    };
+    tilesZone.appendChild(tile);
+  });
+}
+
+function resetCurrentSentence() {
+  loadBuilderSentence();
+}
+
+function checkBuiltSentence() {
+  const slotZone = document.getElementById('builder-slot-zone');
+  const userWords = Array.from(slotZone.children).map(t => t.textContent);
+  const correctWords = builderSentences[currentBuilderIdx].correct;
+  
+  const fb = document.getElementById('builder-feedback');
+  fb.classList.remove('hidden');
+
+  const isMatch = userWords.length === correctWords.length && userWords.every((w, i) => w === correctWords[i]);
+
+  if (isMatch) {
+    fb.className = "p-3 rounded-xl text-xs font-mono bg-emerald-50 border border-emerald-300 text-emerald-900";
+    fb.textContent = "✓ Correct diplomatic structure! Sentence assembled impeccably.";
+    setTimeout(() => {
+      currentBuilderIdx++;
+      if (currentBuilderIdx < builderSentences.length) {
+        loadBuilderSentence();
+      } else {
+        document.getElementById('builder-counter').textContent = "Completed! 🎉";
+        document.getElementById('builder-target-ref').textContent = "Parabéns! Estruturas de negociação criativa consolidadas com sucesso.";
+      }
+    }, 1500);
+  } else {
+    fb.className = "p-3 rounded-xl text-xs font-mono bg-rose-50 border border-rose-300 text-rose-900";
+    fb.textContent = "✗ Word order incorrect. Re-examine the negotiation clauses.";
+  }
+}
+
+// INICIALIZAÇÃO
+document.addEventListener('DOMContentLoaded', () => {
+  renderFlashcards();
+  loadBuilderSentence();
+});
+</script>
+</body>
+</html>

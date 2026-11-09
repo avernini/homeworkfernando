@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Masterclass: The Economics of Attention (B1/B2)</title>
+<!-- Tailwind CSS & Phosphor Icons -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',
+          bodyLight: '#F8FAFC',
+          orangeAction: '#C2410C',
+          orangeHover: '#EA580C',
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .section { display: none; }
+  .section.active { display: block; animation: fadeUp .3s ease forwards; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .perspective-1000 { perspective: 1000px; }
+  .transform-style-3d { transform-style: preserve-3d; }
+  .backface-hidden { backface-visibility: hidden; }
+  .rotate-y-180 { transform: rotateY(180deg); }
+</style>
+</head>
+<body class="bg-deepBlue text-darkSlate min-h-screen text-[17px] antialiased">
+
+<!-- HEADER FALA COM PROGRESSO (5 STEPS) -->
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[1000px] mx-auto px-6 py-4 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div class="flex-shrink-0">
+        <button type="button" onclick="goTo(1)" class="cursor-pointer hover:opacity-95 text-left focus:outline-none transition-opacity group bg-transparent border-0 p-0" title="Return to start">
+          <span class="text-white font-bold tracking-wider text-lg mono group-hover:text-orangeAction transition-colors block">MÉTODO <span class="text-orangeAction">FALA</span></span>
+          <span class="block text-[10px] text-slate-400 font-mono uppercase tracking-widest">Masterclass · Attention Economy</span>
+        </button>
+      </div>
+      <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
+      <div class="hidden sm:block">
+        <h1 class="text-base font-bold text-white tracking-wide">The Economics of Attention: Monetizing Focus</h1>
+        <p class="text-xs text-slate-400">Interactive Masterclass · Transitioning B1/B2</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mono" id="progressLabel">Step 1 / 5</span>
+      <div class="w-24 sm:w-32 h-2.5 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
+        <div class="h-full bg-orangeAction rounded-full transition-all duration-300" id="progressFill" style="width:20%"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN WORKSPACE -->
+<div class="bg-bodyLight w-full min-h-[calc(100vh-69px)]">
+  <main class="max-w-[1000px] mx-auto px-6 py-8 pb-24">
+
+    <!-- STEP 1 – WARM-UP & SCENARIO HOOK -->
+    <div class="section active" id="sec1">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100 font-mono">Step 1: Scenario Hook &amp; Speaking Kickoff (5-8 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2 leading-tight">If You Aren't Paying for the Product, You Are the Product</h2>
+      <p class="text-base text-slate-500 mb-6 leading-relaxed">Modern digital products are engineered by behavioral psychologists to capture and monetize our attention. Reflect on how app design influences your focus out loud:</p>
+
+      <!-- HERO BANNER -->
+      <div class="w-full h-52 rounded-2xl overflow-hidden mb-6 shadow-sm border border-slate-200 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 flex items-center justify-between p-8 relative">
+        <div class="space-y-2 z-10 max-w-lg">
+          <span class="text-xs font-mono text-orangeAction bg-orange-950/80 px-2.5 py-1 rounded border border-orange-800 uppercase font-bold">Digital Economy</span>
+          <h3 class="text-white font-bold text-xl">The Scarcity of Focus</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">Exploring infinite scrolls, variable reward loops, notification engineering, and intentional time reclamation.</p>
+        </div>
+        <div class="hidden sm:flex items-center justify-center z-10 text-orangeAction opacity-90">
+          <i class="ph-bold ph-hourglass-high text-6xl"></i>
+        </div>
+      </div>
+
+      <!-- WARM-UP DISCUSSION BOX -->
+      <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-md mb-6 border border-slate-800 space-y-4">
+        <div class="flex items-center gap-2 text-orangeAction font-bold uppercase tracking-wider text-xs font-mono">
+          <i class="ph-bold ph-chats-teardrop text-base animate-pulse"></i> Speaking Warm-up Prompts (B1/B2 Level)
+        </div>
+        <div class="space-y-2.5 font-mono text-xs sm:text-sm text-slate-200 leading-relaxed">
+          <p>💬 <strong>1.</strong> Which application or digital feature do you find hardest to put down, and why?</p>
+          <p>💬 <strong>2.</strong> Do you believe individuals lack willpower today, or are modern apps simply too addictive?</p>
+          <p>💬 <strong>3.</strong> How has constant connectivity changed the way we handle deep work and business problem-solving?</p>
+        </div>
+      </div>
+
+      <!-- NAVEGAÇÃO STEP 1 -->
+      <div class="flex justify-end pt-4">
+        <button type="button" class="bg-orangeAction hover:bg-orangeHover text-white font-bold px-8 py-4 rounded-xl flex items-center gap-3 transition-all transform hover:-translate-y-0.5 shadow-md text-base cursor-pointer" onclick="goTo(2)">
+          Next: Vocabulary Lab <i class="ph-bold ph-arrow-right text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2 – FLASHCARDS VOCABULARY LAB -->
+    <div class="section" id="sec2">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100 font-mono">Step 2: Vocabulary Lab (8-10 min)</span>
+      <h2 class="text-2xl font-bold text-deepBlue mb-2">Essential Attention Economy Vocabulary</h2>
+      <p class="text-slate-500 mb-6 text-sm leading-relaxed">Click any card to inspect definitions, phonetic context, and text-to-speech audio:</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6" id="flashcardsGrid"></div>
+
+      <!-- NAVEGAÇÃO STEP 2 -->
+      <div class="flex justify-between items-center pt-4">
+        <button type="button" class="bg-white hover:bg-slate-100 text-deepBlue font-bold px-7 py-3.5 rounded-xl border border-slate-300 flex items-center gap-2.5 transition-colors shadow-sm text-sm cursor-pointer" onclick="goTo(1)">
+          <i class="ph-bold ph-arrow-left text-base"></i> Back
+        </button>
+        <button type="button" class="bg-orangeAction hover:bg-orangeHover text-white font-bold px-8 py-4 rounded-xl flex items-center gap-3 transition-all transform hover:-translate-y-0.5 shadow-md text-base cursor-pointer" onclick="goTo(3)">
+          Next: Grammar Calibration <i class="ph-bold ph-arrow-right text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 3 – GRAMMAR CALIBRATION -->
+    <div class="section" id="sec3">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100 font-mono">Step 3: Grammar Calibration (10-12 min)</span>
+      <h2 class="text-2xl font-bold text-deepBlue mb-2">Concession Structures (*Even though* / *Despite*) &amp; Cause-Effect</h2>
+      <p class="text-slate-500 mb-6 text-sm">To discuss digital habits and opposing forces, we use advanced concession phrasing (<em>Even though... / Despite the fact that...</em>):</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 text-xs">
+        <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm space-y-2">
+          <span class="font-bold text-orangeAction block uppercase font-mono tracking-wider text-[10px]">1. Concession with *Even though*</span>
+          <div class="p-2.5 bg-slate-50 rounded border font-mono text-[11px] text-slate-700 space-y-1">
+            <p>• <strong>Even though</strong> we want focus, apps distract us.</p>
+            <p>• <strong>Even though</strong> it's hard, she deleted social media.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm space-y-2">
+          <span class="font-bold text-emerald-700 block uppercase font-mono tracking-wider text-[10px]">2. Concession with *Despite*</span>
+          <div class="p-2.5 bg-slate-50 rounded border font-mono text-[11px] text-slate-700 space-y-1">
+            <p>• <strong>Despite</strong> knowing the risks, we scroll daily.</p>
+            <p>• <strong>Despite</strong> constant alerts, he stayed focused.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm space-y-2">
+          <span class="font-bold text-indigo-700 block uppercase font-mono tracking-wider text-[10px]">3. Purpose with *In order to*</span>
+          <div class="p-2.5 bg-slate-50 rounded border font-mono text-[11px] text-slate-700 space-y-1">
+            <p>• We add friction <strong>in order to</strong> resist temptation.</p>
+            <p>• Apps use design tricks <strong>in order to</strong> hook users.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE DRILLS -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm mb-6 space-y-4">
+        <h4 class="text-xs font-bold font-mono text-slate-400 uppercase tracking-wider">Calibration Drills (4 Challenges)</h4>
+        
+        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-1.5" id="g-q-1">
+          <p class="font-semibold text-slate-800">1. "______ knowing the risks, people spend hours on social feeds."</p>
+          <div class="flex gap-2">
+            <button type="button" onclick="markGrammarDrill(1, 'correct', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">Despite</button>
+            <button type="button" onclick="markGrammarDrill(1, 'wrong', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">Even though</button>
+          </div>
+          <p class="feedback hidden text-[11px] font-bold"></p>
+        </div>
+
+        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-1.5" id="g-q-2">
+          <p class="font-semibold text-slate-800">2. "______ we try to protect our time, algorithms easily pull us back."</p>
+          <div class="flex gap-2">
+            <button type="button" onclick="markGrammarDrill(2, 'correct', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">Even though</button>
+            <button type="button" onclick="markGrammarDrill(2, 'wrong', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">Despite</button>
+          </div>
+          <p class="feedback hidden text-[11px] font-bold"></p>
+        </div>
+
+        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-1.5" id="g-q-3">
+          <p class="font-semibold text-slate-800">3. "Tech companies engineer notifications ______ maximize daily engagement."</p>
+          <div class="flex gap-2">
+            <button type="button" onclick="markGrammarDrill(3, 'correct', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">in order to</button>
+            <button type="button" onclick="markGrammarDrill(3, 'wrong', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">despite</button>
+          </div>
+          <p class="feedback hidden text-[11px] font-bold"></p>
+        </div>
+
+        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-1.5" id="g-q-4">
+          <p class="font-semibold text-slate-800">4. "______ the fact that notifications are distracting, most keep them enabled."</p>
+          <div class="flex gap-2">
+            <button type="button" onclick="markGrammarDrill(4, 'correct', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">Despite</button>
+            <button type="button" onclick="markGrammarDrill(4, 'wrong', this)" class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 font-medium font-mono text-slate-700 transition-all cursor-pointer">Even though</button>
+          </div>
+          <p class="feedback hidden text-[11px] font-bold"></p>
+        </div>
+      </div>
+
+      <!-- NAVEGAÇÃO STEP 3 -->
+      <div class="flex justify-between items-center pt-4">
+        <button type="button" class="bg-white hover:bg-slate-100 text-deepBlue font-bold px-7 py-3.5 rounded-xl border border-slate-300 flex items-center gap-2.5 transition-colors shadow-sm text-sm cursor-pointer" onclick="goTo(2)">
+          <i class="ph-bold ph-arrow-left text-base"></i> Back
+        </button>
+        <button type="button" class="bg-orangeAction hover:bg-orangeHover text-white font-bold px-8 py-4 rounded-xl flex items-center gap-3 transition-all transform hover:-translate-y-0.5 shadow-md text-base cursor-pointer" onclick="goTo(4)">
+          Next: Strategic Discussion Case Files <i class="ph-bold ph-arrow-right text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 4 – STRATEGIC CASE FILES -->
+    <div class="section" id="sec4">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100 font-mono">Step 4: Strategic Case Files (15-18 min)</span>
+      <h2 class="text-2xl font-bold text-deepBlue mb-2">5 Attention Economy Scenarios</h2>
+      <p class="text-slate-500 mb-6 text-sm">Select a scenario to analyze how product design, dopamine loops, and notifications shape our focus:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-6">
+        <div class="md:col-span-4 space-y-2 flex flex-col">
+          <span class="text-xs font-bold text-slate-400 uppercase font-mono block">Choose Scenario:</span>
+          
+          <button type="button" onclick="triggerDilemmaScenario('infinite')" id="btn-scen-infinite" class="w-full text-left bg-white border border-slate-200 hover:border-orangeAction p-2.5 rounded-xl text-xs flex items-center gap-3 transition-all cursor-pointer">
+            <span class="w-8 h-8 rounded-lg bg-slate-900 text-orangeAction flex items-center justify-center font-bold text-xs"><i class="ph-bold ph-infinity"></i></span>
+            <div><strong class="text-deepBlue block">1. The Infinite Scroll</strong><span class="text-slate-400">Removing stopping cues</span></div>
+          </button>
+
+          <button type="button" onclick="triggerDilemmaScenario('redbadg')" id="btn-scen-redbadg" class="w-full text-left bg-white border border-slate-200 hover:border-orangeAction p-2.5 rounded-xl text-xs flex items-center gap-3 transition-all cursor-pointer">
+            <span class="w-8 h-8 rounded-lg bg-slate-900 text-orangeAction flex items-center justify-center font-bold text-xs"><i class="ph-bold ph-bell-ringing"></i></span>
+            <div><strong class="text-deepBlue block">2. Red Badge Alerts</strong><span class="text-slate-400">Constant interruptions</span></div>
+          </button>
+
+          <button type="button" onclick="triggerDilemmaScenario('dopamine')" id="btn-scen-dopamine" class="w-full text-left bg-white border border-slate-200 hover:border-orangeAction p-2.5 rounded-xl text-xs flex items-center gap-3 transition-all cursor-pointer">
+            <span class="w-8 h-8 rounded-lg bg-slate-900 text-orangeAction flex items-center justify-center font-bold text-xs"><i class="ph-bold ph-brain"></i></span>
+            <div><strong class="text-deepBlue block">3. Variable Rewards</strong><span class="text-slate-400">Slot machine mechanics</span></div>
+          </button>
+
+          <button type="button" onclick="triggerDilemmaScenario('friction')" id="btn-scen-friction" class="w-full text-left bg-white border border-slate-200 hover:border-orangeAction p-2.5 rounded-xl text-xs flex items-center gap-3 transition-all cursor-pointer">
+            <span class="w-8 h-8 rounded-lg bg-slate-900 text-orangeAction flex items-center justify-center font-bold text-xs"><i class="ph-bold ph-shield-check"></i></span>
+            <div><strong class="text-deepBlue block">4. Intentional Friction</strong><span class="text-slate-400">Grayscale &amp; blocks</span></div>
+          </button>
+
+          <button type="button" onclick="triggerDilemmaScenario('deepwork')" id="btn-scen-deepwork" class="w-full text-left bg-white border border-slate-200 hover:border-orangeAction p-2.5 rounded-xl text-xs flex items-center gap-3 transition-all cursor-pointer">
+            <span class="w-8 h-8 rounded-lg bg-slate-900 text-orangeAction flex items-center justify-center font-bold text-xs"><i class="ph-bold ph-target"></i></span>
+            <div><strong class="text-deepBlue block">5. Deep Work Defense</strong><span class="text-slate-400">Protecting business focus</span></div>
+          </button>
+        </div>
+
+        <div class="md:col-span-8 space-y-4">
+          <div id="dilemma-data-panel" class="hidden rounded-xl bg-white border border-slate-200 text-xs leading-relaxed shadow-sm overflow-hidden">
+            <div class="w-full h-[120px] bg-slate-900 flex items-center justify-center text-orangeAction text-4xl">
+              <span id="dilemma-icon-large"><i class="ph-bold ph-infinity"></i></span>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center gap-2 mb-2 border-b pb-2">
+                <strong id="dilemma-title" class="text-deepBlue uppercase tracking-wider font-mono">Select a scenario</strong>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                <div class="bg-rose-50/40 p-3 rounded-lg border border-rose-100">
+                  <span class="font-bold text-rose-700 block uppercase text-[9px] font-mono mb-1">Key Phenomenon</span>
+                  <p id="dilemma-pros" class="text-slate-600 font-medium"></p>
+                </div>
+                <div class="bg-emerald-50/40 p-3 rounded-lg border border-emerald-100">
+                  <span class="font-bold text-emerald-700 block uppercase text-[9px] font-mono mb-1">Grammar Target</span>
+                  <p id="dilemma-cons" class="text-slate-600 font-medium"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="teacher-talk-panel" class="hidden p-4 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 text-xs shadow-md">
+            <div class="flex items-center gap-2 text-orangeAction font-bold uppercase tracking-wider text-[10px] mb-2 font-mono">
+              <i class="ph-bold ph-chats-teardrop text-sm animate-pulse"></i> Guided Discussion Prompts
+            </div>
+            <div id="teacher-questions-box" class="space-y-2 font-mono text-white text-xs leading-relaxed bg-slate-950 p-3 rounded-lg border border-slate-800"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATUS CONFIRMATION -->
+      <div class="bg-white border border-slate-200 rounded-xl p-4 flex justify-between items-center shadow-sm mb-4">
+        <div class="flex gap-3 items-center">
+          <div class="p-2 bg-slate-100 rounded-lg text-base"><i class="ph ph-check-square text-orangeAction"></i></div>
+          <div>
+            <h4 class="text-xs font-bold text-deepBlue">Interactive Case Analysis Completed</h4>
+            <p class="text-[11px] text-slate-500">Check this box to unlock the Sentence Architect exercise.</p>
+          </div>
+        </div>
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="instr-check" onchange="toggleStep5Button()" class="rounded border-slate-300 text-orangeAction focus:ring-orangeAction w-4 h-4 cursor-pointer">
+          <span class="text-xs font-bold text-slate-600 uppercase">Confirmed</span>
+        </label>
+      </div>
+
+      <!-- NAVEGAÇÃO STEP 4 -->
+      <div class="flex justify-between items-center pt-4">
+        <button type="button" class="bg-white hover:bg-slate-100 text-deepBlue font-bold px-7 py-3.5 rounded-xl border border-slate-300 flex items-center gap-2.5 transition-colors shadow-sm text-sm cursor-pointer" onclick="goTo(3)">
+          <i class="ph-bold ph-arrow-left text-base"></i> Back
+        </button>
+        <button type="button" id="btn-to-step5" class="bg-orangeAction hover:bg-orangeHover text-white font-bold px-8 py-4 rounded-xl hidden items-center gap-3 transition-all transform hover:-translate-y-0.5 shadow-md text-base cursor-pointer" onclick="goTo(5)">
+          Next: Sentence Architect <i class="ph-bold ph-arrow-right text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 5 – SENTENCE ARCHITECT -->
+    <div class="section" id="sec5">
+      <span class="inline-block text-xs font-bold tracking-widest text-emerald-700 uppercase bg-emerald-50 px-3 py-1 rounded-full mb-3 border border-emerald-100 font-mono">Step 5: Sentence Architect (10-15 min)</span>
+      <h2 class="text-2xl font-bold text-deepBlue mb-2">Syntax Builder: Assembling Attention Economy Sentences</h2>
+      <p class="text-sm text-slate-500 mb-6">Click the word tiles in the correct order to construct advanced concession sentences:</p>
+
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm mb-6 space-y-6">
+        <div class="flex items-center justify-between border-b pb-3">
+          <span class="text-xs font-mono font-bold text-orangeAction uppercase" id="builder-counter">Sentence 1 of 3</span>
+          <span class="text-xs font-mono text-slate-400">Target: Concession Syntax</span>
+        </div>
+
+        <div>
+          <span class="text-xs font-mono text-slate-400 block mb-1">Portuguese Reference:</span>
+          <p id="builder-target-ref" class="text-sm sm:text-base font-semibold text-deepBlue bg-slate-50 p-3 rounded-xl border border-slate-200">
+            Carregando referência...
+          </p>
+        </div>
+
+        <!-- DROP ZONE -->
+        <div>
+          <span class="text-xs font-mono text-slate-400 block mb-1">Your Built Sentence:</span>
+          <div id="builder-slot-zone" class="min-h-[60px] p-3 bg-slate-900 rounded-xl border border-slate-800 flex flex-wrap gap-2 items-center"></div>
+        </div>
+
+        <!-- AVAILABLE TILES -->
+        <div>
+          <span class="text-xs font-mono text-slate-400 block mb-1">Available Tiles:</span>
+          <div id="builder-tiles-zone" class="min-h-[60px] p-3 bg-slate-100 rounded-xl border border-slate-200 flex flex-wrap gap-2 items-center"></div>
+        </div>
+
+        <div class="flex justify-between items-center pt-2">
+          <button type="button" onclick="resetCurrentSentence()" class="bg-white hover:bg-slate-100 text-deepBlue border border-slate-200 text-xs font-semibold px-4 py-2 rounded-lg transition-all cursor-pointer">
+            Reset Tiles
+          </button>
+          <button type="button" onclick="checkBuiltSentence()" class="bg-orangeAction hover:bg-orangeHover text-white text-xs font-semibold px-6 py-2.5 rounded-lg transition-all shadow cursor-pointer">
+            Check Sentence
+          </button>
+        </div>
+
+        <div id="builder-feedback" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+      </div>
+
+      <!-- NAVEGAÇÃO FINAL STEP 5 -->
+      <div class="flex justify-between items-center pt-4">
+        <button type="button" class="bg-white hover:bg-slate-100 text-deepBlue font-bold px-7 py-3.5 rounded-xl border border-slate-300 flex items-center gap-2.5 transition-colors shadow-sm text-sm cursor-pointer" onclick="goTo(4)">
+          <i class="ph-bold ph-arrow-left text-base"></i> Back
+        </button>
+        
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- SCRIPT LOGIC -->
+<script>
+let currentSection = 1;
+const totalSections = 5;
+
+// 1. NAVEGAÇÃO ENTRE PASSOS (5 STEPS)
+function goTo(n) {
+  const targetId = 'sec' + n;
+  const targetEl = document.getElementById(targetId);
+  if (!targetEl) return;
+
+  document.querySelectorAll('.section').forEach(sec => {
+    sec.classList.remove('active');
+  });
+
+  targetEl.classList.add('active');
+  currentSection = n;
+
+  const progressFill = document.getElementById('progressFill');
+  const progressLabel = document.getElementById('progressLabel');
+  const percentage = (n / totalSections) * 100;
+  if (progressFill) progressFill.style.width = percentage + '%';
+  if (progressLabel) progressLabel.textContent = 'Step ' + n + ' / ' + totalSections;
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleStep5Button() {
+  const isChecked = document.getElementById('instr-check').checked;
+  const btn = document.getElementById('btn-to-step5');
+  if (btn) {
+    if (isChecked) {
+      btn.classList.remove('hidden');
+      btn.classList.add('inline-flex');
+    } else {
+      btn.classList.add('hidden');
+      btn.classList.remove('inline-flex');
+    }
+  }
+}
+
+// 2. FLASHCARDS LAB
+const flashcardsData = [
+  { en: "Monetize", def: "To convert into or express in the form of currency or profit.", ex: "Social media platforms monetize user attention through targeted ads.", icon: "ph-currency-dollar", color: "bg-emerald-600" },
+  { en: "Engagement", def: "The process of holding the attention or keeping someone interested.", ex: "Infinite scrolls are designed to maximize daily user engagement.", icon: "ph-chart-line-up", color: "bg-blue-600" },
+  { en: "Distraction", def: "A thing that prevents someone from giving full attention to something else.", ex: "Push notifications are constant distractions during deep work.", icon: "ph-bell-ringing", color: "bg-amber-600" },
+  { en: "Dopamine", def: "A neurochemical associated with reward, motivation, and pleasure loops.", ex: "Likes and notifications trigger quick dopamine hits in the brain.", icon: "ph-brain", color: "bg-purple-600" },
+  { en: "Friction", def: "Resistance encountered when trying to accomplish an action.", ex: "Adding friction to apps helps reduce mindless phone checking.", icon: "ph-hand-palm", color: "bg-rose-600" },
+  { en: "Algorithm", def: "A process or set of rules to be followed in calculations by a computer.", ex: "The algorithm predicts what content will keep you scrolling.", icon: "ph-code", color: "bg-indigo-600" },
+  { en: "Detox", def: "A period of abstaining from toxic or addictive substances and devices.", ex: "A weekend digital detox restored my mental clarity.", icon: "ph-shield-check", color: "bg-cyan-600" },
+  { en: "Productivity", def: "The state or quality of being productive and efficient.", ex: "Eliminating distractions is essential for high productivity.", icon: "ph-target", color: "bg-slate-700" }
+];
+
+function renderFlashcards() {
+  const grid = document.getElementById('flashcardsGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  flashcardsData.forEach((card, idx) => {
+    let wrapper = document.createElement('div');
+    wrapper.className = "perspective-1000 w-full h-64 cursor-pointer";
+    wrapper.onclick = function() {
+      this.querySelector('.card-inner').classList.toggle('rotate-y-180');
+    };
+    wrapper.innerHTML = `
+      <div class="card-inner relative w-full h-full duration-500 transform-style-3d shadow-sm rounded-xl">
+        <div class="absolute inset-0 w-full h-full bg-white border border-slate-200 rounded-xl overflow-hidden flex flex-col justify-between backface-hidden">
+          <div class="h-28 w-full ${card.color} flex items-center justify-center text-white">
+            <i class="ph-bold ${card.icon} text-5xl"></i>
+          </div>
+          <div class="p-3 flex flex-col justify-between flex-1">
+            <div class="flex items-center justify-between">
+              <span class="text-[9px] font-mono text-slate-400 uppercase">#${idx+1} · Click</span>
+              <button type="button" onclick="event.stopPropagation(); audioSpeak('${card.en}')" class="w-6 h-6 rounded-full bg-orange-50 text-orangeAction flex items-center justify-center hover:bg-orangeAction hover:text-white transition-colors cursor-pointer">
+                <i class="ph-bold ph-speaker-high text-xs"></i>
+              </button>
+            </div>
+            <div class="text-center"><h4 class="text-deepBlue font-mono font-bold text-xs">${card.en}</h4></div>
+          </div>
+        </div>
+        <div class="absolute inset-0 w-full h-full bg-deepBlue text-white rounded-xl p-4 flex flex-col justify-between backface-hidden rotate-y-180">
+          <div class="flex items-center justify-between">
+            <span class="text-[9px] font-mono text-orangeAction uppercase">Vocabulary Lab</span>
+            <span class="text-[9px] font-mono text-slate-400">Attention B1/B2</span>
+          </div>
+          <div class="space-y-1.5 text-left">
+            <p class="text-[11px] text-slate-200 leading-snug"><strong>Meaning:</strong> ${card.def}</p>
+            <p class="text-[11px] text-orange-300 italic leading-snug"><strong>Ex:</strong> "${card.ex}"</p>
+          </div>
+          <div class="text-center"><span class="text-[9px] text-slate-400 italic">Back Side</span></div>
+        </div>
+      </div>
+    `;
+    grid.appendChild(wrapper);
+  });
+}
+
+function audioSpeak(word) {
+  window.speechSynthesis.cancel();
+  const tts = new SpeechSynthesisUtterance(word);
+  tts.lang = 'en-US';
+  tts.rate = 0.85;
+  window.speechSynthesis.speak(tts);
+}
+
+// 3. DRILLS GRAMATICAIS
+function markGrammarDrill(qNum, status, btn) {
+  const row = document.getElementById('g-q-' + qNum);
+  const fb = row.querySelector('.feedback');
+  fb.classList.remove('hidden');
+  row.querySelectorAll('button').forEach(b => b.className = "bg-white border px-3 py-1.5 rounded-lg text-slate-700 font-medium text-xs border-slate-200 hover:bg-slate-50 transition-all cursor-pointer");
+
+  if (status === 'correct') {
+    btn.className = "bg-emerald-50 border border-emerald-400 text-emerald-800 font-semibold px-3 py-1.5 rounded-lg text-xs";
+    fb.className = "feedback text-[11px] font-bold text-emerald-600 mt-1";
+    fb.textContent = "✓ Correct! Impeccable concession syntax.";
+  } else {
+    btn.className = "bg-rose-50 border border-rose-400 text-rose-800 font-semibold px-3 py-1.5 rounded-lg text-xs";
+    fb.className = "feedback text-[11px] font-bold text-rose-600 mt-1";
+    fb.textContent = "✗ Incorrect structure. Review concession patterns.";
+  }
+}
+
+// 4. STEP 4: CASOS ESTRATÉGICOS
+const dilemmaScenariosData = {
+  infinite: {
+    icon: "ph-infinity",
+    title: "1. The Infinite Scroll",
+    pros: "Examining how removing stopping cues traps users in continuous browsing loops.",
+    cons: "Target Structure: 'Even though we intend to check just one update, we end up scrolling for hours.'",
+    questions: [
+      "1. Why are infinite feeds so psychologically powerful compared to traditional paginated websites?",
+      "2. How can professionals protect their personal time from infinite design loops?"
+    ],
+    btnId: "btn-scen-infinite"
+  },
+  redbadg: {
+    icon: "ph-bell-ringing",
+    title: "2. Red Badge Alerts",
+    pros: "Analyzing how red notification dots trigger a compulsive urge to clear them.",
+    cons: "Target Structure: 'Despite knowing notifications interrupt focus, people check their screens instantly.'",
+    questions: [
+      "1. How do red badge alerts exploit human curiosity and the desire for completion?",
+      "2. What rules do you use to manage push notifications on your devices?"
+    ],
+    btnId: "btn-scen-redbadg"
+  },
+  dopamine: {
+    icon: "ph-brain",
+    title: "3. Variable Rewards",
+    pros: "Discussing how unpredictable social validation mimics slot machine mechanics.",
+    cons: "Target Structure: 'Apps provide intermittent rewards in order to keep users hooked.'",
+    questions: [
+      "1. In what ways do digital 'likes' function similarly to gambling rewards?",
+      "2. How can we detach our emotional well-being from digital metrics?"
+    ],
+    btnId: "btn-scen-dopamine"
+  },
+  friction: {
+    icon: "ph-shield-check",
+    title: "4. Intentional Friction",
+    pros: "Evaluating the benefits of adding barriers like grayscale screens and app blockers.",
+    cons: "Target Structure: 'Even though friction feels annoying at first, it effectively reduces mindless phone use.'",
+    questions: [
+      "1. Have you ever tried turning your phone screen grayscale or blocking distracting apps?",
+      "2. Why is making bad habits harder (adding friction) more effective than relying on willpower?"
+    ],
+    btnId: "btn-scen-friction"
+  },
+  deepwork: {
+    icon: "ph-target",
+    title: "5. Deep Work Defense",
+    pros: "Exploring strategies to shield high-value professional tasks from digital noise.",
+    cons: "Target Structure: 'Despite constant digital noise, leaders must carve out uninterrupted focus time.'",
+    questions: [
+      "1. How do you protect your deep work sessions from urgent but unimportant interruptions?",
+      "2. What does true productivity look like in an economy that rewards speed and constant availability?"
+    ],
+    btnId: "btn-scen-deepwork"
+  }
+};
+
+function triggerDilemmaScenario(key) {
+  const data = dilemmaScenariosData[key];
+  document.querySelectorAll('[id^="btn-scen-"]').forEach(b => {
+    b.className = "w-full text-left bg-white border border-slate-200 hover:border-orangeAction p-2.5 rounded-xl text-xs flex items-center gap-3 transition-all cursor-pointer";
+  });
+  document.getElementById(data.btnId).className = "w-full text-left bg-orangeAction border border-orangeAction text-white p-2.5 rounded-xl text-xs flex items-center gap-3 transition-all font-semibold shadow-sm cursor-pointer";
+
+  document.getElementById('dilemma-data-panel').classList.remove('hidden');
+  document.getElementById('teacher-talk-panel').classList.remove('hidden');
+
+  document.getElementById('dilemma-icon-large').innerHTML = `<i class="ph-bold ${data.icon}"></i>`;
+  document.getElementById('dilemma-title').textContent = data.title;
+  document.getElementById('dilemma-pros').textContent = data.pros;
+  document.getElementById('dilemma-cons').textContent = data.cons;
+
+  const qBox = document.getElementById('teacher-questions-box');
+  qBox.innerHTML = data.questions.map(q => `<p class="font-medium p-1">• ${q}</p>`).join('');
+}
+
+// 5. STEP 5: SENTENCE ARCHITECT
+const builderSentences = [
+  {
+    ref: "Mesmo sabendo dos riscos, passamos horas navegando nas redes sociais.",
+    correct: ["Even", "though", "we", "know", "the", "risks,", "we", "spend", "hours", "scrolling."],
+    shuffled: ["know", "Even", "risks,", "we", "though", "hours", "spend", "we", "scrolling."]
+  },
+  {
+    ref: "Apesar das constantes notificações, ele conseguiu manter o foco no trabalho.",
+    correct: ["Despite", "constant", "notifications,", "he", "managed", "to", "stay", "focused."],
+    shuffled: ["stay", "constant", "managed", "Despite", "notifications,", "focused.", "he", "to"]
+  },
+  {
+    ref: "As empresas de tecnologia projetam alertas para maximizar o engajamento diário.",
+    correct: ["Tech", "companies", "design", "alerts", "in", "order", "to", "maximize", "engagement."],
+    shuffled: ["in", "maximize", "design", "Tech", "order", "engagement.", "companies", "alerts", "to"]
+  }
+];
+
+let currentBuilderIdx = 0;
+
+function loadBuilderSentence() {
+  const item = builderSentences[currentBuilderIdx];
+  document.getElementById('builder-counter').textContent = `Sentence ${currentBuilderIdx + 1} of ${builderSentences.length}`;
+  document.getElementById('builder-target-ref').textContent = item.ref;
+  
+  const slotZone = document.getElementById('builder-slot-zone');
+  const tilesZone = document.getElementById('builder-tiles-zone');
+  slotZone.innerHTML = '';
+  tilesZone.innerHTML = '';
+  
+  document.getElementById('builder-feedback').classList.add('hidden');
+
+  item.shuffled.forEach((word) => {
+    let tile = document.createElement('button');
+    tile.type = "button";
+    tile.className = "bg-white hover:bg-orange-50 border border-slate-300 text-deepBlue font-mono text-xs px-3 py-2 rounded-lg shadow-sm transition-all cursor-pointer";
+    tile.textContent = word;
+    tile.onclick = function() {
+      if (tile.parentElement === tilesZone) {
+        slotZone.appendChild(tile);
+      } else {
+        tilesZone.appendChild(tile);
+      }
+    };
+    tilesZone.appendChild(tile);
+  });
+}
+
+function resetCurrentSentence() {
+  loadBuilderSentence();
+}
+
+function checkBuiltSentence() {
+  const slotZone = document.getElementById('builder-slot-zone');
+  const userWords = Array.from(slotZone.children).map(t => t.textContent);
+  const correctWords = builderSentences[currentBuilderIdx].correct;
+  
+  const fb = document.getElementById('builder-feedback');
+  fb.classList.remove('hidden');
+
+  const isMatch = userWords.length === correctWords.length && userWords.every((w, i) => w === correctWords[i]);
+
+  if (isMatch) {
+    fb.className = "p-3 rounded-xl text-xs font-mono bg-emerald-50 border border-emerald-300 text-emerald-900";
+    fb.textContent = "✓ Correct concession structure! Sentence assembled impeccably.";
+    setTimeout(() => {
+      currentBuilderIdx++;
+      if (currentBuilderIdx < builderSentences.length) {
+        loadBuilderSentence();
+      } else {
+        document.getElementById('builder-counter').textContent = "Completed! 🎉";
+        document.getElementById('builder-target-ref').textContent = "Parabéns! Estruturas de economia de atenção consolidadas com sucesso.";
+      }
+    }, 1500);
+  } else {
+    fb.className = "p-3 rounded-xl text-xs font-mono bg-rose-50 border border-rose-300 text-rose-900";
+    fb.textContent = "✗ Word order incorrect. Re-examine the concession clauses.";
+  }
+}
+
+// INICIALIZAÇÃO
+document.addEventListener('DOMContentLoaded', () => {
+  renderFlashcards();
+  loadBuilderSentence();
+});
+</script>
+</body>
+</html>

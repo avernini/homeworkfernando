@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Practical Homework: The Future of Skills &amp; Prediction Lab (B1/B2)</title>
+<!-- Tailwind CSS & Phosphor Icons -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',
+          bodyLight: '#F8FAFC',
+          orangeAction: '#C2410C',
+          orangeHover: '#EA580C',
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body class="bg-deepBlue text-darkSlate min-h-screen text-[17px] antialiased">
+
+<!-- HEADER -->
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[1000px] mx-auto px-6 py-4 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div>
+        <span class="text-white font-bold tracking-wider text-lg mono block">MÉTODO <span class="text-orangeAction">FALA</span></span>
+        <span class="block text-[10px] text-slate-400 font-mono uppercase tracking-widest">Practical Homework · Future of Skills &amp; Writing Lab</span>
+      </div>
+    </div>
+    <div>
+      <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mono">Andragogical Active Practice</span>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN WORKSPACE -->
+<div class="bg-bodyLight w-full min-h-[calc(100vh-69px)]">
+  <main class="max-w-[1000px] mx-auto px-6 py-8 pb-24 space-y-8">
+
+    <!-- INTRO HERO -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100 font-mono">Active Practical Homework (B1/B2)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Future of Skills: Prediction Drills &amp; Writing Workspace</h2>
+      <p class="text-base text-slate-500 leading-relaxed">Consolidate the prediction modals (<em>will likely, bound to, might / could</em>) learned in the masterclass through targeted interactive checks, and complete your executive writing assignment directly below.</p>
+    </div>
+
+    <!-- PART 1: PREDICTION GRAMMAR DRILLS -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
+      <div class="flex items-center gap-2 border-b pb-3">
+        <div class="p-2 bg-indigo-50 text-indigo-700 rounded-lg"><i class="ph-bold ph-list-checks text-lg"></i></div>
+        <div>
+          <h3 class="font-bold text-deepBlue text-lg">Part 1: Contextual Prediction Grammar Checkpoint</h3>
+          <p class="text-xs text-slate-400 font-mono">Select the correct prediction structure for each workplace scenario:</p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Q1 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3" id="mc-q-1">
+          <p class="text-xs font-semibold text-slate-800">1. "Routine administrative tasks ______ be fully automated by AI systems within the next few years."</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button type="button" onclick="checkMC(1, 'correct', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">A) will likely</button>
+            <button type="button" onclick="checkMC(1, 'wrong', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">B) bound not to</button>
+          </div>
+          <p class="mc-feedback hidden text-[11px] font-bold mt-1"></p>
+        </div>
+
+        <!-- Q2 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3" id="mc-q-2">
+          <p class="text-xs font-semibold text-slate-800">2. "With rapid digital transformation across all sectors, career disruption is ______ happen."</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button type="button" onclick="checkMC(2, 'wrong', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">A) likely to</button>
+            <button type="button" onclick="checkMC(2, 'correct', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">B) bound to</button>
+          </div>
+          <p class="mc-feedback hidden text-[11px] font-bold mt-1"></p>
+        </div>
+
+        <!-- Q3 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3" id="mc-q-3">
+          <p class="text-xs font-semibold text-slate-800">3. "Emotional intelligence and complex synthesis ______ become the rarest assets in modern leadership."</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button type="button" onclick="checkMC(3, 'correct', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">A) could</button>
+            <button type="button" onclick="checkMC(3, 'wrong', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">B) bound</button>
+          </div>
+          <p class="mc-feedback hidden text-[11px] font-bold mt-1"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART 2: GOOGLE DOCS WRITING ASSIGNMENT (IFRAME) -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+      <div class="flex items-center gap-2 border-b pb-3">
+        <div class="p-2 bg-emerald-50 text-emerald-700 rounded-lg"><i class="ph-bold ph-article text-lg"></i></div>
+        <div>
+          <h3 class="font-bold text-deepBlue text-lg">Part 2: Executive Writing Production (Google Docs Workspace)</h3>
+          <p class="text-xs text-slate-400 font-mono">Access your writing document below and complete your text production assignment:</p>
+        </div>
+      </div>
+
+      <div class="rounded-xl overflow-hidden border border-slate-300 shadow-inner bg-slate-50 w-full h-[650px] relative">
+        <iframe src="https://docs.google.com/document/d/1LgbGymY_KDzIaMzVpHc719tywb7XYK6d8LTkXu1f-nk/edit?usp=sharing" class="w-full h-full border-0" title="Future of Skills Writing Assignment"></iframe>
+      </div>
+      <p class="text-[11px] text-slate-500 italic text-center">Tip: If the document preview requires login or permission, you can open it directly in a new tab to edit.</p>
+    </div>
+
+    <!-- SUBMISSION BOX -->
+    <div class="bg-slate-900 text-white rounded-2xl p-8 text-center shadow-md border border-slate-800 space-y-3">
+      <h4 class="text-base font-bold font-mono uppercase tracking-wider text-orangeAction">Complete Practical Homework</h4>
+      <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">Once you finish the grammar drills and complete your text production in the workspace above, submit your assignment session here.</p>
+      <div class="pt-2">
+        <button type="button" onclick="alert('Homework assignment submitted successfully! Excellent future skills practice.')" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-deepBlue font-bold uppercase px-8 py-3.5 rounded-xl transition-all shadow font-mono cursor-pointer text-xs">
+          Submit Homework <i class="ph-bold ph-check text-base"></i>
+        </button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- SCRIPT LOGIC -->
+<script>
+function checkMC(qNum, status, btn) {
+  const container = document.getElementById('mc-q-' + qNum);
+  const fb = container.querySelector('.mc-feedback');
+  fb.classList.remove('hidden');
+  container.querySelectorAll('button').forEach(b => {
+    b.className = "bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer";
+  });
+
+  if (status === 'correct') {
+    btn.className = "bg-emerald-50 border border-emerald-400 text-emerald-800 font-semibold text-left px-3.5 py-2 rounded-lg text-xs font-mono";
+    fb.className = "mc-feedback text-[11px] font-bold text-emerald-600 mt-1";
+    fb.textContent = "✓ Correct! Impeccable prediction usage.";
+  } else {
+    btn.className = "bg-rose-50 border border-rose-400 text-rose-800 font-semibold text-left px-3.5 py-2 rounded-lg text-xs font-mono";
+    fb.className = "mc-feedback text-[11px] font-bold text-rose-600 mt-1";
+    fb.textContent = "✗ Incorrect choice. Review the grammar rules for prediction modals.";
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Practical Homework: Creative Negotiation &amp; Client Simulator (B1/B2)</title>
+<!-- Tailwind CSS & Phosphor Icons -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',
+          bodyLight: '#F8FAFC',
+          orangeAction: '#C2410C',
+          orangeHover: '#EA580C',
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body class="bg-deepBlue text-darkSlate min-h-screen text-[17px] antialiased">
+
+<!-- HEADER -->
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[1000px] mx-auto px-6 py-4 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div>
+        <span class="text-white font-bold tracking-wider text-lg mono block">MÉTODO <span class="text-orangeAction">FALA</span></span>
+        <span class="block text-[10px] text-slate-400 font-mono uppercase tracking-widest">Practical Homework · Client Pushback Simulator</span>
+      </div>
+    </div>
+    <div>
+      <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mono">Andragogical Active Practice · Designers</span>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN WORKSPACE -->
+<div class="bg-bodyLight w-full min-h-[calc(100vh-69px)]">
+  <main class="max-w-[1000px] mx-auto px-6 py-8 pb-24 space-y-8">
+
+    <!-- INTRO HERO -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100 font-mono">Active Practical Homework (B1/B2)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Creative Negotiation &amp; Client Pushback Lab</h2>
+      <p class="text-base text-slate-500 leading-relaxed">Practice advanced diplomatic structures (<em>Even though, Provided that, Would you mind if...</em>) and navigate real agency client pushback scenarios through interactive simulation.</p>
+    </div>
+
+    <!-- PART 1: GRAMMAR CALIBRATION DRILLS -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
+      <div class="flex items-center gap-2 border-b pb-3">
+        <div class="p-2 bg-indigo-50 text-indigo-700 rounded-lg"><i class="ph-bold ph-list-checks text-lg"></i></div>
+        <div>
+          <h3 class="font-bold text-deepBlue text-lg">Part 1: Contextual Grammar Checkpoint (Agency Focus)</h3>
+          <p class="text-xs text-slate-400 font-mono">Select the correct diplomatic structure for each creative discussion:</p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Q1 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3" id="mc-q-1">
+          <p class="text-xs font-semibold text-slate-800">1. "______ the client requested a colorful retro badge, a sleek modern monogram fits their luxury brand strategy better."</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button type="button" onclick="checkMC(1, 'correct', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">A) Even though</button>
+            <button type="button" onclick="checkMC(1, 'wrong', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">B) Provided that</button>
+          </div>
+          <p class="mc-feedback hidden text-[11px] font-bold mt-1"></p>
+        </div>
+
+        <!-- Q2 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3" id="mc-q-2">
+          <p class="text-xs font-semibold text-slate-800">2. "We can add extra UI motion states ______ the client approves the core wireframe framework today."</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button type="button" onclick="checkMC(2, 'wrong', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">A) even though</button>
+            <button type="button" onclick="checkMC(2, 'correct', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">B) provided that</button>
+          </div>
+          <p class="mc-feedback hidden text-[11px] font-bold mt-1"></p>
+        </div>
+
+        <!-- Q3 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3" id="mc-q-3">
+          <p class="text-xs font-semibold text-slate-800">3. "______ we explored a clean dark mode version for the mobile app presentation?"</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button type="button" onclick="checkMC(3, 'correct', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">A) Would you mind if</button>
+            <button type="button" onclick="checkMC(3, 'wrong', this)" class="bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">B) Even though</button>
+          </div>
+          <p class="mc-feedback hidden text-[11px] font-bold mt-1"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART 2: INTERACTIVE CLIENT PUSHBACK SIMULATOR -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
+      <div class="flex items-center gap-2 border-b pb-3">
+        <div class="p-2 bg-emerald-50 text-emerald-700 rounded-lg"><i class="ph-bold ph-handshake text-lg"></i></div>
+        <div>
+          <h3 class="font-bold text-deepBlue text-lg">Part 2: Client Pushback Simulator (Agency Scenarios)</h3>
+          <p class="text-xs text-slate-400 font-mono">Choose your response strategy to handle difficult client feedback:</p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <!-- SIMULATION SCENARIO 1 -->
+        <div class="p-5 bg-slate-50 rounded-xl border border-slate-200 space-y-4" id="sim-1">
+          <div class="flex justify-between items-center">
+            <span class="text-[10px] font-mono font-bold text-orangeAction uppercase bg-orange-50 px-2.5 py-1 rounded border border-orange-200">Scenario 1: The "Make the Logo Bigger" Request</span>
+            <span class="text-xs font-mono text-slate-400">Impact: Visual Hierarchy</span>
+          </div>
+          <p class="text-xs font-semibold text-slate-800">The client looks at your clean editorial layout and says: <em>"The design looks empty. Can you double the size of the logo and add a drop shadow?"</em> How do you respond?</p>
+          
+          <div class="grid grid-cols-1 gap-3">
+            <button type="button" onclick="runSimulation(1, 'defensive')" class="bg-white border border-slate-300 text-left p-3 rounded-xl text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">
+              <strong class="block text-deepBlue mb-1">A) Defensive: "That will ruin the whitespace and look completely amateur."</strong>
+              <span class="text-[11px] text-slate-500 block">Creates friction and makes the client feel criticized.</span>
+            </button>
+            <button type="button" onclick="runSimulation(1, 'passive')" class="bg-white border border-slate-300 text-left p-3 rounded-xl text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">
+              <strong class="block text-deepBlue mb-1">B) Passive: "Sure, whatever you prefer, I'll change it right now."</strong>
+              <span class="text-[11px] text-slate-500 block">Compromises the visual quality of the agency portfolio.</span>
+            </button>
+            <button type="button" onclick="runSimulation(1, 'diplomatic')" class="bg-white border border-slate-300 text-left p-3 rounded-xl text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">
+              <strong class="block text-deepBlue mb-1">C) Diplomatic: "Even though a larger logo grabs immediate attention, whitespace actually gives the brand premium elegance. Would you mind if we tested a slightly bolder weight instead?"</strong>
+              <span class="text-[11px] text-slate-500 block">Persuades with design rationale and offers an elegant compromise.</span>
+            </button>
+          </div>
+          <div id="sim-feedback-1" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+        </div>
+
+        <!-- SIMULATION SCENARIO 2 -->
+        <div class="p-5 bg-slate-50 rounded-xl border border-slate-200 space-y-4" id="sim-2">
+          <div class="flex justify-between items-center">
+            <span class="text-[10px] font-mono font-bold text-orangeAction uppercase bg-orange-50 px-2.5 py-1 rounded border border-orange-200">Scenario 2: Last-Minute Scope Creep</span>
+            <span class="text-xs font-mono text-slate-400">Impact: Project Deadlines</span>
+          </div>
+          <p class="text-xs font-semibold text-slate-800">It is Thursday afternoon, and the final branding package is due Friday morning. The client emails: <em>"Can you also quickly design three extra social media banner variations for our upcoming campaign?"</em> How do you respond?</p>
+          
+          <div class="grid grid-cols-1 gap-3">
+            <button type="button" onclick="runSimulation(2, 'aggressive')" class="bg-white border border-slate-300 text-left p-3 rounded-xl text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">
+              <strong class="block text-deepBlue mb-1">A) Aggressive: "No way. That wasn't in our contract. Pay extra or forget it."</strong>
+              <span class="text-[11px] text-slate-500 block">Damages professional relationships abruptly.</span>
+            </button>
+            <button type="button" onclick="runSimulation(2, 'diplomatic')" class="bg-white border border-slate-300 text-left p-3 rounded-xl text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer">
+              <strong class="block text-deepBlue mb-1">B) Diplomatic: "We can certainly design those extra variations provided that we adjust the final delivery schedule to Monday morning to maintain top quality."</strong>
+              <span class="text-[11px] text-slate-500 block">Sets firm boundaries while accommodating the client's request professionally.</span>
+            </button>
+          </div>
+          <div id="sim-feedback-2" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUBMISSION BOX -->
+    <div class="bg-slate-900 text-white rounded-2xl p-8 text-center shadow-md border border-slate-800 space-y-3">
+      <h4 class="text-base font-bold font-mono uppercase tracking-wider text-orangeAction">Complete Practical Homework</h4>
+      <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">Once you complete the grammar checks and the client simulation above, submit your assignment session here.</p>
+      <div class="pt-2">
+        <button type="button" onclick="alert('Homework assignment submitted successfully! Excellent creative negotiation practice.')" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-deepBlue font-bold uppercase px-8 py-3.5 rounded-xl transition-all shadow font-mono cursor-pointer text-xs">
+          Submit Homework <i class="ph-bold ph-check text-base"></i>
+        </button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- SCRIPT LOGIC -->
+<script>
+function checkMC(qNum, status, btn) {
+  const container = document.getElementById('mc-q-' + qNum);
+  const fb = container.querySelector('.mc-feedback');
+  fb.classList.remove('hidden');
+  container.querySelectorAll('button').forEach(b => {
+    b.className = "bg-white border border-slate-300 text-left px-3.5 py-2 rounded-lg text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer";
+  });
+
+  if (status === 'correct') {
+    btn.className = "bg-emerald-50 border border-emerald-400 text-emerald-800 font-semibold text-left px-3.5 py-2 rounded-lg text-xs font-mono";
+    fb.className = "mc-feedback text-[11px] font-bold text-emerald-600 mt-1";
+    fb.textContent = "✓ Correct! Impeccable diplomatic usage.";
+  } else {
+    btn.className = "bg-rose-50 border border-rose-400 text-rose-800 font-semibold text-left px-3.5 py-2 rounded-lg text-xs font-mono";
+    fb.className = "mc-feedback text-[11px] font-bold text-rose-600 mt-1";
+    fb.textContent = "✗ Incorrect choice. Review the grammar rules for concession and politeness clauses.";
+  }
+}
+
+function runSimulation(simNum, choice) {
+  const container = document.getElementById('sim-' + simNum);
+  const fb = document.getElementById('sim-feedback-' + simNum);
+  fb.classList.remove('hidden');
+
+  container.querySelectorAll('button').forEach(b => {
+    b.className = "bg-white border border-slate-300 text-left p-3 rounded-xl text-xs font-mono text-slate-700 hover:border-orangeAction transition-all cursor-pointer";
+  });
+
+  event.currentTarget.className = "bg-slate-900 border border-slate-900 text-white text-left p-3 rounded-xl text-xs font-mono shadow-sm";
+
+  if (simNum === 1) {
+    if (choice === 'diplomatic') {
+      fb.className = "p-3 rounded-xl text-xs font-mono bg-emerald-50 border border-emerald-300 text-emerald-900";
+      fb.innerHTML = "<strong>✓ Masterclass Execution!</strong> You successfully defended your design rationale without causing friction, using concession and polite inquiry clauses.";
+    } else {
+      fb.className = "p-3 rounded-xl text-xs font-mono bg-rose-50 border border-rose-300 text-rose-900";
+      fb.innerHTML = "<strong>✗ Relationship Risk.</strong> Either causing unnecessary friction or compromising portfolio quality. A diplomatic response is always superior in agency settings.";
+    }
+  } else if (simNum === 2) {
+    if (choice === 'diplomatic') {
+      fb.className = "p-3 rounded-xl text-xs font-mono bg-emerald-50 border border-emerald-300 text-emerald-900";
+      fb.innerHTML = "<strong>✓ Outstanding Negotiation!</strong> You used <em>'provided that'</em> to set a healthy boundary while remaining collaborative and professional.";
+    } else {
+      fb.className = "p-3 rounded-xl text-xs font-mono bg-rose-50 border border-rose-300 text-rose-900";
+      fb.innerHTML = "<strong>✗ Abrupt Approach.</strong> Rejecting clients aggressively damages long-term agency partnerships. Always negotiate terms with structured alternatives.";
+    }
+  }
+}
+</script>
+</body>
+</html>

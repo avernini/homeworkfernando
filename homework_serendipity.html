@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Homework: Serendipity Writing Assignment (B1/B2)</title>
+<!-- Tailwind CSS & Phosphor Icons -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',
+          bodyLight: '#F8FAFC',
+          orangeAction: '#C2410C',
+          orangeHover: '#EA580C',
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body class="bg-deepBlue text-darkSlate min-h-screen text-[17px] antialiased">
+
+<!-- HEADER -->
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[1000px] mx-auto px-6 py-4 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div>
+        <span class="text-white font-bold tracking-wider text-lg mono block">MÉTODO <span class="text-orangeAction">FALA</span></span>
+        <span class="block text-[10px] text-slate-400 font-mono uppercase tracking-widest">Homework Assignment · Serendipity &amp; Openness</span>
+      </div>
+    </div>
+    <div>
+      <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mono">Independent Practice</span>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN WORKSPACE -->
+<div class="bg-bodyLight w-full min-h-[calc(100vh-69px)]">
+  <main class="max-w-[1000px] mx-auto px-6 py-8 pb-24">
+
+    <!-- HOMEWORK CONTAINER -->
+    <div class="space-y-6">
+      <div>
+        <span class="inline-block text-xs font-bold tracking-widest text-indigo-700 uppercase bg-indigo-50 px-3 py-1 rounded-full mb-3 border border-indigo-100 font-mono">Writing Homework Assignment</span>
+        <h2 class="text-3xl font-bold text-deepBlue mb-2">Guided Writing Practice: Choose &amp; Reflect</h2>
+        <p class="text-base text-slate-500 mb-6 leading-relaxed">Choose <strong>one</strong> of the two reflective prompts below and write your paragraph in the Google Doc workspace embedded below:</p>
+      </div>
+
+      <!-- PROMPTS BOX -->
+      <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-md border border-slate-800 space-y-4">
+        <div class="flex items-center gap-2 text-orangeAction font-bold uppercase tracking-wider text-xs font-mono">
+          <i class="ph-bold ph-pencil-line text-base animate-pulse"></i> Homework Writing Prompts (Choose One)
+        </div>
+        <div class="space-y-3 font-mono text-xs sm:text-sm text-slate-200 leading-relaxed bg-slate-950 p-4 rounded-xl border border-slate-800">
+          <p>📝 <strong>Option 1:</strong> Describe a time when a seemingly negative unexpected event (a delay, a cancellation, or a mistake) turned out to be a lucky break.</p>
+          <p>📝 <strong>Option 2:</strong> How can individuals intentionally design their routines and environments to increase their exposure to serendipitous opportunities?</p>
+        </div>
+      </div>
+
+      <!-- GOOGLE DOCS IFRAME CONTAINER -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b pb-3">
+          <span class="text-xs font-mono font-bold text-deepBlue uppercase flex items-center gap-2">
+            <i class="ph-bold ph-google-logo text-orangeAction text-base"></i> Google Docs Writing Workspace
+          </span>
+          <span class="text-xs font-mono text-slate-400">Live Collaborative Document</span>
+        </div>
+        
+        <div class="w-full h-[600px] rounded-xl overflow-hidden border border-slate-200 shadow-inner bg-slate-50">
+          <iframe src="https://docs.google.com/document/d/1gxAz4tEr5SrWmZMw3346EEqyenrwcLYHvUwtia7gGms/edit?usp=sharing" class="w-full h-full border-0" title="Google Docs Homework Assignment"></iframe>
+        </div>
+        <p class="text-xs text-slate-400 italic text-center">Tip: You can type directly into the embedded document above or open it in a new browser tab if preferred.</p>
+      </div>
+
+      
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

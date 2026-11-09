@@ -1,0 +1,9 @@
+{
+  "name": "metodo-fala-toefl",
+  "version": "1.0.0",
+  "description": "Mini-Simulador TOEFL com upload para o Google Drive",
+  "main": "index.js",
+  "dependencies": {
+    "googleapis": "^126.0.0"
+  }
+}
