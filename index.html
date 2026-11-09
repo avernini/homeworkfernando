@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Student Homework Hub</title>
+<!-- Tailwind CSS & Phosphor Icons for Premium Interface Consistency -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',      /* Dark UI Header Background */
+          bodyLight: '#F8FAFC',     /* Workspace background */
+          orangeAction: '#C2410C',  /* Primary brand accent color */
+          orangeHover: '#EA580C',   /* Hover color states */
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+          greenSoft: '#E8F8EF',
+          redSoft: '#FDEAEA',
+          amberSoft: '#FEF3D7'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .transition-all { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+</style>
+</head>
+<body class="bg-bodyLight text-darkSlate min-h-screen text-[18px] antialiased">
+
+<!-- ── STANDARDIZED METHOD FALA HEADER ── -->
+<header class="bg-deepBlue border-b border-slate-800 shadow-md">
+  <div class="max-w-[960px] mx-auto px-6 py-5 flex items-center justify-between gap-4">
+    
+    <div class="flex items-center gap-3">
+      <div class="flex-shrink-0">
+        <span class="text-white font-bold tracking-wider text-lg mono select-none">MÉTODO <span class="text-orangeAction">FALA</span></span>
+      </div>
+      <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
+      <div class="hidden sm:block">
+        <h1 class="text-base font-bold text-white tracking-wide">Student Homework Hub</h1>
+        <p class="text-xs text-slate-400">CEFR Operations Portal · Personal Learning Management</p>
+      </div>
+    </div>
+
+    <!-- Active Student Profile Tag -->
+    <div class="flex items-center gap-2.5 bg-slate-800/80 px-4 py-1.5 rounded-lg border border-slate-700">
+      <div class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></div>
+      <span class="text-xs font-semibold text-white tracking-wide uppercase font-mono" id="studentNameLabel">Active Student</span>
+    </div>
+
+  </div>
+</header>
+
+<!-- MAIN CONTENT WORKSPACE -->
+<main class="max-w-[960px] mx-auto px-6 py-12 pb-24">
+
+  <!-- ── PROGRESS DASHBOARD HERO ── -->
+  <div class="bg-deepBlue rounded-2xl p-8 mb-8 text-white shadow-xl relative overflow-hidden border border-slate-800">
+    <div class="absolute -right-10 -top-10 w-40 h-44 bg-orangeAction/10 rounded-full blur-2xl"></div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+      <div class="md:col-span-2">
+        <span class="text-orangeAction font-mono font-bold text-xs uppercase tracking-widest">Performance Diagnostics</span>
+        <h2 class="text-3xl font-bold mt-1 mb-4">Your Independent Learning Road</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-4">Consolidate vocabulary collocations, critical frameworks, and writing portfolios covered in your executive English sessions.</p>
+        
+        <!-- Linear Progress Tracker bar -->
+        <div>
+          <div class="flex justify-between items-center text-xs font-mono font-semibold mb-1.5 text-slate-400">
+            <span>COMPLIANCE PROGRESS</span>
+            <span id="progressBarLabel">0% Complete</span>
+          </div>
+          <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden border border-slate-700 p-0.5">
+            <div id="progressBarFill" class="h-full bg-gradient-to-r from-orangeAction to-orangeHover rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 text-center">
+        <div class="bg-slate-800/60 border border-slate-700/60 p-4 rounded-xl">
+          <span class="block text-2xl font-bold font-mono text-orangeAction" id="counterTotal">11</span>
+          <span class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">Assigned</span>
+        </div>
+        <div class="bg-slate-800/60 border border-slate-700/60 p-4 rounded-xl">
+          <span class="block text-2xl font-bold font-mono text-emerald-400" id="counterDone">0</span>
+          <span class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">Complete</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TASK LIST COMPONENT ── -->
+  <div class="space-y-4 mb-8">
+    <div class="flex items-center justify-between">
+      <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 font-mono">Assigned Tasks Repository</h3>
+      <button onclick="toggleTeacherSettings()" class="text-xs font-bold font-mono text-slate-400 hover:text-orangeAction transition-colors flex items-center gap-1 cursor-pointer">
+        <i class="ph ph-gear"></i> Setup Hub
+      </button>
+    </div>
+
+    <!-- Task Card 1: Freelance Negotiation & Pricing (Original) -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-1">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-orange-50 text-orangeAction rounded-xl border border-orange-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-currency-dollar"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-orangeAction bg-orange-50 border border-orange-100 px-2 py-0.5 rounded">Task 1</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR A2-B1</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Class Module: Freelance Negotiation &amp; Pricing</h4>
+          <p class="text-xs text-slate-500 mt-1">Second Conditional structures, commercial pricing vocabulary, interactive case files, and audio studio production.</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-1" onchange="toggleTaskStatus(1)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-1">Not Started</span>
+        </label>
+        <a href="freelance.html" id="linkTask-1" class="bg-orangeAction hover:bg-orangeHover text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+          Open Lesson <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Task Card 2: If We Were Honest Making Plans (Original) -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-2">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-amber-50 text-amber-700 rounded-xl border border-amber-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-chat-centered-dots"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-amber-700 bg-amber-50 border border-amber-100 px-2 py-0.5 rounded">Task 2</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR B2</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Homework Task: If We Were Honest Making Plans</h4>
+          <p class="text-xs text-slate-500 mt-1">Refusal registers, slang idioms (be down to, turn down), and social white lies essay writing.</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-2" onchange="toggleTaskStatus(2)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-2">Not Started</span>
+        </label>
+        <a href="homeworkhonest.html" id="linkTask-2" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+          Execute Task <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Task Card 3: Television - The Global Classroom (Original) -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-3">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-blue-50 text-blue-700 rounded-xl border border-blue-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-television"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-blue-700 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded">Task 3</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR A2-B1</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Homework Task: Television &amp; Media Habits</h4>
+          <p class="text-xs text-slate-500 mt-1">Industry terminology (binge watch, spinoff), past habits (used to) vs modern perfect trends, and embedded Docs workspace.</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-3" onchange="toggleTaskStatus(3)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-3">Not Started</span>
+        </label>
+        <a href="homework_television.html" id="linkTask-3" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+          Execute Task <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Task Card 4: Multi-Skill Proficiency Mock Test (Original) -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-4">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-emerald-50 text-emerald-700 rounded-xl border border-emerald-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-certificate"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded">Task 4</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR A2-B2 Diagnostic</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Proficiency Simulation: 4-Skill Mock Test</h4>
+          <p class="text-xs text-slate-500 mt-1">Flight disruption text analytics, auditory laboratory stress tracking, written notification files, and audio recording matrix.</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-4" onchange="toggleTaskStatus(4)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-4">Not Started</span>
+        </label>
+        <a href="mocktest.html" id="linkTask-4" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+          Execute Task <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Task Card 5: Street Navigation & Detour Challenges (Original) -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-5">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-purple-50 text-purple-700 rounded-xl border border-purple-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-map-trifold"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-purple-700 bg-purple-50 border border-purple-100 px-2 py-0.5 rounded">Task 5</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR A2</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Homework Task: Street Navigation &amp; Spatial Prepositions</h4>
+          <p class="text-xs text-slate-500 mt-1">Spatial prepositions calibration (across from, next to, behind), interactive city grid matrix, and tourist guide text production.</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-5" onchange="toggleTaskStatus(5)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-5">Not Started</span>
+        </label>
+        <a href="homework_navigation.html" id="linkTask-5" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+          Execute Task <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Task Card 6: Class & Homework: Creative Negotiation & Pricing (NEW - Dual Buttons) -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-6">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-amber-50 text-amber-700 rounded-xl border border-amber-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-currency-dollar"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-amber-700 bg-amber-50 border border-amber-100 px-2 py-0.5 rounded">Task 6</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR B1</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Class &amp; Homework: Creative Negotiation &amp; Pricing</h4>
+          <p class="text-xs text-slate-500 mt-1">Second Conditional structures, commercial pricing vocabulary, interactive case files, and audio studio production.</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-6" onchange="toggleTaskStatus(6)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-6">Not Started</span>
+        </label>
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <a href="class_creative_negotiation.html" id="linkClass-6" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-3 py-2.5 rounded-lg transition-colors flex items-center gap-1 justify-center">
+            Class
+          </a>
+          <a href="homework_creative_negotiation.html" id="linkHomework-6" class="bg-orangeAction hover:bg-orangeHover text-white font-semibold text-xs px-3 py-2.5 rounded-lg transition-colors flex items-center gap-1 justify-center">
+            Homework <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task Card 7: Decision Fatigue & Cognitive Load Module & Homework (NEW) -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-7">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-blue-50 text-blue-700 rounded-xl border border-blue-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-brain"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-blue-700 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded">Task 7</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR B1-B2</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Class &amp; Homework: Decision Fatigue &amp; Cognitive Load</h4>
+          <p class="text-xs text-slate-500 mt-1">Managing choices, decision-making vocabulary, case studies, and digital ergonomics.</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-7" onchange="toggleTaskStatus(7)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-7">Not Started</span>
+        </label>
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <a href="class_decision_fatigue.html" id="linkClass-7" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-3 py-2.5 rounded-lg transition-colors flex items-center gap-1 justify-center">
+            Class
+          </a>
+          <a href="homework_decision_fatigue.html" id="linkHomework-7" class="bg-orangeAction hover:bg-orangeHover text-white font-semibold text-xs px-3 py-2.5 rounded-lg transition-colors flex items-center gap-1 justify-center">
+            Homework <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task Card 8: Future Skills & Workplace Adaptability (NEW) -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-8">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-emerald-50 text-emerald-700 rounded-xl border border-emerald-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-trend-up"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded">Task 8</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR B2</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Class &amp; Homework: Future Skills &amp; Adaptability</h4>
+          <p class="text-xs text-slate-500 mt-1">Professional competencies, agility vocabulary, portfolio reflections, and career planning frameworks.</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-8" onchange="toggleTaskStatus(8)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-8">Not Started</span>
+        </label>
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <a href="class_futureskills.html" id="linkClass-8" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-3 py-2.5 rounded-lg transition-colors flex items-center gap-1 justify-center">
+            Class
+          </a>
+          <a href="homework_futureskills.html" id="linkHomework-8" class="bg-orangeAction hover:bg-orangeHover text-white font-semibold text-xs px-3 py-2.5 rounded-lg transition-colors flex items-center gap-1 justify-center">
+            Homework <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task Card 9: Attention & Deep Work Strategies (NEW) -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-9">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-purple-50 text-purple-700 rounded-xl border border-purple-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-target"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-purple-700 bg-purple-50 border border-purple-100 px-2 py-0.5 rounded">Task 9</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR B1-B2</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Class &amp; Homework: Attention &amp; Deep Work</h4>
+          <p class="text-xs text-slate-500 mt-1">Focus management, distraction audits, lexical chunks for productivity, and reading sprint.</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-9" onchange="toggleTaskStatus(9)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-9">Not Started</span>
+        </label>
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <a href="class_attention.html" id="linkClass-9" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-3 py-2.5 rounded-lg transition-colors flex items-center gap-1 justify-center">
+            Class
+          </a>
+          <a href="homework_attention.html" id="linkHomework-9" class="bg-orangeAction hover:bg-orangeHover text-white font-semibold text-xs px-3 py-2.5 rounded-lg transition-colors flex items-center gap-1 justify-center">
+            Homework <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task Card 10: The Power of Serendipity in Innovation (NEW) -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-10">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-rose-50 text-rose-700 rounded-xl border border-rose-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-sparkle"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-rose-700 bg-rose-50 border border-rose-100 px-2 py-0.5 rounded">Task 10</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">CEFR B2</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">Class &amp; Homework: The Power of Serendipity</h4>
+          <p class="text-xs text-slate-500 mt-1">Vocabulary of discovery, accidental breakthroughs, reflection journals, and listening lab.</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-10" onchange="toggleTaskStatus(10)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-10">Not Started</span>
+        </label>
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <a href="class_serendipity.html" id="linkClass-10" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-3 py-2.5 rounded-lg transition-colors flex items-center gap-1 justify-center">
+            Class
+          </a>
+          <a href="homework_serendipity.html" id="linkHomework-10" class="bg-orangeAction hover:bg-orangeHover text-white font-semibold text-xs px-3 py-2.5 rounded-lg transition-colors flex items-center gap-1 justify-center">
+            Homework <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task Card 11: TOEFL iBT Express Mini-Simulator (NEW) -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6" id="taskCard-11">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-indigo-50 text-indigo-700 rounded-xl border border-indigo-100 flex-shrink-0 text-2xl">
+          <i class="ph ph-certificate"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <span class="text-xs font-mono font-bold text-indigo-700 bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded">Task 11</span>
+            <span class="text-xs bg-slate-100 px-2 py-0.5 text-slate-600 rounded-md font-mono uppercase tracking-wider font-bold">Official Simulation</span>
+          </div>
+          <h4 class="font-bold text-deepBlue text-lg">TOEFL iBT Express Mini-Simulator (15 min)</h4>
+          <p class="text-xs text-slate-500 mt-1">Reading sprint, Google Drive audio listening lab, and speaking recorder synced directly to Google Drive.</p>
+        </div>
+      </div>
+      <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-100">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="checkTask-11" onchange="toggleTaskStatus(11)" class="w-4 h-4 rounded text-orangeAction focus:ring-orangeAction border-slate-300">
+          <span class="text-xs font-mono font-bold text-slate-500 uppercase" id="statusLabel-11">Not Started</span>
+        </label>
+        <a href="toefl_express_simulator_v2.html" id="linkHomework-11" class="bg-orangeAction hover:bg-orangeHover text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 focus:outline-none shadow-sm w-full sm:w-auto justify-center">
+          Start Simulator <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── TEACHER CONFIGURATION DASHBOARD (HIDDEN BY DEFAULT) ── -->
+  <div id="teacherSettings" class="bg-white border border-slate-200 rounded-xl p-6 hidden transition-all animate-fadeUp">
+    <div class="flex items-center justify-between border-b pb-3 mb-4">
+      <span class="text-xs font-mono font-bold text-orangeAction uppercase">Hub Customization panel</span>
+      <button onclick="toggleTeacherSettings()" class="text-slate-400 hover:text-slate-600 text-sm font-bold cursor-pointer">Close <i class="ph ph-x"></i></button>
+    </div>
+    
+    <div class="grid grid-cols-1 gap-4 text-sm mb-4">
+      <div>
+        <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-1">Student Display Name:</label>
+        <input type="text" id="inputStudentName" class="w-full p-2.5 border rounded-lg focus:outline-none focus:border-orangeAction bg-slate-50" placeholder="Type student name...">
+      </div>
+    </div>
+    <button onclick="saveTeacherSettings()" class="bg-deepBlue hover:bg-slate-800 text-white font-semibold text-xs px-5 py-2.5 rounded-lg transition-colors font-mono cursor-pointer">
+      Save Dashboard Matrix
+    </button>
+  </div>
+
+</main>
+
+<!-- ── ENGINE APPLICATION STATE & PERSISTENCE CORE ── -->
+<script>
+let appState = {
+  studentName: "Active Student",
+  tasks: {
+    1: { completed: false, path: "freelance.html" },
+    2: { completed: false, path: "homeworkhonest.html" },
+    3: { completed: false, path: "homework_television.html" },
+    4: { completed: false, path: "mocktest.html" },
+    5: { completed: false, path: "homework_navigation.html" },
+    6: { completed: false, classPath: "class_creative_negotiation.html", hwPath: "homework_creative_negotiation.html" },
+    7: { completed: false, classPath: "class_decision_fatigue.html", hwPath: "homework_decision_fatigue.html" },
+    8: { completed: false, classPath: "class_futureskills.html", hwPath: "homework_futureskills.html" },
+    9: { completed: false, classPath: "class_attention.html", hwPath: "homework_attention.html" },
+    10: { completed: false, classPath: "class_serendipity.html", hwPath: "homework_serendipity.html" },
+    11: { completed: false, path: "toefl_express_simulator_v2.html" }
+  }
+};
+
+function toggleTeacherSettings() {
+  const panel = document.getElementById('teacherSettings');
+  panel.classList.toggle('hidden');
+}
+
+function saveTeacherSettings() {
+  const nameVal = document.getElementById('inputStudentName').value.trim();
+  if (nameVal) appState.studentName = nameVal;
+
+  localStorage.setItem('metodo_fala_homework_hub_state', JSON.stringify(appState));
+  syncDOM();
+  toggleTeacherSettings();
+}
+
+function toggleTaskStatus(taskId) {
+  const checkbox = document.getElementById(`checkTask-${taskId}`);
+  appState.tasks[taskId].completed = checkbox.checked;
+  
+  localStorage.setItem('metodo_fala_homework_hub_state', JSON.stringify(appState));
+  syncDOM();
+}
+
+function syncDOM() {
+  document.getElementById('studentNameLabel').textContent = appState.studentName;
+  document.getElementById('inputStudentName').value = appState.studentName;
+
+  let totalTasks = Object.keys(appState.tasks).length;
+  let completedCount = 0;
+
+  for (let id in appState.tasks) {
+    const task = appState.tasks[id];
+    const checkbox = document.getElementById(`checkTask-${id}`);
+    const card = document.getElementById(`taskCard-${id}`);
+    const statusLabel = document.getElementById(`statusLabel-${id}`);
+    
+    if (checkbox) checkbox.checked = task.completed;
+
+    // Ajuste dinâmico de links para tarefas 1-5 e 11 (botão único) vs 6-10 (botão duplo Class/Homework)
+    if (id >= 6 && id <= 10) {
+      const classLink = document.getElementById(`linkClass-${id}`);
+      const hwLink = document.getElementById(`linkHomework-${id}`);
+      if (classLink && task.classPath) classLink.setAttribute('href', task.classPath);
+      if (hwLink && task.hwPath) hwLink.setAttribute('href', task.hwPath);
+    } else {
+      const runLink = document.getElementById(`linkTask-${id}`) || document.getElementById(`linkHomework-${id}`);
+      if (runLink && task.path) runLink.setAttribute('href', task.path);
+    }
+
+    if (task.completed) {
+      completedCount++;
+      statusLabel.textContent = "Completed";
+      statusLabel.className = "text-xs font-mono font-bold text-emerald-600 uppercase";
+      card.className = "bg-white border border-emerald-300 bg-emerald-50/10 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-emerald-400 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6";
+    } else {
+      statusLabel.textContent = "Not Started";
+      statusLabel.className = "text-xs font-mono font-bold text-slate-400 uppercase";
+      card.className = "bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6";
+    }
+  }
+
+  let pct = Math.round((completedCount / totalTasks) * 100);
+  document.getElementById('progressBarLabel').textContent = `${pct}% Complete`;
+  document.getElementById('progressBarFill').style.width = `${pct}%`;
+
+  document.getElementById('counterTotal').textContent = totalTasks;
+  document.getElementById('counterDone').textContent = completedCount;
+}
+
+window.onload = function() {
+  const savedState = localStorage.getItem('metodo_fala_homework_hub_state');
+  if (savedState) {
+    try {
+      const parsed = JSON.parse(savedState);
+      if (parsed.studentName) appState.studentName = parsed.studentName;
+      for (let id in appState.tasks) {
+        if (parsed.tasks && parsed.tasks[id]) {
+          appState.tasks[id].completed = parsed.tasks[id].completed || false;
+          if (parsed.tasks[id].path) appState.tasks[id].path = parsed.tasks[id].path;
+          if (parsed.tasks[id].classPath) appState.tasks[id].classPath = parsed.tasks[id].classPath;
+          if (parsed.tasks[id].hwPath) appState.tasks[id].hwPath = parsed.tasks[id].hwPath;
+        }
+      }
+    } catch (e) {
+      console.error("Failure restoring localized states.", e);
+    }
+  }
+  syncDOM();
+};
+</script>
+</body>
+</html>

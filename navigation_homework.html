@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Street Navigation Homework: Practice &amp; Writing</title>
+<!-- Tailwind CSS & Phosphor Icons para Consistência Visual Premium -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',      /* Dark UI Header Block */
+          bodyLight: '#F8FAFC',     /* Workspace body background */
+          orangeAction: '#C2410C',  /* Primary brand accent */
+          orangeHover: '#EA580C',   /* Hover color states */
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+          greenSoft: '#E8F8EF',
+          redSoft: '#FDEAEA',
+          amberSoft: '#FEF3D7'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&family=IBM+Plex+Mono:wght=400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .section { display: none; animation: fadeUp .35s ease; }
+  .section.active { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body class="bg-deepBlue text-darkSlate min-h-screen text-[18px] antialiased">
+
+<!-- ── STANDARDIZED METHOD FALA HEADER ── -->
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[960px] mx-auto px-6 py-5 flex items-center justify-between gap-4">
+    
+    <div class="flex items-center gap-3">
+      <div class="flex-shrink-0">
+        <button onclick="resetHomework()" class="cursor-pointer hover:opacity-80 transition-opacity select-none text-left focus:outline-none">
+          <span class="text-white font-bold tracking-wider text-lg mono">MÉTODO <span class="text-orangeAction">FALA</span></span>
+        </button>
+      </div>
+      <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
+      <div class="hidden sm:block">
+        <h1 class="text-base font-bold text-white tracking-wide">Navigation Homework</h1>
+        <p class="text-xs text-slate-400">Easy Practice · Maps &amp; Writing Task</p>
+      </div>
+    </div>
+
+    <!-- Progress Tracker Linear Layout -->
+    <div class="flex items-center gap-3">
+      <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mono" id="progressLabel">Step 1 / 5</span>
+      <div class="w-24 sm:w-32 h-2.5 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
+        <div class="h-full bg-orangeAction rounded-full transition-all duration-500" id="progressFill" style="width:20%"></div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- MAIN CONTENT WORKSPACE -->
+<div class="bg-bodyLight w-full min-h-[calc(100vh-73px)]">
+  <main class="max-w-[960px] mx-auto px-6 py-12 pb-24">
+
+    <!-- ═══════════════════════════════════════════
+         STEP 1 – VOCABULARY RECALL
+    ═══════════════════════════════════════════ -->
+    <div class="section active" id="sec1">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-4 border border-orange-100">Step 1: Word Practice (3 min)</span>
+      
+      <h2 class="text-3xl font-bold text-deepBlue mb-2 leading-tight">Check Your Prepositions</h2>
+      <p class="text-base text-slate-500 mb-8 leading-relaxed">Let's review the map words from our class[cite: 3]. Read the sentences below and choose the correct answer:</p>
+
+      <div class="space-y-4 mb-8">
+        <!-- Pergunta 1 -->
+        <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-3" id="vocab-q-0">
+          <p class="text-base font-semibold text-slate-800">1. The bakery and the bookstore share a wall. They are right beside each other. The bookstore is ______ the bakery[cite: 3].</p>
+          <div class="flex flex-wrap gap-2.5 text-sm font-mono">
+            <button onclick="selectVocabMatch(0, 'across from', this)" class="vocab-btn bg-white border border-slate-200 p-3 rounded-lg hover:border-orangeAction transition-all">across from</button>
+            <button onclick="selectVocabMatch(0, 'next to', this)" class="vocab-btn bg-white border border-slate-200 p-3 rounded-lg hover:border-orangeAction transition-all">next to</button>
+            <button onclick="selectVocabMatch(0, 'behind', this)" class="vocab-btn bg-white border border-slate-200 p-3 rounded-lg hover:border-orangeAction transition-all">behind</button>
+          </div>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-3" id="vocab-q-1">
+          <p class="text-base font-semibold text-slate-800">2. The hotel is on one side of the street and the coffee house is on the other side. The hotel is ______ the coffee house[cite: 3].</p>
+          <div class="flex flex-wrap gap-2.5 text-sm font-mono">
+            <button onclick="selectVocabMatch(1, 'across from', this)" class="vocab-btn bg-white border border-slate-200 p-3 rounded-lg hover:border-orangeAction transition-all">across from</button>
+            <button onclick="selectVocabMatch(1, 'between', this)" class="vocab-btn bg-white border border-slate-200 p-3 rounded-lg hover:border-orangeAction transition-all">between</button>
+            <button onclick="selectVocabMatch(1, 'in front of', this)" class="vocab-btn bg-white border border-slate-200 p-3 rounded-lg hover:border-orangeAction transition-all">in front of</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="vocab-feedback-msg" class="hidden mb-6 p-4 rounded-lg font-semibold text-center text-sm"></div>
+
+      <div class="flex justify-end">
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(2)">Next: Map Navigation <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 2 – MAP NAVIGATION QUIZ
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec2">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 2: Directions Check (3 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Find the Correct Route</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Let's check your map directions[cite: 3]. Read the navigation problems and choose the best path:</p>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-6 mb-8 space-y-4">
+        <!-- Questão Rota 1 -->
+        <div class="p-4 bg-slate-50 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-3" id="gram-q-0">
+          <p class="font-medium text-slate-800 text-base">1. You are at the Tech Store on Broad Street. How do you go to the Bookstore[cite: 3]?</p>
+          <div class="flex flex-col sm:flex-row gap-2 text-sm font-semibold">
+            <button onclick="selectGrammarMatch(0, 'path-a', this)" class="gram-btn bg-white border border-slate-200 px-4 py-2 rounded-lg hover:border-orangeAction transition-all text-left">Walk up Oak Avenue for one block. It is on the corner[cite: 3].</button>
+            <button onclick="selectGrammarMatch(0, 'path-b', this)" class="gram-btn bg-white border border-slate-200 px-4 py-2 rounded-lg hover:border-orangeAction transition-all text-left">Walk behind the Library on Broad Street[cite: 3].</button>
+          </div>
+        </div>
+
+        <!-- Questão Rota 2 -->
+        <div class="p-4 bg-slate-50 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-3" id="gram-q-1">
+          <p class="font-medium text-slate-800 text-base">2. Main Street is blocked. You cannot walk there[cite: 3]. What is the best detour?</p>
+          <div class="flex flex-col sm:flex-row gap-2 text-sm font-semibold">
+            <button onclick="selectGrammarMatch(1, 'detour-a', this)" class="gram-btn bg-white border border-slate-200 px-4 py-2 rounded-lg hover:border-orangeAction transition-all text-left">Walk straight through the blocked red zone on Main Street[cite: 3].</button>
+            <button onclick="selectGrammarMatch(1, 'detour-b', this)" class="gram-btn bg-white border border-slate-200 px-4 py-2 rounded-lg hover:border-orangeAction transition-all text-left">Turn right on Grand Avenue and walk past the open buildings[cite: 3].</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="grammar-feedback-msg" class="hidden mb-6 p-4 rounded-lg font-semibold text-center text-sm"></div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(1)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(3)">Next: Write Directions <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 3 – INTEGRATED WRITING WORKSPACE (GOOGLE DOCS IFRAME)
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec3">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 3: Writing Task (7 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Write Your Tourist Guide Message</h2>
+      <p class="text-slate-500 mb-6 leading-relaxed">
+        <strong>Your Task:</strong> Write a short message (40-60 words) to a lost friend[cite: 3]. 
+        Tell them how to walk from the Subway Station to the Coffee House[cite: 3]. Use map prepositions like <em>"next to"</em>, <em>"across from"</em>, or <em>"on the corner of"</em>[cite: 3].
+      </p>
+
+      <!-- INTEGRATED GOOGLE DOCS IFRAME WORKSPACE -->
+      <div class="w-full bg-white rounded-xl border border-slate-200 shadow-md p-4 mb-6">
+        <div class="flex items-center justify-between border-b pb-3 mb-4">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">📝</span>
+            <strong class="text-deepBlue text-base uppercase tracking-wider font-mono">Google Document Space</strong>
+          </div>
+          <span class="text-xs bg-orange-50 border border-orange-100 text-orangeAction px-2 py-0.5 rounded font-bold font-mono">Live Document</span>
+        </div>
+
+        <!-- RESPONSIVE EMBED CONTAINER -->
+        <div class="w-full aspect-[4/5] sm:aspect-[16/10] rounded-lg overflow-hidden border border-slate-200 bg-slate-100 relative">
+          <!-- Substitua o URL abaixo pelo link embed do seu Google Docs público de Homework -->
+          <iframe class="w-full h-full absolute top-0 left-0" 
+                  src="https://docs.google.com/document/d/1g2bL9C5Vw0kE5qKAn6Z8w4dD_hG-Lw_X5Z_gN8Bv-qM/edit?usp=sharing" 
+                  frameborder="0" 
+                  allowfullscreen></iframe>
+        </div>
+        
+        <p class="text-xs text-slate-400 mt-3 font-medium italic">
+          *Note: If the document doesn't load instantly, please check your internet connection or use your personal Google link folder.
+        </p>
+      </div>
+
+      <!-- INSTRUCTOR COMPLIANCE CHECK FOR TIMELINE -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 mb-6 flex justify-between items-center shadow-sm">
+        <div class="flex gap-3 items-center">
+          <div class="p-2 bg-slate-100 rounded-lg text-lg"><i class="ph ph-check-square text-orangeAction"></i></div>
+          <div>
+            <h4 class="text-xs font-bold text-deepBlue">Writing Confirmation</h4>
+            <p class="text-[11px] text-slate-500">Check this box when you finish writing your text guide inside the Google document.</p>
+          </div>
+        </div>
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="essay-check" onchange="toggleStep4Button()" class="rounded border-slate-300 text-orangeAction focus:ring-orangeAction w-4 h-4">
+          <span class="text-xs font-bold text-slate-600 uppercase">Finished</span>
+        </label>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(2)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button id="btn-to-step4" class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg hidden items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(4)">Next: Speaking Plan <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 4 – SPEECH STRUCTURE BRAINSTORMING
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec4">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 4: Speaking Plan (2 min)</span>
+      <h2 class="text-2xl font-bold text-deepBlue mb-2">Prepare Your Conversation</h2>
+      <p class="text-slate-500 mb-6 text-sm leading-relaxed">Let's prepare for our conversation next class. Type short notes or keywords inside the boxes to plan how you will explain the map routes:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <!-- Bloco 1 -->
+        <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-xs space-y-2">
+          <span class="block text-xs font-bold text-orangeAction font-mono uppercase">1. Starting Point Notes</span>
+          <p class="text-[11px] text-slate-400 italic">"Go out of the subway station..."[cite: 3]</p>
+          <textarea id="speech-b-1" oninput="calculateOutlineReadiness()" placeholder="Type your opening notes here..." class="w-full h-[80px] p-2 text-xs border rounded-lg outline-none focus:border-orangeAction bg-slate-50 resize-none font-sans"></textarea>
+        </div>
+
+        <!-- Bloco 2 -->
+        <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-xs space-y-2">
+          <span class="block text-xs font-bold text-orangeAction font-mono uppercase">2. Landmark References</span>
+          <p class="text-[11px] text-slate-400 italic">"Walk past the park and turn..."[cite: 3]</p>
+          <textarea id="speech-b-2" oninput="calculateOutlineReadiness()" placeholder="Type your landmark keywords here..." class="w-full h-[80px] p-2 text-xs border rounded-lg outline-none focus:border-orangeAction bg-slate-50 resize-none font-sans"></textarea>
+        </div>
+
+        <!-- Bloco 3 -->
+        <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-xs space-y-2">
+          <span class="block text-xs font-bold text-orangeAction font-mono uppercase">3. Final Destination Notes</span>
+          <p class="text-[11px] text-slate-400 italic">"The coffee shop is across from..."[cite: 3]</p>
+          <textarea id="speech-b-3" oninput="calculateOutlineReadiness()" placeholder="Type your final block notes here..." class="w-full h-[80px] p-2 text-xs border rounded-lg outline-none focus:border-orangeAction bg-slate-50 resize-none font-sans"></textarea>
+        </div>
+      </div>
+
+      <!-- Barra de Prontidão de Argumento Reativa -->
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm mb-6">
+        <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+          <span>SPEAKING PREPARATION PROGRESS</span>
+          <span id="outline-score-lbl">0%</span>
+        </div>
+        <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+          <div id="outline-bar-fill" class="bg-orangeAction h-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(3)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(5)">Next: Save Homework <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STEP 5 – SUBMISSION LAB COMPILATION
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec5">
+      <span class="inline-block text-xs font-bold tracking-widest text-emerald-700 uppercase bg-emerald-50 px-3 py-1 rounded-full mb-3 border border-emerald-100">Step 5: Finish Work (1 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Save Your Homework Profile</h2>
+      <p class="text-slate-500 mb-4 leading-relaxed">Click the button below to complete and lock your homework profile for your next class with your teacher[cite: 3].</p>
+      
+      <!-- LINK DE RETORNO À AULA PRINCIPAL PARA REVISÃO -->
+      <p class="text-sm font-medium text-slate-600 mb-6">
+        💡 Need to check the town map structures again? You can review your class dashboard anytime here: 
+        <a href="classroom_navigation.html" target="_blank" class="text-orangeAction hover:text-orangeHover font-bold underline inline-flex items-center gap-1">Open Main Lesson Dashboard <i class="ph ph-arrow-square-out"></i></a>[cite: 3].
+      </p>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm text-center">
+        <button onclick="compileHomeworkReport()" class="w-full bg-deepBlue hover:bg-slate-800 text-white font-bold uppercase tracking-wider py-4 rounded-xl text-sm transition-colors shadow-sm font-mono">
+          Finish &amp; Lock My Homework
+        </button>
+        <div id="final-summary-box" class="hidden mt-6 p-5 rounded-xl border text-left text-sm font-medium leading-relaxed"></div>
+      </div>
+
+      <div class="flex justify-start">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(4)"><i class="ph ph-arrow-left"></i> Back</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ENGINE JAVASCRIPT COHESION SYSTEM -->
+<script>
+let currentSection = 1;
+let vocabUserSelections = {};
+let grammarUserSelections = {};
+
+function goTo(n) {
+  document.getElementById('sec' + currentSection).classList.remove('active');
+  currentSection = n;
+  document.getElementById('sec' + n).classList.add('active');
+  
+  // Progress Calculation
+  document.getElementById('progressFill').style.width = (n * 20) + '%';
+  document.getElementById('progressLabel').textContent = 'Step ' + n + ' / 5';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// ── VOCABULARY SELECTION LOGIC ──
+function selectVocabMatch(qIndex, selection, btn) {
+  vocabUserSelections[qIndex] = selection;
+  const card = document.getElementById('vocab-q-' + qIndex);
+  
+  card.querySelectorAll('.vocab-btn').forEach(b => {
+    b.className = "vocab-btn bg-white border border-slate-200 p-3 rounded-lg hover:border-orangeAction transition-all";
+  });
+  
+  btn.className = "vocab-btn bg-deepBlue text-white border border-deepBlue p-3 rounded-lg transition-all";
+  
+  if (Object.keys(vocabUserSelections).length === 2) {
+    auditVocabStep();
+  }
+}
+
+function auditVocabStep() {
+  const c1 = vocabUserSelections[0] === 'next to';
+  const c2 = vocabUserSelections[1] === 'across from';
+  const feedback = document.getElementById('vocab-feedback-msg');
+  feedback.classList.remove('hidden');
+  
+  if (c1 && c2) {
+    feedback.className = "mb-6 p-4 rounded-lg font-semibold text-center text-xs border border-emerald-200 bg-emerald-50 text-emerald-800 font-mono";
+    feedback.textContent = "✓ Good job! Your vocabulary options match correctly.";
+  } else {
+    feedback.className = "mb-6 p-4 rounded-lg font-semibold text-center text-xs border border-amber-200 bg-amber-50 text-amber-800 font-mono";
+    feedback.textContent = "⚠ Mismatch detected. Please check the word options again.";
+  }
+}
+
+// ── GRAMMAR SELECTION LOGIC ──
+function selectGrammarMatch(qIndex, selection, btn) {
+  grammarUserSelections[qIndex] = selection;
+  const card = document.getElementById('gram-q-' + qIndex);
+  
+  card.querySelectorAll('.gram-btn').forEach(b => {
+    b.className = "gram-btn bg-white border border-slate-200 px-4 py-2 rounded-lg hover:border-orangeAction transition-all text-left";
+  });
+  
+  btn.className = "gram-btn bg-deepBlue text-white border border-deepBlue px-4 py-2 rounded-lg transition-all text-left";
+  
+  if (Object.keys(grammarUserSelections).length === 2) {
+    auditGrammarStep();
+  }
+}
+
+function auditGrammarStep() {
+  const c1 = grammarUserSelections[0] === 'path-a';
+  const c2 = grammarUserSelections[1] === 'detour-b';
+  const feedback = document.getElementById('grammar-feedback-msg');
+  feedback.classList.remove('hidden');
+  
+  if (c1 && c2) {
+    feedback.className = "mb-6 p-4 rounded-lg font-semibold text-center text-xs border border-emerald-200 bg-emerald-50 text-emerald-800 font-mono";
+    feedback.textContent = "✓ Map Routes Confirmed! Detours and straight lines are correctly mapped.";
+  } else {
+    feedback.className = "mb-6 p-4 rounded-lg font-semibold text-center text-xs border border-amber-200 bg-amber-50 text-amber-800 font-mono";
+    feedback.textContent = "⚠ Mismatch in routes options. Check map rules again.";
+  }
+}
+
+// ── WORKSPACE LOCK TOGGLE ──
+function toggleStep4Button() {
+  const checked = document.getElementById('essay-check').checked;
+  const btn = document.getElementById('btn-to-step4');
+  if (checked) {
+    btn.classList.remove('hidden');
+    btn.classList.add('inline-flex');
+  } else {
+    btn.classList.add('hidden');
+    btn.classList.remove('inline-flex');
+  }
+}
+
+// ── REACTIVE SPEECH ARCHITECTURE COMPLIANCE SCANNER (STEP 4)
+function calculateOutlineReadiness() {
+  let score = 0;
+  const b1 = document.getElementById('speech-b-1').value.trim();
+  const b2 = document.getElementById('speech-b-2').value.trim();
+  const b3 = document.getElementById('speech-b-3').value.trim();
+
+  if (b1) score += 33;
+  if (b2) score += 33;
+  if (b3) score += 34;
+
+  document.getElementById('outline-score-lbl').textContent = score + "%";
+  document.getElementById('outline-bar-fill').style.width = score + "%";
+}
+
+// ── REPORT COMPILATION CORE ──
+function compileHomeworkReport() {
+  const summaryBox = document.getElementById('final-summary-box');
+  summaryBox.classList.remove('hidden');
+  summaryBox.className = "mt-6 p-5 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-800 font-sans shadow-inner";
+  summaryBox.innerHTML = `
+    <div class="flex items-start gap-3">
+      <span class="text-xl mt-0.5">🏆</span>
+      <div>
+        <h4 class="font-bold text-base">Homework Saved Successfully![cite: 3]</h4>
+        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+          Your vocabulary answers, map selections, and your integrated Google Doc guide are locked. Please be ready to talk about your map direction notes out loud in our next live class![cite: 3]
+        </p>
+      </div>
+    </div>
+  `;
+}
+
+function resetHomework() {
+  location.reload();
+}
+</script>
+</body>
+</html>

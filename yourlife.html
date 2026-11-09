@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO FALA – Your Online Life Is Permanent</title>
+<!-- Tailwind CSS & Phosphor Icons for Premium Interface Consistency -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepBlue: '#0F172A',      /* Predominant dark header block */
+          bodyLight: '#F8FAFC',     /* Workspace body background */
+          orangeAction: '#C2410C',  /* Primary accent brand color */
+          orangeHover: '#EA580C',   /* Hover color states */
+          darkSlate: '#334155',
+          softSand: '#F1F5F9',
+          greenSoft: '#E8F8EF',
+          redSoft: '#FDEAEA',
+          amberSoft: '#FEF3D7'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&family=IBM+Plex+Mono:wght=400;600&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .section { display: none; animation: fadeUp .35s ease; }
+  .section.active { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+  }
+  .animate-shake { animation: shake 0.3s ease-in-out 2; }
+</style>
+</head>
+<body class="bg-deepBlue text-darkSlate min-h-screen text-[18px] antialiased">
+
+<!-- ── STANDARDIZED METHOD FALA HEADER ── -->
+<header class="bg-deepBlue sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <div class="max-w-[960px] mx-auto px-6 py-5 flex items-center justify-between gap-4">
+    
+    <div class="flex items-center gap-3">
+      <div class="flex-shrink-0">
+        <button onclick="resetEngine()" class="cursor-pointer hover:opacity-80 transition-opacity select-none text-left focus:outline-none">
+          <span class="text-white font-bold tracking-wider text-lg mono">MÉTODO <span class="text-orangeAction">FALA</span></span>
+        </button>
+      </div>
+      <div class="h-6 w-[1px] bg-slate-700 hidden sm:block"></div>
+      <div class="hidden sm:block">
+        <h1 class="text-base font-bold text-white tracking-wide">Your Online Life Is Permanent</h1>
+        <p class="text-xs text-slate-400">Digital Footprint Auditing · Modals of Obligation · Vocabulary & Collocations</p>
+      </div>
+    </div>
+
+    <!-- Progress Tracker Linear Layout -->
+    <div class="flex items-center gap-3">
+      <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mono" id="progressLabel">Step 1 / 5</span>
+      <div class="w-24 sm:w-32 h-2.5 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
+        <div class="h-full bg-orangeAction rounded-full transition-all duration-500" id="progressFill" style="width:20%"></div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- MAIN CONTENT WORKSPACE -->
+<div class="bg-bodyLight w-full min-h-[calc(100vh-73px)]">
+  <main class="max-w-[960px] mx-auto px-6 py-12 pb-24">
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 1 – WARM-UP & ICEBREAKER
+    ═══════════════════════════════════════════ -->
+    <div class="section active" id="sec1">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-4 border border-orange-100">Step 1: Warm-up (5-8 min)</span>
+      
+      <h2 class="text-4xl font-bold text-deepBlue mb-3 leading-tight">The Electronic Tattoo Concept</h2>
+      <p class="text-lg text-slate-500 mb-8 leading-relaxed max-w-3xl">Every click, post, or query we execute leaves an indelible digital footprint. This is your electronic tattoo—permanent, searchable, and immortal. Let's explore the lexical parameters used to navigate online safety.</p>
+
+      <!-- PANORAMIC THEMED VISUAL -->
+      <div class="w-full h-[320px] rounded-xl overflow-hidden mb-8 shadow-sm border border-slate-200">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=960&h=320&q=80" alt="Cybersecurity interface background network" class="w-full h-full object-cover">
+      </div>
+
+      <!-- INTERACTIVE CHALLENGE PORTAL -->
+      <div class="bg-amber-50/70 border border-amber-200 rounded-xl p-6 mb-6 text-sm text-amber-900 leading-relaxed">
+        <span class="font-bold uppercase tracking-wider text-amber-800 text-xs flex items-center gap-1.5 mb-1.5"><i class="ph-bold ph-lightning"></i> Digital Footprint Challenge:</span>
+        <p class="text-slate-700 font-medium mb-2">Analyze your online trail and discuss these questions out loud to activate your fluency baseline:</p>
+        <p class="mono bg-white p-3 rounded border border-slate-200 text-sm text-slate-800 font-semibold shadow-inner">
+          ➔ How do you think big data, tattoos and immortality can be connected?<br>
+          ➔ What might an electronic tattoo be? <br>
+          ➔ What information about you can be found on the internet?
+        </p>
+      </div>
+
+      <!-- VOCABULARY TOOLKIT WITH AUDIO VANGUARD -->
+      <div class="bg-white border border-slate-200 rounded-xl p-8 mb-6 shadow-sm">
+        <span class="inline-block text-xs font-bold tracking-wider text-amber-700 bg-amberSoft px-3 py-1 rounded-full mb-4 uppercase">Dating & Privacy Vocabulary</span>
+        <p class="text-base text-slate-600 mb-5">Click on the vocabulary pills below to verify their technical applications. Click the <i class="ph-bold ph-speaker-high text-orangeAction"></i> icon to trigger premium native speech parameters:</p>
+        
+        <div class="flex flex-wrap gap-2.5 mb-5">
+          <button class="vocab-pill px-5 py-2.5 rounded-lg border border-slate-200 bg-white text-base font-medium hover:border-orangeAction hover:text-orangeAction transition-colors mono" onclick="toggleVocab(this, 'distracted')">distracted</button>
+          <button class="vocab-pill px-5 py-2.5 rounded-lg border border-slate-200 bg-white text-base font-medium hover:border-orangeAction hover:text-orangeAction transition-colors mono" onclick="toggleVocab(this, 'figureout')">figure out</button>
+          <button class="vocab-pill px-5 py-2.5 rounded-lg border border-slate-200 bg-white text-base font-medium hover:border-orangeAction hover:text-orangeAction transition-colors mono" onclick="toggleVocab(this, 'immortality')">immortality</button>
+          <button class="vocab-pill px-5 py-2.5 rounded-lg border border-slate-200 bg-white text-base font-medium hover:border-orangeAction hover:text-orangeAction transition-colors mono" onclick="toggleVocab(this, 'threaten')">threaten</button>
+          <button class="vocab-pill px-5 py-2.5 rounded-lg border border-slate-200 bg-white text-base font-medium hover:border-orangeAction hover:text-orangeAction transition-colors mono" onclick="toggleVocab(this, 'turnout')">turn out</button>
+        </div>
+
+        <!-- AUDIO VANGUARD VOCAB DEF BOXES -->
+        <div class="vocab-def hidden mt-3 p-5 bg-softSand rounded-lg border-l-4 border-orangeAction text-base leading-relaxed shadow-xs" id="def-distracted">
+          <div class="flex items-center gap-2 mb-2">
+            <button onclick="speak('distracted')" class="text-orangeAction hover:text-orangeHover text-xl focus:outline-none transition-transform active:scale-95 flex items-center justify-center mr-1" title="Listen pronunciation">
+              <i class="ph-bold ph-speaker-high"></i>
+            </button>
+            <strong class="text-deepBlue text-lg font-bold tracking-wide">distracted</strong>
+            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded text-slate-600 font-mono">/dɪˈstræk.tɪd/</span>
+          </div>
+          <p class="text-slate-600">Unable to concentrate or pay full attention because your mind is captured by alternative events.</p>
+          <em class="text-slate-500 block mt-1">"Users are easily distracted by infinite feeds, sharing data without thinking."</em>
+        </div>
+
+        <div class="vocab-def hidden mt-3 p-5 bg-softSand rounded-lg border-l-4 border-orangeAction text-base leading-relaxed shadow-xs" id="def-figureout">
+          <div class="flex items-center gap-2 mb-2">
+            <button onclick="speak('figure out')" class="text-orangeAction hover:text-orangeHover text-xl focus:outline-none transition-transform active:scale-95 flex items-center justify-center mr-1" title="Listen pronunciation">
+              <i class="ph-bold ph-speaker-high"></i>
+            </button>
+            <strong class="text-deepBlue text-lg font-bold tracking-wide">figure out</strong>
+            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded text-slate-600 font-mono">/ˈfɪɡ.jɚ aʊt/</span>
+          </div>
+          <p class="text-slate-600">To finally understand, discover, or solve a complex problem or logic puzzle after systematic analysis.</p>
+          <em class="text-slate-500 block mt-1">"We need to figure out how algorithms track our location settings in background."</em>
+        </div>
+
+        <div class="vocab-def hidden mt-3 p-5 bg-softSand rounded-lg border-l-4 border-orangeAction text-base leading-relaxed shadow-xs" id="def-immortality">
+          <div class="flex items-center gap-2 mb-2">
+            <button onclick="speak('immortality')" class="text-orangeAction hover:text-orangeHover text-xl focus:outline-none transition-transform active:scale-95 flex items-center justify-center mr-1" title="Listen pronunciation">
+              <i class="ph-bold ph-speaker-high"></i>
+            </button>
+            <strong class="text-deepBlue text-lg font-bold tracking-wide">immortality</strong>
+            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded text-slate-600 font-mono">/ˌɪm.ɔːrˈtæl.ə.t̬i/</span>
+          </div>
+          <p class="text-slate-600">The ability to remain alive, active, or stored forever without degradation. In tech, it represents unerasable digital trails.</p>
+          <em class="text-slate-500 block mt-1">"Our data achieves absolute immortality once it passes to cloud servers."</em>
+        </div>
+
+        <div class="vocab-def hidden mt-3 p-5 bg-softSand rounded-lg border-l-4 border-orangeAction text-base leading-relaxed shadow-xs" id="def-threaten">
+          <div class="flex items-center gap-2 mb-2">
+            <button onclick="speak('threaten')" class="text-orangeAction hover:text-orangeHover text-xl focus:outline-none transition-transform active:scale-95 flex items-center justify-center mr-1" title="Listen pronunciation">
+              <i class="ph-bold ph-speaker-high"></i>
+            </button>
+            <strong class="text-deepBlue text-lg font-bold tracking-wide">threaten</strong>
+            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded text-slate-600 font-mono">/ˈθret.ən/</span>
+          </div>
+          <p class="text-slate-600">To declare an intention to cause damage, leakage, or structural problems to a person if specific rules are not obeyed.</p>
+          <em class="text-slate-500 block mt-1">"Ransomware hackers often threaten to release private company datasets."</em>
+        </div>
+
+        <div class="vocab-def hidden mt-3 p-5 bg-softSand rounded-lg border-l-4 border-orangeAction text-base leading-relaxed shadow-xs" id="def-turnout">
+          <div class="flex items-center gap-2 mb-2">
+            <button onclick="speak('turn out')" class="text-orangeAction hover:text-orangeHover text-xl focus:outline-none transition-transform active:scale-95 flex items-center justify-center mr-1" title="Listen pronunciation">
+              <i class="ph-bold ph-speaker-high"></i>
+            </button>
+            <strong class="text-deepBlue text-lg font-bold tracking-wide">turn out</strong>
+            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded text-slate-600 font-mono">/tɝːn aʊt/</span>
+          </div>
+          <p class="text-slate-600">To develop in a specific way or have a surprising, unpredicted final result.</p>
+          <em class="text-slate-500 block mt-1">"It may turn out that the app was quietly capturing background analytics all along."</em>
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(2)">Next: Grammar Mapping <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 2 – GRAMMAR MAPPING (MODALS OF PRIVACY)
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec2">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 2: Grammar Mapping (10-12 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Modals of Advice, Obligation & Digital Hygiene</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Securing your digital footprint requires utilizing appropriate modal verbs of strength to deliver exact instructions and rules.</p>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-8 mb-6 shadow-sm">
+        <span class="inline-block text-xs font-bold tracking-wider text-slate-700 bg-slate-100 px-3 py-1 rounded-full mb-4 uppercase">The Obligation Spectrum</span>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-base">
+            <thead>
+              <tr class="bg-deepBlue text-white uppercase tracking-wider text-[12px] font-bold font-mono">
+                <th class="p-4 rounded-tl-lg">Modal</th>
+                <th class="p-4">Strength Level</th>
+                <th class="p-4 rounded-tr-lg">Digital Governance Application Case</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 mono text-orangeAction font-bold">must / mustn't</td>
+                <td class="p-4 font-semibold text-rose-600">99% — Rigid Prohibitions / Absolute Rules</td>
+                <td class="p-4 text-slate-600">"You <strong>mustn't reuse</strong> legacy passwords on secure banking networks."</td>
+              </tr>
+              <tr class="bg-softSand hover:bg-slate-50">
+                <td class="p-4 mono text-deepBlue font-bold">have to / don't have to</td>
+                <td class="p-4 font-semibold text-blue-600">80% — Regulatory Need (External Source)</td>
+                <td class="p-4 text-slate-600">"Companies <strong>have to encrypt</strong> all transactional databases by law."</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 mono text-deepBlue font-bold">should / shouldn't</td>
+                <td class="p-4 font-semibold text-amber-600">55% — Recommended Advice / Best Practices</td>
+                <td class="p-4 text-slate-600">"You <strong>should think twice</strong> before posting unverified images."</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- CRITICAL EXAM SYNTAX GUARD -->
+      <div class="bg-white border border-slate-200 rounded-xl mb-8 shadow-sm overflow-hidden">
+        <div class="bg-deepBlue px-8 py-4 flex items-center justify-between border-b border-slate-800">
+          <div class="flex items-center gap-2">
+            <i class="ph ph-shield-warning text-xl text-orangeAction"></i>
+            <span class="text-base font-bold text-white uppercase tracking-wider mono">Syntax Loss Protection</span>
+          </div>
+        </div>
+
+        <div class="p-8 space-y-6 bg-bodyLight/30">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="bg-rose-50/40 border border-rose-100 rounded-xl p-5 flex items-start gap-4 shadow-sm">
+              <div class="p-2 bg-rose-100 text-rose-600 rounded-lg text-xl flex-shrink-0 mt-0.5"><i class="ph ph-prohibit"></i></div>
+              <div>
+                <span class="block text-xs font-bold text-rose-700 uppercase tracking-wider mb-1">Avoid Illegal Auxiliary Doubling</span>
+                <p class="mono text-base text-rose-950 leading-relaxed">You mustn't to post credentials on forums.</p>
+              </div>
+            </div>
+            <div class="bg-emerald-50/40 border border-emerald-100 rounded-xl p-5 flex items-start gap-4 shadow-sm">
+              <div class="p-2 bg-emerald-100 text-emerald-600 rounded-lg text-xl flex-shrink-0 mt-0.5"><i class="ph ph-check-circle"></i></div>
+              <div>
+                <span class="block text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">Correct Way</span>
+                <p class="mono text-base text-emerald-950 font-medium leading-relaxed">You <strong>mustn't post</strong> credentials on forums. <em class="text-xs text-slate-400 block mt-1">(Modals always skip 'to')</em></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(1)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(3)">Next: Incident Simulator <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 3 – INTERACTIVE INCIDENT SIMULATOR
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec3">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 3: Simulator (15 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Live Privacy & Compliance Incident Simulator</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Inject a realistic data breakdown, exposure risk, or social security leak below. Analyze the targeted constraints and present your strategy out loud.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <button class="p-5 bg-white border border-slate-200 hover:border-orangeAction text-left rounded-xl shadow-sm transition-all" onclick="triggerIncident('incident1')">
+          <div class="text-2xl mb-2">🛡️</div>
+          <span class="block font-bold text-deepBlue text-base mb-1">Incident Alpha</span>
+          <p class="text-sm text-slate-500">Unprotected server logs exposing user database passwords.</p>
+        </button>
+        <button class="p-5 bg-white border border-slate-200 hover:border-orangeAction text-left rounded-xl shadow-sm transition-all" onclick="triggerIncident('incident2')">
+          <div class="text-2xl mb-2">🕵️‍♂️</div>
+          <span class="block font-bold text-deepBlue text-base mb-1">Incident Beta</span>
+          <p class="text-sm text-slate-500">An employee shares sensitive operational blueprints on a generic chat.</p>
+        </button>
+        <button class="p-5 bg-white border border-slate-200 hover:border-orangeAction text-left rounded-xl shadow-sm transition-all" onclick="triggerIncident('incident3')">
+          <div class="text-2xl mb-2">💻</div>
+          <span class="block font-bold text-deepBlue text-base mb-1">Incident Gamma</span>
+          <p class="text-sm text-slate-500">Third-party tracker networks capturing location credentials.</p>
+        </button>
+      </div>
+
+      <!-- SIMULATOR DISPLAY CARD -->
+      <div id="simulatorCard" class="bg-white border border-slate-200 rounded-xl p-8 mb-10 shadow-sm hidden">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="animate-ping inline-flex h-2 w-2 rounded-full bg-red-400 opacity-75"></span>
+          <span class="text-xs font-bold uppercase tracking-wider text-red-600" id="simTitle">Live Risk Injected</span>
+        </div>
+        
+        <div class="w-full h-[240px] rounded-xl overflow-hidden mb-6 shadow-inner bg-slate-100">
+          <img id="simImage" src="" alt="Incident Visual" class="w-full h-full object-cover">
+        </div>
+
+        <p class="text-xl text-deepBlue font-semibold mb-6 animate-pulse" id="simDescription">Selecting standard variables...</p>
+        
+        <div class="p-6 bg-deepBlue text-slate-200 rounded-xl border border-slate-800">
+          <span class="block text-xs font-bold uppercase text-orangeAction tracking-wider mb-3 mono">🎯 Required Syntax Constraint: <span id="simGrammarTag" class="text-white bg-slate-800 px-2 py-0.5 rounded ml-1">-</span></span>
+          <p class="text-base leading-relaxed mono p-1" id="simScaffold">Select an incident block above to populate scaffolding lines.</p>
+        </div>
+
+        <div class="mt-6 pt-6 border-t border-slate-100">
+          <h4 class="text-base font-bold text-deepBlue mb-2"><i class="ph-bold ph-chats-teardrop text-orangeAction mr-1"></i> Executive Risk Assessment Question:</h4>
+          <p class="text-slate-600 text-base italic" id="simFollowUp"></p>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(2)"><i class="ph ph-arrow-left"></i> Back</button>
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="goTo(4)">Next: Calibration Practice <i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 4 – CONTROLLED PRACTICE
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec4">
+      <span class="inline-block text-xs font-bold tracking-widest text-orangeAction uppercase bg-orange-50 px-3 py-1 rounded-full mb-3 border border-orange-100">Step 4: Controlled Practice (10-12 min)</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-2">Lexical & Modal Suffix Calibration Matrix</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">Match the vocabulary collocations and modal constraints below to prevent communication breakdowns. You can toggle options freely before verifying!</p>
+
+      <!-- EXERCISE A: WORD TO DEFINITION MATCHING (SCRAMBLED) -->
+      <div class="bg-white border border-slate-200 rounded-xl p-8 mb-6 shadow-sm">
+        <span class="inline-block text-xs font-bold tracking-wider text-amber-700 bg-amberSoft px-3 py-1 rounded-full mb-4 uppercase">Exercise A: Match Words with the Definitions</span>
+        <p class="text-base text-slate-600 mb-6">Select the matching partner definition for each core vocabulary item:</p>
+        <div class="space-y-4" id="matcher-container"></div>
+      </div>
+
+      <!-- EXERCISE B: COLLOCATION GAP FILL (SCRAMBLED) -->
+      <div class="bg-white border border-slate-200 rounded-xl p-8 mb-6 shadow-sm">
+        <span class="inline-block text-xs font-bold tracking-wider text-indigo-700 bg-blue-50 px-3 py-1 rounded-full mb-4 uppercase">Exercise B: Collocations Applied Practice</span>
+        <p class="text-base text-slate-600 mb-6">Complete the operational statements using the correct word-pairing collocations:</p>
+        <div class="space-y-4" id="gap-fill-container"></div>
+      </div>
+
+      <div id="quiz-score-msg" class="hidden mb-6 p-5 rounded-lg font-semibold text-center text-lg"></div>
+
+      <div class="flex justify-between items-center">
+        <button class="bg-white hover:bg-slate-100 text-deepBlue font-medium px-5 py-3.5 rounded-lg border border-slate-200 flex items-center gap-2 transition-colors text-base" onclick="goTo(3)"><i class="ph ph-arrow-left"></i> Back</button>
+        <div class="flex gap-2.5">
+          <button class="bg-deepBlue hover:bg-slate-800 text-white font-medium px-6 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-base" onclick="checkAllExercises()">Validate All Entries</button>
+          <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-6 py-3.5 rounded-lg hidden items-center gap-2 transition-colors shadow-sm text-base" id="toFinalBtn" onclick="goTo(5)">See Results <i class="ph ph-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 5 – RESULTS & STRATEGIC BOARDROOM
+    ═══════════════════════════════════════════ -->
+    <div class="section" id="sec5">
+      <span class="inline-block text-xs font-bold tracking-widest text-emerald-700 uppercase bg-emerald-50 px-3 py-1 rounded-full mb-3 border border-emerald-100">Step 5: Results & Outlines</span>
+      <h2 class="text-3xl font-bold text-deepBlue mb-8">Digital Hygiene Assessment Complete! 🚀</h2>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-10 mb-6 shadow-sm text-center">
+        <div class="score-number text-7xl sm:text-8xl font-bold text-orangeAction mono mb-2" id="finalScore">–</div>
+        <div class="text-base font-semibold tracking-wider uppercase text-slate-400 mb-4">Total Compliance Accuracy</div>
+        <div class="inline-block px-6 py-2.5 rounded-full font-bold text-base mb-5 bg-amberSoft text-amber-800" id="finalBadge">Processing...</div>
+        <p class="text-slate-600 max-w-md mx-auto text-base leading-relaxed" id="finalMsg"></p>
+      </div>
+
+      <!-- IMMERSIVE BOARDROOM THEMES FROM ORIGINAL WORD DOCUMENT -->
+      <div class="bg-white border border-slate-200 rounded-xl p-8 mb-6 shadow-sm">
+        <span class="inline-block text-xs font-bold tracking-wider text-deepBlue bg-slate-100 px-3 py-1 rounded-full mb-4 uppercase">The Cyber Hygiene Policy Board</span>
+        <h3 class="text-xl font-bold text-deepBlue mb-4">Simulated Boardroom Dialogue</h3>
+        <p class="text-base text-slate-500 mb-6">Execute this target compliance challenge out loud with your teacher. Analyze risk variables without slipping syntax rules:</p>
+        
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-base">
+            <thead>
+              <tr class="bg-deepBlue text-white uppercase tracking-wider text-[12px] font-bold font-mono">
+                <th class="p-4 rounded-tl-lg">Interviewer Core Question</th>
+                <th class="p-4 rounded-tr-lg">Required Structural Target & Response Scaffold</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="p-4 text-slate-700 font-medium">"What will happen if an automated system tracking your location makes mistakes with your data?"</td>
+                <td class="p-4 text-slate-600 leading-relaxed text-sm font-mono"><strong>[mustn't / shouldn't / because]</strong><br>➔ "We must explain that they mustn't share blueprints because every post becomes..."</td>
+              </tr>
+              <tr class="bg-softSand">
+                <td class="p-4 text-slate-700 font-medium">"Do we have to update our privacy policy due to recent administrative security anomalies?"</td>
+                <td class="p-4 text-slate-600 leading-relaxed text-sm font-mono"><strong>[have to / because / turn out]</strong><br>➔ "Yes, we have to audit our protocols because it might turn out that our..."</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- INDEPENDENT PRODUCTION WRITING -->
+      <div class="bg-white border-2 border-dashed border-slate-300 rounded-xl p-8 mb-10 shadow-sm bg-slate-50/50">
+        <div class="flex items-center justify-between border-b pb-4 mb-4">
+          <h3 class="text-xl font-bold text-deepBlue"><i class="ph-bold ph-download-simple text-orangeAction"></i> Post-Session Written Policy Assignment</h3>
+          <span class="text-xs bg-slate-200 px-2.5 py-1 text-slate-700 rounded-md uppercase tracking-wider font-bold mono">B2 Output Spec</span>
+        </div>
+        <div class="space-y-4 text-base text-slate-700 leading-relaxed">
+          <p><strong>🎯 Independent Security Directive:</strong> Write 5 customized rules for a modern corporate environment mapping online boundaries and privacy parameters:</p>
+          <div class="p-4 bg-white rounded border border-slate-200 text-xs font-mono text-slate-600 space-y-1">
+            <div>• Draft at least 2 rules detailing strict prohibitions using **mustn't** or **are not allowed to**.</div>
+            <div>• Draft at least 2 instructions outlining operational non-obligations using **don't have to** / **don't need to**.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-start">
+        <button class="bg-orangeAction hover:bg-orangeHover text-white font-semibold px-6 py-3.5 rounded-lg flex items-center gap-2 transition-colors text-base shadow-md" onclick="resetEngine()">
+          <i class="ph ph-arrows-counter-clockwise"></i> Restart Session Framework
+        </button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ── ENGINE APPLICATION STATE & SHUFFLER CORE ── -->
+<script>
+let currentSection = 1;
+let selectedMatchAnswers = {};
+let selectedGapAnswers = {};
+let quizChecked  = false;
+let quizScore    = 0;
+
+// FORCED NATIVE HIGH-ACCURACY US VOICE UTTERANCE
+function speak(word) {
+  window.speechSynthesis.cancel(); 
+  const voiceEngine = new SpeechSynthesisUtterance(word);
+  const systemVoices = window.speechSynthesis.getVoices();
+  
+  const usAccentVoice = systemVoices.find(voice => 
+    voice.lang === 'en-US' && (voice.name.includes('Google') || voice.name.includes('Natural') || voice.name.includes('Zira') || voice.name.includes('David') || voice.name.includes('Samantha'))
+  );
+  
+  if (usAccentVoice) {
+    voiceEngine.voice = usAccentVoice;
+  } else {
+    voiceEngine.lang = 'en-US';
+  }
+  voiceEngine.rate = 0.85; 
+  window.speechSynthesis.speak(voiceEngine);
+}
+
+if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+}
+
+function goTo(n) {
+  document.getElementById('sec' + currentSection).classList.remove('active');
+  currentSection = n;
+  document.getElementById('sec' + n).classList.add('active');
+  updateProgress(n);
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  if (n === 5) buildResults();
+}
+
+function updateProgress(n) {
+  const fill  = document.getElementById('progressFill');
+  const label = document.getElementById('progressLabel');
+  fill.style.width = (n * 20) + '%';
+  label.textContent = 'Step ' + n + ' / 5';
+}
+
+function toggleVocab(pill, key) {
+  const card = pill.closest('div').parentElement;
+  const allPills = pill.parentElement.querySelectorAll('.vocab-pill');
+  const allDefs  = card.querySelectorAll('.vocab-def');
+  const def      = document.getElementById('def-' + key);
+
+  if (pill.classList.contains('bg-deepBlue')) {
+    pill.classList.remove('bg-deepBlue', 'text-white', 'border-deepBlue');
+    pill.classList.add('bg-white', 'text-darkSlate', 'border-slate-200');
+    if (def) { def.classList.add('hidden'); }
+    return;
+  }
+  
+  allPills.forEach(p => {
+    p.classList.remove('bg-deepBlue', 'text-white', 'border-deepBlue');
+    p.classList.add('bg-white', 'text-darkSlate', 'border-slate-200');
+  });
+  allDefs.forEach(d => d.classList.add('hidden'));
+  
+  pill.classList.add('bg-deepBlue', 'text-white', 'border-deepBlue');
+  pill.classList.remove('bg-white', 'text-darkSlate', 'border-slate-200');
+  if (def) def.classList.remove('hidden');
+}
+
+// ── DIGITAL ANOMALIES SIMULATOR OBJECTS ──
+const incidents = {
+  incident1: {
+    title: "COMPLIANCE BREACH: Leaked Access Logs",
+    desc: "A developer accidently pushes clear-text user access files to a public repository. Standard digital footprint rules are compromised.",
+    grammar: "must / should / because",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=700&q=80",
+    scaffold: "We <span class='text-orange-400 font-bold'>must isolate</span> the repository immediately <span class='text-orange-400 font-bold'>because</span> public databases <span class='text-orange-400 font-bold'>should never</span> expose...",
+    followup: "How would you explain the operational risks of this leak to a client?"
+  },
+  incident2: {
+    title: "DIGITAL IDENTITY ALERT: Compromised Account",
+    desc: "An unauthorized agent hacks a leadership social account, sending indiscreet links to your premium stakeholder circle.",
+    grammar: "don't have to / should",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=700&q=80",
+    scaffold: "We <span class='text-orange-400 font-bold'>don't have to delete</span> the entire channel, but we <span class='text-orange-400 font-bold'>should force</span> a baseline reset because...",
+    followup: "Why does an indiscreet post instantly threaten corporate reputation parameters?"
+  },
+  incident3: {
+    title: "PRIVACY THREAT: Third-Party Telemetry Logs",
+    desc: "Your tracking metrics reveal a background script silently captures customer location data without consent.",
+    grammar: "mustn't / have to",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=700&q=80",
+    scaffold: "The system <span class='text-orange-400 font-bold'>mustn't collect</span> telemetry data silently. We <span class='text-orange-400 font-bold'>have to deactivate</span> the pipeline rules until...",
+    followup: "What steps should a project manager take to guarantee standard alignment with user rules?"
+  }
+};
+
+function triggerIncident(id) {
+  const card = document.getElementById('simulatorCard');
+  const title = document.getElementById('simTitle');
+  const desc = document.getElementById('simDescription');
+  const grammar = document.getElementById('simGrammarTag');
+  const scaffold = document.getElementById('simScaffold');
+  const img = document.getElementById('simImage');
+  const followup = document.getElementById('simFollowUp');
+
+  card.classList.remove('hidden');
+  title.textContent = incidents[id].title;
+  desc.textContent = incidents[id].desc;
+  grammar.textContent = incidents[id].grammar;
+  scaffold.innerHTML = incidents[id].scaffold;
+  img.src = incidents[id].image;
+  followup.textContent = incidents[id].followup;
+  
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// ── CUSTOM HIGH FIDELITY TASK MATCH MATRICES ──
+const wordsMatchingData = [
+  { term: "shout", key: "shout", options: ["express strong emotions", "be known surprisingly", "the ability to live forever"], correct: "express strong emotions", hint: "shout ➔ express strong emotions" },
+  { term: "turn out", key: "turnout", options: ["be known or discovered surprisingly", "tell someone you will hurt them", "unable to concentrate"], correct: "be known or discovered surprisingly", hint: "turn out ➔ be known/discovered surprisingly" },
+  { term: "immortality", key: "immortality", options: ["the ability to live forever", "join, connect", "turn upside down"], correct: "the ability to live forever", hint: "immortality ➔ live forever" },
+  { term: "threaten", key: "threaten", options: ["tell someone you will cause them problems", "learn or understand", "unable to concentrate"], correct: "tell someone you will cause them problems", hint: "threaten ➔ declare harm or problems" },
+  { term: "figure out", key: "figureout", options: ["learn or understand something", "express strong emotions", "join, connect"], correct: "learn or understand something", hint: "figure out ➔ learn or understand" },
+  { term: "tie", key: "tie", options: ["join, connect", "turn upside down", "the ability to live forever"], correct: "join, connect", hint: "tie ➔ join or connect" },
+  { term: "flip", key: "flip", options: ["turn upside down", "unable to concentrate", "be known surprisingly"], correct: "turn upside down", hint: "flip ➔ turn upside down" },
+  { term: "distracted", key: "distracted", options: ["unable to concentrate because of something", "tell someone you will cause problems", "express strong emotions"], correct: "unable to concentrate because of something", hint: "distracted ➔ unable to concentrate" }
+];
+
+const collocationsGapData = [
+  { sentence: "a) We _____ about ourselves on social media without thinking about the consequences.", options: ["provide information", "utter a word"], correct: "provide information", hint: "provide information ➔ inputting details" },
+  { sentence: "b) Asking a woman about her age is an _____.", options: ["indiscreet question", "utter word"], correct: "indiscreet question", hint: "indiscreet question ➔ overly personal query" },
+  { sentence: "c) The face recognition system is not perfect and it can sometimes _____.", options: ["make mistakes", "provide information"], correct: "make mistakes", hint: "make mistakes ➔ err on parameters" },
+  { sentence: "d) I’m not _____ this singer. Can you tell me which band he is in?", options: ["familiar with", "tied to"], correct: "familiar with", hint: "familiar with ➔ knowledgeable about" },
+  { sentence: "e) This is my secret project so don’t _____ about this to anyone.", options: ["utter a word", "make mistakes"], correct: "utter a word", hint: "utter a word ➔ say absolutely nothing" },
+  { sentence: "f) Some people can be rational in a crisis and _____ trouble using their magnetic personality.", options: ["charm their way out of", "shout their way out of"], correct: "charm their way out of", hint: "charm your way out ➔ use charisma to escape trouble" }
+];
+
+function shuffleArray(array) {
+  let arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+let scrambledMatching = [];
+let scrambledGaps = [];
+
+function buildExercises() {
+  scrambledMatching = wordsMatchingData.map(item => ({
+    ...item,
+    shuffledOpts: shuffleArray(item.options)
+  }));
+  scrambledGaps = collocationsGapData.map(item => ({
+    ...item,
+    shuffledOpts: shuffleArray(item.options)
+  }));
+}
+
+function renderExercises() {
+  const matcherContainer = document.getElementById('matcher-container');
+  matcherContainer.innerHTML = "";
+  
+  scrambledMatching.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'border border-slate-200 rounded-xl p-4 bg-slate-50 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-orangeAction/40 transition-all';
+    div.id = 'match-q-' + i;
+    
+    const opts = item.shuffledOpts.map((o, idx) => `
+      <button class="match-opt-btn bg-white border border-slate-200 text-xs font-semibold text-deepBlue px-3 py-1.5 rounded-lg hover:border-orangeAction hover:bg-orange-50 transition-all"
+              onclick="selectMatchOpt(${i}, ${idx}, this)"
+              id="btn-match-${i}-${idx}">
+        ${o}
+      </button>
+    `).join('');
+    
+    div.innerHTML = `
+      <span class="text-sm font-bold text-deepBlue font-mono flex items-center gap-1.5"><i class="ph ph-hash text-orangeAction"></i> ${item.term}</span>
+      <div class="flex flex-wrap gap-2 justify-end">${opts}</div>
+    `;
+    matcherContainer.appendChild(div);
+  });
+
+  const gapsContainer = document.getElementById('gap-fill-container');
+  gapsContainer.innerHTML = "";
+
+  scrambledGaps.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'border border-slate-200 rounded-xl p-5 bg-slate-50 space-y-3';
+    div.id = 'gap-q-' + i;
+
+    const opts = item.shuffledOpts.map((o, idx) => `
+      <button class="gap-opt-btn bg-white border border-slate-200 text-xs font-semibold text-deepBlue px-4 py-2 rounded-lg hover:border-orangeAction hover:bg-orange-50 transition-all"
+              onclick="selectGapOpt(${i}, ${idx}, this)"
+              id="btn-gap-${i}-${idx}">
+        ${o}
+      </button>
+    `).join('');
+
+    div.innerHTML = `
+      <p class="text-sm font-semibold text-deepBlue leading-relaxed">${item.sentence.replace('_____', '<span class="inline-block min-w-[100px] border-b-2 border-orangeAction bg-orange-50 h-5 vertical-middle rounded-sm"></span>')}</p>
+      <div class="flex flex-wrap gap-2">${opts}</div>
+    `;
+    gapsContainer.appendChild(div);
+  });
+}
+
+function selectMatchOpt(rowIdx, optionIdx, clickedBtn) {
+  if (quizChecked) return;
+  selectedMatchAnswers[rowIdx] = clickedBtn.textContent.trim();
+  const block = document.getElementById('match-q-' + rowIdx);
+  
+  block.querySelectorAll('.match-opt-btn').forEach(btn => {
+    btn.classList.remove('bg-deepBlue', 'text-white', 'border-deepBlue');
+    btn.classList.add('bg-white', 'text-deepBlue', 'border-slate-200');
+  });
+  clickedBtn.classList.add('bg-deepBlue', 'text-white', 'border-deepBlue');
+  clickedBtn.classList.remove('bg-white', 'text-deepBlue', 'border-slate-200');
+}
+
+function selectGapOpt(rowIdx, optionIdx, clickedBtn) {
+  if (quizChecked) return;
+  selectedGapAnswers[rowIdx] = clickedBtn.textContent.trim();
+  const block = document.getElementById('gap-q-' + rowIdx);
+
+  block.querySelectorAll('.gap-opt-btn').forEach(btn => {
+    btn.classList.remove('bg-deepBlue', 'text-white', 'border-deepBlue');
+    btn.classList.add('bg-white', 'text-deepBlue', 'border-slate-200');
+  });
+  clickedBtn.classList.add('bg-deepBlue', 'text-white', 'border-deepBlue');
+  clickedBtn.classList.remove('bg-white', 'text-deepBlue', 'border-slate-200');
+}
+
+function checkAllExercises() {
+  if (quizChecked) return;
+  quizChecked = true;
+  quizScore = 0;
+  const maxScore = wordsMatchingData.length + collocationsGapData.length;
+
+  // 1. Audit Word-Definition Matching
+  scrambledMatching.forEach((item, i) => {
+    const block = document.getElementById('match-q-' + i);
+    const userAns = selectedMatchAnswers[i];
+    const correct = item.correct;
+
+    block.querySelectorAll('.match-opt-btn').forEach(b => {
+      b.disabled = true;
+      b.classList.add('opacity-60');
+    });
+
+    if (userAns === correct) {
+      quizScore++;
+      block.classList.add('border-emerald-500', 'bg-emerald-50/20');
+      block.querySelectorAll('.match-opt-btn').forEach(b => {
+        if (b.textContent.trim() === correct) {
+          b.classList.remove('opacity-60', 'bg-white', 'text-deepBlue', 'bg-deepBlue');
+          b.classList.add('bg-emerald-600', 'text-white', 'border-emerald-600');
+        }
+      });
+    } else {
+      block.classList.add('border-rose-300', 'bg-rose-50/20');
+      block.querySelectorAll('.match-opt-btn').forEach(b => {
+        const txtVal = b.textContent.trim();
+        if (userAns && txtVal === userAns) {
+          b.classList.remove('opacity-60', 'bg-deepBlue', 'text-white');
+          b.classList.add('bg-rose-600', 'text-white', 'border-rose-600');
+        }
+        if (txtVal === correct) {
+          b.classList.remove('opacity-60');
+          b.classList.add('border-emerald-600', 'text-emerald-600', 'font-bold');
+        }
+      });
+    }
+  });
+
+  // 2. Audit Collocation Gaps
+  scrambledGaps.forEach((item, i) => {
+    const block = document.getElementById('gap-q-' + i);
+    const userAns = selectedGapAnswers[i];
+    const correct = item.correct;
+
+    block.querySelectorAll('.gap-opt-btn').forEach(b => {
+      b.disabled = true;
+      b.classList.add('opacity-60');
+    });
+
+    if (userAns === correct) {
+      quizScore++;
+      block.classList.add('border-emerald-500', 'bg-emerald-50/20');
+      block.querySelectorAll('.gap-opt-btn').forEach(b => {
+        if (b.textContent.trim() === correct) {
+          b.classList.remove('opacity-60', 'bg-white', 'text-deepBlue', 'bg-deepBlue');
+          b.classList.add('bg-emerald-600', 'text-white', 'border-emerald-600');
+        }
+      });
+    } else {
+      block.classList.add('border-rose-300', 'bg-rose-50/20');
+      block.querySelectorAll('.gap-opt-btn').forEach(b => {
+        const txtVal = b.textContent.trim();
+        if (userAns && txtVal === userAns) {
+          b.classList.remove('opacity-60', 'bg-deepBlue', 'text-white');
+          b.classList.add('bg-rose-600', 'text-white', 'border-rose-600');
+        }
+        if (txtVal === correct) {
+          b.classList.remove('opacity-60');
+          b.classList.add('border-emerald-600', 'text-emerald-600', 'font-bold');
+        }
+      });
+    }
+  });
+
+  const msg = document.getElementById('quiz-score-msg');
+  msg.classList.remove('hidden');
+  if (quizScore >= 11) {
+    msg.className = 'mb-6 p-5 rounded-lg font-semibold text-center text-lg bg-emerald-50 text-emerald-600 border border-emerald-200';
+    msg.textContent = `🎉 Calibration Confirmed! ${quizScore}/${maxScore} parameters matched successfully!`;
+  } else if (quizScore >= 8) {
+    msg.className = 'mb-6 p-5 rounded-lg font-semibold text-center text-lg bg-amberSoft text-amber-800 border border-amber-200';
+    msg.textContent = `👍 Stable Base. ${quizScore}/${maxScore} markers synced. Watch parameters closely.`;
+  } else {
+    msg.className = 'mb-6 p-5 rounded-lg font-semibold text-center text-lg bg-rose-50 text-rose-600 border border-rose-200';
+    msg.textContent = `${quizScore}/${maxScore} indicators verified. Re-verify Step 2 guidelines.`;
+  }
+  
+  document.getElementById('toFinalBtn').classList.remove('hidden');
+  document.getElementById('toFinalBtn').classList.add('inline-flex');
+}
+
+function buildResults() {
+  const total = wordsMatchingData.length + collocationsGapData.length;
+  const pct = Math.round((quizScore / total) * 100);
+  const numEl = document.getElementById('finalScore');
+  const badgeEl = document.getElementById('finalBadge');
+  const msgEl = document.getElementById('finalMsg');
+
+  numEl.textContent = quizScore + '/' + total;
+
+  if (pct >= 80) {
+    badgeEl.textContent = '🏆 B2-Ready Digital Privacy Consultant';
+    badgeEl.className = 'inline-block px-6 py-2.5 rounded-full font-bold text-base mb-5 bg-amberSoft text-amber-800';
+    msgEl.textContent = 'Outstanding strategic calibration! You separate absolute obligations from advisory hygiene rules flawlessly while selecting native technical collocations.';
+  } else if (pct >= 60) {
+    badgeEl.textContent = '👍 Secure Systems Specialist';
+    badgeEl.className = 'inline-block px-6 py-2.5 rounded-full font-bold text-base mb-5 bg-blue-50 text-blue-600';
+    msgEl.textContent = 'Stable performance baseline. Focus on distinguishing modal rules (mustn\'t vs don\'t have to) to completely secure your policy phrasing.';
+  } else {
+    badgeEl.textContent = '📚 Developing Compliance Candidate';
+    badgeEl.className = 'inline-block px-6 py-2.5 rounded-full font-bold text-base mb-5 bg-emerald-50 text-emerald-600';
+    msgEl.textContent = 'Execution parameters require revision. Re-engaging with the digital collocations toolkit will sharpen your audit speeds.';
+  }
+}
+
+function resetEngine() {
+  quizAnswers = {};
+  selectedMatchAnswers = {};
+  selectedGapAnswers = {};
+  quizChecked = false;
+  quizScore = 0;
+
+  document.getElementById('quiz-score-msg').classList.add('hidden');
+  document.getElementById('toFinalBtn').classList.add('hidden');
+  document.getElementById('toFinalBtn').classList.remove('inline-flex');
+  document.getElementById('simulatorCard').classList.add('hidden');
+  
+  document.querySelectorAll('.vocab-pill').forEach(pill => {
+    pill.classList.remove('bg-deepBlue', 'text-white', 'border-deepBlue');
+    pill.classList.add('bg-white', 'text-darkSlate', 'border-slate-200');
+  });
+  document.querySelectorAll('.vocab-def').forEach(def => def.classList.add('hidden'));
+
+  buildExercises();
+  renderExercises();
+  goTo(1);
+}
+
+// Start
+buildExercises();
+renderExercises();
+</script>
+</body>
+</html>
+```
+eof
+
+Sinta-se à vontade para salvar e realizar o deploy do arquivo final! A imersão em colocações de privacidade digital está 100% calibrada.
